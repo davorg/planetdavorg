@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>planet davorg</title>
+  <link rel="alternate" href="http://davorg.theplanetarium.org/" type="text/html"/>
+  <subtitle>Aggregating Dave's stuff</subtitle>
+  <author>
+    <name>Dave Cross</name>
+    <email>dave@dave.org.uk</email>
+  </author>
+  <updated>2020-11-26T17:03:06Z</updated>
+  <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
+  <id>http://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/14329131879</id>
+    <published>2020-11-26T16:38:27Z</published>
+    <updated>2020-11-26T16:38:27Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/theplanetarium/compare/3341efa0ea...05dd62a42e"/>
+    <title type="html">davorg pushed to main in davorg/theplanetarium</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/theplanetarium/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/theplanetarium" rel="noreferrer"&gt;davorg/theplanetarium&lt;/a&gt;
+      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2020-11-26T16:38:27Z" class="no-wrap"&gt;Nov 26, 2020&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/theplanetarium/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/theplanetarium/commit/05dd62a42e86d546cc433d4c90da1080c6461c85" rel="noreferrer"&gt;05dd62a&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Create CNAME
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:CreateEvent/14329121583</id>
+    <published>2020-11-26T16:37:23Z</published>
+    <updated>2020-11-26T16:37:23Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/theplanetarium/compare/main"/>
+    <title type="html">davorg created a branch main in davorg/theplanetarium</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="git-branch" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- create --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-secondary py-3"&gt;
+    &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+        &lt;div class="d-flex flex-items-baseline"&gt;
+          &lt;div&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            created a
+            branch
+            in
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/theplanetarium" rel="noreferrer"&gt;davorg/theplanetarium&lt;/a&gt;
+            &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+              &lt;relative-time datetime="2020-11-26T16:37:23Z" class="no-wrap"&gt;Nov 26, 2020&lt;/relative-time&gt;
+            &lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;div class="Box p-3 mt-2"&gt;
+      &lt;div&gt;
+        &lt;div class="f4 lh-condensed text-bold text-gray-dark"&gt;
+            &lt;a class="css-truncate css-truncate-target branch-name v-align-middle" title="main" href="/davorg/theplanetarium/tree/main" rel="noreferrer"&gt;main&lt;/a&gt; in &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/theplanetarium" rel="noreferrer"&gt;davorg/theplanetarium&lt;/a&gt;
+        &lt;/div&gt;
+
+
+          &lt;p class="f6 text-gray mt-2 mb-0"&gt;
+            &lt;span&gt;Updated Nov 26&lt;/span&gt;
+          &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:CreateEvent/14329115215</id>
+    <published>2020-11-26T16:36:45Z</published>
+    <updated>2020-11-26T16:36:45Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/theplanetarium//"/>
+    <title type="html">davorg created a repository davorg/theplanetarium</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="repo" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- create --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-secondary py-3"&gt;
+    &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+        &lt;div class="d-flex flex-items-baseline"&gt;
+          &lt;div&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            created a
+            repository
+            
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/theplanetarium" rel="noreferrer"&gt;davorg/theplanetarium&lt;/a&gt;
+            &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+              &lt;relative-time datetime="2020-11-26T16:36:45Z" class="no-wrap"&gt;Nov 26, 2020&lt;/relative-time&gt;
+            &lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;div class="Box p-3 mt-2"&gt;
+      &lt;div&gt;
+        &lt;div class="f4 lh-condensed text-bold text-gray-dark"&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/theplanetarium" rel="noreferrer"&gt;davorg/theplanetarium&lt;/a&gt;
+        &lt;/div&gt;
+
+          &lt;div class="dashboard-break-word text-gray mt-1 repo-description"&gt;
+            &lt;p&gt;The Planetarium web site&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;p class="f6 text-gray mt-2 mb-0"&gt;
+            &lt;span&gt;Updated Nov 26&lt;/span&gt;
+          &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:IssueCommentEvent/14325876276</id>
+    <published>2020-11-26T11:47:17Z</published>
+    <updated>2020-11-26T11:47:17Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/dashboard/pull/32#issuecomment-734252424"/>
+    <title type="html">davorg commented on pull request davorg/dashboard#32</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_comment" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- issue_comment --&gt;
+&lt;div class="d-flex border-bottom border-gray py-3"&gt;
+    &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div&gt;
+          &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+          
+          commented on
+          pull request
+          &lt;a class="link-gray-dark text-bold" title="Add author: PERLANCAR" href="/davorg/dashboard/pull/32#issuecomment-734252424" rel="noreferrer"&gt;davorg/dashboard#32&lt;/a&gt;
+          &lt;span class="f6 text-gray-light ml-1"&gt;
+            &lt;relative-time datetime="2020-11-26T11:47:17Z" class="no-wrap"&gt;Nov 26, 2020&lt;/relative-time&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;div class="message markdown-body Box p-3 wb-break-all"&gt;
+      &lt;div class="f6 mb-1"&gt;
+        &lt;a title="Add author: PERLANCAR" class="link-gray" href="/davorg/dashboard/pull/32#issuecomment-734252424" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="link-gray-dark text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2020-11-26T11:47:17Z" class="no-wrap"&gt;Nov 26, 2020&lt;/relative-time&gt;&lt;/a&gt;
+      &lt;/div&gt;
+        &lt;p&gt;I had to revert this merge. Because you have over 2,000 distributions, visiting your page made 2,000+ requests to GitHub - which made them annoyed …&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Oops.
+
+Triggered by adding a new author to https://t.co/K0aPkQDxsl who has 2,000+ modules. When you visit that page… https://t.co/5kHugPDwLb</title>
+    <link rel="alternate" href="https://twitter.com/@davorg/status/1331921329172475904" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Oops.
+
+Triggered by adding a new author to https://t.co/K0aPkQDxsl who has 2,000+ modules. When you visit that page… https://t.co/5kHugPDwLb</div>
+    </content>
+    <updated>2020-11-26T11:22:45Z</updated>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/14325443406</id>
+    <published>2020-11-26T11:07:00Z</published>
+    <updated>2020-11-26T11:07:00Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/dashboard/compare/9d814b6d09...666735ee35"/>
+    <title type="html">davorg pushed to master in davorg/dashboard</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/dashboard/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/dashboard" rel="noreferrer"&gt;davorg/dashboard&lt;/a&gt;
+      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2020-11-26T11:07:00Z" class="no-wrap"&gt;Nov 26, 2020&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/dashboard/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/dashboard/commit/666735ee359918212b2b80f356f265861396d7ad" rel="noreferrer"&gt;666735e&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Revert "Add author: PERLANCAR"
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>RT @perlcareers: @perlhacks @davorg The interactive parts of our website are handled by ECS running containers derived from: https://t.co/B…</title>
+    <link rel="alternate" href="https://twitter.com/@davorg/status/1331894903941500937" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">RT @perlcareers: @perlhacks @davorg The interactive parts of our website are handled by ECS running containers derived from: https://t.co/B…</div>
+    </content>
+    <updated>2020-11-26T09:37:45Z</updated>
+  </entry>
+  <entry>
+    <title>RT @perlhacks: Did you know that there are a number of pre-built Docker images with various versions of Perl on them. They are built by vol…</title>
+    <link rel="alternate" href="https://twitter.com/@davorg/status/1331877997767438337" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">RT @perlhacks: Did you know that there are a number of pre-built Docker images with various versions of Perl on them. They are built by vol…</div>
+    </content>
+    <updated>2020-11-26T08:30:34Z</updated>
+  </entry>
+  <entry>
+    <title>Bloody hell. I've just seen there's a "Ready Player Two". Ernest Cline is Dan Brown for Gen X. https://t.co/spCSgn6u2Y</title>
+    <link rel="alternate" href="https://twitter.com/@davorg/status/1331625395054055427" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Bloody hell. I've just seen there's a "Ready Player Two". Ernest Cline is Dan Brown for Gen X. https://t.co/spCSgn6u2Y</div>
+    </content>
+    <updated>2020-11-25T15:46:49Z</updated>
+  </entry>
+  <entry>
+    <title>@abqexpert "Whoever did it" is Larry Wall, the inventor of Perl. He's an interesting character.</title>
+    <link rel="alternate" href="https://twitter.com/@davorg/status/1331624858179035140" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">@abqexpert "Whoever did it" is Larry Wall, the inventor of Perl. He's an interesting character.</div>
+    </content>
+    <updated>2020-11-25T15:44:41Z</updated>
+  </entry>
+  <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <title>London from Hampstead Heath</title>
+    <link rel="alternate" type="text/html" href="https://www.flickr.com/photos/davorg/50629844577/"/>
+    <id>tag:flickr.com,2005:/photo/50629844577</id>
+    <published>2020-11-21T18:23:32Z</published>
+    <updated>2020-11-21T18:23:32Z</updated>
+    <flickr:date_taken>2020-11-21T18:23:32-08:00</flickr:date_taken>
+    <dc:date.Taken>2020-11-21T18:23:32-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href="https://www.flickr.com/people/davorg/"&gt;Dave Cross&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href="https://www.flickr.com/photos/davorg/50629844577/" title="London from Hampstead Heath"&gt;&lt;img src="https://live.staticflickr.com/65535/50629844577_47621d7f85_m.jpg" width="240" height="180" alt="London from Hampstead Heath" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;via Instagram &lt;a href="https://instagr.am/p/CH3MCdwJwUk/" rel="noreferrer nofollow"&gt;instagr.am/p/CH3MCdwJwUk/&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>Dave Cross</name>
+      <uri>https://www.flickr.com/people/davorg/</uri>
+      <flickr:nsid>39021241@N00</flickr:nsid>
+      <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
+    </author>
+    <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/65535/50629844577_47621d7f85_b.jpg"/>
+    <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
+    <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
+    <displaycategories>
+            </displaycategories>
+    </entry>
+  <entry>
+    <title>DAVECROSS has released AudioFile-Info-Ogg-Vorbis-Header-v1.8.2</title>
+    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/AudioFile-Info-Ogg-Vorbis-Header-v1.8.2" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Perl extension to get info from</div>
+    </content>
+    <author>
+      <name>DAVECROSS</name>
+    </author>
+    <id>https://metacpan.org/release/DAVECROSS/AudioFile-Info-Ogg-Vorbis-Header-v1.8.2</id>
+    <published>2020-11-17T08:46:54Z</published>
+    <updated>2020-11-17T08:46:54Z</updated>
+  </entry>
+  <entry>
+    <title>DAVECROSS has released AudioFile-Info-MP3-Tag-v1.6.2</title>
+    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/AudioFile-Info-MP3-Tag-v1.6.2" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Perl extension to get info from MP3 files.</div>
+    </content>
+    <author>
+      <name>DAVECROSS</name>
+    </author>
+    <id>https://metacpan.org/release/DAVECROSS/AudioFile-Info-MP3-Tag-v1.6.2</id>
+    <published>2020-11-17T08:37:21Z</published>
+    <updated>2020-11-17T08:37:21Z</updated>
+  </entry>
+  <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <title>Urban fox in Islington</title>
+    <link rel="alternate" type="text/html" href="https://www.flickr.com/photos/davorg/50599757368/"/>
+    <id>tag:flickr.com,2005:/photo/50599757368</id>
+    <published>2020-11-14T12:08:26Z</published>
+    <updated>2020-11-14T12:08:26Z</updated>
+    <flickr:date_taken>2020-11-14T12:08:26-08:00</flickr:date_taken>
+    <dc:date.Taken>2020-11-14T12:08:26-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href="https://www.flickr.com/people/davorg/"&gt;Dave Cross&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href="https://www.flickr.com/photos/davorg/50599757368/" title="Urban fox in Islington"&gt;&lt;img src="https://live.staticflickr.com/65535/50599757368_e90e3e7272_m.jpg" width="240" height="240" alt="Urban fox in Islington" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;via Instagram &lt;a href="https://instagr.am/p/CHkfNATJwid/" rel="noreferrer nofollow"&gt;instagr.am/p/CHkfNATJwid/&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>Dave Cross</name>
+      <uri>https://www.flickr.com/people/davorg/</uri>
+      <flickr:nsid>39021241@N00</flickr:nsid>
+      <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
+    </author>
+    <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/65535/50599757368_e90e3e7272_b.jpg"/>
+    <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
+    <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
+    <displaycategories>
+            </displaycategories>
+    </entry>
+  <entry>
+    <title>DAVECROSS has released Genealogy-Relationship-0.0.4</title>
+    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Genealogy-Relationship-0.0.4" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">calculate the relationship between two people</div>
+    </content>
+    <author>
+      <name>DAVECROSS</name>
+    </author>
+    <id>https://metacpan.org/release/DAVECROSS/Genealogy-Relationship-0.0.4</id>
+    <published>2020-11-09T11:34:06Z</published>
+    <updated>2020-11-09T11:34:06Z</updated>
+  </entry>
+  <entry>
+    <title>DAVECROSS has released AudioFile-Info-MP3-Info-v1.4.2</title>
+    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/AudioFile-Info-MP3-Info-v1.4.2" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Perl extension to get info from MP3 files.</div>
+    </content>
+    <author>
+      <name>DAVECROSS</name>
+    </author>
+    <id>https://metacpan.org/release/DAVECROSS/AudioFile-Info-MP3-Info-v1.4.2</id>
+    <published>2020-11-05T14:09:31Z</published>
+    <updated>2020-11-05T14:09:31Z</updated>
+  </entry>
+  <entry>
+    <title>DAVECROSS has released Tie-Hash-Cannabinol-1.12.1</title>
+    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Tie-Hash-Cannabinol-1.12.1" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Perl extension for creating hashes that forget things</div>
+    </content>
+    <author>
+      <name>DAVECROSS</name>
+    </author>
+    <id>https://metacpan.org/release/DAVECROSS/Tie-Hash-Cannabinol-1.12.1</id>
+    <published>2020-11-04T16:44:41Z</published>
+    <updated>2020-11-04T16:44:41Z</updated>
+  </entry>
+  <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <title>The upgrade to Fedora 33 did not go well</title>
+    <link rel="alternate" type="text/html" href="https://www.flickr.com/photos/davorg/50543421682/"/>
+    <id>tag:flickr.com,2005:/photo/50543421682</id>
+    <published>2020-10-29T07:38:30Z</published>
+    <updated>2020-10-29T07:38:30Z</updated>
+    <flickr:date_taken>2020-10-29T07:38:30-08:00</flickr:date_taken>
+    <dc:date.Taken>2020-10-29T07:38:30-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href="https://www.flickr.com/people/davorg/"&gt;Dave Cross&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href="https://www.flickr.com/photos/davorg/50543421682/" title="The upgrade to Fedora 33 did not go well"&gt;&lt;img src="https://live.staticflickr.com/65535/50543421682_b8f1a5c9d9_m.jpg" width="240" height="240" alt="The upgrade to Fedora 33 did not go well" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;via Instagram &lt;a href="https://instagr.am/p/CG61cbUpCuC/" rel="noreferrer nofollow"&gt;instagr.am/p/CG61cbUpCuC/&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>Dave Cross</name>
+      <uri>https://www.flickr.com/people/davorg/</uri>
+      <flickr:nsid>39021241@N00</flickr:nsid>
+      <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
+    </author>
+    <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/65535/50543421682_b8f1a5c9d9_b.jpg"/>
+    <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
+    <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
+    <displaycategories>
+            </displaycategories>
+    </entry>
+  <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <title>Islington graffiti</title>
+    <link rel="alternate" type="text/html" href="https://www.flickr.com/photos/davorg/50513730233/"/>
+    <id>tag:flickr.com,2005:/photo/50513730233</id>
+    <published>2020-10-21T21:18:08Z</published>
+    <updated>2020-10-21T21:18:08Z</updated>
+    <flickr:date_taken>2020-10-21T22:18:08-08:00</flickr:date_taken>
+    <dc:date.Taken>2020-10-21T22:18:08-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href="https://www.flickr.com/people/davorg/"&gt;Dave Cross&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href="https://www.flickr.com/photos/davorg/50513730233/" title="Islington graffiti"&gt;&lt;img src="https://live.staticflickr.com/65535/50513730233_89bd3ddf9a_m.jpg" width="240" height="240" alt="Islington graffiti" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;via Instagram &lt;a href="https://instagr.am/p/CGnr7aZJN3Q/" rel="noreferrer nofollow"&gt;instagr.am/p/CGnr7aZJN3Q/&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>Dave Cross</name>
+      <uri>https://www.flickr.com/people/davorg/</uri>
+      <flickr:nsid>39021241@N00</flickr:nsid>
+      <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
+    </author>
+    <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/65535/50513730233_89bd3ddf9a_b.jpg"/>
+    <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
+    <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
+    <displaycategories>
+            </displaycategories>
+    </entry>
+  <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <title>Edinburgh Castle</title>
+    <link rel="alternate" type="text/html" href="https://www.flickr.com/photos/davorg/50422886407/"/>
+    <id>tag:flickr.com,2005:/photo/50422886407</id>
+    <published>2020-10-05T11:53:43Z</published>
+    <updated>2020-10-05T11:53:43Z</updated>
+    <flickr:date_taken>2020-10-05T12:53:43-08:00</flickr:date_taken>
+    <dc:date.Taken>2020-10-05T12:53:43-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href="https://www.flickr.com/people/davorg/"&gt;Dave Cross&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href="https://www.flickr.com/photos/davorg/50422886407/" title="Edinburgh Castle"&gt;&lt;img src="https://live.staticflickr.com/65535/50422886407_fc44942501_m.jpg" width="240" height="240" alt="Edinburgh Castle" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;via Instagram &lt;a href="https://instagr.am/p/CF9eJRWpR8l/" rel="noreferrer nofollow"&gt;instagr.am/p/CF9eJRWpR8l/&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>Dave Cross</name>
+      <uri>https://www.flickr.com/people/davorg/</uri>
+      <flickr:nsid>39021241@N00</flickr:nsid>
+      <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
+    </author>
+    <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/65535/50422886407_fc44942501_b.jpg"/>
+    <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
+    <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
+    <displaycategories>
+            </displaycategories>
+    </entry>
+  <entry>
+    <title>Down the rabbit hole</title>
+    <link rel="alternate" href="https://perlhacks.com/2020/09/down-the-rabbit-hole/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Blog posts are like busses. You wait months for one and then two come along on consecutive days!</p>
+<p><a href="https://perlhacks.com/2020/09/blogging-for-perl/">Yesterday I wrote</a> about how we didn’t need a blogging platform for the Perl community – all we really needed was a good-looking feed aggregator. I mentioned <a href="http://perlsphere.net/">Perlsphere</a> as one such aggregator.</p>
+<p>Then Matthew commented, saying that Perlsphere looked a bit broken as Dave Cantrell’s posts from a few years ago frequently pop up there as new posts. I had a quick look at the problem and couldn’t quite work out what was going on. His web feed seems valid, but Perlsphere didn’t seem to recognise the dates of the posts.</p>
+<p>Perlsphere is implemented using <a href="https://metacpan.org/pod/Plagger">Plagger</a>, a feed aggregator written my Miyagawa a very long time ago (back when it seemed that web feeds were going to conquer the world). It’s a pretty complex beast and it seemed possible that somewhere deep in its code, it was mis-parsing Dave’s web feed. So I cloned <a href="https://github.com/miyagawa/plagger">the repo</a> and tried to work out what was going on.</p>
+<p>But Plagger hasn’t been updated for a very long time. As you can see from the <a href="http://matrix.cpantesters.org/?dist=Plagger+0.7.17">test results</a>, it stopped passing its tests a long while ago (I suspect when the current directory was removed from @INC). I spent a brief time trying to get it working but, ultimately, decided it was too hard a job.</p>
+<p>So I took another look at Perlsphere. And I decided that if it’s based on bit-rotten software, it’s not going to be very easy to maintain (which gave me flashbacks to blogs.perl.org!)</p>
+<p>But there’s another Perl tool for aggregating web feeds. And I wrote it. It’s called <a href="https://metacpan.org/release/Perlanet">Perlanet</a> (and, boy, do I regret that name now). Back in the first decade of this millennium, I was fascinated by web feeds and the idea of using them to build local “planets” – a web site that aggregated web feeds that had interesting information about your local area. Of course, that was back in the days when everything had a web feed and it was simple enough to pull them together and create really quite interesting sites. These days, of course, web feeds are rather unfashionable and almost no-one thinks to add them on to their web site.</p>
+<p>However, they still cling to life in the world of blogging. Mainly, I suspect, because blogging platforms added them fifteen years ago and just haven’t bothered to remove them yet. And it’s blog posts that we’re interested in here – so we’re still in with a chance of building something useful.</p>
+<p>And that’s what I did over lunch. I give you <a href="http://perl.theplanetarium.org/">Planet Perl</a>, a new site for aggregating Perl blogs.</p>
+<p>Currently, it only has four blogs in the configuration. But <a href="https://github.com/davorg/planetperl/blob/master/perlanetrc">the config file is on Github</a> and I’ll be happy to get pull requests adding other blogs.</p>
+<p>I hope you find it useful.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/09/down-the-rabbit-hole/">Down the rabbit hole</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Blog posts are like busses. You wait months for one and then two come along on consecutive days! Yesterday I wrote about how we didn’t need a blogging platform for the Perl community – all we really needed was a good-looking feed aggregator. I mentioned Perlsphere as one such aggregator. Then Matthew commented, saying that […]</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/09/down-the-rabbit-hole/">Down the rabbit hole</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2011</id>
+    <published>2020-09-18T15:24:23Z</published>
+    <updated>2020-09-18T15:24:23Z</updated>
+    <category term="Miscellaneous"/>
+    <category term="aggregator"/>
+    <category term="planet perl"/>
+    <category term="web feeds"/>
+  </entry>
+  <entry>
+    <title>Blogging for Perl</title>
+    <link rel="alternate" href="https://perlhacks.com/2020/09/blogging-for-perl/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I think it was at YAPC Copenhagen in 2008 that a small group of us first discussed the idea of building a shared blogging platform for the Perl community. It was over a year later that we launched <a href="http://blogs.perl.org/">blogs.perl.org</a>.</p>
+<p>I remember a lot of discussions over that time where we tried to thrash out exactly what we wanted to build. I know that one of my main drivers was that I wanted to replace the journals feature of use.perl. For those of you too young to remember, use.perl was a Perl community web site from the dawn of time. The site ran Perl news on its front page, but users could also have their own journal. For a few years, we had a nice little blogging community on the site. It used the same software as <a href="https://slashdot.org/">Slashdot</a> and, like Slashdot, was looking pretty dated at the time. I remember being particularly disappointed that you couldn’t put images in a journal entry.</p>
+<p>So that was certainly where I started from when planning blogs.perl.org. I wanted a modern blogging platform to replace use.perl. Other people wanted slightly different things. At least one person argued strongly that what we really needed was a nice-looking blog aggregator and that people could do their actual blogging on their own sites (or some other blog provider).</p>
+<p>But, as you can see, that point of view lost out and we implemented a full blogging system using <a href="https://www.movabletype.org/">Movable Type</a>.</p>
+<p>Ten years on, I think that was a mistake. I think that having a community blogging platform for Perl is actively harmful to Perl.</p>
+<p>I’ll explain why a bit later, but first let’s talk through a bit of more recent history of the site.</p>
+<p>It’s well-known, I think, that the site is not is a good state. I’m happy to explain what happened there, but it’s a long and rather dull story. There have been a couple of attempts to build replacement systems but they both stalled before they were complete.</p>
+<p>So we’re left in a situation where the site is broken and no-one really has the time or the expertise to fix it. And attempts to replace it seem doomed to failure.</p>
+<p>Earlier this year I decided that the situation was untenable and that I wanted to close the site down. I spoke to Aaron and he pretty much agreed with me. We decided that we’d give people plenty of notice to take their blogging elsewhere and, rather than closing the site completely, we would make it read-only (so all the existing content would still be there). We ran the idea past the rest of the loose “management team” and <a href="http://blogs.perl.org/users/aristotle/">Aristotle</a> spoke up, saying that he would rather take the site over himself and try to improve matters. And that’s what happened. Over the last few months, Aaron and I have extricated ourselves from running the site and it’s all now handled by Aristotle.</p>
+<p>I wish him all the best in those endeavours and really hope he manages to make the site better than it was (he’s already making great progress in removing loads of old spam blogs from the site).</p>
+<p>But, really, I think that my original plan was a better idea. I don’t want people to blog about Perl on a Perl community site. I want people to blog about Perl on sites where people blog about other languages and technologies.</p>
+<p>I’ve been giving talks about the need for the Perl community to break out of its echo chamber for almost as long as I’ve been part of the community. But I think it’s important. It’s a kind of low-key marketing. If you’re talking about your cool Perl project on a Perl community web site then only people who are looking for Perl articles will find it. But if you blog about it on a general programming web site then a) you’ll get a far bigger audience and b) some of that audience might say “oh! I never knew Perl could do that – perhaps I’ll give it a closer look.”</p>
+<p>And that’s why I think blogs.perl.org (and, probably, use.perl before it) are harmful to Perl. It encourages Perl bloggers to blog for the Perl community – when it would be far better to get your blog posts in front of more people. Perl people will still read your Perl posts (through <a href="http://perlsphere.net/">Perlsphere</a> perhaps, or post the link to <a href="https://www.reddit.com/r/perl/">/r/perl</a> or the <a href="https://www.facebook.com/groups/perlcommunity">Perl Community Facebook group</a>) but other people will see them too. On blogs.perl.org, you’re pretty much guaranteed that only Perl programmers will see your posts.</p>
+<p>To be honest, I don’t understand why people still use blogs.perl.org. Until Aristotle’s work bears fruit it’s painfully broken. What do you get that’s worth putting yourself through all of that pain? Why not just blog somewhere else and submit your web feed to Perlsphere? Or blog where other programmers blog – somewhere like <a href="https://dev.to/">dev.to</a>, perhaps (I’ve started publishing <a href="https://dev.to/davorg">my more technical blog posts</a> there).</p>
+<p>I think it will be great if Aristotle gets blogs.perl.org working well. I really want that to happen. But it would be even better if he didn’t have to. If people stopped using it; if they went off and started spreading their interesting Perl blog posts all over the web.</p>
+<p>Break out of the echo chamber. Find yourself a bigger audience. Spread the word beyond the Perl community.</p>
+<p>Or, alternatively, explain to me why it’s so vital that the Perl community has its own centralised blogging platform.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/09/blogging-for-perl/">Blogging for Perl</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I think it was at YAPC Copenhagen in 2008 that a small group of us first discussed the idea of building a shared blogging platform for the Perl community. It was over a year later that we launched blogs.perl.org. I remember a lot of discussions over that time where we tried to thrash out exactly […]</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/09/blogging-for-perl/">Blogging for Perl</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2007</id>
+    <published>2020-09-17T20:10:32Z</published>
+    <updated>2020-09-17T20:10:32Z</updated>
+    <category term="Miscellaneous"/>
+    <category term="blogs.perl.org"/>
+    <category term="echo chamber"/>
+    <category term="perl. blogging"/>
+  </entry>
+  <entry>
+    <title>The Best of Perl Hacks</title>
+    <link rel="alternate" href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>What do you do when you’re stuck inside because Coronavirus means that your country is in lockdown? Well, you write a book, of course. Or, to be more accurate, you cobble together fifty or so old blog posts into a book.</p>
+<p>So that’s what I’ve done. Now you can read some of your favourite Perl Hacks blog posts in a handy Kindle book. Other ebook marketplaces are, of course, available – but I haven’t had the time to make a version that’s available from anywhere else yet. That might follow if enough people ask for it.</p>
+<p>The book is, predictably, called <em>The Best of Perl Hacks</em> and it’s <a href="https://amzn.to/2RixX0k">available from Amazon now</a> (that link goes to the UK store, but it should be available on all Amazon sites).</p>
+<p>Please buy it, read it and let me know what you think.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/">The Best of Perl Hacks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>What do you do when you’re stuck inside because Coronavirus means that your country is in lockdown? Well, you write a book, of course. Or, to be more accurate, you cobble together fifty or so old blog posts into a book. So that’s what I’ve done. Now you can read some of your favourite Perl […]</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/">The Best of Perl Hacks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=1983</id>
+    <published>2020-04-07T15:05:30Z</published>
+    <updated>2020-04-07T15:05:30Z</updated>
+    <category term="Miscellaneous"/>
+  </entry>
+  <entry>
+    <title>Consuming Culture: 16-31 Jan 2020</title>
+    <link rel="alternate" href="https://blog.dave.org.uk/2020/02/consuming-culture-16-31-jan-2020.html" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Here are brief descriptions of the various cultural things I did in the second half of January 2020.</p>
+<p><strong>Food: 12:51 (Islington, 2020-01-18)</strong></p>
+<p>Our second visit to <a href="https://www.1251.co.uk/">12:51</a>, but the first time we tried the tasting menu. It’s a bit pricy (£75 a head, I think) but it’s well worth it. The food was wonderful. And on the night we were there, James Cochran (the chef who owns the restaurant) was there – although he was serving, rather than being in the kitchen.</p>
+<p><strong>Food: Wolkite Kitfo (Holloway, 2020-01-24)</strong></p>
+<p>This is an Ethiopian restaurant near Arsenal’s new stadium. Ethiopian food is really interesting. It’s usually served piled up on a flatbread called injera. You then tear off bits of the injera and use it to scoop up bits of the food and put it in your mouth. So the injera doubles as both plate and cutlery. If you’re interested (and I think you should be) then this is a nice local restaurant in which to try it.</p>
+<p><strong>Art: 24/7 (Somerset House, 2020-01-29)</strong></p>
+<p>The subtitle for <a href="https://www.somersethouse.org.uk/whats-on/247">this exhibition</a> is “A wake-up call for our non-stop world”. The pieces here all examine the way that the world has changed over the last twenty years so we are now all more connected much more of the time and how that has affected us. It’s a very thought-provoking exhibition and I highly recommend you seeing it.</p>
+<p><strong>Film: The Personal History of David Copperfield (Screen on the Green, 2020-01-29)</strong></p>
+<p>I’ve never read <em>David Copperfield</em>. I don’t remember even seeing another film or TV adaptation. So I was probably one of very few people in the cinema who didn’t know the plot. And, therefore, I have no idea how much this film deviates from the book. It certainly feels like a rather modern take on the book (although it’s very much set in the nineteenth century). There’s a great cast and a cracking script. I loved it.</p>
+<p><strong>Gig: John Grant (Roundhouse, 2020-01-29)</strong></p>
+<p>I love John Grant’s music and see him live whenever I can (I already have a ticket to see him again at the start of May). This gig was part of the Roundhouse’s “In the Round” where artists play to an all-seated audience. This was a stripped-back set (just John on piano and a keyboard player) which meant that some of his more complex songs were skipped. But he played everything I wanted to hear – even finishing with a great version of “Chicken Bones”.</p>
+<p><strong>Gig: Hate Moss (Old Blue Last, 2020-01-30)</strong></p>
+<p>It is many years since I was last at the Old Blue Last for a gig. I was drawn back by an old friend who was first on the bill, playing as <a href="https://www.youtube.com/channel/UCj-S1swulLxU5_pXYR_6pbw">M-Orchestra</a>. I stayed on to see the other two acts. Kill Your Boyfriends were a bit noisy for my tastes, but Hate Moss were well worth staying out for. I’ll be looking out for them playing London again.</p>
+<p><strong>Dance: Sadlers Wells Sampled (Sadlers Wells, 2020-01-31)</strong></p>
+<p>I’ve been in London for over 35 years and I’ve never been to Sadlers Wells. And if you’re going to fix that, then it makes good sense to go on a night where there’s a selection of different types of dance on display. There were eight different acts during the night – from traditional Indian dance and tango to really experimental dance from Company Wayne McGregor and Géométrie Variable. I’m no expert in dance and this was a great introduction to the breadth of options available.</p>
+<p>The post <a rel="nofollow" href="https://blog.dave.org.uk/2020/02/consuming-culture-16-31-jan-2020.html">Consuming Culture: 16-31 Jan 2020</a> appeared first on <a rel="nofollow" href="https://blog.dave.org.uk">Davblog</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Here are brief descriptions of the various cultural things I did in the second half of January 2020. Food: 12:51 (Islington, 2020-01-18) Our second visit to 12:51, but the first time we tried the tasting menu. It’s a bit pricy (£75 a head, I think) but it’s well worth it. The food was wonderful. And […]</p>
+<p>The post <a rel="nofollow" href="https://blog.dave.org.uk/2020/02/consuming-culture-16-31-jan-2020.html">Consuming Culture: 16-31 Jan 2020</a> appeared first on <a rel="nofollow" href="https://blog.dave.org.uk">Davblog</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://blog.dave.org.uk/?p=3741</id>
+    <published>2020-02-02T18:21:31Z</published>
+    <updated>2020-02-02T18:21:31Z</updated>
+    <category term="culture"/>
+    <category term="12:51"/>
+    <category term="24/7"/>
+    <category term="art"/>
+    <category term="consuming culture"/>
+    <category term="dance"/>
+    <category term="david copperfield"/>
+    <category term="film"/>
+    <category term="food"/>
+    <category term="gig"/>
+    <category term="hate moss"/>
+    <category term="john grant"/>
+    <category term="kill your boyfriends"/>
+    <category term="m-orchestra"/>
+    <category term="sadlers wells"/>
+    <category term="somerset house"/>
+    <category term="wolkite kitfo"/>
+  </entry>
+  <entry>
+    <title>Consuming Culture: 1-15 Jan 2020</title>
+    <link rel="alternate" href="https://blog.dave.org.uk/2020/01/consuming-culture-1-15-jan-2020.html" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I want to do more blogging this year. So one thing I’m going to do is to write about the cultural experiences that I have. My plan is to write short reviews of any films, plays, exhibitions and lectures that I go to. To start us off, here’s what I did in the first half of January.</p>
+<p><strong>Film: Last Christmas (Vue Islington, 2020-01-01)</strong></p>
+<p>Yes, this got some terrible reviews, but cheesy romcoms are a bit of a guilty pleasure of mine. This isn’t up to the standards of <em>Four Weddings and a Funeral</em> or <em>Notting Hill</em>, but I really enjoyed it. And I don’t care how much you judge me for that.</p>
+<p><strong>Art: <a href="https://www.thewonderfactory.co.uk/">Wonder Factory</a> (Dalston Works, 2020-01-03)</strong></p>
+<p>This was weird. Fifteen rooms have been turned into Instagram-friendly art installations. They are of variable quality, but the best installations (like the marshmallow swimming pool) are very good. It’s only around until early February (and it seems they’re now only opening at the weekend) so you should get along to see it soon.</p>
+<p><strong>Film: Jojo Rabbit (Screen on the Green, 2020-01-05)</strong></p>
+<p>The Hitler Youth isn’t the most obvious subject for comedy, but this film manages to pull it off brilliantly. It’s obviously a very delicate balance but director, Taika Waititi, gets it spot on – while also playing a very funny imaginary Adolf Hitler. I see this has been nominated for the Best Picture Oscar; and that’s well-deserved.</p>
+<p><strong>VR: Doctor Who – Edge of Time (<a href="https://other.world/">Other World</a>, 2020-01-05)</strong></p>
+<p>Other World is a virtual reality arcade in Haggerston and currently, one of the VR experiences they are offering is the Doctor Who game, <em>Edge of Time</em>. Players are put in their individual pods and loaded up with all their VR equipment (headset, headphones and a controller for each hand) by staff before being left alone to help the Thirteenth Doctor save the universe. I confess I got a bit stuck trying to get the Tardis to dematerialise, but I really enjoyed myself and am very tempted to go back for another try.</p>
+<p><strong>Play: A Kind of People (<a href="https://royalcourttheatre.com/">Royal Court Theatre</a>, 2020-01-06)</strong></p>
+<p>The Royal Court has a brilliant scheme where they make tickets for Monday evening performances available for £12 each. That price makes it very tempting to see plays that you know nothing about. And that’s what we did for this. We really had no idea what this play was about. It turns out that it’s an investigation of the various prejudices (racism, sexism, class snobbery, …) that bubble under the surface of British society. I’d recommend you go and see it, but it closes in a couple of days.</p>
+<p><strong>Meeting: Tech For UK Post-Election Debrief (Onfido Ltd, 2020-01-08)</strong></p>
+<p>I want to get along to more tech meet-ups this year and this was my first. Tech For UK is a group of techies who volunteer their time to build tools that increase democratic engagement in the UK. You can see some examples at <a href="https://voter.tools/">voter.tools</a> (this includes my site – <a href="https://twittelection.co.uk/">TwittElection</a>). This meeting was a discussion about what the group had been doing during the election campaign and where they should focus their efforts in the future.</p>
+<p><strong>Art: Bridgit Riley (<a href="https://www.southbankcentre.co.uk/venues/hayward-gallery">Hayward Gallery</a>, 2020-01-15)</strong></p>
+<p>I want to make more use of my South Bank membership, and this was a free after-hours, members’ viewing of the exhibition. This is a retrospective of Riley’s whole career and, therefore, is a great introduction to the breadth of her work. She’s a fascinating artist (if one who occasionally produces art that can give you a bit of a headache). I recommend seeing the exhibition – but hurry, it closes on 26 January.</p>
+<p>The post <a rel="nofollow" href="https://blog.dave.org.uk/2020/01/consuming-culture-1-15-jan-2020.html">Consuming Culture: 1-15 Jan 2020</a> appeared first on <a rel="nofollow" href="https://blog.dave.org.uk">Davblog</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I want to do more blogging this year. So one thing I’m going to do is to write about the cultural experiences that I have. My plan is to write short reviews of any films, plays, exhibitions and lectures that I go to. To start us off, here’s what I did in the first half […]</p>
+<p>The post <a rel="nofollow" href="https://blog.dave.org.uk/2020/01/consuming-culture-1-15-jan-2020.html">Consuming Culture: 1-15 Jan 2020</a> appeared first on <a rel="nofollow" href="https://blog.dave.org.uk">Davblog</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://blog.dave.org.uk/?p=3737</id>
+    <published>2020-01-16T09:52:26Z</published>
+    <updated>2020-01-16T09:52:26Z</updated>
+    <category term="culture"/>
+    <category term="a kind of people"/>
+    <category term="art"/>
+    <category term="brigit reilly"/>
+    <category term="consuming culture"/>
+    <category term="doctor who"/>
+    <category term="film"/>
+    <category term="jojo rabbit"/>
+    <category term="last christmas"/>
+    <category term="tech for uk"/>
+    <category term="theatre"/>
+    <category term="vr"/>
+    <category term="wonder factory"/>
+  </entry>
+  <entry>
+    <title>2019 in Gigs</title>
+    <link rel="alternate" href="https://blog.dave.org.uk/2020/01/2019-in-gigs.html" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s time that I wrote my now-traditional review of the gigs I saw last year.</p>
+<p>It felt like I didn’t see so many gigs this year, but <a href="https://www.songkick.com/users/davorg/gigography">Songkick tells me</a> I saw 43 which was more than the previous year (but still some considerable way short of the 60 I saw in 2013). I’ll get to the best ones in a minute, but let’s talk about a few of the disappointments first.</p>
+<p>The first gig I saw in the year was the Residents at the Union Chapel. I wasn’t really sure what I was expecting, but it was all a bit disjointed and amateur-sounding, so I left before very long. Having really enjoyed the Bananarama reunion tour a couple of years ago, I was looking forward to seeing them (now Siobhan-less) again, particularly at a lovely little venue like Omeara – but they were a terrible disappointment and wanted to play their new album instead of the hits that I wanted to hear. I really wanted to enjoy the post-Pete Shelley Buzzcocks show at the Albert Hall, but it was a lot like a third-rate Buzzcocks tribute band and I left quite a while before the end.</p>
+<p>And here, in chronological order, are my ten favourite gigs of the year.</p>
+<ul>
+<li><strong>Tears For Fears:</strong> This was postponed from the previous year. It takes a good band to make it worth going to the O2 Arena. And Tears for Fears certainly hit the spot.</li>
+<li><strong>Desperate Journalist:</strong> An up and coming band that I really want to hear more from. Oh, and they were supported by She Makes War, who is always worth seeing.</li>
+<li><strong>Grant:</strong> This was a slightly strange one. A night of Scandinavian music at the Lexington. We went because we wanted to see the first act, Moses Hightower (who were great). Grant was on next and she totally blew us away. I think we left soon after she finished.</li>
+<li><strong>Stealing Sheep:</strong> I don’t get to see Stealing Sheep as often as I used too, but they were touring this year because of their new album. I saw them twice. I enjoyed the show at Earth in Dalston the most. That’s them in the photo above.</li>
+<li><strong>Sleeper:</strong> I never got to see Sleeper back in the 90s. But I saw them twice this year. I think I just prefered the show at the 100 Club.</li>
+<li><strong>Swimming Girls:</strong> I’ve seen Swimming Girls as a support act and really wanted to see them playing a headline show. I finally got to do that at the Lexington this year. And then they announced they were splitting up.</li>
+<li><strong>Cut Copy:</strong> A band that I hadn’t heard of at the start of this year. But this show at Somerset House was great and I’d certainly see them again.</li>
+<li><strong>Sunflower Bean:</strong> I always love seeing Sunflower Bean and this was at the Borderline (just before it closed down) and I thought the days of seeing them in venues this small were long past.</li>
+<li><strong>Midge Ure:</strong> This was pure nostalgia. Midge Ure’s current band played all Visage’s first album and Ultravox’s “Vienna” – two albums that he recorded in 1980.</li>
+<li><strong>Amanda Palmer:</strong> This wasn’t really a gig. It was more of a four-hour-long, intense psychotherapy session with occasional songs. I saw the prototype for this show in Edinburgh last year, but the full version was sensational.</li>
+</ul>
+<p>Just outside of this list are shows by Pale Waves, Lloyd Cole, Wildwood Kin and OMD.</p>
+<p>Oh, and I have a new regular gig-going companion this year. I asked her what her favourite gig of the year was and she voted for the Grant show at the Lexington.</p>
+<p>2020 is already shaping up well. I have tickets to see John Grant (twice), Tove Lo and Ladytron. And there’s some heavyweight nostalgia coming – with gigs by the Pet Shop Boys and Bauhaus.</p>
+<p>What about you? What live music did you really enjoy in 2019?</p>
+<p>The post <a rel="nofollow" href="https://blog.dave.org.uk/2020/01/2019-in-gigs.html">2019 in Gigs</a> appeared first on <a rel="nofollow" href="https://blog.dave.org.uk">Davblog</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s time that I wrote my now-traditional review of the gigs I saw last year. It felt like I didn’t see so many gigs this year, but Songkick tells me I saw 43 which was more than the previous year (but still some considerable way short of the 60 I saw in 2013). I’ll get […]</p>
+<p>The post <a rel="nofollow" href="https://blog.dave.org.uk/2020/01/2019-in-gigs.html">2019 in Gigs</a> appeared first on <a rel="nofollow" href="https://blog.dave.org.uk">Davblog</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://blog.dave.org.uk/?p=3730</id>
+    <published>2020-01-02T16:46:08Z</published>
+    <updated>2020-01-02T16:46:08Z</updated>
+    <category term="music"/>
+    <category term="2019"/>
+    <category term="gigs"/>
+    <category term="review"/>
+    <category term="year in gigs"/>
+  </entry>
+  <entry>
+    <title>2020 Vision</title>
+    <link rel="alternate" href="https://blog.dave.org.uk/2019/12/2020-vision.html" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’ve been working in this industry for a long time – over thirty years. For most of that time, I’ve been working as a freelancer, but it’s always been working for someone else. When I set up <a href="https://mag-sol.com/">Magnum Solutions</a> (my freelancing company) in 1995 I always had a vague desire to grow it into a company that wasn’t just me selling my time and skills to other companies. But I’ve never really known how I wanted to do that.</p>
+<p>On the other hand, I’ve spent a lot of those thirty years building web sites in my spare time. Whether it’s my (now, long defunct) <a href="https://dave.org.uk/streams/">BBC Streams</a> project or current sites like <a href="https://lineofsuccession.co.uk/">Line of Succession</a> or <a href="https://twittelection.co.uk/">TwittElection</a>, there’s always something that I’m tinkering with. Some of them get some small level of popularity. None of them has ever made me enough money that I could consider giving up the freelancer life in order to spend more time on one of these projects.</p>
+<p>This year has been slightly different. This was the year that the market for Perl freelancers in London finally hit the level at which I decided to take a permanent job. So I’ve been working for <a href="https://equals.co/">Equals</a> (formerly FairFX) as a senior developer since February. But even that didn’t feel quite right. It felt a bit like a step backwards to go back to being an employee.</p>
+<p>And then, while on holiday a month ago, something crystalised for me during a conversation with a friend. She asked how I’d really like to spend my time and I replied that I’d like to take time off from working nine to five and spent it trying to turn one or more of my side-projects into a real business. She asked what was stopping me from doing that and I replied that I didn’t have enough money. She laughed and asked me what the money in the ISA that I’ve been paying into on and off for the last decade was for. I’d always vaguely assumed it was for “the future” (whatever that means) but I realised that she was right. There was no reason at all why I shouldn’t use some of that money to support myself while I took time off work to do what I really wanted.</p>
+<p>So that’s what I’m going to do. I’ve given notice at Equals and I’m leaving just before Christmas. And for the first six months of 2020, I’ll be living off my savings while I try to find some way to make a living from the various business ideas I’ve been doing almost nothing with for the last thirty years.</p>
+<p>I’m going to be structured about it. I plan to try six things for a month each. I have an idea what the first two or three things will be but I hope you’ll forgive me if I don’t go into any detail right now. I do want to be very open about what I’m doing while I’m doing it – I’ve set up a new web site at <a href="https://davecross.co.uk/">davecross.co.uk</a> and I’ll be writing about my projects there. Hey, even if nothing takes off, perhaps there’s a book in the reports of all my failures.</p>
+<p>At the end of June, I’ll take stock and decide whether it’s worth continuing the experiment.</p>
+<p>And that’s what I’m calling my “2020 Vision”. Because bad puns are the basis of good marketing – or something like that.</p>
+<p>The post <a rel="nofollow" href="https://blog.dave.org.uk/2019/12/2020-vision.html">2020 Vision</a> appeared first on <a rel="nofollow" href="https://blog.dave.org.uk">Davblog</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’ve been working in this industry for a long time – over thirty years. For most of that time, I’ve been working as a freelancer, but it’s always been working for someone else. When I set up Magnum Solutions (my freelancing company) in 1995 I always had a vague desire to grow it into a […]</p>
+<p>The post <a rel="nofollow" href="https://blog.dave.org.uk/2019/12/2020-vision.html">2020 Vision</a> appeared first on <a rel="nofollow" href="https://blog.dave.org.uk">Davblog</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://blog.dave.org.uk/?p=3722</id>
+    <published>2019-12-01T11:00:25Z</published>
+    <updated>2019-12-01T11:00:25Z</updated>
+    <category term="life"/>
+    <category term="2020vision"/>
+    <category term="plans"/>
+    <category term="tech"/>
+  </entry>
+  <entry>
+    <title>Measuring the Quality of Your Perl Code</title>
+    <link rel="alternate" href="https://www.slideshare.net/davorg/measuring-the-quality-of-your-perl-code-162990735" type="text/html"/>
+    <content type="html">
+        &lt;img alt="" src="//cdn.slidesharecdn.com/ss_thumbnails/measuringthequalityofyourperlcode-190811142319-thumbnail-2.jpg?cb=1565533495" style="border:1px solid #C3E6D8;float:right;" /&gt;&lt;br&gt; Some thoughts on ways to measure the quality of Perl code (and, hence, get a basis for improving it)
+      </content>
+    <summary type="html">
+        &lt;img alt="" src="//cdn.slidesharecdn.com/ss_thumbnails/measuringthequalityofyourperlcode-190811142319-thumbnail-2.jpg?cb=1565533495" style="border:1px solid #C3E6D8;float:right;" /&gt;&lt;br&gt; Some thoughts on ways to measure the quality of Perl code (and, hence, get a basis for improving it)
+      </summary>
+    <author>
+      <name>davorg@slideshare.net(davorg)</name>
+    </author>
+    <id>https://www.slideshare.net/davorg/measuring-the-quality-of-your-perl-code-162990735</id>
+    <published>2019-08-11T14:23:19Z</published>
+    <updated>2019-08-11T14:23:19Z</updated>
+  </entry>
+  <entry>
+    <title>Apollo 11 at 50 - A Simple Twitter Bot</title>
+    <link rel="alternate" href="https://www.slideshare.net/davorg/apollo-11-at-50-a-simple-twitter-bot" type="text/html"/>
+    <content type="html">
+        &lt;img alt="" src="//cdn.slidesharecdn.com/ss_thumbnails/apollo-190811141300-thumbnail-2.jpg?cb=1565532859" style="border:1px solid #C3E6D8;float:right;" /&gt;&lt;br&gt; How (and why) I spent 90 minutes writing a Twitterbot that tweeted the Apollo 11 mission timeline (shifted by 50 years)
+      </content>
+    <summary type="html">
+        &lt;img alt="" src="//cdn.slidesharecdn.com/ss_thumbnails/apollo-190811141300-thumbnail-2.jpg?cb=1565532859" style="border:1px solid #C3E6D8;float:right;" /&gt;&lt;br&gt; How (and why) I spent 90 minutes writing a Twitterbot that tweeted the Apollo 11 mission timeline (shifted by 50 years)
+      </summary>
+    <author>
+      <name>davorg@slideshare.net(davorg)</name>
+    </author>
+    <id>https://www.slideshare.net/davorg/apollo-11-at-50-a-simple-twitter-bot</id>
+    <published>2019-08-11T14:13:00Z</published>
+    <updated>2019-08-11T14:13:00Z</updated>
+  </entry>
+  <entry>
+    <title>Monoliths, Balls of Mud and Silver Bullets</title>
+    <link rel="alternate" href="https://www.slideshare.net/davorg/monoliths-balls-of-mud-and-silver-bullets-162989542" type="text/html"/>
+    <content type="html">
+        &lt;img alt="" src="//cdn.slidesharecdn.com/ss_thumbnails/monoliths-190811141027-thumbnail-2.jpg?cb=1565532750" style="border:1px solid #C3E6D8;float:right;" /&gt;&lt;br&gt; A talk from the European Perl Conference 2019 (but not about Perl)
+      </content>
+    <summary type="html">
+        &lt;img alt="" src="//cdn.slidesharecdn.com/ss_thumbnails/monoliths-190811141027-thumbnail-2.jpg?cb=1565532750" style="border:1px solid #C3E6D8;float:right;" /&gt;&lt;br&gt; A talk from the European Perl Conference 2019 (but not about Perl)
+      </summary>
+    <author>
+      <name>davorg@slideshare.net(davorg)</name>
+    </author>
+    <id>https://www.slideshare.net/davorg/monoliths-balls-of-mud-and-silver-bullets-162989542</id>
+    <published>2019-08-11T14:10:27Z</published>
+    <updated>2019-08-11T14:10:27Z</updated>
+  </entry>
+</feed>
