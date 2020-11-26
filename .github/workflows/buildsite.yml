@@ -36,7 +36,7 @@ jobs:
         echo $GIT_STATUS
         git config --global user.name 'Dave Cross'
         git config --global user.email 'dave@dave.org.uk'
-        git add docs/
+        git add *
         if [ "$GIT_STATUS" != "" ]; then git commit -m "Automated Web page generation"; fi
         if [ "$GIT_STATUS" != "" ]; then git push; fi
 
