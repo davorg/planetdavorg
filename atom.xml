@@ -7,9 +7,241 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2020-12-01T16:36:30Z</updated>
+  <updated>2020-12-01T17:21:29Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PullRequestEvent/14374954003</id>
+    <published>2020-12-01T16:54:55Z</published>
+    <updated>2020-12-01T16:54:55Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/pullingshots/net-lastfm/pull/1"/>
+    <title type="html">davorg opened a pull request in pullingshots/net-lastfm</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_opened" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- pull_request --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;div class="d-flex flex-items-baseline"&gt;
+        &lt;div&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            opened
+            a pull request in
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/pullingshots/net-lastfm" rel="noreferrer"&gt;pullingshots/net-lastfm&lt;/a&gt;
+          &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+            &lt;relative-time datetime="2020-12-01T16:54:55Z" class="no-wrap"&gt;Dec 1, 2020&lt;/relative-time&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="Box p-3 my-2"&gt;
+      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request open d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+      &lt;div class="ml-4"&gt;
+        &lt;div&gt;
+          &lt;span class="f4 lh-condensed text-bold text-gray-dark"&gt;&lt;a class="text-gray-dark text-bold" aria-label="Fix 411 problem" href="/pullingshots/net-lastfm/pull/1" rel="noreferrer"&gt;Fix 411 problem&lt;/a&gt;&lt;/span&gt;
+          &lt;span class="f4 text-gray-light ml-1"&gt;#1&lt;/span&gt;
+            &lt;div class="lh-condensed mb-2 mt-1"&gt;
+              &lt;p&gt;This seems to fix the problem described at &lt;a href="https://rt.cpan.org/Ticket/Display.html?id=133654" rel="nofollow noreferrer"&gt;https://rt.cpan.org/Ticket/Display.html?id=133654&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="1 commit with 1 addition and 1 deletion"&gt;
+            &lt;span class="text-green"&gt;+1&lt;/span&gt;
+            &lt;span class="text-red"&gt;-1&lt;/span&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/14374915314</id>
+    <published>2020-12-01T16:51:57Z</published>
+    <updated>2020-12-01T16:51:57Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/net-lastfm/compare/05702e5bc9...08d5754ffe"/>
+    <title type="html">davorg pushed to master in davorg/net-lastfm</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/net-lastfm/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/net-lastfm" rel="noreferrer"&gt;davorg/net-lastfm&lt;/a&gt;
+      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2020-12-01T16:51:57Z" class="no-wrap"&gt;Dec 1, 2020&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/net-lastfm/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/net-lastfm/commit/08d5754ffe41b47526f7dd78b4d533c834417c95" rel="noreferrer"&gt;08d5754&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Fix 411 problem
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:ForkEvent/14374858818</id>
+    <published>2020-12-01T16:47:39Z</published>
+    <updated>2020-12-01T16:47:39Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/net-lastfm"/>
+    <title type="html">davorg forked davorg/net-lastfm from pullingshots/net-lastfm</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="fork" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- fork --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-secondary py-3"&gt; 
+    &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+      &lt;div&gt;
+        &lt;div class="d-flex flex-items-baseline"&gt;
+          &lt;div&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            forked
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" title="davorg/net-lastfm" href="/davorg/net-lastfm" rel="noreferrer"&gt;davorg/net-lastfm&lt;/a&gt;
+            from
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/pullingshots/net-lastfm" rel="noreferrer"&gt;pullingshots/net-lastfm&lt;/a&gt;
+            &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+              &lt;relative-time datetime="2020-12-01T16:47:39Z" class="no-wrap"&gt;Dec 1, 2020&lt;/relative-time&gt;
+            &lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="Box p-3 mt-2"&gt;
+
+        &lt;div&gt;
+          &lt;div class="f4 lh-condensed text-bold text-gray-dark"&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/pullingshots/net-lastfm" rel="noreferrer"&gt;pullingshots/net-lastfm&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="dashboard-break-word text-gray mt-1 repo-description"&gt;
+            &lt;p&gt;&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;p class="f6 text-gray mt-2 mb-0"&gt;
+              &lt;span class="d-inline-block text-gray mr-3"&gt;
+                &lt;span class="ml-0"&gt;
+  &lt;span class="repo-language-color" style="background-color: #0298c3"&gt;&lt;/span&gt;
+  &lt;span itemprop="programmingLanguage"&gt;Perl&lt;/span&gt;
+&lt;/span&gt;
+
+              &lt;/span&gt;
+
+              &lt;span class="d-inline-block mr-3"&gt;
+                  &lt;a class="muted-link" href="/pullingshots/net-lastfm/stargazers" rel="noreferrer"&gt;
+                    &lt;svg class="octicon octicon-star mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"&gt;&lt;/path&gt;&lt;/svg&gt;1
+&lt;/a&gt;              &lt;/span&gt;
+
+
+              &lt;span&gt;Updated Jul 23&lt;/span&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/14374767770</id>
+    <published>2020-12-01T16:40:48Z</published>
+    <updated>2020-12-01T16:40:48Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/lastfm-feed/compare/0dcc38a941...8a7d160192"/>
+    <title type="html">davorg pushed to master in davorg/lastfm-feed</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@perlhacks.com</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/lastfm-feed/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/lastfm-feed" rel="noreferrer"&gt;davorg/lastfm-feed&lt;/a&gt;
+      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2020-12-01T16:40:48Z" class="no-wrap"&gt;Dec 1, 2020&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/lastfm-feed/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/lastfm-feed/commit/8a7d160192ed583b4b22bfd0d8b27a8e93c57521" rel="noreferrer"&gt;8a7d160&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Use request_signed()
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>@4Viewers But I'm not going mad, am I? I definitely saw it in the autumn trailer.</title>
     <link rel="alternate" href="https://twitter.com/@davorg/status/1333446434453139460" type="text/html"/>
@@ -101,186 +333,6 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PullRequestEvent/14353626726</id>
-    <published>2020-11-30T07:15:59Z</published>
-    <updated>2020-11-30T07:15:59Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/szabgab/perlweekly/pull/311"/>
-    <title type="html">davorg opened a pull request in szabgab/perlweekly</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@perlhacks.com</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_opened" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- pull_request --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;div class="d-flex flex-items-baseline"&gt;
-        &lt;div&gt;
-            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-            
-            opened
-            a pull request in
-            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/szabgab/perlweekly" rel="noreferrer"&gt;szabgab/perlweekly&lt;/a&gt;
-          &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-            &lt;relative-time datetime="2020-11-30T07:15:59Z" class="no-wrap"&gt;Nov 30, 2020&lt;/relative-time&gt;
-          &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="Box p-3 my-2"&gt;
-      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request open d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
-
-      &lt;div class="ml-4"&gt;
-        &lt;div&gt;
-          &lt;span class="f4 lh-condensed text-bold text-gray-dark"&gt;&lt;a class="text-gray-dark text-bold" aria-label="Copyedit" href="/szabgab/perlweekly/pull/311" rel="noreferrer"&gt;Copyedit&lt;/a&gt;&lt;/span&gt;
-          &lt;span class="f4 text-gray-light ml-1"&gt;#311&lt;/span&gt;
-            &lt;div class="lh-condensed mb-2 mt-1"&gt;
-              &lt;p&gt;Not sure why this contains 44 changed files, rather than the one I edited. You can probably ignore all of the others.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="6 commits with 2,990 additions and 362 deletions"&gt;
-            &lt;span class="text-green"&gt;+2,990&lt;/span&gt;
-            &lt;span class="text-red"&gt;-362&lt;/span&gt;
-          &lt;/div&gt;
-
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/14353608835</id>
-    <published>2020-11-30T07:13:51Z</published>
-    <updated>2020-11-30T07:13:51Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlweekly/compare/ae23ea75e1...129ef4c6e3"/>
-    <title type="html">davorg pushed to master in davorg/perlweekly</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@perlhacks.com</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/perlweekly/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/perlweekly" rel="noreferrer"&gt;davorg/perlweekly&lt;/a&gt;
-      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2020-11-30T07:13:51Z" class="no-wrap"&gt;Nov 30, 2020&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/perlweekly/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlweekly/commit/129ef4c6e320b5d9935b8ec4e020684fa8f3e71b" rel="noreferrer"&gt;129ef4c&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Copyedit
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/14353452802</id>
-    <published>2020-11-30T06:55:13Z</published>
-    <updated>2020-11-30T06:55:13Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlweekly/compare/00ef31e76a...ae23ea75e1"/>
-    <title type="html">davorg pushed to master in davorg/perlweekly</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@perlhacks.com</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/perlweekly/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/perlweekly" rel="noreferrer"&gt;davorg/perlweekly&lt;/a&gt;
-      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2020-11-30T06:55:13Z" class="no-wrap"&gt;Nov 30, 2020&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/perlweekly/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="szabgab"&gt;
-                    &lt;a class="d-inline-block" href="/szabgab" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars3.githubusercontent.com/u/48833?s=32&amp;amp;v=4" width="16" height="16" alt="@szabgab"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlweekly/commit/ae23ea75e1b1398d38d041efeb0652d35c7731ec" rel="noreferrer"&gt;ae23ea7&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      html
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="szabgab"&gt;
-                    &lt;a class="d-inline-block" href="/szabgab" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars3.githubusercontent.com/u/48833?s=32&amp;amp;v=4" width="16" height="16" alt="@szabgab"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlweekly/commit/9e9eb2eeacf0b87035fd46ac773acdf0d50fce27" rel="noreferrer"&gt;9e9eb2e&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      jobs; sponsor; more posts; stats; tidy
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-                &lt;li class="f6 mt-2"&gt;
-                  &lt;a class="link-gray" href="/davorg/perlweekly/compare/00ef31e76a...ae23ea75e1" rel="noreferrer"&gt;2 more commits »&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
   <entry>
     <title>Yeah. That looks good :-) https://t.co/looDojgk7p</title>
     <link rel="alternate" href="https://twitter.com/@davorg/status/1333131137699508241" type="text/html"/>
@@ -296,62 +348,6 @@
       <div xmlns="http://www.w3.org/1999/xhtml">The three months it took to buy my flat seemed to last forever. But it's three months today since the purchase comp… https://t.co/oOcgZVp3qd</div>
     </content>
     <updated>2020-11-28T10:47:29Z</updated>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/14337314815</id>
-    <published>2020-11-27T12:56:57Z</published>
-    <updated>2020-11-27T12:56:57Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetbalham/compare/ae60fd7f26...1b60e64ce0"/>
-    <title type="html">davorg pushed to main in davorg/planetbalham</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@perlhacks.com</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/planetbalham/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/planetbalham" rel="noreferrer"&gt;davorg/planetbalham&lt;/a&gt;
-      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2020-11-27T12:56:57Z" class="no-wrap"&gt;Nov 27, 2020&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/planetbalham/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetbalham/commit/1b60e64ce0288d622e38913a7aaf09a4ef63716b" rel="noreferrer"&gt;1b60e64&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Create CNAME
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <title>London from Hampstead Heath</title>
