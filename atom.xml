@@ -7,9 +7,125 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2020-12-22T07:34:00Z</updated>
+  <updated>2020-12-22T08:35:25Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/14613458371</id>
+    <published>2020-12-22T08:16:28Z</published>
+    <updated>2020-12-22T08:16:28Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/dashboard/compare/73d5027042...44c18574c8"/>
+    <title type="html">davorg pushed to master in davorg/dashboard</title>
+    <author>
+      <name>davorg</name>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/dashboard/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/dashboard" rel="noreferrer"&gt;davorg/dashboard&lt;/a&gt;
+      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2020-12-22T08:16:28Z" class="no-wrap"&gt;Dec 22, 2020&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/dashboard/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits "&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/dashboard/commit/44c18574c829820a1a371ffb54e32788e632cf69" rel="noreferrer"&gt;44c1857&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Merge pull request &lt;a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="772631414" data-permission-text="Title is private" data-url="https://github.com/davorg/dashboard/issues/36" data-hovercard-type="pull_request" data-hovercard-url="/davorg/dashboard/pull/36/hovercard" href="https://github.com/davorg/dashboard/pull/36" rel="noreferrer"&gt;#36&lt;/a&gt; from petdance/master
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="petdance"&gt;
+                    &lt;a class="d-inline-block" href="/petdance" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars0.githubusercontent.com/u/41100?s=32&amp;amp;v=4" width="16" height="16" alt="@petdance"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/dashboard/commit/81902af45731b83ce351eddd86f6b80bc88d436c" rel="noreferrer"&gt;81902af&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Info for petdance for dashboard
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PullRequestEvent/14613458212</id>
+    <published>2020-12-22T08:16:27Z</published>
+    <updated>2020-12-22T08:16:27Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/dashboard/pull/36"/>
+    <title type="html">davorg merged a pull request in davorg/dashboard</title>
+    <author>
+      <name>davorg</name>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_merged" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- pull_request --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;div class="d-flex flex-items-baseline"&gt;
+        &lt;div&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            merged
+            a pull request in
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/dashboard" rel="noreferrer"&gt;davorg/dashboard&lt;/a&gt;
+          &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+            &lt;relative-time datetime="2020-12-22T08:16:27Z" class="no-wrap"&gt;Dec 22, 2020&lt;/relative-time&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="Box p-3 my-2"&gt;
+      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request merged d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+      &lt;div class="ml-4"&gt;
+        &lt;div&gt;
+          &lt;span class="f4 lh-condensed text-bold text-gray-dark"&gt;&lt;a class="text-gray-dark text-bold" aria-label="Info for petdance for dashboard" href="/davorg/dashboard/pull/36" rel="noreferrer"&gt;Info for petdance for dashboard&lt;/a&gt;&lt;/span&gt;
+          &lt;span class="f4 text-gray-light ml-1"&gt;#36&lt;/span&gt;
+        &lt;/div&gt;
+
+          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="1 commit with 17 additions and 0 deletions"&gt;
+            &lt;span class="text-green"&gt;+17&lt;/span&gt;
+            &lt;span class="text-red"&gt;-0&lt;/span&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Congratulations to @PerlSawyer, @neilbowers and @rjbs for election to Perl's first Steering Council. https://t.co/UYQv0Y7ZEe</title>
     <link rel="alternate" href="https://twitter.com/@davorg/status/1341100827923132417" type="text/html"/>
@@ -254,72 +370,6 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/14602669274</id>
-    <published>2020-12-21T10:37:54Z</published>
-    <updated>2020-12-21T10:37:54Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/array-compare/compare/5575f6037e...6cd0d1e5f5"/>
-    <title type="html">davorg pushed to master in davorg/array-compare</title>
-    <author>
-      <name>davorg</name>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/array-compare/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/array-compare" rel="noreferrer"&gt;davorg/array-compare&lt;/a&gt;
-      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2020-12-21T10:37:54Z" class="no-wrap"&gt;Dec 21, 2020&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/array-compare/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/array-compare/commit/6cd0d1e5f55061dca4f36be183b6a63abd72d1e8" rel="noreferrer"&gt;6cd0d1e&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Update Changes
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/array-compare/commit/21411ee718ccf4b02503949a83423c0f1fb2558f" rel="noreferrer"&gt;21411ee&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Only supported on 5.10+.
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
   <entry>
     <title>DAVECROSS has released Array-Compare-v3.0.8</title>
     <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Array-Compare-v3.0.8" type="text/html"/>
@@ -332,56 +382,6 @@
     <id>https://metacpan.org/release/DAVECROSS/Array-Compare-v3.0.8</id>
     <published>2020-12-21T10:37:32Z</published>
     <updated>2020-12-21T10:37:32Z</updated>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PullRequestEvent/14600567714</id>
-    <published>2020-12-21T07:05:14Z</published>
-    <updated>2020-12-21T07:05:14Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/szabgab/perlweekly/pull/317"/>
-    <title type="html">davorg opened a pull request in szabgab/perlweekly</title>
-    <author>
-      <name>davorg</name>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_opened" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- pull_request --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;div class="d-flex flex-items-baseline"&gt;
-        &lt;div&gt;
-            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-            
-            opened
-            a pull request in
-            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/szabgab/perlweekly" rel="noreferrer"&gt;szabgab/perlweekly&lt;/a&gt;
-          &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-            &lt;relative-time datetime="2020-12-21T07:05:14Z" class="no-wrap"&gt;Dec 21, 2020&lt;/relative-time&gt;
-          &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="Box p-3 my-2"&gt;
-      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request open d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
-
-      &lt;div class="ml-4"&gt;
-        &lt;div&gt;
-          &lt;span class="f4 lh-condensed text-bold text-gray-dark"&gt;&lt;a class="text-gray-dark text-bold" aria-label="Copyedit" href="/szabgab/perlweekly/pull/317" rel="noreferrer"&gt;Copyedit&lt;/a&gt;&lt;/span&gt;
-          &lt;span class="f4 text-gray-light ml-1"&gt;#317&lt;/span&gt;
-        &lt;/div&gt;
-
-          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="1 commit with 19 additions and 19 deletions"&gt;
-            &lt;span class="text-green"&gt;+19&lt;/span&gt;
-            &lt;span class="text-red"&gt;-19&lt;/span&gt;
-          &lt;/div&gt;
-
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>DAVECROSS has released SVG-Timeline-Genealogy-0.0.4</title>
