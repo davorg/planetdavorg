@@ -7,9 +7,133 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2020-12-28T10:35:22Z</updated>
+  <updated>2020-12-28T11:29:34Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/14655348951</id>
+    <published>2020-12-28T10:48:12Z</published>
+    <updated>2020-12-28T10:48:12Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/dashboard/compare/e189086b9c...3d68824ebb"/>
+    <title type="html">davorg pushed to master in davorg/dashboard</title>
+    <author>
+      <name>davorg</name>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/dashboard/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+
+      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/dashboard" rel="noreferrer"&gt;davorg/dashboard&lt;/a&gt;
+      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2020-12-28T10:48:12Z" class="no-wrap"&gt;Dec 28, 2020&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/dashboard/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits "&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/dashboard/commit/3d68824ebb02a422e51f06156d64d6fa76ebe83c" rel="noreferrer"&gt;3d68824&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Merge pull request &lt;a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="774659243" data-permission-text="Title is private" data-url="https://github.com/davorg/dashboard/issues/37" data-hovercard-type="pull_request" data-hovercard-url="/davorg/dashboard/pull/37/hovercard" href="https://github.com/davorg/dashboard/pull/37" rel="noreferrer"&gt;#37&lt;/a&gt; from manwar/manwar-dashboard
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="manwar"&gt;
+                    &lt;a class="d-inline-block" href="/manwar" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars0.githubusercontent.com/u/681195?s=32&amp;amp;v=4" width="16" height="16" alt="@manwar"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/dashboard/commit/69c3d6b05c93b9a2943db879f1ecb5b9a749b35d" rel="noreferrer"&gt;69c3d6b&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      - Added manwar dashboard.
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PullRequestEvent/14655348856</id>
+    <published>2020-12-28T10:48:11Z</published>
+    <updated>2020-12-28T10:48:11Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/dashboard/pull/37"/>
+    <title type="html">davorg merged a pull request in davorg/dashboard</title>
+    <author>
+      <name>davorg</name>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_merged" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- pull_request --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;div class="d-flex flex-items-baseline"&gt;
+        &lt;div&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            merged
+            a pull request in
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/dashboard" rel="noreferrer"&gt;davorg/dashboard&lt;/a&gt;
+          &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+            &lt;relative-time datetime="2020-12-28T10:48:11Z" class="no-wrap"&gt;Dec 28, 2020&lt;/relative-time&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="Box p-3 my-2"&gt;
+      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request merged d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+      &lt;div class="ml-4"&gt;
+        &lt;div&gt;
+          &lt;span class="f4 lh-condensed text-bold text-gray-dark"&gt;&lt;a class="text-gray-dark text-bold" aria-label="- Added manwar dashboard." href="/davorg/dashboard/pull/37" rel="noreferrer"&gt;- Added manwar dashboard.&lt;/a&gt;&lt;/span&gt;
+          &lt;span class="f4 text-gray-light ml-1"&gt;#37&lt;/span&gt;
+            &lt;div class="lh-condensed mb-2 mt-1"&gt;
+              &lt;p&gt;Hi &lt;a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/davorg/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/davorg" rel="noreferrer"&gt;@davorg&lt;/a&gt;
+Please review the PR.
+My first attempt to get my dashboard up. Hopefully I didn't break anything.
+Many Thanks.
+Best Regards,
+Mohammad&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="1 commit with 17 additions and 0 deletions"&gt;
+            &lt;span class="text-green"&gt;+17&lt;/span&gt;
+            &lt;span class="text-red"&gt;-0&lt;/span&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Not much to argue with here (though, personally, I'd put The Dreaming a lot higher). https://t.co/vE00NdAAiF</title>
     <link rel="alternate" href="https://twitter.com/@davorg/status/1343292067154436096" type="text/html"/>
@@ -215,61 +339,6 @@
     </content>
     <updated>2020-12-23T10:19:06Z</updated>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/14626214977</id>
-    <published>2020-12-23T09:57:35Z</published>
-    <updated>2020-12-23T09:57:35Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/svg-trafficlight/compare/dc4b743bcd...68b53e9fe1"/>
-    <title type="html">davorg pushed to master in davorg/svg-trafficlight</title>
-    <author>
-      <name>davorg</name>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/svg-trafficlight/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-
-      &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/svg-trafficlight" rel="noreferrer"&gt;davorg/svg-trafficlight&lt;/a&gt;
-      &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2020-12-23T09:57:35Z" class="no-wrap"&gt;Dec 23, 2020&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/svg-trafficlight/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars1.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/svg-trafficlight/commit/68b53e9fe16cc9f6355152ab4bafcaa5e8698fab" rel="noreferrer"&gt;68b53e9&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Better GitHub Actions
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
   <entry>
     <title>DAVECROSS has released Template-Provider-Pandoc-0.0.4</title>
     <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Template-Provider-Pandoc-0.0.4" type="text/html"/>
@@ -282,52 +351,6 @@
     <id>https://metacpan.org/release/DAVECROSS/Template-Provider-Pandoc-0.0.4</id>
     <published>2020-12-23T09:38:31Z</published>
     <updated>2020-12-23T09:38:31Z</updated>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:CreateEvent/14626029000</id>
-    <published>2020-12-23T09:37:27Z</published>
-    <updated>2020-12-23T09:37:27Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/template-provider-pandoc/tree/RELEASE_0.0.4"/>
-    <title type="html">davorg created a tag RELEASE_0.0.4 in davorg/template-provider-pandoc</title>
-    <author>
-      <name>davorg</name>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars1.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="tag" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
-&lt;!-- create --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-secondary py-3"&gt;
-    &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-        &lt;div class="d-flex flex-items-baseline"&gt;
-          &lt;div&gt;
-            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-            
-            created a
-            tag
-            in
-            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/template-provider-pandoc" rel="noreferrer"&gt;davorg/template-provider-pandoc&lt;/a&gt;
-            &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-              &lt;relative-time datetime="2020-12-23T09:37:27Z" class="no-wrap"&gt;Dec 23, 2020&lt;/relative-time&gt;
-            &lt;/span&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-    &lt;div class="Box p-3 mt-2"&gt;
-      &lt;div&gt;
-        &lt;div class="f4 lh-condensed text-bold text-gray-dark"&gt;
-            &lt;a class="link-gray-dark text-bold" title="RELEASE_0.0.4" href="/davorg/template-provider-pandoc/tree/RELEASE_0.0.4" rel="noreferrer"&gt;RELEASE_0.0.4&lt;/a&gt; in &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/template-provider-pandoc" rel="noreferrer"&gt;davorg/template-provider-pandoc&lt;/a&gt;
-        &lt;/div&gt;
-
-
-          &lt;p class="f6 text-gray mt-2 mb-0"&gt;
-            &lt;span&gt;Updated Nov 6&lt;/span&gt;
-          &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>DAVECROSS has released SVG-TrafficLight-0.1.4</title>
