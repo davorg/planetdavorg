@@ -686,7 +686,7 @@ I don&#8217;t usually include classical shows in these lists. To be honest, I do
             <div class="panel-body"><p>Blog posts are like busses. You wait months for one and then two come along on consecutive days!</p>
 <p><a href="https://perlhacks.com/2020/09/blogging-for-perl/">Yesterday I wrote</a> about how we didn’t need a blogging platform for the Perl community – all we really needed was a good-looking feed aggregator. I mentioned <a href="http://perlsphere.net/">Perlsphere</a> as one such aggregator.</p>
 <p>Then Matthew commented, saying that Perlsphere looked a bit broken as Dave Cantrell’s posts from a few years ago frequently pop up there as new posts. I had a quick look at the problem and couldn’t quite work out what was going on. His web feed seems valid, but Perlsphere didn’t seem to recognise the dates of the posts.</p>
-<p>Perlsphere is implemented using <a href="https://metacpan.org/pod/Plagger">Plagger</a>, a feed aggregator written my Miyagawa a very long time ago (back when it seemed that web feeds were going to conquer the world). It’s a pretty complex beast and it seemed possible that somewhere deep in its code, it was mis-parsing Dave’s web feed. So I cloned <a href="https://github.com/miyagawa/plagger">the repo</a> and tried to work out what was going on.</p>
+<p>Perlsphere is implemented using <a href="https://metacpan.org/pod/Plagger">Plagger</a>, a feed aggregator written by Miyagawa a very long time ago (back when it seemed that web feeds were going to conquer the world). It’s a pretty complex beast and it seemed possible that somewhere deep in its code, it was mis-parsing Dave’s web feed. So I cloned <a href="https://github.com/miyagawa/plagger">the repo</a> and tried to work out what was going on.</p>
 <p>But Plagger hasn’t been updated for a very long time. As you can see from the <a href="http://matrix.cpantesters.org/?dist=Plagger+0.7.17">test results</a>, it stopped passing its tests a long while ago (I suspect when the current directory was removed from @INC). I spent a brief time trying to get it working but, ultimately, decided it was too hard a job.</p>
 <p>So I took another look at Perlsphere. And I decided that if it’s based on bit-rotten software, it’s not going to be very easy to maintain (which gave me flashbacks to blogs.perl.org!)</p>
 <p>But there’s another Perl tool for aggregating web feeds. And I wrote it. It’s called <a href="https://metacpan.org/release/Perlanet">Perlanet</a> (and, boy, do I regret that name now). Back in the first decade of this millennium, I was fascinated by web feeds and the idea of using them to build local “planets” – a web site that aggregated web feeds that had interesting information about your local area. Of course, that was back in the days when everything had a web feed and it was simple enough to pull them together and create really quite interesting sites. These days, of course, web feeds are rather unfashionable and almost no-one thinks to add them on to their web site.</p>
@@ -751,7 +751,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:dave@dave.org.uk">Dave Cross</a> / Thursday 14 January 2021 08:59</address>
+      <address><a href="mailto:dave@dave.org.uk">Dave Cross</a> / Thursday 14 January 2021 09:58</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->
