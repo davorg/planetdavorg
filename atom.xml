@@ -7,9 +7,57 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2021-01-25T11:55:29Z</updated>
+  <updated>2021-01-25T12:58:47Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:IssuesEvent/14935836340</id>
+    <published>2021-01-25T12:32:35Z</published>
+    <updated>2021-01-25T12:32:35Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/dashboard/issues/39"/>
+    <title type="html">davorg opened an issue in davorg/dashboard</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_opened" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- issues --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div&gt;
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            opened
+            an issue in
+            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/dashboard" rel="noreferrer"&gt;davorg/dashboard&lt;/a&gt;
+          &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
+            &lt;relative-time datetime="2021-01-25T12:32:35Z" class="no-wrap"&gt;Jan 25, 2021&lt;/relative-time&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="Box p-3 wb-break-all"&gt;
+      &lt;svg height="16" aria-label="Issue" class="octicon octicon-issue-opened open d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
+      &lt;div class="ml-4"&gt;
+        &lt;span class="f4 lh-condensed text-bold text-gray-dark"&gt;
+          &lt;a title="master vs main" class="text-gray-dark" aria-label="master vs main" href="/davorg/dashboard/issues/39" rel="noreferrer"&gt;master vs main&lt;/a&gt;
+        &lt;/span&gt;
+        &lt;span class="f4 text-gray-light ml-1"&gt;#39&lt;/span&gt;
+          &lt;div class="dashboard-break-word lh-condensed mb-2 mt-1"&gt;
+            &lt;p&gt;We're starting to see some new GitHub repos appear with a default branch of &lt;code&gt;main&lt;/code&gt; instead of &lt;code&gt;master&lt;/code&gt;. This is a problem as we're currently assuming t…&lt;/p&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
     <id>tag:github.com,2008:PushEvent/14934887960</id>
     <published>2021-01-25T11:08:42Z</published>
@@ -233,53 +281,6 @@
             &lt;/ul&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:CreateEvent/14934236044</id>
-    <published>2021-01-25T10:16:08Z</published>
-    <updated>2021-01-25T10:16:08Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/tie-hash-regex/tree/RELEASE_1.14"/>
-    <title type="html">davorg created a tag RELEASE_1.14 in davorg/tie-hash-regex</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="tag" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
-&lt;!-- create --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-secondary py-3"&gt;
-    &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-        &lt;div class="d-flex flex-items-baseline"&gt;
-          &lt;div&gt;
-            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-            
-            created a
-            tag
-            in
-            &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/tie-hash-regex" rel="noreferrer"&gt;davorg/tie-hash-regex&lt;/a&gt;
-            &lt;span class="f6 text-gray-light no-wrap ml-1"&gt;
-              &lt;relative-time datetime="2021-01-25T10:16:08Z" class="no-wrap"&gt;Jan 25, 2021&lt;/relative-time&gt;
-            &lt;/span&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-    &lt;div class="Box p-3 mt-2"&gt;
-      &lt;div&gt;
-        &lt;div class="f4 lh-condensed text-bold text-gray-dark"&gt;
-            &lt;a class="link-gray-dark text-bold" title="RELEASE_1.14" href="/davorg/tie-hash-regex/tree/RELEASE_1.14" rel="noreferrer"&gt;RELEASE_1.14&lt;/a&gt; in &lt;a class="link-gray-dark no-underline text-bold wb-break-all d-inline-block" href="/davorg/tie-hash-regex" rel="noreferrer"&gt;davorg/tie-hash-regex&lt;/a&gt;
-        &lt;/div&gt;
-
-
-          &lt;p class="f6 text-gray mt-2 mb-0"&gt;
-            &lt;span&gt;Updated Jan 25&lt;/span&gt;
-          &lt;/p&gt;
-      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
