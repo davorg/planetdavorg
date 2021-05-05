@@ -7,68 +7,247 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2021-05-05T13:34:34Z</updated>
+  <updated>2021-05-05T14:26:46Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
-  <entry>
-    <title>Bang and Blame - R.E.M.</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Bang and Blame - R.E.M.</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/R.E.M./_/Bang+and+Blame" type="text/html"/>
-    <updated>2021-05-05T13:00:40Z</updated>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/16211027380</id>
+    <published>2021-05-05T14:06:04Z</published>
+    <updated>2021-05-05T14:06:04Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/95e72c41ae...83899ec5cc"/>
+    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
     <author>
-      <name>R.E.M.</name>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
     </author>
-    <id>https://musicbrainz.org/recording/0484b4a8-c868-38a9-9fc3-cb3211457723</id>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
+      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2021-05-05T14:06:04Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/83899ec5cc52cabe8cc9bd6294fbb64997abc6ac" rel="noreferrer"&gt;83899ec&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      First draft Makefile.PL
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/4481777a421b7d0cf521b9e036a82bf752e98624" rel="noreferrer"&gt;4481777&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Improved .gitignore
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/16210995610</id>
+    <published>2021-05-05T14:04:10Z</published>
+    <updated>2021-05-05T14:04:10Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/c3d6d4d23f...95e72c41ae"/>
+    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
+      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2021-05-05T14:04:10Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/95e72c41ae6a20c298b113d2b03beedd46d316f7" rel="noreferrer"&gt;95e72c4&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Added File::ShareDir. Added local TT directories.
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/16210981365</id>
+    <published>2021-05-05T14:03:18Z</published>
+    <updated>2021-05-05T14:03:18Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/ca0cbaa4fe...c3d6d4d23f"/>
+    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
+      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2021-05-05T14:03:18Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/c3d6d4d23fd335a245f46ec75c71c68409bbfdbb" rel="noreferrer"&gt;c3d6d4d&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Moved some stuff around
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <title>Daysleeper - R.E.M.</title>
+    <title>Thank God It's Not Christmas - Sparks</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Daysleeper - R.E.M.</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Thank God It's Not Christmas - Sparks</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/R.E.M./_/Daysleeper" type="text/html"/>
-    <updated>2021-05-05T12:57:00Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Sparks/_/Thank+God+It%27s+Not+Christmas" type="text/html"/>
+    <updated>2021-05-05T13:59:10Z</updated>
     <author>
-      <name>R.E.M.</name>
+      <name>Sparks</name>
     </author>
-    <id>https://musicbrainz.org/recording/02aea349-06b6-4cdc-9a42-43fc0fd15512</id>
+    <id>https://musicbrainz.org/recording/166b99d6-1f22-3a75-8b5a-518f77c93513</id>
   </entry>
   <entry>
-    <title>At My Most Beautiful - R.E.M.</title>
+    <title>Here In Heaven - Sparks</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">At My Most Beautiful - R.E.M.</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Here In Heaven - Sparks</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/R.E.M./_/At+My+Most+Beautiful" type="text/html"/>
-    <updated>2021-05-05T12:53:24Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Sparks/_/Here+In+Heaven" type="text/html"/>
+    <updated>2021-05-05T13:56:20Z</updated>
     <author>
-      <name>R.E.M.</name>
+      <name>Sparks</name>
     </author>
-    <id>https://musicbrainz.org/recording/02048000-975e-3ab2-b329-4776f79028ec</id>
+    <id>https://musicbrainz.org/recording/113fb96c-5401-41ba-ae95-67bfbcbeef1a</id>
   </entry>
   <entry>
-    <title>Near Wild Heaven - R.E.M.</title>
+    <title>Falling In Love With Myself Again - Sparks</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Near Wild Heaven - R.E.M.</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Falling In Love With Myself Again - Sparks</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/R.E.M./_/Near+Wild+Heaven" type="text/html"/>
-    <updated>2021-05-05T12:50:04Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Sparks/_/Falling+In+Love+With+Myself+Again" type="text/html"/>
+    <updated>2021-05-05T13:53:12Z</updated>
     <author>
-      <name>R.E.M.</name>
+      <name>Sparks</name>
     </author>
-    <id>https://musicbrainz.org/recording/0323b669-a15d-43e6-aeb5-964491f82aeb</id>
+    <id>https://musicbrainz.org/recording/4f0b7f30-75a8-338d-9cad-db51079e4eed</id>
   </entry>
   <entry>
-    <title>Try Not to Breathe - R.E.M.</title>
+    <title>Amateur Hour - Sparks</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Try Not to Breathe - R.E.M.</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Amateur Hour - Sparks</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/R.E.M./_/Try+Not+to+Breathe" type="text/html"/>
-    <updated>2021-05-05T12:46:13Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Sparks/_/Amateur+Hour" type="text/html"/>
+    <updated>2021-05-05T13:49:33Z</updated>
     <author>
-      <name>R.E.M.</name>
+      <name>Sparks</name>
     </author>
-    <id>https://musicbrainz.org/recording/1007cb7c-c53a-37ed-b460-2c3ed1cb7994</id>
+    <id>https://musicbrainz.org/recording/01f71321-fd78-30e6-93ab-104bc109f243</id>
+  </entry>
+  <entry>
+    <title>This Town Ain't Big Enough For Both Of Us - Sparks</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">This Town Ain't Big Enough For Both Of Us - Sparks</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Sparks/_/This+Town+Ain%27t+Big+Enough+For+Both+Of+Us" type="text/html"/>
+    <updated>2021-05-05T13:46:26Z</updated>
+    <author>
+      <name>Sparks</name>
+    </author>
+    <id>https://musicbrainz.org/recording/001ce220-7d0f-490b-b2a5-c01ff3beae6a</id>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
     <id>tag:github.com,2008:PublicEvent/16208228048</id>
@@ -236,183 +415,6 @@ https://t.co/Lxnevaheq4</div>
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16177095945</id>
-    <published>2021-05-03T08:42:42Z</published>
-    <updated>2021-05-03T08:42:42Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlweeklychallenge-club/compare/d990590ad3...323110b0d0"/>
-    <title type="html">davorg pushed to master in davorg/perlweeklychallenge-club</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/perlweeklychallenge-club/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/perlweeklychallenge-club" rel="noreferrer"&gt;davorg/perlweeklychallenge-club&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-03T08:42:42Z" class="no-wrap"&gt;May 3, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/perlweeklychallenge-club/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="stuart-little"&gt;
-                    &lt;a class="d-inline-block" href="/stuart-little" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/27939583?s=32&amp;amp;v=4" width="16" height="16" alt="@stuart-little"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlweeklychallenge-club/commit/f06be0c25270b9a07a7c6d9b81fbc86007ea9b2f" rel="noreferrer"&gt;f06be0c&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      1st commit on 062_haskell
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="wlmb"&gt;
-                    &lt;a class="d-inline-block" href="/wlmb" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/12705053?s=32&amp;amp;v=4" width="16" height="16" alt="@wlmb"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlweeklychallenge-club/commit/cb5b0b9f3520ea8d0c5da1db466196d0c40d1b38" rel="noreferrer"&gt;cb5b0b9&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Change number of challenge
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-                &lt;li class="f6 mt-2"&gt;
-                  &lt;a class="Link--secondary" href="/davorg/perlweeklychallenge-club/compare/d990590ad3...323110b0d0" rel="noreferrer"&gt;161 more commits »&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PullRequestEvent/16177069940</id>
-    <published>2021-05-03T08:40:15Z</published>
-    <updated>2021-05-03T08:40:15Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/szabgab/perlweekly/pull/359"/>
-    <title type="html">davorg opened a pull request in szabgab/perlweekly</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_opened" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- pull_request --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;div class="d-flex flex-items-baseline"&gt;
-        &lt;div&gt;
-            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-            
-            opened
-            a pull request in
-            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/szabgab/perlweekly" rel="noreferrer"&gt;szabgab/perlweekly&lt;/a&gt;
-          &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-            &lt;relative-time datetime="2021-05-03T08:40:15Z" class="no-wrap"&gt;May 3, 2021&lt;/relative-time&gt;
-          &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="Box p-3 my-2"&gt;
-      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request open d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
-
-      &lt;div class="ml-4"&gt;
-        &lt;div&gt;
-          &lt;span class="f4 lh-condensed text-bold color-text-primary"&gt;&lt;a class="color-text-primary text-bold" aria-label="Copyedit" href="/szabgab/perlweekly/pull/359" rel="noreferrer"&gt;Copyedit&lt;/a&gt;&lt;/span&gt;
-          &lt;span class="f4 color-text-tertiary ml-1"&gt;#359&lt;/span&gt;
-        &lt;/div&gt;
-
-          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="1 commit with 31 additions and 31 deletions"&gt;
-            &lt;span class="color-text-success"&gt;+31&lt;/span&gt;
-            &lt;span class="color-text-danger"&gt;-31&lt;/span&gt;
-          &lt;/div&gt;
-
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16177062400</id>
-    <published>2021-05-03T08:39:31Z</published>
-    <updated>2021-05-03T08:39:31Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlweekly/compare/426e787dff...7048deefbd"/>
-    <title type="html">davorg pushed to master in davorg/perlweekly</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/perlweekly/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/perlweekly" rel="noreferrer"&gt;davorg/perlweekly&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-03T08:39:31Z" class="no-wrap"&gt;May 3, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/perlweekly/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlweekly/commit/7048deefbdd47851f67d3a5797ea2d677d3fe86a" rel="noreferrer"&gt;7048dee&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Copyedit
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
   <entry>
     <title>@Smylers2 That's me catching up on old Infinite Monkey Cage podcasts while out walking ☺️</title>
     <link rel="alternate" href="https://twitter.com/@davorg/status/1388752746174631937" type="text/html"/>
@@ -545,7 +547,7 @@ https://t.co/Lxnevaheq4</div>
       <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
     </author>
     <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
-    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/video/51125397431/dbc2e5507e/360p.mp4?s=eyJpIjo1MTEyNTM5NzQzMSwiZSI6MTYyMDIyMzQ2OSwicyI6ImIwYjRmY2E0N2U1OWZkM2UxYzZjOWY4MzkyMGMxNzM1Njc3NTE0MGQiLCJ2IjoxfQ"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/video/51125397431/dbc2e5507e/360p.mp4?s=eyJpIjo1MTEyNTM5NzQzMSwiZSI6MTYyMDIyNjYwMiwicyI6IjczZDk0MDBjYWEwZmFhYmUzYWUzMGRiMjU0ZGFjZDkwODFiMzhkMGYiLCJ2IjoxfQ"/>
     <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
     <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
     <displaycategories>
