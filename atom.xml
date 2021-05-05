@@ -7,14 +7,14 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2021-05-05T15:29:55Z</updated>
+  <updated>2021-05-05T16:43:52Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16211755626</id>
-    <published>2021-05-05T14:49:20Z</published>
-    <updated>2021-05-05T14:49:20Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/310199c8ba...6258df3c85"/>
+    <id>tag:github.com,2008:PushEvent/16213529871</id>
+    <published>2021-05-05T16:43:30Z</published>
+    <updated>2021-05-05T16:43:30Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/00e3e85319...53ef1c1512"/>
     <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
     <author>
       <name>davorg</name>
@@ -36,7 +36,7 @@
 
       &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
       &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T14:49:20Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+        &lt;relative-time datetime="2021-05-05T16:43:30Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
       &lt;/span&gt;
 
         &lt;div class="Box p-3 mt-2"&gt;
@@ -49,10 +49,10 @@
                   &lt;span title="davorg"&gt;
                     &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/6258df3c856b7ea44af04e075c173be156a8ca6f" rel="noreferrer"&gt;6258df3&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/53ef1c1512dbcfd9a61b4839f9d3180612da2e71" rel="noreferrer"&gt;53ef1c1&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
-                      Add default content for the index page.
+                      Archive CPAN logs
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
@@ -67,10 +67,10 @@
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16211747906</id>
-    <published>2021-05-05T14:48:51Z</published>
-    <updated>2021-05-05T14:48:51Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/83899ec5cc...310199c8ba"/>
+    <id>tag:github.com,2008:PushEvent/16213496375</id>
+    <published>2021-05-05T16:41:02Z</published>
+    <updated>2021-05-05T16:41:02Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/6cc448f304...00e3e85319"/>
     <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
     <author>
       <name>davorg</name>
@@ -92,7 +92,7 @@
 
       &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
       &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T14:48:51Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+        &lt;relative-time datetime="2021-05-05T16:41:02Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
       &lt;/span&gt;
 
         &lt;div class="Box p-3 mt-2"&gt;
@@ -105,10 +105,191 @@
                   &lt;span title="davorg"&gt;
                     &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/310199c8baf3395f575dc86e6d2ec24c066e4215" rel="noreferrer"&gt;310199c&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/00e3e853191a5f33bc53daf7d408cfd14b7f2bc3" rel="noreferrer"&gt;00e3e85&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
-                      Add a macro for "other links". Use it.
+                      Remove /docs from .gitignore
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/16213450915</id>
+    <published>2021-05-05T16:37:50Z</published>
+    <updated>2021-05-05T16:37:50Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/a22a8fdaad...6cc448f304"/>
+    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
+      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2021-05-05T16:37:50Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/6cc448f304f0a7cad24b82c37e1b6202f5e6f188" rel="noreferrer"&gt;6cc448f&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Add a web site builder workflow
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>DAVECROSS has released App-CPANModuleSite-0.0.1</title>
+    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/App-CPANModuleSite-0.0.1" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Automatically create a web site for a CPAN module.</div>
+    </content>
+    <author>
+      <name>DAVECROSS</name>
+    </author>
+    <id>https://metacpan.org/release/DAVECROSS/App-CPANModuleSite-0.0.1</id>
+    <published>2021-05-05T16:23:48Z</published>
+    <updated>2021-05-05T16:23:48Z</updated>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/16213136462</id>
+    <published>2021-05-05T16:15:37Z</published>
+    <updated>2021-05-05T16:15:37Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/ce9aa458c0...a22a8fdaad"/>
+    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
+      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2021-05-05T16:15:37Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/a22a8fdaad79e31fe422787f1aeec717132b5a0a" rel="noreferrer"&gt;a22a8fd&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Starting the web site for the web-site-building module
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/16213101643</id>
+    <published>2021-05-05T16:13:12Z</published>
+    <updated>2021-05-05T16:13:12Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/6258df3c85...ce9aa458c0"/>
+    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+
+        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+
+      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
+      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
+        &lt;relative-time datetime="2021-05-05T16:13:12Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2"&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/ce9aa458c03e15c22770a8657631e1faee2c1935" rel="noreferrer"&gt;ce9aa45&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Add the tiniest amount of documentation.
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
@@ -181,185 +362,6 @@
       <name>Sparks</name>
     </author>
     <id>https://musicbrainz.org/recording/01542e92-d86b-36bf-9460-e71e043a0aa2</id>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16211027380</id>
-    <published>2021-05-05T14:06:04Z</published>
-    <updated>2021-05-05T14:06:04Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/95e72c41ae...83899ec5cc"/>
-    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T14:06:04Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/83899ec5cc52cabe8cc9bd6294fbb64997abc6ac" rel="noreferrer"&gt;83899ec&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      First draft Makefile.PL
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/4481777a421b7d0cf521b9e036a82bf752e98624" rel="noreferrer"&gt;4481777&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Improved .gitignore
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16210995610</id>
-    <published>2021-05-05T14:04:10Z</published>
-    <updated>2021-05-05T14:04:10Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/c3d6d4d23f...95e72c41ae"/>
-    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T14:04:10Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/95e72c41ae6a20c298b113d2b03beedd46d316f7" rel="noreferrer"&gt;95e72c4&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Added File::ShareDir. Added local TT directories.
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16210981365</id>
-    <published>2021-05-05T14:03:18Z</published>
-    <updated>2021-05-05T14:03:18Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/ca0cbaa4fe...c3d6d4d23f"/>
-    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T14:03:18Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/c3d6d4d23fd335a245f46ec75c71c68409bbfdbb" rel="noreferrer"&gt;c3d6d4d&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Moved some stuff around
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>Happy birthday to the @guardian. 200 years old today. https://t.co/AKpMzp0fTT</title>
@@ -529,7 +531,7 @@ https://t.co/Lxnevaheq4</div>
       <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
     </author>
     <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
-    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/video/51125397431/dbc2e5507e/360p.mp4?s=eyJpIjo1MTEyNTM5NzQzMSwiZSI6MTYyMDIzMDM5MCwicyI6ImFkOTc3MzlhOTQ4YTBiNDI1OGVhM2EyNjI2Mjc4MjI5NTVlYjk2NjIiLCJ2IjoxfQ"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/video/51125397431/dbc2e5507e/360p.mp4?s=eyJpIjo1MTEyNTM5NzQzMSwiZSI6MTYyMDIzNDgyNiwicyI6ImUzYjk3MmFmZjM1ZWRjNWJmMmQzNjNiODdkZjhjYmVjYjA2MDYwZWUiLCJ2IjoxfQ"/>
     <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
     <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
     <displaycategories>
@@ -586,19 +588,6 @@ https://t.co/Lxnevaheq4</div>
     <id>https://metacpan.org/release/DAVECROSS/Template-Plugin-XML-Feed-v1.0.3</id>
     <published>2021-01-28T15:19:07Z</published>
     <updated>2021-01-28T15:19:07Z</updated>
-  </entry>
-  <entry>
-    <title>DAVECROSS has released XML-Feed-0.61</title>
-    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/XML-Feed-0.61" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">XML Syndication Feed Support</div>
-    </content>
-    <author>
-      <name>DAVECROSS</name>
-    </author>
-    <id>https://metacpan.org/release/DAVECROSS/XML-Feed-0.61</id>
-    <published>2021-01-28T14:25:56Z</published>
-    <updated>2021-01-28T14:25:56Z</updated>
   </entry>
   <entry>
     <title>2020 in Gigs</title>
