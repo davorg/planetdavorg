@@ -7,28 +7,108 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2021-05-06T05:28:24Z</updated>
+  <updated>2021-05-06T06:33:45Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
-  <entry>
-    <title>DAVECROSS has released App-CPANModuleSite-0.0.3</title>
-    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/App-CPANModuleSite-0.0.3" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Automatically create a web site for a CPAN module.</div>
-    </content>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:IssueCommentEvent/16221090697</id>
+    <published>2021-05-06T06:31:56Z</published>
+    <updated>2021-05-06T06:31:56Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/issues/1#issuecomment-833264662"/>
+    <title type="html">davorg commented on issue davorg/app-cpanmodulesite#1</title>
     <author>
-      <name>DAVECROSS</name>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
     </author>
-    <id>https://metacpan.org/release/DAVECROSS/App-CPANModuleSite-0.0.3</id>
-    <published>2021-05-05T18:19:56Z</published>
-    <updated>2021-05-05T18:19:56Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_comment" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- issue_comment --&gt;
+&lt;div class="d-flex border-bottom color-border-primary py-3"&gt;
+    &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div&gt;
+          &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+          
+          commented on
+          issue
+          &lt;a class="Link--primary text-bold" title="Undeclared configure_requires prerequisite File::ShareDir::Install" href="/davorg/app-cpanmodulesite/issues/1#issuecomment-833264662" rel="noreferrer"&gt;davorg/app-cpanmodulesite#1&lt;/a&gt;
+          &lt;span class="f6 color-text-tertiary ml-1"&gt;
+            &lt;relative-time datetime="2021-05-06T06:31:56Z" class="no-wrap"&gt;May 6, 2021&lt;/relative-time&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;div class="message markdown-body Box p-3 wb-break-all"&gt;
+      &lt;div class="f6 mb-1"&gt;
+        &lt;a title="Undeclared configure_requires prerequisite File::ShareDir::Install" class="Link--secondary" href="/davorg/app-cpanmodulesite/issues/1#issuecomment-833264662" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2021-05-06T06:31:56Z" class="no-wrap"&gt;May 6, 2021&lt;/relative-time&gt;&lt;/a&gt;
+      &lt;/div&gt;
+        &lt;p&gt;Ah, no. Yes, I see, it needs to be a CONFIGURE_PREREQ, not a BUILD_PREREQ.
+&lt;a class="commit-link" data-hovercard-type="commit" data-hovercard-url="https://github.com/davorg/app-cpanmodulesite/commit/c426b5a9ac63e72d2d0b8aaee088e7ace250b0d9/hovercard" href="https://github.com/davorg/app-cpanmodulesite/commit/c426b5a9ac63e72d2d0b8aaee088e7ace250b0d9" rel="noreferrer"&gt;&lt;tt&gt;c426b5a&lt;/tt&gt;&lt;/a&gt;
+Version 0.0.5 en route to CPAN&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:CreateEvent/16214777464</id>
-    <published>2021-05-05T18:19:46Z</published>
-    <updated>2021-05-05T18:19:46Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/tree/RELEASE_0.0.3"/>
-    <title type="html">davorg created a tag RELEASE_0.0.3 in davorg/app-cpanmodulesite</title>
+    <id>tag:github.com,2008:IssuesEvent/16221090724</id>
+    <published>2021-05-06T06:31:56Z</published>
+    <updated>2021-05-06T06:31:56Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/issues/1"/>
+    <title type="html">davorg closed an issue in davorg/app-cpanmodulesite</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_closed" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- issues --&gt;
+&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
+  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div&gt;
+            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            closed
+            an issue in
+            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
+          &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
+            &lt;relative-time datetime="2021-05-06T06:31:56Z" class="no-wrap"&gt;May 6, 2021&lt;/relative-time&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="Box p-3 wb-break-all"&gt;
+      &lt;svg height="16" aria-label="Issue" class="octicon octicon-issue-closed closed d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 0110.65-5.003.75.75 0 00.959-1.153 8 8 0 102.592 8.33.75.75 0 10-1.444-.407A6.5 6.5 0 011.5 8zM8 12a1 1 0 100-2 1 1 0 000 2zm0-8a.75.75 0 01.75.75v3.5a.75.75 0 11-1.5 0v-3.5A.75.75 0 018 4zm4.78 4.28l3-3a.75.75 0 00-1.06-1.06l-2.47 2.47-.97-.97a.749.749 0 10-1.06 1.06l1.5 1.5a.75.75 0 001.06 0z"&gt;&lt;/path&gt;&lt;/svg&gt;
+      &lt;div class="ml-4"&gt;
+        &lt;span class="f4 lh-condensed text-bold color-text-primary"&gt;
+          &lt;a title="Undeclared configure_requires prerequisite File::ShareDir::Install" class="color-text-primary" aria-label="Undeclared configure_requires prerequisite File::ShareDir::Install" href="/davorg/app-cpanmodulesite/issues/1" rel="noreferrer"&gt;Undeclared configure_requires prerequisite File::ShareDir::Install&lt;/a&gt;
+        &lt;/span&gt;
+        &lt;span class="f4 color-text-tertiary ml-1"&gt;#1&lt;/span&gt;
+          &lt;div class="dashboard-break-word lh-condensed mb-2 mt-1"&gt;
+            &lt;p&gt;Automatic builds fail if File::ShareDir::Install is not yet installed:
+&lt;code&gt;Output from '/usr/local/bin/perl Makefile.PL': Can't locate File/ShareDir/In…&lt;/code&gt;&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;div class="f6 color-text-secondary mt-1"&gt;
+            2 comments
+          &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:CreateEvent/16221076309</id>
+    <published>2021-05-06T06:30:28Z</published>
+    <updated>2021-05-06T06:30:28Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/tree/RELEASE_0.0.5"/>
+    <title type="html">davorg created a tag RELEASE_0.0.5 in davorg/app-cpanmodulesite</title>
     <author>
       <name>davorg</name>
       <email>dave@davecross.co.uk</email>
@@ -49,7 +129,7 @@
             in
             &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
             &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-              &lt;relative-time datetime="2021-05-05T18:19:46Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+              &lt;relative-time datetime="2021-05-06T06:30:28Z" class="no-wrap"&gt;May 6, 2021&lt;/relative-time&gt;
             &lt;/span&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -57,12 +137,12 @@
     &lt;div class="Box p-3 mt-2"&gt;
       &lt;div&gt;
         &lt;div class="f4 lh-condensed text-bold color-text-primary"&gt;
-            &lt;a class="Link--primary text-bold" title="RELEASE_0.0.3" href="/davorg/app-cpanmodulesite/tree/RELEASE_0.0.3" rel="noreferrer"&gt;RELEASE_0.0.3&lt;/a&gt; in &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
+            &lt;a class="Link--primary text-bold" title="RELEASE_0.0.5" href="/davorg/app-cpanmodulesite/tree/RELEASE_0.0.5" rel="noreferrer"&gt;RELEASE_0.0.5&lt;/a&gt; in &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
         &lt;/div&gt;
 
 
           &lt;p class="f6 color-text-secondary mt-2 mb-0"&gt;
-            &lt;span&gt;Updated May 5&lt;/span&gt;
+            &lt;span&gt;Updated May 6&lt;/span&gt;
           &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -71,10 +151,10 @@
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16214685231</id>
-    <published>2021-05-05T18:12:28Z</published>
-    <updated>2021-05-05T18:12:28Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/f6243e13a4...6f37277c91"/>
+    <id>tag:github.com,2008:PushEvent/16221074437</id>
+    <published>2021-05-06T06:30:17Z</published>
+    <updated>2021-05-06T06:30:17Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/d95f3f3400...c426b5a9ac"/>
     <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
     <author>
       <name>davorg</name>
@@ -96,77 +176,7 @@
 
       &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
       &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T18:12:28Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/6f37277c91a8ffb4357f00235f42d034b4b3d5d7" rel="noreferrer"&gt;6f37277&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Ignore the CPAN packages
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/b9db766d4c116b19a37b5014431a79f6418a5349" rel="noreferrer"&gt;b9db766&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Generate a (simple) site for this module.
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-                &lt;li class="f6 mt-2"&gt;
-                  &lt;a class="Link--secondary" href="/davorg/app-cpanmodulesite/compare/f6243e13a4...6f37277c91" rel="noreferrer"&gt;2 more commits »&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16214492390</id>
-    <published>2021-05-05T17:57:17Z</published>
-    <updated>2021-05-05T17:57:17Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/ad4ed4247b...f6243e13a4"/>
-    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T17:57:17Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
+        &lt;relative-time datetime="2021-05-06T06:30:17Z" class="no-wrap"&gt;May 6, 2021&lt;/relative-time&gt;
       &lt;/span&gt;
 
         &lt;div class="Box p-3 mt-2"&gt;
@@ -179,10 +189,10 @@
                   &lt;span title="davorg"&gt;
                     &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/f6243e13a4e2fa27e061c47ba4d3414f427db88d" rel="noreferrer"&gt;f6243e1&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/c426b5a9ac63e72d2d0b8aaee088e7ace250b0d9" rel="noreferrer"&gt;c426b5a&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
-                      Rejig the log archiving a bit
+                      Make File::Share::Install a configure prereq
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
@@ -197,116 +207,56 @@
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16214447864</id>
-    <published>2021-05-05T17:53:52Z</published>
-    <updated>2021-05-05T17:53:52Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/8469486a9e...ad4ed4247b"/>
-    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
+    <id>tag:github.com,2008:IssueCommentEvent/16221035901</id>
+    <published>2021-05-06T06:26:26Z</published>
+    <updated>2021-05-06T06:26:26Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/issues/2#issuecomment-833262089"/>
+    <title type="html">davorg commented on issue davorg/app-cpanmodulesite#2</title>
     <author>
       <name>davorg</name>
       <email>dave@davecross.co.uk</email>
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+    <content type="html">&lt;div class="issues_comment" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- issue_comment --&gt;
+&lt;div class="d-flex border-bottom color-border-primary py-3"&gt;
+    &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T17:53:52Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/ad4ed4247bfa596907a197598d4592d29cf82df1" rel="noreferrer"&gt;ad4ed42&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Install missing module
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div&gt;
+          &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+          
+          commented on
+          issue
+          &lt;a class="Link--primary text-bold" title="MetaCPAN::Client v2 required" href="/davorg/app-cpanmodulesite/issues/2#issuecomment-833262089" rel="noreferrer"&gt;davorg/app-cpanmodulesite#2&lt;/a&gt;
+          &lt;span class="f6 color-text-tertiary ml-1"&gt;
+            &lt;relative-time datetime="2021-05-06T06:26:26Z" class="no-wrap"&gt;May 6, 2021&lt;/relative-time&gt;
+          &lt;/span&gt;
         &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;div class="message markdown-body Box p-3 wb-break-all"&gt;
+      &lt;div class="f6 mb-1"&gt;
+        &lt;a title="MetaCPAN::Client v2 required" class="Link--secondary" href="/davorg/app-cpanmodulesite/issues/2#issuecomment-833262089" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2021-05-06T06:26:26Z" class="no-wrap"&gt;May 6, 2021&lt;/relative-time&gt;&lt;/a&gt;
+      &lt;/div&gt;
+        &lt;p&gt;Thanks. Release 0.0.4 en route to CPAN now.&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16214408824</id>
-    <published>2021-05-05T17:50:50Z</published>
-    <updated>2021-05-05T17:50:50Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/app-cpanmodulesite/compare/b63eb1b618...8469486a9e"/>
-    <title type="html">davorg pushed to main in davorg/app-cpanmodulesite</title>
+  <entry>
+    <title>DAVECROSS has released App-CPANModuleSite-0.0.3</title>
+    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/App-CPANModuleSite-0.0.3" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Automatically create a web site for a CPAN module.</div>
+    </content>
     <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
+      <name>DAVECROSS</name>
     </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-3"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/app-cpanmodulesite" rel="noreferrer"&gt;davorg/app-cpanmodulesite&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-05-05T17:50:50Z" class="no-wrap"&gt;May 5, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/app-cpanmodulesite/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/app-cpanmodulesite/commit/8469486a9e18795a77f985b5c194d93382cfedaf" rel="noreferrer"&gt;8469486&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Install some useful libraries
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
+    <id>https://metacpan.org/release/DAVECROSS/App-CPANModuleSite-0.0.3</id>
+    <published>2021-05-05T18:19:56Z</published>
+    <updated>2021-05-05T18:19:56Z</updated>
   </entry>
   <entry>
     <title>Let's all wash our jeans in memoriam. https://t.co/2bdmRA4I5s</title>
@@ -536,7 +486,7 @@ https://t.co/Lxnevaheq4</div>
       <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
     </author>
     <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
-    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/video/51125397431/dbc2e5507e/360p.mp4?s=eyJpIjo1MTEyNTM5NzQzMSwiZSI6MTYyMDI4MDY5OCwicyI6ImMwMDVmZmYxNzY3MjBkY2MxMWY0MjgyNjQ5MzAwNTc5MGRmMzM2NjIiLCJ2IjoxfQ"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/video/51125397431/dbc2e5507e/360p.mp4?s=eyJpIjo1MTEyNTM5NzQzMSwiZSI6MTYyMDI4NDYxOCwicyI6Ijg4OGIyMDgzZmI5MTQ1OTZhY2E2NjkxMjQxZTQ4NDBlYWMxNDM0NjUiLCJ2IjoxfQ"/>
     <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
     <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
     <displaycategories>
