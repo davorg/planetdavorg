@@ -7,68 +7,142 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2021-05-21T12:09:01Z</updated>
+  <updated>2021-05-21T13:17:29Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
-  <entry>
-    <title>Razor Love - Neil Young</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Razor Love - Neil Young</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Neil+Young/_/Razor+Love" type="text/html"/>
-    <updated>2021-05-21T11:09:55Z</updated>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:ForkEvent/16456505403</id>
+    <published>2021-05-21T13:16:51Z</published>
+    <updated>2021-05-21T13:16:51Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/Perl-LanguageServer"/>
+    <title type="html">davorg forked davorg/Perl-LanguageServer from richterger/Perl-LanguageServer</title>
     <author>
-      <name>Neil Young</name>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
     </author>
-    <id>https://musicbrainz.org/recording/02943c3d-6f48-45ef-affc-8412d3166f6c</id>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="fork" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- fork --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-secondary py-3"&gt; 
+    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+      &lt;div&gt;
+        &lt;div class="d-flex flex-items-baseline"&gt;
+          &lt;div&gt;
+            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+            
+            forked
+            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" title="davorg/Perl-LanguageServer" href="/davorg/Perl-LanguageServer" rel="noreferrer"&gt;davorg/Perl-LanguageServer&lt;/a&gt;
+            from
+            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/richterger/Perl-LanguageServer" rel="noreferrer"&gt;richterger/Perl-LanguageServer&lt;/a&gt;
+            &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
+              &lt;relative-time datetime="2021-05-21T13:16:51Z" class="no-wrap"&gt;May 21, 2021&lt;/relative-time&gt;
+            &lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="Box p-3 mt-2"&gt;
+
+        &lt;div&gt;
+          &lt;div class="f4 lh-condensed text-bold color-text-primary"&gt;
+            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/richterger/Perl-LanguageServer" rel="noreferrer"&gt;richterger/Perl-LanguageServer&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="dashboard-break-word color-text-secondary mt-1 repo-description"&gt;
+            &lt;p&gt;Language Server for Perl&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;p class="f6 color-text-secondary mt-2 mb-0"&gt;
+              &lt;span class="d-inline-block color-text-secondary mr-3"&gt;
+                &lt;span class="ml-0"&gt;
+  &lt;span class="repo-language-color" style="background-color: #0298c3"&gt;&lt;/span&gt;
+  &lt;span itemprop="programmingLanguage"&gt;Perl&lt;/span&gt;
+&lt;/span&gt;
+
+              &lt;/span&gt;
+
+              &lt;span class="d-inline-block mr-3"&gt;
+                  &lt;a class="Link--muted" href="/richterger/Perl-LanguageServer/stargazers" rel="noreferrer"&gt;
+                    &lt;svg class="octicon octicon-star mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"&gt;&lt;path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"&gt;&lt;/path&gt;&lt;/svg&gt;101
+&lt;/a&gt;              &lt;/span&gt;
+
+
+              &lt;span&gt;Updated May 20&lt;/span&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <title>Southern Man - Neil Young</title>
+    <title>Dark Heart - Tunng</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Southern Man - Neil Young</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Dark Heart - Tunng</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Neil+Young/_/Southern+Man" type="text/html"/>
-    <updated>2021-05-21T11:04:23Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Tunng/_/Dark+Heart" type="text/html"/>
+    <updated>2021-05-21T13:02:26Z</updated>
     <author>
-      <name>Neil Young</name>
+      <name>Tunng</name>
     </author>
-    <id>https://musicbrainz.org/recording/00771feb-3d86-4d2d-9f41-96df604e6336</id>
+    <id>https://musicbrainz.org/recording/5a70cba7-c372-4443-b62e-2ead16485f5f</id>
   </entry>
   <entry>
-    <title>After the Gold Rush - Neil Young</title>
+    <title>Dream In - Tunng</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">After the Gold Rush - Neil Young</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Dream In - Tunng</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Neil+Young/_/After+the+Gold+Rush" type="text/html"/>
-    <updated>2021-05-21T11:00:36Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Tunng/_/Dream+In" type="text/html"/>
+    <updated>2021-05-21T12:57:46Z</updated>
     <author>
-      <name>Neil Young</name>
+      <name>Tunng</name>
     </author>
-    <id>https://musicbrainz.org/recording/06194eff-6eeb-4b27-a187-c3a789ae7b78</id>
+    <id>https://musicbrainz.org/recording/221f282c-e796-4e37-b3cb-c313097e427c</id>
   </entry>
   <entry>
-    <title>Cinnamon Girl - 2009 Remaster - Neil Young</title>
+    <title>Tale from Black - Tunng</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Cinnamon Girl - 2009 Remaster - Neil Young</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Tale from Black - Tunng</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Neil+Young/_/Cinnamon+Girl+-+2009+Remaster" type="text/html"/>
-    <updated>2021-05-21T10:57:35Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Tunng/_/Tale+from+Black" type="text/html"/>
+    <updated>2021-05-21T12:52:10Z</updated>
     <author>
-      <name>Neil Young</name>
+      <name>Tunng</name>
     </author>
-    <id>https://musicbrainz.org/recording/</id>
+    <id>https://musicbrainz.org/recording/02937ed5-caf7-3f8c-a5de-6d11a1fb140f</id>
   </entry>
   <entry>
-    <title>Only Love Can Break Your Heart - Neil Young</title>
+    <title>ABOP - Tunng</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Only Love Can Break Your Heart - Neil Young</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">ABOP - Tunng</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Neil+Young/_/Only+Love+Can+Break+Your+Heart" type="text/html"/>
-    <updated>2021-05-21T10:54:26Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Tunng/_/ABOP" type="text/html"/>
+    <updated>2021-05-21T12:47:36Z</updated>
     <author>
-      <name>Neil Young</name>
+      <name>Tunng</name>
     </author>
-    <id>https://musicbrainz.org/recording/074e1e77-1579-47f4-9ce3-1415fa087d2d</id>
+    <id>https://musicbrainz.org/recording/23c3f132-333d-45c7-b8f9-64d70a2cde31</id>
+  </entry>
+  <entry>
+    <title>Eating the Dead - Tunng</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Eating the Dead - Tunng</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Tunng/_/Eating+the+Dead" type="text/html"/>
+    <updated>2021-05-21T12:40:21Z</updated>
+    <author>
+      <name>Tunng</name>
+    </author>
+    <id>https://musicbrainz.org/recording/718ce5c9-982b-4fd7-81cb-0ece5773888b</id>
+  </entry>
+  <entry>
+    <title>@wantarray To be honest, HTML::TreeBuilder made it rather harder than I expected. I think there are better parsers… https://t.co/WRBE0k6qM3</title>
+    <link rel="alternate" href="https://twitter.com/@davorg/status/1395716477085536261" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">@wantarray To be honest, HTML::TreeBuilder made it rather harder than I expected. I think there are better parsers… https://t.co/WRBE0k6qM3</div>
+    </content>
+    <updated>2021-05-21T12:21:53Z</updated>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
     <id>tag:github.com,2008:PushEvent/16454110665</id>
@@ -306,63 +380,6 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PullRequestEvent/16406227001</id>
-    <published>2021-05-18T14:41:48Z</published>
-    <updated>2021-05-18T14:41:48Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlsphere/pull/9"/>
-    <title type="html">davorg merged a pull request in davorg/perlsphere</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_merged" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- pull_request --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;div class="d-flex flex-items-baseline"&gt;
-        &lt;div&gt;
-            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-            
-            merged
-            a pull request in
-            &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/perlsphere" rel="noreferrer"&gt;davorg/perlsphere&lt;/a&gt;
-          &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-            &lt;relative-time datetime="2021-05-18T14:41:48Z" class="no-wrap"&gt;May 18, 2021&lt;/relative-time&gt;
-          &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="Box p-3 my-2"&gt;
-      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request merged d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
-
-      &lt;div class="ml-4"&gt;
-        &lt;div&gt;
-          &lt;span class="f4 lh-condensed text-bold color-text-primary"&gt;&lt;a class="color-text-primary text-bold" aria-label="Remove Dave's Free Press until we can fix the problems." href="/davorg/perlsphere/pull/9" rel="noreferrer"&gt;Remove Dave's Free Press until we can fix the problems.&lt;/a&gt;&lt;/span&gt;
-          &lt;span class="f4 color-text-tertiary ml-1"&gt;#9&lt;/span&gt;
-            &lt;div class="lh-condensed mb-2 mt-1"&gt;
-              &lt;p&gt;Old posts seem to be reposted annoyingly frequently.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="1 commit with 0 additions and 1 deletion"&gt;
-            &lt;span class="color-text-success"&gt;+0&lt;/span&gt;
-            &lt;span class="color-text-danger"&gt;-1&lt;/span&gt;
-          &lt;/div&gt;
-
-          &lt;div class="d-inline-block f6 color-text-secondary ml-3"&gt;
-            1 comment
-          &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
   <entry>
     <title>@lovesexypodcast @OvidPerl I have a feeling that I'm going to spend a lot of this morning listening to The Shamen.… https://t.co/5C2ps1jNtk</title>
     <link rel="alternate" href="https://twitter.com/@davorg/status/1394222906159292418" type="text/html"/>
@@ -382,14 +399,6 @@ https://t.co/qWfrXbFiDf</title>
 https://t.co/qWfrXbFiDf</div>
     </content>
     <updated>2021-05-17T09:14:56Z</updated>
-  </entry>
-  <entry>
-    <title>@Mrdini Yeah, that's right. This is *not* the NHS Covid app.</title>
-    <link rel="alternate" href="https://twitter.com/@davorg/status/1393962844840923138" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">@Mrdini Yeah, that's right. This is *not* the NHS Covid app.</div>
-    </content>
-    <updated>2021-05-16T16:13:35Z</updated>
   </entry>
   <entry>
     <title>DAVECROSS has released App-CPANModuleSite-0.0.9</title>
@@ -528,7 +537,7 @@ https://t.co/qWfrXbFiDf</div>
       <flickr:buddyicon>https://farm5.staticflickr.com/4759/buddyicons/39021241@N00.jpg?1516110776#39021241@N00</flickr:buddyicon>
     </author>
     <link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en"/>
-    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/video/51125397431/dbc2e5507e/360p.mp4?s=eyJpIjo1MTEyNTM5NzQzMSwiZSI6MTYyMTYwMDczNiwicyI6IjIxYjVhYmU3Yjc5ZDEwZjdjYzc2ZjRkYzRhOTZiMDY4MDViNmI2NDkiLCJ2IjoxfQ"/>
+    <link rel="enclosure" type="image/jpeg" href="https://live.staticflickr.com/video/51125397431/dbc2e5507e/360p.mp4?s=eyJpIjo1MTEyNTM5NzQzMSwiZSI6MTYyMTYwNDg0NCwicyI6IjVjMDBlZTE3YmRlMGRjNmE0NTgyMDIxZTBlZTc3MGQ5MzU0N2RmNDQiLCJ2IjoxfQ"/>
     <category term="ifttt" scheme="https://www.flickr.com/photos/tags/"/>
     <category term="instagram" scheme="https://www.flickr.com/photos/tags/"/>
     <displaycategories>
