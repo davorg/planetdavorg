@@ -7,9 +7,48 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2021-06-08T06:15:59Z</updated>
+  <updated>2021-06-08T07:19:02Z</updated>
   <link rel="self" href="http://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>http://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:IssueCommentEvent/16684944070</id>
+    <published>2021-06-08T06:58:22Z</published>
+    <updated>2021-06-08T06:58:22Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/szabgab/perlweekly/issues/368#issuecomment-856507862"/>
+    <title type="html">davorg commented on issue szabgab/perlweekly#368</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_comment" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- issue_comment --&gt;
+&lt;div class="d-flex border-bottom color-border-primary py-3"&gt;
+    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div&gt;
+          &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+          
+          commented on
+          issue
+          &lt;a class="Link--primary text-bold" title="More useful RSS" href="/szabgab/perlweekly/issues/368#issuecomment-856507862" rel="noreferrer"&gt;szabgab/perlweekly#368&lt;/a&gt;
+          &lt;span class="f6 color-text-tertiary ml-1"&gt;
+            &lt;relative-time datetime="2021-06-08T06:58:22Z" class="no-wrap"&gt;Jun 8, 2021&lt;/relative-time&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;div class="message markdown-body Box p-3 wb-break-all"&gt;
+      &lt;div class="f6 mb-1"&gt;
+        &lt;a title="More useful RSS" class="Link--secondary" href="/szabgab/perlweekly/issues/368#issuecomment-856507862" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2021-06-08T06:58:22Z" class="no-wrap"&gt;Jun 8, 2021&lt;/relative-time&gt;&lt;/a&gt;
+      &lt;/div&gt;
+        &lt;p&gt;I can take a look and see how hard it'll be :-)&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
     <id>tag:github.com,2008:IssuesEvent/16675044970</id>
     <published>2021-06-07T15:13:47Z</published>
@@ -263,62 +302,6 @@
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
                       Install dependencies in Travis
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/16670776569</id>
-    <published>2021-06-07T10:33:26Z</published>
-    <updated>2021-06-07T10:33:26Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/succession/compare/44fdbbc3da...db3278e5d4"/>
-    <title type="html">davorg pushed to master in davorg/succession</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;&lt;!-- push --&gt;
-&lt;div class="d-flex border-bottom color-border-secondary py-3"&gt;
-  &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-
-        &lt;a class="branch-name" href="/davorg/succession/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-
-      &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg/succession" rel="noreferrer"&gt;davorg/succession&lt;/a&gt;
-      &lt;span class="f6 color-text-tertiary no-wrap ml-1"&gt;
-        &lt;relative-time datetime="2021-06-07T10:33:26Z" class="no-wrap"&gt;Jun 7, 2021&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2"&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/succession/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/succession/commit/db3278e5d4ada9d4f452cf8b1aa1174491c66428" rel="noreferrer"&gt;db3278e&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Update Google ads code
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
