@@ -26,7 +26,6 @@ jobs:
 
     - name: Create pages
       run: |
-        mkdir -p docs
         perlanet
 
     - name: Commit new page
