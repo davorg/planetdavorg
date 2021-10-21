@@ -7,9 +7,47 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2021-10-21T15:09:29Z</updated>
+  <updated>2021-10-21T16:14:25Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:IssueCommentEvent/18540009406</id>
+    <published>2021-10-21T15:12:23Z</published>
+    <updated>2021-10-21T15:12:23Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/pull/10#issuecomment-948715530"/>
+    <title type="html">davorg commented on pull request davorg/perlschool#10</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_comment" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
+&lt;!-- issue_comment --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-secondary py-3"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div class=""&gt;
+          &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+          
+          commented on
+          &lt;a class="Link--primary text-bold" title="Retire &amp;quot;Preparing for Perl 7&amp;quot;" href="/davorg/perlschool/pull/10#issuecomment-948715530" rel="noreferrer"&gt;davorg/perlschool#10&lt;/a&gt;
+            &lt;span class="f6 color-fg-muted ml-1"&gt;
+              &lt;relative-time datetime="2021-10-21T15:12:23Z" class="no-wrap"&gt;Oct 21, 2021&lt;/relative-time&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;div class="message markdown-body Box p-3 wb-break-all "&gt;
+      &lt;div class="f6 mb-1"&gt;
+        &lt;a title="Retire &amp;quot;Preparing for Perl 7&amp;quot;" class="Link--secondary" href="/davorg/perlschool/pull/10#issuecomment-948715530" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2021-10-21T15:12:23Z" class="no-wrap"&gt;Oct 21, 2021&lt;/relative-time&gt;&lt;/a&gt;
+      &lt;/div&gt;
+        &lt;p&gt;I think your problem was that the &lt;code&gt;books.list&lt;/code&gt; was just there to seed the SQLite database &lt;code&gt;perlschool.db&lt;/code&gt;. So changing the text file isn't going to cha…&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>@briandfoy_perl WSL has been my main development environment for about a year now. I've been very happy with it. An… https://t.co/QObnfCFV3v</title>
     <link rel="alternate" href="https://twitter.com/davorg/status/1451203126778728456" type="text/html"/>
@@ -322,44 +360,6 @@ I've annotated it as "retired", but if it's easier to simply remove it from…&l
       <div xmlns="http://www.w3.org/1999/xhtml">@RoundhouseLDN I hope you're deleting tonight's start time. There are still hundreds of us outside</div>
     </content>
     <updated>2021-10-20T19:28:57Z</updated>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:IssueCommentEvent/18519214303</id>
-    <published>2021-10-20T13:31:03Z</published>
-    <updated>2021-10-20T13:31:03Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/rel-window/pull/1#issuecomment-947670527"/>
-    <title type="html">davorg commented on pull request davorg/rel-window#1</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_comment" data-test-selector="visible-event"&gt;&lt;div class="body"&gt;
-&lt;!-- issue_comment --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-secondary py-3"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
-        &lt;div class=""&gt;
-          &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-          
-          commented on
-          &lt;a class="Link--primary text-bold" title="Update index.html" href="/davorg/rel-window/pull/1#issuecomment-947670527" rel="noreferrer"&gt;davorg/rel-window#1&lt;/a&gt;
-            &lt;span class="f6 color-fg-muted ml-1"&gt;
-              &lt;relative-time datetime="2021-10-20T13:31:03Z" class="no-wrap"&gt;Oct 20, 2021&lt;/relative-time&gt;
-            &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;div class="message markdown-body Box p-3 wb-break-all "&gt;
-      &lt;div class="f6 mb-1"&gt;
-        &lt;a title="Update index.html" class="Link--secondary" href="/davorg/rel-window/pull/1#issuecomment-947670527" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2021-10-20T13:31:03Z" class="no-wrap"&gt;Oct 20, 2021&lt;/relative-time&gt;&lt;/a&gt;
-      &lt;/div&gt;
-        &lt;p&gt;Can you please explain the thought behind these changes? It seems to me that the CSS changes are tiny and probably undetectable and the text change…&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>♫ My Top 5 #lastfm artists: The Staves (85), Penguin Cafe Orchestra (25), Ani DiFranco (24), The Killers (15) &amp;amp; Lan… https://t.co/H7ruO3uiqQ</title>
