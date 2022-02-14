@@ -7,9 +7,47 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2022-02-14T11:09:16Z</updated>
+  <updated>2022-02-14T12:09:18Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:IssueCommentEvent/20243775339</id>
+    <published>2022-02-14T11:46:50Z</published>
+    <updated>2022-02-14T11:46:50Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/richterger/Perl-LanguageServer/issues/89#issuecomment-1038989973"/>
+    <title type="html">davorg commented on issue richterger/Perl-LanguageServer#89</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_comment"&gt;&lt;div class="body"&gt;
+&lt;!-- issue_comment --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div class=""&gt;
+          &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+          
+          commented on
+          &lt;a class="Link--primary text-bold" title="Language Server dependency  IO::AIO installation is failing on Windows 10" href="/richterger/Perl-LanguageServer/issues/89#issuecomment-1038989973" rel="noreferrer"&gt;richterger/Perl-LanguageServer#89&lt;/a&gt;
+            &lt;span class="f6 color-fg-muted ml-1"&gt;
+              &lt;relative-time datetime="2022-02-14T11:46:50Z" class="no-wrap"&gt;Feb 14, 2022&lt;/relative-time&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;div class="message markdown-body Box p-3 wb-break-all "&gt;
+      &lt;div class="f6 mb-1"&gt;
+        &lt;a title="Language Server dependency  IO::AIO installation is failing on Windows 10" class="Link--secondary" href="/richterger/Perl-LanguageServer/issues/89#issuecomment-1038989973" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2022-02-14T11:46:50Z" class="no-wrap"&gt;Feb 14, 2022&lt;/relative-time&gt;&lt;/a&gt;
+      &lt;/div&gt;
+        &lt;p&gt;I've just come across this problem too. In my opinion, the best solution is to migrate away from relying on Lehmannware. This CPAN author is known …&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>In the meantime, I'll be over here listening to the Sugarhill Gang and Grandmaster Flash.</title>
     <link rel="alternate" href="https://twitter.com/davorg/status/1493172146473996292" type="text/html"/>
@@ -350,72 +388,6 @@
       <div xmlns="http://www.w3.org/1999/xhtml">Almost forgot that it's Darwin Day today. Hope you've all been doing some top quality evolving. #DarwinDay</div>
     </content>
     <updated>2022-02-12T18:01:18Z</updated>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/20217831211</id>
-    <published>2022-02-12T17:43:04Z</published>
-    <updated>2022-02-12T17:43:04Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/daveknowslondon/compare/084bf6847d...389aefab39"/>
-    <title type="html">davorg pushed to master in davorg/daveknowslondon</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
-    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class=""&gt;
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/daveknowslondon/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/daveknowslondon" rel="noreferrer"&gt;davorg/daveknowslondon&lt;/a&gt;
-        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
-          &lt;relative-time datetime="2022-02-12T17:43:04Z" class="no-wrap"&gt;Feb 12, 2022&lt;/relative-time&gt;
-        &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 "&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/daveknowslondon/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/daveknowslondon/commit/389aefab3923b41ff76b914c3bec5a47757d9dd7" rel="noreferrer"&gt;389aefa&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Merge pull request &lt;a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1134342385" data-permission-text="Title is private" data-url="https://github.com/davorg/daveknowslondon/issues/15" data-hovercard-type="pull_request" data-hovercard-url="/davorg/daveknowslondon/pull/15/hovercard" href="https://github.com/davorg/daveknowslondon/pull/15" rel="noreferrer"&gt;#15&lt;/a&gt; from davorg/dependabot/npm_and_yarn/follow-red…
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="dependabot"&gt;
-                    &lt;a class="d-inline-block" href="/apps/dependabot" rel="noreferrer"&gt;&lt;img class="mr-1" src="https://avatars.githubusercontent.com/in/29110?s=32&amp;amp;v=4" width="16" height="16" alt="@dependabot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/daveknowslondon/commit/8d61f9d543162583ae5fa56ad516f9bb8011554f" rel="noreferrer"&gt;8d61f9d&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Bump follow-redirects from 1.14.7 to 1.14.8
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <title>Clapham Common</title>
