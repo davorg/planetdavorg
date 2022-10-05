@@ -7,10 +7,10 @@ author:
 entries: 30
 opml: opml.xml
 page:
-  file: index.html
+  file: docs/index.html
   template: index.tt
 feed:
-  file: atom.xml
+  file: docs/atom.xml
   format: Atom
 cache_dir: /tmp/davorg
 feeds:
