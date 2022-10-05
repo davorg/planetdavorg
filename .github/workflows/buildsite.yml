@@ -10,19 +10,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: davorg/perl-perlanet:latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Install libraries
-      run: |
-          sudo apt-get update -y
-          sudo apt-get install -y cpanminus libtidy-dev libxml++2.6-dev libhtml-tidy-perl
-
-    - name: Install modules
-      run: |
-          sudo cpanm --installdeps --notest .
 
     - name: Create pages
       run: |
@@ -35,7 +27,7 @@ jobs:
         echo $GIT_STATUS
         git config --global user.name 'Dave Cross'
         git config --global user.email 'dave@dave.org.uk'
-        git add *
+        git add docs/*
         if [ "$GIT_STATUS" != "" ]; then git commit -m "Automated Web page generation"; fi
         if [ "$GIT_STATUS" != "" ]; then git push; fi
 
