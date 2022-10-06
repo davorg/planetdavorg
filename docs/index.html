@@ -57,14 +57,108 @@ body {
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Air/_/Kelly+Watch+the+Stars">Kelly Watch the Stars - Air</a></h2>
+              <h2><a href="https://www.last.fm/music/Aim/_/The+Girl+Who+Fell+Through+the+Ice">The Girl Who Fell Through the Ice - Aim</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
-              <p class="text-right"><small>Published by Air
-     on Thursday 06 October 2022 09:00</small></p>
+              <p class="text-right"><small>Published by Aim
+     on Thursday 06 October 2022 09:59</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Unknown+Mortal+Orchestra/_/So+Good+at+Being+in+Trouble">So Good at Being in Trouble - Unknown Mortal Orchestra</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by Unknown Mortal Orchestra
+     on Thursday 06 October 2022 09:56</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Portishead/_/It+Could+Be+Sweet">It Could Be Sweet - Portishead</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by Portishead
+     on Thursday 06 October 2022 09:51</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://twitter.com/davorg/status/1577958635824726016">RT @perlhacks: How and why I created a Docker container for Perlanet.
+
+https://t.co/XujXlW3pcH</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">twitter</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Thursday 06 October 2022 09:47</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Lemon+Jelly/_/In+The+Bath">In The Bath - Lemon Jelly</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by Lemon Jelly
+     on Thursday 06 October 2022 09:45</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p>I’m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain <a href="https://metacpan.org/pod/perlanet">perlanet</a> (a Perl program for aggregating web feeds into a new feed – and building a web site based on that new feed) and I use it to build <a href="https://theplanetarium.org/">a few sites on topics I’m interested in</a>.</p>
+<p>Last year, I worked out a way to use GitHub Actions to <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">rebuild these sites automatically</a> every few hours – thereby enabling me to host the sites on GitHub Pages (I still think it’s a useful technique, but I sometimes worry slightly about the large number of commits those repos have – someone at GitHub must surely notice one day!)</p>
+<p>Yesterday, I was doing some light maintenance on one of those sites when I realised that each rebuild of these sites was taking a significant time (by which I mean four or five minutes) and started wondering if there was a way to speed them up and use less of GitHub’s resources. The problem is that Perlanet is a pretty hefty module and each rebuild was installing that module (and, therefore, dozens of other modules) on a pristine Ubuntu container.</p>
+<p>When you say it like that, the solution is obvious.</p>
+<p>You don’t need to run your GitHub Actions on the standard containers that GitHub supplies. You can run them on any container that’s available from any public container hosting service. So the solution was to build a Perlanet container and run the jobs using that instead. So that’s how I spent an hour or so yesterday.</p>
+<p>Here’s the Dockerfile I ended up with:</p><pre class="urvanov-syntax-highlighter-plain-tag">FROM perl:latest
+
+RUN apt-get update &amp;&amp; \
+    apt-get -y upgrade &amp;&amp; \ 
+    apt-get install -y build-essential &amp;&amp; \
+    apt-get install -y cpanminus libtidy-dev libxml++2.6-dev libhtml-tidy-perl &amp;&amp; \
+    cpanm --notest Test::Exception &amp;&amp; \
+    cpanm --notest Perlanet &amp;&amp; \
+    cpanm --notest LWP::Protocol::https</pre><p>It’s (obviously) <a href="https://github.com/davorg/perl-perlanet-docker">available on GitHub</a> in case anyone wants to improve on my rather ropey knowledge of Docker.</p>
+<p>I explicitly install Test::Exception because HTML::Tidy (one of Perlanet’s pre-requisites) needs it and I can’t work out why the standard installation procedure isn’t installing it. And while, LWP::Protocol::https is, strictly speaking, required by Perlanet, you wouldn’t get very far on the modern web if you only accessed web feeds that are available over HTTP.</p>
+<p>A little bit of Docker Hub set-up and the container is <a href="https://hub.docker.com/r/davorg/perl-perlanet">available for everyone to use</a> (and rebuilt automatically whenever I commit to the repo).</p>
+<p>It was then just a case of changing my GitHub Actions to use my container. Here’s an example of <a href="https://github.com/davorg/planetdavorg/commit/5b65ce407e89dd16e74ad4b417b104c43dca96ef">one of the commits</a> that did that.</p>
+<p>I realise I’m pretty late to the party here, but I think this is a useful pattern. If you have a Perl library (or, indeed, any other software) that exists to provide a service to users then it’s a great idea to provide a containerised version of that software.</p>
+<p>And I’m happy to report that my site rebuilds have gone from 4-5 minutes to about 45 seconds.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">perl hacks</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Thursday 06 October 2022 09:43</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Jos%C3%A9+Gonz%C3%A1lez/_/Heartbeats">Heartbeats - José González</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by José González
+     on Thursday 06 October 2022 09:42</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -345,54 +439,6 @@ body {
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Air/_/Kelly+Watch+the+Stars">Kelly Watch the Stars - Air</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Air
-     on Wednesday 05 October 2022 17:03</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Portishead/_/It+Could+Be+Sweet">It Could Be Sweet - Portishead</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Portishead
-     on Wednesday 05 October 2022 16:58</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Laura+Marling/_/Ghosts">Ghosts - Laura Marling</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Laura Marling
-     on Wednesday 05 October 2022 16:55</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Lemon+Jelly/_/%2775+aka+Stay+With+You">'75 aka Stay With You - Lemon Jelly</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Lemon Jelly
-     on Wednesday 05 October 2022 16:49</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
               <h2><a href="https://twitter.com/davorg/status/1577659111348621313">It's @hacktoberfest and I've already had a PR from someone who didn't read the README and wanted to update a genera… https://t.co/BceeH2mkJN</a></h2>
             </div><!-- panel-heading -->
 
@@ -439,20 +485,6 @@ https://t.co/tQt7T8WkOy</a></h2>
 
               <p class="text-right"><small>Published by Dave Cross
      on Wednesday 05 October 2022 12:31</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://twitter.com/davorg/status/1577620001602867200">Who wants a t-shirt? #antigrowthcoalition
-
-https://t.co/5yn9fxaJHv</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">twitter</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Wednesday 05 October 2022 11:21</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -962,23 +994,6 @@ OMD are just one of those bands that I see live whenever I can. I&#8217;ve now b
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/">The Best of Perl Hacks</a></h2>
-            </div><!-- panel-heading -->
-            <div class="panel-body"><p>What do you do when you’re stuck inside because Coronavirus means that your country is in lockdown? Well, you write a book, of course. Or, to be more accurate, you cobble together fifty or so old blog posts into a book.</p>
-<p>So that’s what I’ve done. Now you can read some of your favourite Perl Hacks blog posts in a handy Kindle book. Other ebook marketplaces are, of course, available – but I haven’t had the time to make a version that’s available from anywhere else yet. That might follow if enough people ask for it.</p>
-<p>The book is, predictably, called <em>The Best of Perl Hacks</em> and it’s <a href="https://amzn.to/2RixX0k">available from Amazon now</a> (that link goes to the UK store, but it should be available on all Amazon sites).</p>
-<p>Please buy it, read it and let me know what you think.</p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/">The Best of Perl Hacks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-       </div><!-- panel-body -->
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">perl hacks</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Tuesday 07 April 2020 15:05</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
               <h2><a href="https://www.goodreads.com/review/show/3162730028?utm_medium=api&utm_source=rss">The Introvert Entrepreneur</a></h2>
             </div><!-- panel-heading -->
             <div class="panel-body">
@@ -1117,7 +1132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:dave@dave.org.uk">Dave Cross</a> / Thursday 06 October 2022 09:09</address>
+      <address><a href="mailto:dave@dave.org.uk">Dave Cross</a> / Thursday 06 October 2022 10:08</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->

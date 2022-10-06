@@ -7,20 +7,128 @@
     <name>Dave Cross</name>
     <email>dave@dave.org.uk</email>
   </author>
-  <updated>2022-10-06T09:09:52Z</updated>
+  <updated>2022-10-06T10:08:46Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
   <entry>
-    <title>Kelly Watch the Stars - Air</title>
+    <title>The Girl Who Fell Through the Ice - Aim</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Kelly Watch the Stars - Air</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">The Girl Who Fell Through the Ice - Aim</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Air/_/Kelly+Watch+the+Stars" type="text/html"/>
-    <updated>2022-10-06T09:00:05Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Aim/_/The+Girl+Who+Fell+Through+the+Ice" type="text/html"/>
+    <updated>2022-10-06T09:59:51Z</updated>
     <author>
-      <name>Air</name>
+      <name>Aim</name>
     </author>
-    <id>https://musicbrainz.org/recording/06a1bdf1-bf4a-421a-8d53-8d36322deead</id>
+    <id>https://musicbrainz.org/recording/a6270c1e-eaae-3529-a55d-dd7e52836a36</id>
+  </entry>
+  <entry>
+    <title>So Good at Being in Trouble - Unknown Mortal Orchestra</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">So Good at Being in Trouble - Unknown Mortal Orchestra</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Unknown+Mortal+Orchestra/_/So+Good+at+Being+in+Trouble" type="text/html"/>
+    <updated>2022-10-06T09:56:01Z</updated>
+    <author>
+      <name>Unknown Mortal Orchestra</name>
+    </author>
+    <id>https://musicbrainz.org/recording/2b2524e2-f48a-44ad-89f9-967bbcccc355</id>
+  </entry>
+  <entry>
+    <title>It Could Be Sweet - Portishead</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">It Could Be Sweet - Portishead</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Portishead/_/It+Could+Be+Sweet" type="text/html"/>
+    <updated>2022-10-06T09:51:43Z</updated>
+    <author>
+      <name>Portishead</name>
+    </author>
+    <id>https://musicbrainz.org/recording/13dc8b80-3e78-4c88-9d47-c9eca3d5d114</id>
+  </entry>
+  <entry>
+    <title>RT @perlhacks: How and why I created a Docker container for Perlanet.
+
+https://t.co/XujXlW3pcH</title>
+    <link rel="alternate" href="https://twitter.com/davorg/status/1577958635824726016" type="text/html"/>
+    <id>https://twitter.com/davorg/status/1577958635824726016</id>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">RT @perlhacks: How and why I created a Docker container for Perlanet.
+
+https://t.co/XujXlW3pcH</div>
+    </content>
+    <updated>2022-10-06T09:47:10Z</updated>
+  </entry>
+  <entry>
+    <title>In The Bath - Lemon Jelly</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">In The Bath - Lemon Jelly</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Lemon+Jelly/_/In+The+Bath" type="text/html"/>
+    <updated>2022-10-06T09:45:01Z</updated>
+    <author>
+      <name>Lemon Jelly</name>
+    </author>
+    <id>https://musicbrainz.org/recording/00df2d20-5a61-3d45-acf0-49cc6124583f</id>
+  </entry>
+  <entry>
+    <title>Building a Perlanet Container</title>
+    <link rel="alternate" href="https://perlhacks.com/2022/10/building-a-perlanet-container/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain <a href="https://metacpan.org/pod/perlanet">perlanet</a> (a Perl program for aggregating web feeds into a new feed – and building a web site based on that new feed) and I use it to build <a href="https://theplanetarium.org/">a few sites on topics I’m interested in</a>.</p>
+<p>Last year, I worked out a way to use GitHub Actions to <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">rebuild these sites automatically</a> every few hours – thereby enabling me to host the sites on GitHub Pages (I still think it’s a useful technique, but I sometimes worry slightly about the large number of commits those repos have – someone at GitHub must surely notice one day!)</p>
+<p>Yesterday, I was doing some light maintenance on one of those sites when I realised that each rebuild of these sites was taking a significant time (by which I mean four or five minutes) and started wondering if there was a way to speed them up and use less of GitHub’s resources. The problem is that Perlanet is a pretty hefty module and each rebuild was installing that module (and, therefore, dozens of other modules) on a pristine Ubuntu container.</p>
+<p>When you say it like that, the solution is obvious.</p>
+<p>You don’t need to run your GitHub Actions on the standard containers that GitHub supplies. You can run them on any container that’s available from any public container hosting service. So the solution was to build a Perlanet container and run the jobs using that instead. So that’s how I spent an hour or so yesterday.</p>
+<p>Here’s the Dockerfile I ended up with:</p><pre class="urvanov-syntax-highlighter-plain-tag">FROM perl:latest
+
+RUN apt-get update &amp;&amp; \
+    apt-get -y upgrade &amp;&amp; \ 
+    apt-get install -y build-essential &amp;&amp; \
+    apt-get install -y cpanminus libtidy-dev libxml++2.6-dev libhtml-tidy-perl &amp;&amp; \
+    cpanm --notest Test::Exception &amp;&amp; \
+    cpanm --notest Perlanet &amp;&amp; \
+    cpanm --notest LWP::Protocol::https</pre><p>It’s (obviously) <a href="https://github.com/davorg/perl-perlanet-docker">available on GitHub</a> in case anyone wants to improve on my rather ropey knowledge of Docker.</p>
+<p>I explicitly install Test::Exception because HTML::Tidy (one of Perlanet’s pre-requisites) needs it and I can’t work out why the standard installation procedure isn’t installing it. And while, LWP::Protocol::https is, strictly speaking, required by Perlanet, you wouldn’t get very far on the modern web if you only accessed web feeds that are available over HTTP.</p>
+<p>A little bit of Docker Hub set-up and the container is <a href="https://hub.docker.com/r/davorg/perl-perlanet">available for everyone to use</a> (and rebuilt automatically whenever I commit to the repo).</p>
+<p>It was then just a case of changing my GitHub Actions to use my container. Here’s an example of <a href="https://github.com/davorg/planetdavorg/commit/5b65ce407e89dd16e74ad4b417b104c43dca96ef">one of the commits</a> that did that.</p>
+<p>I realise I’m pretty late to the party here, but I think this is a useful pattern. If you have a Perl library (or, indeed, any other software) that exists to provide a service to users then it’s a great idea to provide a containerised version of that software.</p>
+<p>And I’m happy to report that my site rebuilds have gone from 4-5 minutes to about 45 seconds.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain perlanet (a Perl program for aggregating web feeds into a new feed – and building a web site based on that new feed) and I use it to build a few sites on topics I’m interested in.… <a class="more-link" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Continue reading <span class="screen-reader-text">Building a Perlanet Container</span></a></p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2076</id>
+    <published>2022-10-06T09:43:46Z</published>
+    <updated>2022-10-06T09:43:46Z</updated>
+    <category term="Packaging"/>
+    <category term="container"/>
+    <category term="docker"/>
+    <category term="packaging"/>
+    <category term="perlanet"/>
+    <category term="semi-static"/>
+  </entry>
+  <entry>
+    <title>Heartbeats - José González</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Heartbeats - José González</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Jos%C3%A9+Gonz%C3%A1lez/_/Heartbeats" type="text/html"/>
+    <updated>2022-10-06T09:42:20Z</updated>
+    <author>
+      <name>José González</name>
+    </author>
+    <id>https://musicbrainz.org/recording/03b69009-1793-3d65-96e2-d267ed28209f</id>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
     <id>tag:github.com,2008:PushEvent/24430694940</id>
@@ -309,54 +417,6 @@
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <title>Kelly Watch the Stars - Air</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Kelly Watch the Stars - Air</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Air/_/Kelly+Watch+the+Stars" type="text/html"/>
-    <updated>2022-10-05T17:03:02Z</updated>
-    <author>
-      <name>Air</name>
-    </author>
-    <id>https://musicbrainz.org/recording/06a1bdf1-bf4a-421a-8d53-8d36322deead</id>
-  </entry>
-  <entry>
-    <title>It Could Be Sweet - Portishead</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">It Could Be Sweet - Portishead</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Portishead/_/It+Could+Be+Sweet" type="text/html"/>
-    <updated>2022-10-05T16:58:44Z</updated>
-    <author>
-      <name>Portishead</name>
-    </author>
-    <id>https://musicbrainz.org/recording/13dc8b80-3e78-4c88-9d47-c9eca3d5d114</id>
-  </entry>
-  <entry>
-    <title>Ghosts - Laura Marling</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Ghosts - Laura Marling</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Laura+Marling/_/Ghosts" type="text/html"/>
-    <updated>2022-10-05T16:55:44Z</updated>
-    <author>
-      <name>Laura Marling</name>
-    </author>
-    <id>https://musicbrainz.org/recording/0f436a0d-36ae-3d00-a694-6dea61f18a1d</id>
-  </entry>
-  <entry>
-    <title>'75 aka Stay With You - Lemon Jelly</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">'75 aka Stay With You - Lemon Jelly</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Lemon+Jelly/_/%2775+aka+Stay+With+You" type="text/html"/>
-    <updated>2022-10-05T16:49:32Z</updated>
-    <author>
-      <name>Lemon Jelly</name>
-    </author>
-    <id>https://musicbrainz.org/recording/55e730d6-0763-3711-b7d1-a59f2f5159c8</id>
-  </entry>
-  <entry>
     <title>It's @hacktoberfest and I've already had a PR from someone who didn't read the README and wanted to update a genera… https://t.co/BceeH2mkJN</title>
     <link rel="alternate" href="https://twitter.com/davorg/status/1577659111348621313" type="text/html"/>
     <id>https://twitter.com/davorg/status/1577659111348621313</id>
@@ -407,22 +467,6 @@ https://t.co/tQt7T8WkOy</title>
 https://t.co/tQt7T8WkOy</div>
     </content>
     <updated>2022-10-05T12:31:54Z</updated>
-  </entry>
-  <entry>
-    <title>Who wants a t-shirt? #antigrowthcoalition
-
-https://t.co/5yn9fxaJHv</title>
-    <link rel="alternate" href="https://twitter.com/davorg/status/1577620001602867200" type="text/html"/>
-    <id>https://twitter.com/davorg/status/1577620001602867200</id>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Who wants a t-shirt? #antigrowthcoalition
-
-https://t.co/5yn9fxaJHv</div>
-    </content>
-    <updated>2022-10-05T11:21:33Z</updated>
   </entry>
   <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <title>Clapham history plaque</title>
@@ -1067,30 +1111,6 @@ OMD are just one of those bands that I see live whenever I can. I’ve now been 
     <id>https://www.goodreads.com/review/show/3304101908?utm_medium=api&amp;utm_source=rss</id>
     <published>2020-04-27T02:57:21-07:00</published>
     <updated>2020-04-27T02:57:21-07:00</updated>
-  </entry>
-  <entry>
-    <title>The Best of Perl Hacks</title>
-    <link rel="alternate" href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>What do you do when you’re stuck inside because Coronavirus means that your country is in lockdown? Well, you write a book, of course. Or, to be more accurate, you cobble together fifty or so old blog posts into a book.</p>
-<p>So that’s what I’ve done. Now you can read some of your favourite Perl Hacks blog posts in a handy Kindle book. Other ebook marketplaces are, of course, available – but I haven’t had the time to make a version that’s available from anywhere else yet. That might follow if enough people ask for it.</p>
-<p>The book is, predictably, called <em>The Best of Perl Hacks</em> and it’s <a href="https://amzn.to/2RixX0k">available from Amazon now</a> (that link goes to the UK store, but it should be available on all Amazon sites).</p>
-<p>Please buy it, read it and let me know what you think.</p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/">The Best of Perl Hacks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </content>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>What do you do when you’re stuck inside because Coronavirus means that your country is in lockdown? Well, you write a book, of course. Or, to be more accurate, you cobble together fifty or so old blog posts into a book. So that’s what I’ve done. Now you can read some of your favourite Perl… <a class="more-link" href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/">Continue reading <span class="screen-reader-text">The Best of Perl Hacks</span></a></p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/04/the-best-of-perl-hacks/">The Best of Perl Hacks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </summary>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://perlhacks.com/?p=1983</id>
-    <published>2020-04-07T15:05:30Z</published>
-    <updated>2020-04-07T15:05:30Z</updated>
-    <category term="Miscellaneous"/>
   </entry>
   <entry>
     <title>The Introvert Entrepreneur</title>
