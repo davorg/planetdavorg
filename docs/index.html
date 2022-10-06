@@ -57,38 +57,62 @@ body {
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Aim/_/The+Girl+Who+Fell+Through+the+Ice">The Girl Who Fell Through the Ice - Aim</a></h2>
+              <h2><a href="https://www.last.fm/music/Amanda+Palmer/_/Strength+Through+Music">Strength Through Music - Amanda Palmer</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
-              <p class="text-right"><small>Published by Aim
-     on Thursday 06 October 2022 09:59</small></p>
+              <p class="text-right"><small>Published by Amanda Palmer
+     on Thursday 06 October 2022 11:02</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Unknown+Mortal+Orchestra/_/So+Good+at+Being+in+Trouble">So Good at Being in Trouble - Unknown Mortal Orchestra</a></h2>
+              <h2><a href="https://www.last.fm/music/Amanda+Palmer/_/Blake+Says">Blake Says - Amanda Palmer</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
-              <p class="text-right"><small>Published by Unknown Mortal Orchestra
-     on Thursday 06 October 2022 09:56</small></p>
+              <p class="text-right"><small>Published by Amanda Palmer
+     on Thursday 06 October 2022 10:58</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Portishead/_/It+Could+Be+Sweet">It Could Be Sweet - Portishead</a></h2>
+              <h2><a href="https://www.last.fm/music/Amanda+Palmer/_/Leeds+United">Leeds United - Amanda Palmer</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
-              <p class="text-right"><small>Published by Portishead
-     on Thursday 06 October 2022 09:51</small></p>
+              <p class="text-right"><small>Published by Amanda Palmer
+     on Thursday 06 October 2022 10:53</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Amanda+Palmer/_/Ampersand">Ampersand - Amanda Palmer</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by Amanda Palmer
+     on Thursday 06 October 2022 10:47</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Amanda+Palmer/_/Runs+in+the+Family">Runs in the Family - Amanda Palmer</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by Amanda Palmer
+     on Thursday 06 October 2022 10:44</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -103,18 +127,6 @@ https://t.co/XujXlW3pcH</a></h2>
 
               <p class="text-right"><small>Published by Dave Cross
      on Thursday 06 October 2022 09:47</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Lemon+Jelly/_/In+The+Bath">In The Bath - Lemon Jelly</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Lemon Jelly
-     on Thursday 06 October 2022 09:45</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -135,7 +147,7 @@ RUN apt-get update &amp;&amp; \
     cpanm --notest Test::Exception &amp;&amp; \
     cpanm --notest Perlanet &amp;&amp; \
     cpanm --notest LWP::Protocol::https</pre><p>It’s (obviously) <a href="https://github.com/davorg/perl-perlanet-docker">available on GitHub</a> in case anyone wants to improve on my rather ropey knowledge of Docker.</p>
-<p>I explicitly install Test::Exception because HTML::Tidy (one of Perlanet’s pre-requisites) needs it and I can’t work out why the standard installation procedure isn’t installing it. And while, LWP::Protocol::https is, strictly speaking, required by Perlanet, you wouldn’t get very far on the modern web if you only accessed web feeds that are available over HTTP.</p>
+<p>I explicitly install Test::Exception because HTML::Tidy (one of Perlanet’s pre-requisites) needs it and I can’t work out why the standard installation procedure isn’t installing it. And while, LWP::Protocol::https is, strictly speaking, not required by Perlanet, you wouldn’t get very far on the modern web if you only accessed web feeds that are available over HTTP.</p>
 <p>A little bit of Docker Hub set-up and the container is <a href="https://hub.docker.com/r/davorg/perl-perlanet">available for everyone to use</a> (and rebuilt automatically whenever I commit to the repo).</p>
 <p>It was then just a case of changing my GitHub Actions to use my container. Here’s an example of <a href="https://github.com/davorg/planetdavorg/commit/5b65ce407e89dd16e74ad4b417b104c43dca96ef">one of the commits</a> that did that.</p>
 <p>I realise I’m pretty late to the party here, but I think this is a useful pattern. If you have a Perl library (or, indeed, any other software) that exists to provide a service to users then it’s a great idea to provide a containerised version of that software.</p>
@@ -147,18 +159,6 @@ RUN apt-get update &amp;&amp; \
 
               <p class="text-right"><small>Published by Dave Cross
      on Thursday 06 October 2022 09:43</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Jos%C3%A9+Gonz%C3%A1lez/_/Heartbeats">Heartbeats - José González</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by José González
-     on Thursday 06 October 2022 09:42</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -1132,7 +1132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:dave@dave.org.uk">Dave Cross</a> / Thursday 06 October 2022 10:08</address>
+      <address><a href="mailto:dave@dave.org.uk">Dave Cross</a> / Thursday 06 October 2022 11:07</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->
