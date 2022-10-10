@@ -7,9 +7,270 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2022-10-10T15:27:50Z</updated>
+  <updated>2022-10-10T16:09:31Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry>
+    <title>Does This Train Stop On Merseyside - Ian Prowse</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Does This Train Stop On Merseyside - Ian Prowse</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Ian+Prowse/_/Does+This+Train+Stop+On+Merseyside" type="text/html"/>
+    <updated>2022-10-10T16:01:46Z</updated>
+    <author>
+      <name>Ian Prowse</name>
+    </author>
+    <id>https://musicbrainz.org/recording/</id>
+  </entry>
+  <entry>
+    <title>Not that PR, thanks</title>
+    <link rel="alternate" href="https://perlhacks.com/2022/10/not-that-pr-thanks/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s October. And that means that <a href="https://hacktoberfest.com/">Hacktoberfest</a> has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt.</p>
+<p>In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can be a bit of a pain in the arse. Some people go crazy for a free t-shirt and that means you’ll almost certainly get several pull requests that aren’t really of the quality you’d hope for.</p>
+<p>I have a particular problem that probably isn’t very common. I’ve talked before about the “semi-static” sites I run on GitHub Pages. There’s some data in a GitHub Repo and every couple of hours the system wakes up and runs some code which generates a few HTML pages and commits those HTML pages into the repo’s “/docs” directory. And – hey presto! – there’s a new version of your web site.</p>
+<p>A good example is <a href="https://perl.theplanetarium.org/">Planet Perl</a>. The data is a YAML file which mostly consists of a list of web feeds. Every couple of hours we run <a href="https://metacpan.org/dist/Perlanet/view/bin/perlanet">perlanet</a> to pull in those web feeds and build a new version of the web site containing the latest articles about Perl.</p>
+<p>Can you see what the problem is?</p>
+<p>The problem is that the most obvious file in the repo is the “index.html” which is the web site. So when people find that repo and want to make a small change to the web site they’ll change that “index.html” file. But that file is generated. Every few hours, any changes to that file are overwritten as a new version is created. You actually want to change “index.tt”. But that uses <a href="https://metacpan.org/dist/Template-Toolkit/view/lib/Template/Manual/Directives.pod">Template Toolkit syntax</a>, so it’s easy enough to see why people with no Perl knowledge might want to avoid editing that.</p>
+<p>The <a href="https://github.com/davorg/planetperl/blob/master/README.md">README file</a> for the project explains which files you might want to change in order to make different types of changes. But people don’t read that. Or, if they do read it, they ignore the bits that they don’t like.</p>
+<p>So I get pull requests that I have to reject because they change the wrong files.</p>
+<p>Last year I got enough of these problematic pull requests that I decided to automate a solution. And it’s <a href="https://github.com/davorg/planetperl/blob/master/.github/workflows/reject-pr.yml">this pretty simple GitHub Workflow</a>. It runs whenever my repo receives a pull request and looks at the files that have been changed. If that list of files includes “docs/index.html” then the PR is automatically closed with a polite message explaining what they’ve done wrong.</p>
+<p>This makes my life easier. It’s possible it might make your life easier too.</p>
+<p> </p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s October. And that means that Hacktoberfest has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt. In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can… <a class="more-link" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Continue reading <span class="screen-reader-text">Not that PR, thanks</span></a></p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2082</id>
+    <published>2022-10-10T16:01:43Z</published>
+    <updated>2022-10-10T16:01:43Z</updated>
+    <category term="Miscellaneous"/>
+    <category term="github"/>
+    <category term="github actions"/>
+    <category term="pull request"/>
+    <category term="semi-static sites"/>
+    <category term="workflow"/>
+  </entry>
+  <entry>
+    <title>You're In A Bad Way - Saint Etienne</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">You're In A Bad Way - Saint Etienne</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Saint+Etienne/_/You%27re+In+A+Bad+Way" type="text/html"/>
+    <updated>2022-10-10T15:58:42Z</updated>
+    <author>
+      <name>Saint Etienne</name>
+    </author>
+    <id>https://musicbrainz.org/recording/0a7b4300-5f36-3e76-b7cd-29a84012838a</id>
+  </entry>
+  <entry>
+    <title>Something To Talk About - Badly Drawn Boy</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Something To Talk About - Badly Drawn Boy</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Badly+Drawn+Boy/_/Something+To+Talk+About" type="text/html"/>
+    <updated>2022-10-10T15:55:02Z</updated>
+    <author>
+      <name>Badly Drawn Boy</name>
+    </author>
+    <id>https://musicbrainz.org/recording/0670aaa9-53ef-39e8-9ec1-8ddb695fe5ad</id>
+  </entry>
+  <entry>
+    <title>Going Underground - The Jam</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Going Underground - The Jam</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/The+Jam/_/Going+Underground" type="text/html"/>
+    <updated>2022-10-10T15:52:07Z</updated>
+    <author>
+      <name>The Jam</name>
+    </author>
+    <id>https://musicbrainz.org/recording/</id>
+  </entry>
+  <entry>
+    <title>7" Singles - Paul Heaton</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">7" Singles - Paul Heaton</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Paul+Heaton/_/7%22+Singles" type="text/html"/>
+    <updated>2022-10-10T15:48:27Z</updated>
+    <author>
+      <name>Paul Heaton</name>
+    </author>
+    <id>https://musicbrainz.org/recording/</id>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/24504987291</id>
+    <published>2022-10-10T15:36:15Z</published>
+    <updated>2022-10-10T15:36:15Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetwestminster/compare/c508126bf9...80ddd5d11c"/>
+    <title type="html">davorg pushed to master in davorg/planetwestminster</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
+    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class=""&gt;
+      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetwestminster/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/planetwestminster" rel="noreferrer"&gt;davorg/planetwestminster&lt;/a&gt;
+        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
+          &lt;relative-time datetime="2022-10-10T15:36:15Z" class="no-wrap"&gt;Oct 10, 2022&lt;/relative-time&gt;
+        &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetwestminster/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetwestminster/commit/80ddd5d11cb9e044c97dff1152f20af2c2536439" rel="noreferrer"&gt;80ddd5d&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Don't hardcode feed URL
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/24504897256</id>
+    <published>2022-10-10T15:32:07Z</published>
+    <updated>2022-10-10T15:32:07Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetskeptic/compare/851a201058...5bcc639607"/>
+    <title type="html">davorg pushed to master in davorg/planetskeptic</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
+    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class=""&gt;
+      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetskeptic/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/planetskeptic" rel="noreferrer"&gt;davorg/planetskeptic&lt;/a&gt;
+        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
+          &lt;relative-time datetime="2022-10-10T15:32:07Z" class="no-wrap"&gt;Oct 10, 2022&lt;/relative-time&gt;
+        &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetskeptic/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetskeptic/commit/5bcc639607591be232bbbed88738101744a1cbc1" rel="noreferrer"&gt;5bcc639&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Don't hardcode feed URL
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/24504851218</id>
+    <published>2022-10-10T15:30:06Z</published>
+    <updated>2022-10-10T15:30:06Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/compare/c48768771e...0f8f142dbf"/>
+    <title type="html">davorg pushed to master in davorg/planetperl</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
+    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class=""&gt;
+      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetperl/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/planetperl" rel="noreferrer"&gt;davorg/planetperl&lt;/a&gt;
+        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
+          &lt;relative-time datetime="2022-10-10T15:30:06Z" class="no-wrap"&gt;Oct 10, 2022&lt;/relative-time&gt;
+        &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetperl/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetperl/commit/0f8f142dbf167b6bd3b5c6614d9d8724209c7dec" rel="noreferrer"&gt;0f8f142&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Don't hardcode feed URL
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
     <id>tag:github.com,2008:PushEvent/24504780517</id>
     <published>2022-10-10T15:27:00Z</published>
@@ -131,72 +392,6 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/24504687327</id>
-    <published>2022-10-10T15:22:47Z</published>
-    <updated>2022-10-10T15:22:47Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetbalham/compare/430d2a07ad...e2887f3a2c"/>
-    <title type="html">davorg pushed to main in davorg/planetbalham</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
-    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class=""&gt;
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/planetbalham/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/planetbalham" rel="noreferrer"&gt;davorg/planetbalham&lt;/a&gt;
-        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
-          &lt;relative-time datetime="2022-10-10T15:22:47Z" class="no-wrap"&gt;Oct 10, 2022&lt;/relative-time&gt;
-        &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 "&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/planetbalham/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetbalham/commit/e2887f3a2c85cf620518dfbc18a5f6b50b177b13" rel="noreferrer"&gt;e2887f3&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Merge branch 'main' of github.com:davorg/planetbalham
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetbalham/commit/13556410a5fbb6abdc84da7459bacf00d004a587" rel="noreferrer"&gt;1355641&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Fix hard-coding of feed URL
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
   <entry>
     <title>@DrHydeous @hacktoberfest What if someone decides an obscure repo needs a badly-written contributor's guide?</title>
     <link rel="alternate" href="https://twitter.com/davorg/status/1579490884265336833" type="text/html"/>
@@ -220,143 +415,6 @@
       <div xmlns="http://www.w3.org/1999/xhtml">I'm seriously considering withdrawing all of my repos from @hacktoberfest. Most of the PRs I get are from people tr… https://t.co/4PdzsoBG45</div>
     </content>
     <updated>2022-10-10T14:42:28Z</updated>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:IssueCommentEvent/24503678608</id>
-    <published>2022-10-10T14:39:48Z</published>
-    <updated>2022-10-10T14:39:48Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetskeptic/issues/7#issuecomment-1273419583"/>
-    <title type="html">davorg commented on issue davorg/planetskeptic#7</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_comment"&gt;&lt;div class="body"&gt;
-&lt;!-- issue_comment --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
-        &lt;div class=""&gt;
-          &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-          
-          commented on
-          &lt;a class="Link--primary text-bold" title="Add Contributor Guidelines" href="/davorg/planetskeptic/issues/7#issuecomment-1273419583" rel="noreferrer"&gt;davorg/planetskeptic#7&lt;/a&gt;
-            &lt;span class="f6 color-fg-muted ml-1"&gt;
-              &lt;relative-time datetime="2022-10-10T14:39:48Z" class="no-wrap"&gt;Oct 10, 2022&lt;/relative-time&gt;
-            &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;div class="message markdown-body Box p-3 wb-break-all "&gt;
-      &lt;div class="f6 mb-1"&gt;
-        &lt;a title="Add Contributor Guidelines" class="Link--secondary" href="/davorg/planetskeptic/issues/7#issuecomment-1273419583" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2022-10-10T14:39:48Z" class="no-wrap"&gt;Oct 10, 2022&lt;/relative-time&gt;&lt;/a&gt;
-      &lt;/div&gt;
-        &lt;p&gt;See, this is the problem. You have no real interest in my project. You're just looking for easy targets to get pull requests. Do you really want a …&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:IssueCommentEvent/24503348804</id>
-    <published>2022-10-10T14:25:59Z</published>
-    <updated>2022-10-10T14:25:59Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetskeptic/issues/7#issuecomment-1273399410"/>
-    <title type="html">davorg commented on issue davorg/planetskeptic#7</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_comment"&gt;&lt;div class="body"&gt;
-&lt;!-- issue_comment --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
-        &lt;div class=""&gt;
-          &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-          
-          commented on
-          &lt;a class="Link--primary text-bold" title="Add Contributor Guidelines" href="/davorg/planetskeptic/issues/7#issuecomment-1273399410" rel="noreferrer"&gt;davorg/planetskeptic#7&lt;/a&gt;
-            &lt;span class="f6 color-fg-muted ml-1"&gt;
-              &lt;relative-time datetime="2022-10-10T14:25:59Z" class="no-wrap"&gt;Oct 10, 2022&lt;/relative-time&gt;
-            &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;div class="message markdown-body Box p-3 wb-break-all "&gt;
-      &lt;div class="f6 mb-1"&gt;
-        &lt;a title="Add Contributor Guidelines" class="Link--secondary" href="/davorg/planetskeptic/issues/7#issuecomment-1273399410" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2022-10-10T14:25:59Z" class="no-wrap"&gt;Oct 10, 2022&lt;/relative-time&gt;&lt;/a&gt;
-      &lt;/div&gt;
-        &lt;p&gt;Maybe. I'm not convinced.
-Please tell me what draws you particularly to this project.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Build - The Housemartins</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Build - The Housemartins</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/The+Housemartins/_/Build" type="text/html"/>
-    <updated>2022-10-10T11:19:30Z</updated>
-    <author>
-      <name>The Housemartins</name>
-    </author>
-    <id>https://musicbrainz.org/recording/03a37151-f057-4ef1-aeba-24b6a7898e20</id>
-  </entry>
-  <entry>
-    <title>The Austerity Of Love - Paul Heaton</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">The Austerity Of Love - Paul Heaton</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Paul+Heaton/_/The+Austerity+Of+Love" type="text/html"/>
-    <updated>2022-10-10T11:15:02Z</updated>
-    <author>
-      <name>Paul Heaton</name>
-    </author>
-    <id>https://musicbrainz.org/recording/</id>
-  </entry>
-  <entry>
-    <title>You Keep It All In - The Beautiful South</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">You Keep It All In - The Beautiful South</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/The+Beautiful+South/_/You+Keep+It+All+In" type="text/html"/>
-    <updated>2022-10-10T11:12:08Z</updated>
-    <author>
-      <name>The Beautiful South</name>
-    </author>
-    <id>https://musicbrainz.org/recording/00bfbb26-7600-4f95-a306-1fff0ea63f7c</id>
-  </entry>
-  <entry>
-    <title>Real Hope - Paul Heaton</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Real Hope - Paul Heaton</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Paul+Heaton/_/Real+Hope" type="text/html"/>
-    <updated>2022-10-10T11:09:01Z</updated>
-    <author>
-      <name>Paul Heaton</name>
-    </author>
-    <id>https://musicbrainz.org/recording/</id>
-  </entry>
-  <entry>
-    <title>Good As Gold (Stupid As Mud) - The Beautiful South</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Good As Gold (Stupid As Mud) - The Beautiful South</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/The+Beautiful+South/_/Good+As+Gold+(Stupid+As+Mud)" type="text/html"/>
-    <updated>2022-10-10T11:05:12Z</updated>
-    <author>
-      <name>The Beautiful South</name>
-    </author>
-    <id>https://musicbrainz.org/recording/4592bbc7-75c0-3cfb-9063-7e1bddba2c6a</id>
   </entry>
   <entry>
     <title>@ArianeSherine Heh! Fortunately not :-)</title>
@@ -1018,46 +1076,6 @@ OMD are just one of those bands that I see live whenever I can. I’ve now been 
     <category term="aggregator"/>
     <category term="planet perl"/>
     <category term="web feeds"/>
-  </entry>
-  <entry>
-    <title>Blogging for Perl</title>
-    <link rel="alternate" href="https://perlhacks.com/2020/09/blogging-for-perl/" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>I think it was at YAPC Copenhagen in 2008 that a small group of us first discussed the idea of building a shared blogging platform for the Perl community. It was over a year later that we launched <a href="http://blogs.perl.org/">blogs.perl.org</a>.</p>
-<p>I remember a lot of discussions over that time where we tried to thrash out exactly what we wanted to build. I know that one of my main drivers was that I wanted to replace the journals feature of use.perl. For those of you too young to remember, use.perl was a Perl community web site from the dawn of time. The site ran Perl news on its front page, but users could also have their own journal. For a few years, we had a nice little blogging community on the site. It used the same software as <a href="https://slashdot.org/">Slashdot</a> and, like Slashdot, was looking pretty dated at the time. I remember being particularly disappointed that you couldn’t put images in a journal entry.</p>
-<p>So that was certainly where I started from when planning blogs.perl.org. I wanted a modern blogging platform to replace use.perl. Other people wanted slightly different things. At least one person argued strongly that what we really needed was a nice-looking blog aggregator and that people could do their actual blogging on their own sites (or some other blog provider).</p>
-<p>But, as you can see, that point of view lost out and we implemented a full blogging system using <a href="https://www.movabletype.org/">Movable Type</a>.</p>
-<p>Ten years on, I think that was a mistake. I think that having a community blogging platform for Perl is actively harmful to Perl.</p>
-<p>I’ll explain why a bit later, but first let’s talk through a bit of more recent history of the site.</p>
-<p>It’s well-known, I think, that the site is not is a good state. I’m happy to explain what happened there, but it’s a long and rather dull story. There have been a couple of attempts to build replacement systems but they both stalled before they were complete.</p>
-<p>So we’re left in a situation where the site is broken and no-one really has the time or the expertise to fix it. And attempts to replace it seem doomed to failure.</p>
-<p>Earlier this year I decided that the situation was untenable and that I wanted to close the site down. I spoke to Aaron and he pretty much agreed with me. We decided that we’d give people plenty of notice to take their blogging elsewhere and, rather than closing the site completely, we would make it read-only (so all the existing content would still be there). We ran the idea past the rest of the loose “management team” and <a href="http://blogs.perl.org/users/aristotle/">Aristotle</a> spoke up, saying that he would rather take the site over himself and try to improve matters. And that’s what happened. Over the last few months, Aaron and I have extricated ourselves from running the site and it’s all now handled by Aristotle.</p>
-<p>I wish him all the best in those endeavours and really hope he manages to make the site better than it was (he’s already making great progress in removing loads of old spam blogs from the site).</p>
-<p>But, really, I think that my original plan was a better idea. I don’t want people to blog about Perl on a Perl community site. I want people to blog about Perl on sites where people blog about other languages and technologies.</p>
-<p>I’ve been giving talks about the need for the Perl community to break out of its echo chamber for almost as long as I’ve been part of the community. But I think it’s important. It’s a kind of low-key marketing. If you’re talking about your cool Perl project on a Perl community web site then only people who are looking for Perl articles will find it. But if you blog about it on a general programming web site then a) you’ll get a far bigger audience and b) some of that audience might say “oh! I never knew Perl could do that – perhaps I’ll give it a closer look.”</p>
-<p>And that’s why I think blogs.perl.org (and, probably, use.perl before it) are harmful to Perl. It encourages Perl bloggers to blog for the Perl community – when it would be far better to get your blog posts in front of more people. Perl people will still read your Perl posts (through <a href="http://perlsphere.net/">Perlsphere</a> perhaps, or post the link to <a href="https://www.reddit.com/r/perl/">/r/perl</a> or the <a href="https://www.facebook.com/groups/perlcommunity">Perl Community Facebook group</a>) but other people will see them too. On blogs.perl.org, you’re pretty much guaranteed that only Perl programmers will see your posts.</p>
-<p>To be honest, I don’t understand why people still use blogs.perl.org. Until Aristotle’s work bears fruit it’s painfully broken. What do you get that’s worth putting yourself through all of that pain? Why not just blog somewhere else and submit your web feed to Perlsphere? Or blog where other programmers blog – somewhere like <a href="https://dev.to/">dev.to</a>, perhaps (I’ve started publishing <a href="https://dev.to/davorg">my more technical blog posts</a> there).</p>
-<p>I think it will be great if Aristotle gets blogs.perl.org working well. I really want that to happen. But it would be even better if he didn’t have to. If people stopped using it; if they went off and started spreading their interesting Perl blog posts all over the web.</p>
-<p>Break out of the echo chamber. Find yourself a bigger audience. Spread the word beyond the Perl community.</p>
-<p>Or, alternatively, explain to me why it’s so vital that the Perl community has its own centralised blogging platform.</p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/09/blogging-for-perl/">Blogging for Perl</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </content>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>I think it was at YAPC Copenhagen in 2008 that a small group of us first discussed the idea of building a shared blogging platform for the Perl community. It was over a year later that we launched blogs.perl.org. I remember a lot of discussions over that time where we tried to thrash out exactly… <a class="more-link" href="https://perlhacks.com/2020/09/blogging-for-perl/">Continue reading <span class="screen-reader-text">Blogging for Perl</span></a></p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/09/blogging-for-perl/">Blogging for Perl</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </summary>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://perlhacks.com/?p=2007</id>
-    <published>2020-09-17T20:10:32Z</published>
-    <updated>2020-09-17T20:10:32Z</updated>
-    <category term="Miscellaneous"/>
-    <category term="blogs.perl.org"/>
-    <category term="echo chamber"/>
-    <category term="perl. blogging"/>
   </entry>
   <entry>
     <title>Bonk: The Curious Coupling of Sex and Science</title>
