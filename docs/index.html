@@ -57,69 +57,120 @@ body {
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/beabadoobee/_/You+Lie+All+The+Time+-+Bedroom+Session">You Lie All The Time - Bedroom Session - beabadoobee</a></h2>
+              <h2><a href="https://twitter.com/davorg/status/1582418682453454850">RT @perlhacks: Another useful Docker container.
+
+https://t.co/G9a3OJObLQ</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">twitter</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Tuesday 18 October 2022 17:09</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://perlhacks.com/2022/10/containers-for-coverage/">Containers for Coverage</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p>I’ve been building Docker containers again. And I think you’ll find this one a little more useful than <a href="https://perlhacks.com/2022/10/building-a-perlanet-container/">the Perlanet one</a> I wrote about a couple of weeks ago.</p>
+<p>Several years ago I got into <a href="https://www.travis-ci.com/">Travis CI</a> and set up lots of <a href="https://github.com/davorg?tab=repositories">my GitHub repos</a> so they automatically ran the tests each time I committed to the repo. Later on, I also worked out how to tie those test runs into <a href="https://coveralls.io/">Coveralls.io</a> so I got pretty graphs of how my test coverage was looking. I gave <a href="https://www.slideshare.net/davorg/github-travisci-and-perl">a talk about what I had done</a>.</p>
+<p>But two things changed.</p>
+<p>Firstly, Travis CI got too popular and, eventually, removed their free service. And, secondly, <a href="https://github.com/features/actions">GitHub Actions</a> was introduced. Over the last few years, I’ve set up many of my repos to use GitHub Actions for CI. But, basically because I’m lazy, I didn’t remove the Travis CI configuration from those repos.</p>
+<p>But last week I decided the time was right to start work on that. And when I went to remove the .travis.yml I realised that something was missing from my GitHub Actions CI workflows – they were running the unit tests, but they weren’t reporting on test coverage. So it was time to fix that.</p>
+<p>I needed to reimplement the logic that connected Travis CI to Coveralls.io in a GitHub workflow. That actually turned out to be pretty simple. There’s a CPAN module called <a href="https://metacpan.org/pod/Devel::Cover::Report::Coveralls">Devel::Cover::Report::Coveralls</a> which takes the output from Devel::Cover, converts it to the correct format and sends it to Coveralls.io. And, as a bonus, it has documentation showing how to implement that in a GitHub workflow.</p>
+<p>So I hacked at my workflow definition file for one of my CPAN modules and within a few minutes I had it working.</p>
+<p>Well, I say “a few minutes”, but it took over thirteen minutes to run. It turns out that Devel::Cover::Report::Coveralls is a pretty heavyweight module and needs to install a lot of other modules in order to do its work.</p>
+<p>At this point, you can probably guess where this is going. And you’d be right.</p>
+<p>I’ve created a Docker container that has Devel::Cover::Report::Coveralls already installed. And, obviously, it’s available for everyone to use from the Docker hub – <a href="https://hub.docker.com/repository/docker/davorg/perl-coveralls">davorg/perl-coveralls</a>.</p>
+<p>A couple of small adjustments to my GitHub workflow and the coverage job is now running on my new container – and takes 29 seconds instead of 13 minutes. So that’s a win.</p>
+<p>The relevant section of my <a href="https://github.com/davorg/calendar-simple/blob/master/.github/workflows/perltest.yml">workflow file</a> is here:</p><pre class="urvanov-syntax-highlighter-plain-tag">coverage:
+    runs-on: ubuntu-latest
+    container: davorg/perl-coveralls:latest
+    name: Test coverage
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: cpanm -n --installdeps .
+      - name: Coverage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cover -test -report Coveralls</pre><p>And it’s producing nice graphs on Coveralls.io like the one above.</p>
+<p>Let me know if you find it useful.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/containers-for-coverage/">Containers for Coverage</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">perl hacks</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Tuesday 18 October 2022 17:01</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/beabadoobee/_/Are+You+Sure">Are You Sure - beabadoobee</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by beabadoobee
-     on Tuesday 18 October 2022 16:03</small></p>
+     on Tuesday 18 October 2022 17:00</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/beabadoobee/_/Yoshimi,+Forest,+Magdalene">Yoshimi, Forest, Magdalene - beabadoobee</a></h2>
+              <h2><a href="https://www.last.fm/music/beabadoobee/_/1999+-+Bedroom+Session">1999 - Bedroom Session - beabadoobee</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by beabadoobee
-     on Tuesday 18 October 2022 16:00</small></p>
+     on Tuesday 18 October 2022 16:57</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/beabadoobee/_/Bobby">Bobby - beabadoobee</a></h2>
+              <h2><a href="https://www.last.fm/music/beabadoobee/_/Disappear+-+Bedroom+Session">Disappear - Bedroom Session - beabadoobee</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by beabadoobee
-     on Tuesday 18 October 2022 15:56</small></p>
+     on Tuesday 18 October 2022 16:53</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/beabadoobee/_/Further+Away">Further Away - beabadoobee</a></h2>
+              <h2><a href="https://www.last.fm/music/beabadoobee/_/The+Moon+Song">The Moon Song - beabadoobee</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by beabadoobee
-     on Tuesday 18 October 2022 15:53</small></p>
+     on Tuesday 18 October 2022 16:51</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/beabadoobee/_/Horen+Sarrison">Horen Sarrison - beabadoobee</a></h2>
+              <h2><a href="https://www.last.fm/music/beabadoobee/_/She+Plays+Bass+-+live+from+Abbey+Road+Studios,+London">She Plays Bass - live from Abbey Road Studios, London - beabadoobee</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by beabadoobee
-     on Tuesday 18 October 2022 15:48</small></p>
+     on Tuesday 18 October 2022 16:47</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://github.com/davorg/calendar-simple/compare/b4b6dc4c03...7c401d06e4">davorg pushed to master in davorg/calendar-simple</a></h2>
+              <h2><a href="https://github.com/davorg/calendar-simple/compare/b842a36143...40f001a513">davorg pushed to master in davorg/calendar-simple</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88212,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24673988838,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;372616c8-62fc-47f3-83f2-bdc390abb851&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="8717a711d580745d3c92a8bb4fec090702e2f8eaca0f4654e961ec519b4d6f1d"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88212,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24675303065,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;5b4ae97a-f192-442c-abc2-79588d82d991&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="1fdaceb52f7de0c839eb507c436fea53349883032b34f746d969216e59e2ead0"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline border-bottom color-border-muted py-3">
     <span class="mr-2"><a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;v=4" width="32" height="32" alt="@davorg"></a></span>
@@ -132,7 +183,7 @@ body {
         in
       <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/calendar-simple" rel="noreferrer">davorg/calendar-simple</a>
         <span class="color-fg-muted no-wrap f6 ml-1">
-          <relative-time datetime="2022-10-18T15:34:53Z" class="no-wrap">Oct 18, 2022</relative-time>
+          <relative-time datetime="2022-10-18T16:30:16Z" class="no-wrap">Oct 18, 2022</relative-time>
         </span>
 
         <div class="Box p-3 mt-2 ">
@@ -145,10 +196,10 @@ body {
                   <span title="davorg">
                     <a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;v=4" width="16" height="16" alt="@davorg"></a>
                   </span>
-                  <code><a class="mr-1" href="/davorg/calendar-simple/commit/7c401d06e41884997acfb9ab65b111784c8da551" rel="noreferrer">7c401d0</a></code>
+                  <code><a class="mr-1" href="/davorg/calendar-simple/commit/40f001a513220955d0963f4b6351d8173525554e" rel="noreferrer">40f001a</a></code>
                   <div class="dashboard-break-word lh-condensed">
                     <blockquote>
-                      Fix syntax
+                      Don't need to set up Perl
                     </blockquote>
                   </div>
                 </li>
@@ -165,14 +216,14 @@ body {
 <span class="label label-default" style="float: left">github</span>
 
               <p class="text-right"><small>Published by davorg
-     on Tuesday 18 October 2022 15:34</small></p>
+     on Tuesday 18 October 2022 16:30</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://github.com/davorg/calendar-simple/compare/0160aa2420...b4b6dc4c03">davorg pushed to master in davorg/calendar-simple</a></h2>
+              <h2><a href="https://github.com/davorg/calendar-simple/compare/5b8401b2e6...b842a36143">davorg pushed to master in davorg/calendar-simple</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88212,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24673929610,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;3d96b4bc-2325-4b3b-ba62-c9f2feb43ccf&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="17be059327f583eae341842c180e3049121df1a34270bdf0342815ed888d1f64"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88212,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24675244362,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;11935191-cdaa-4711-80bd-c1af34dafec6&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="137b175a4792f3e5ac9b8c3bd522f0a8a36be61704af9281740f08efcdca6e65"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline border-bottom color-border-muted py-3">
     <span class="mr-2"><a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;v=4" width="32" height="32" alt="@davorg"></a></span>
@@ -185,7 +236,7 @@ body {
         in
       <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/calendar-simple" rel="noreferrer">davorg/calendar-simple</a>
         <span class="color-fg-muted no-wrap f6 ml-1">
-          <relative-time datetime="2022-10-18T15:32:34Z" class="no-wrap">Oct 18, 2022</relative-time>
+          <relative-time datetime="2022-10-18T16:27:37Z" class="no-wrap">Oct 18, 2022</relative-time>
         </span>
 
         <div class="Box p-3 mt-2 ">
@@ -198,10 +249,10 @@ body {
                   <span title="davorg">
                     <a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;v=4" width="16" height="16" alt="@davorg"></a>
                   </span>
-                  <code><a class="mr-1" href="/davorg/calendar-simple/commit/b4b6dc4c03352504a612a73297919e741b806f25" rel="noreferrer">b4b6dc4</a></code>
+                  <code><a class="mr-1" href="/davorg/calendar-simple/commit/b842a36143e262bab48a826c2aa169e39bacaf2d" rel="noreferrer">b842a36</a></code>
                   <div class="dashboard-break-word lh-condensed">
                     <blockquote>
-                      Typo
+                      No need to install the Coveralls stuff now
                     </blockquote>
                   </div>
                 </li>
@@ -218,14 +269,14 @@ body {
 <span class="label label-default" style="float: left">github</span>
 
               <p class="text-right"><small>Published by davorg
-     on Tuesday 18 October 2022 15:32</small></p>
+     on Tuesday 18 October 2022 16:27</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://github.com/davorg/calendar-simple/compare/a8b4d86431...0160aa2420">davorg pushed to master in davorg/calendar-simple</a></h2>
+              <h2><a href="https://github.com/davorg/calendar-simple/compare/7c401d06e4...5b8401b2e6">davorg pushed to master in davorg/calendar-simple</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88212,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24673906085,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;b344df34-db68-4c2d-a6bf-0ad49b0de8e9&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="0183e26884da0128bfca39a6ee9bbea7fafcc31d3628239a1450bb9c38e7849a"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88212,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24675217955,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;3a3e0384-7f71-4771-b9ea-4486548f2e3d&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="fe53244858c1860ac203197ba5e2d7973f5e0eacd626eb29223f9fd501948e39"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline border-bottom color-border-muted py-3">
     <span class="mr-2"><a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;v=4" width="32" height="32" alt="@davorg"></a></span>
@@ -238,7 +289,7 @@ body {
         in
       <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/calendar-simple" rel="noreferrer">davorg/calendar-simple</a>
         <span class="color-fg-muted no-wrap f6 ml-1">
-          <relative-time datetime="2022-10-18T15:31:40Z" class="no-wrap">Oct 18, 2022</relative-time>
+          <relative-time datetime="2022-10-18T16:26:25Z" class="no-wrap">Oct 18, 2022</relative-time>
         </span>
 
         <div class="Box p-3 mt-2 ">
@@ -251,10 +302,10 @@ body {
                   <span title="davorg">
                     <a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;v=4" width="16" height="16" alt="@davorg"></a>
                   </span>
-                  <code><a class="mr-1" href="/davorg/calendar-simple/commit/0160aa242076996f7f71ff90fd167ab2647a00db" rel="noreferrer">0160aa2</a></code>
+                  <code><a class="mr-1" href="/davorg/calendar-simple/commit/5b8401b2e6fdfc325a6a92bfa1067fd5289da139" rel="noreferrer">5b8401b</a></code>
                   <div class="dashboard-break-word lh-condensed">
                     <blockquote>
-                      Add Devel::Cover
+                      Use a container for the Coveralls stuff
                     </blockquote>
                   </div>
                 </li>
@@ -271,14 +322,14 @@ body {
 <span class="label label-default" style="float: left">github</span>
 
               <p class="text-right"><small>Published by davorg
-     on Tuesday 18 October 2022 15:31</small></p>
+     on Tuesday 18 October 2022 16:26</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://github.com/davorg/calendar-simple/compare/d881abd491...a8b4d86431">davorg pushed to master in davorg/calendar-simple</a></h2>
+              <h2><a href="https://github.com/davorg/perl-coveralls-docker/compare/a211cec5e9...968c085fff">davorg pushed to main in davorg/perl-coveralls-docker</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88212,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24673443470,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;397bfe55-e60e-4f9d-ab91-96018e4ea086&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="49ca82bc0bd22a4a68311971f26e3596d6b76950f3abd9a2978630349b1cc8cc"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:553697642,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24674960103,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;f9d4a87f-fd1b-4eec-a499-f33088c98373&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="f470d44b1b39374c2a66407e4b7551e6b725598442329fdc65819c8602ac24a5"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline border-bottom color-border-muted py-3">
     <span class="mr-2"><a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;v=4" width="32" height="32" alt="@davorg"></a></span>
@@ -287,16 +338,16 @@ body {
       <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer">davorg</a>
       
       pushed to
-        <a class="branch-name" href="/davorg/calendar-simple/tree/master" rel="noreferrer">master</a>
+        <a class="branch-name" href="/davorg/perl-coveralls-docker/tree/main" rel="noreferrer">main</a>
         in
-      <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/calendar-simple" rel="noreferrer">davorg/calendar-simple</a>
+      <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/perl-coveralls-docker" rel="noreferrer">davorg/perl-coveralls-docker</a>
         <span class="color-fg-muted no-wrap f6 ml-1">
-          <relative-time datetime="2022-10-18T15:14:02Z" class="no-wrap">Oct 18, 2022</relative-time>
+          <relative-time datetime="2022-10-18T16:14:48Z" class="no-wrap">Oct 18, 2022</relative-time>
         </span>
 
         <div class="Box p-3 mt-2 ">
-          <span>1 commit to</span>
-          <a class="branch-name" href="/davorg/calendar-simple/tree/master" rel="noreferrer">master</a>
+          <span>2 commits to</span>
+          <a class="branch-name" href="/davorg/perl-coveralls-docker/tree/main" rel="noreferrer">main</a>
 
           <div class="commits pusher-is-only-committer">
             <ul class="list-style-none">
@@ -304,10 +355,21 @@ body {
                   <span title="davorg">
                     <a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;v=4" width="16" height="16" alt="@davorg"></a>
                   </span>
-                  <code><a class="mr-1" href="/davorg/calendar-simple/commit/a8b4d86431c15f9f1c46b104e05fb1da73b9ebe6" rel="noreferrer">a8b4d86</a></code>
+                  <code><a class="mr-1" href="/davorg/perl-coveralls-docker/commit/968c085fff5232a29d2aebcf12e16e9a607fb6a5" rel="noreferrer">968c085</a></code>
                   <div class="dashboard-break-word lh-condensed">
                     <blockquote>
-                      Bump version of action/checkout. Attempt to fix metadata
+                      Merge branch 'main' of github.com:davorg/perl-coveralls-docker
+                    </blockquote>
+                  </div>
+                </li>
+                <li class="d-flex flex-items-baseline">
+                  <span title="davorg">
+                    <a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;v=4" width="16" height="16" alt="@davorg"></a>
+                  </span>
+                  <code><a class="mr-1" href="/davorg/perl-coveralls-docker/commit/fe7d122c011a52d16e6105a60fad5a0be4bed1a0" rel="noreferrer">fe7d122</a></code>
+                  <div class="dashboard-break-word lh-condensed">
+                    <blockquote>
+                      Initial version
                     </blockquote>
                   </div>
                 </li>
@@ -324,51 +386,45 @@ body {
 <span class="label label-default" style="float: left">github</span>
 
               <p class="text-right"><small>Published by davorg
-     on Tuesday 18 October 2022 15:14</small></p>
+     on Tuesday 18 October 2022 16:14</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://github.com/davorg/net-songkick/compare/8c5d96e32c...5ced1af9f9">davorg pushed to master in davorg/net-songkick</a></h2>
+              <h2><a href="https://github.com/davorg/perl-coveralls-docker/compare/main">davorg created a branch main in davorg/perl-coveralls-docker</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:249866,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24673372463,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;167c13a5-e02a-44b8-a8be-3255f95520c1&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="ed7bf991b46619b125c5adc7fc7793bf2dd3295c0432c39005e98dd22d0a834b"><div class="body">
-<!-- push -->
+            <div class="panel-body"><div class="git-branch js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:553697642,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;CreateEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:24674878189,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;935f387d-0c7d-4b7e-a189-9e0ae5b71c71&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="cd3699785607deb8080865b1da6bfa177e8bcb8f91a8f09ff9ffd33672d1e482"><div class="body">
+<!-- create -->
 <div class="d-flex flex-items-baseline border-bottom color-border-muted py-3">
-    <span class="mr-2"><a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;v=4" width="32" height="32" alt="@davorg"></a></span>
+      <span class="mr-2"><a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;v=4" width="32" height="32" alt="@davorg"></a></span>
+
   <div class="d-flex flex-column width-full">
-    <div class="">
-      <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer">davorg</a>
-      
-      pushed to
-        <a class="branch-name" href="/davorg/net-songkick/tree/master" rel="noreferrer">master</a>
-        in
-      <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/net-songkick" rel="noreferrer">davorg/net-songkick</a>
-        <span class="color-fg-muted no-wrap f6 ml-1">
-          <relative-time datetime="2022-10-18T15:11:21Z" class="no-wrap">Oct 18, 2022</relative-time>
-        </span>
+        <div class="d-flex flex-items-baseline">
+          <div class="">
+              <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer">davorg</a>
+              
+              created a
+              branch
+              in
+              <a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/perl-coveralls-docker" rel="noreferrer">davorg/perl-coveralls-docker</a>
 
-        <div class="Box p-3 mt-2 ">
-          <span>1 commit to</span>
-          <a class="branch-name" href="/davorg/net-songkick/tree/master" rel="noreferrer">master</a>
-
-          <div class="commits pusher-is-only-committer">
-            <ul class="list-style-none">
-                <li class="d-flex flex-items-baseline">
-                  <span title="davorg">
-                    <a class="d-inline-block" href="/davorg" rel="noreferrer"><img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;v=4" width="16" height="16" alt="@davorg"></a>
-                  </span>
-                  <code><a class="mr-1" href="/davorg/net-songkick/commit/5ced1af9f9ea74932981b8154fbae52606dbae5b" rel="noreferrer">5ced1af</a></code>
-                  <div class="dashboard-break-word lh-condensed">
-                    <blockquote>
-                      Update version of action/checkout. Attempt to fix metadata
-                    </blockquote>
-                  </div>
-                </li>
-
-
-            </ul>
+              <span class="f6 color-fg-muted no-wrap ml-1">
+                <relative-time datetime="2022-10-18T16:11:12Z" class="no-wrap">Oct 18, 2022</relative-time>
+              </span>
           </div>
         </div>
+
+    <div class="Box p-3 mt-2 ">
+      <div>
+        <div class="f4 lh-condensed text-bold color-fg-default">
+              <a class="css-truncate css-truncate-target branch-name v-align-middle" title="main" href="/davorg/perl-coveralls-docker/tree/main" rel="noreferrer">main</a> in <a class="Link--primary text-bold no-underline wb-break-all d-inline-block" href="/davorg/perl-coveralls-docker" rel="noreferrer">davorg/perl-coveralls-docker</a>
+        </div>
+
+
+          <p class="f6 color-fg-muted mt-2 mb-0">
+            <span>Updated Oct 18</span>
+          </p>
+      </div>
     </div>
   </div>
 </div>
@@ -377,7 +433,7 @@ body {
 <span class="label label-default" style="float: left">github</span>
 
               <p class="text-right"><small>Published by davorg
-     on Tuesday 18 October 2022 15:11</small></p>
+     on Tuesday 18 October 2022 16:11</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -454,18 +510,6 @@ body {
 
               <p class="text-right"><small>Published by Dave Cross
      on Tuesday 18 October 2022 07:35</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://twitter.com/davorg/status/1581969016713015296">Wednesday's PMQs (assuming Truss makes it that far) is going to be carnage.</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">twitter</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Monday 17 October 2022 11:22</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -924,30 +968,6 @@ OMD are just one of those bands that I see live whenever I can. I&#8217;ve now b
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://perlhacks.com/2020/09/down-the-rabbit-hole/">Down the rabbit hole</a></h2>
-            </div><!-- panel-heading -->
-            <div class="panel-body"><p>Blog posts are like busses. You wait months for one and then two come along on consecutive days!</p>
-<p><a href="https://perlhacks.com/2020/09/blogging-for-perl/">Yesterday I wrote</a> about how we didn’t need a blogging platform for the Perl community – all we really needed was a good-looking feed aggregator. I mentioned <a href="http://perlsphere.net/">Perlsphere</a> as one such aggregator.</p>
-<p>Then Matthew commented, saying that Perlsphere looked a bit broken as Dave Cantrell’s posts from a few years ago frequently pop up there as new posts. I had a quick look at the problem and couldn’t quite work out what was going on. His web feed seems valid, but Perlsphere didn’t seem to recognise the dates of the posts.</p>
-<p>Perlsphere is implemented using <a href="https://metacpan.org/pod/Plagger">Plagger</a>, a feed aggregator written by Miyagawa a very long time ago (back when it seemed that web feeds were going to conquer the world). It’s a pretty complex beast and it seemed possible that somewhere deep in its code, it was mis-parsing Dave’s web feed. So I cloned <a href="https://github.com/miyagawa/plagger">the repo</a> and tried to work out what was going on.</p>
-<p>But Plagger hasn’t been updated for a very long time. As you can see from the <a href="http://matrix.cpantesters.org/?dist=Plagger+0.7.17">test results</a>, it stopped passing its tests a long while ago (I suspect when the current directory was removed from @INC). I spent a brief time trying to get it working but, ultimately, decided it was too hard a job.</p>
-<p>So I took another look at Perlsphere. And I decided that if it’s based on bit-rotten software, it’s not going to be very easy to maintain (which gave me flashbacks to blogs.perl.org!)</p>
-<p>But there’s another Perl tool for aggregating web feeds. And I wrote it. It’s called <a href="https://metacpan.org/release/Perlanet">Perlanet</a> (and, boy, do I regret that name now). Back in the first decade of this millennium, I was fascinated by web feeds and the idea of using them to build local “planets” – a web site that aggregated web feeds that had interesting information about your local area. Of course, that was back in the days when everything had a web feed and it was simple enough to pull them together and create really quite interesting sites. These days, of course, web feeds are rather unfashionable and almost no-one thinks to add them on to their web site.</p>
-<p>However, they still cling to life in the world of blogging. Mainly, I suspect, because blogging platforms added them fifteen years ago and just haven’t bothered to remove them yet. And it’s blog posts that we’re interested in here – so we’re still in with a chance of building something useful.</p>
-<p>And that’s what I did over lunch. I give you <a href="http://perl.theplanetarium.org/">Planet Perl</a>, a new site for aggregating Perl blogs.</p>
-<p>Currently, it only has four blogs in the configuration. But <a href="https://github.com/davorg/planetperl/blob/master/perlanetrc">the config file is on Github</a> and I’ll be happy to get pull requests adding other blogs.</p>
-<p>I hope you find it useful.</p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/09/down-the-rabbit-hole/">Down the rabbit hole</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-       </div><!-- panel-body -->
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">perl hacks</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Friday 18 September 2020 15:24</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
               <h2><a href="https://www.goodreads.com/review/show/3304101908?utm_medium=api&utm_source=rss">Bonk: The Curious Coupling of Sex and Science</a></h2>
             </div><!-- panel-heading -->
             <div class="panel-body">
@@ -1111,7 +1131,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Tuesday 18 October 2022 16:10</address>
+      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Tuesday 18 October 2022 17:19</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->
