@@ -7,22 +7,60 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2022-12-09T08:07:05Z</updated>
+  <updated>2022-12-09T09:06:51Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/25764712015</id>
-    <published>2022-12-09T00:23:23Z</published>
-    <updated>2022-12-09T00:23:23Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/b5faefee2d...893b55611c"/>
-    <title type="html">davorg pushed to master in davorg/uptime</title>
+    <id>tag:github.com,2008:IssueCommentEvent/25771763435</id>
+    <published>2022-12-09T08:36:51Z</published>
+    <updated>2022-12-09T08:36:51Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/parse-rpm-spec/pull/4#issuecomment-1344008694"/>
+    <title type="html">davorg commented on pull request davorg/parse-rpm-spec#4</title>
     <author>
       <name>davorg</name>
       <email>dave@davecross.co.uk</email>
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25764712015,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;0878b4f3-9515-4f52-9b22-450ea49a6d4e&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="7b4275a02e78d382cce1432cbb3b13434c4d3f698d416c08a35d07e84033c1ad"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174090,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25771763435,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;c3c81587-7a2f-493e-a01d-5dee9660f9d0&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="196be260171598f8c42a176acc49c9f758f9db461612e22904ac2aaafff547ef"&gt;&lt;div class="body"&gt;
+&lt;!-- issue_comment --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+        &lt;div class=""&gt;
+          &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+          
+          commented on
+          &lt;a class="Link--primary text-bold" title="Remove .travis.yml since travis-ci.org has shut down" href="/davorg/parse-rpm-spec/pull/4#issuecomment-1344008694" rel="noreferrer"&gt;davorg/parse-rpm-spec#4&lt;/a&gt;
+            &lt;span class="f6 color-fg-muted ml-1"&gt;
+              &lt;relative-time datetime="2022-12-09T08:36:51Z" class="no-wrap"&gt;Dec 9, 2022&lt;/relative-time&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;div class="message markdown-body Box p-3 wb-break-all "&gt;
+      &lt;div class="f6 mb-1"&gt;
+        &lt;a title="Remove .travis.yml since travis-ci.org has shut down" class="Link--secondary" href="/davorg/parse-rpm-spec/pull/4#issuecomment-1344008694" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2022-12-09T08:36:51Z" class="no-wrap"&gt;Dec 9, 2022&lt;/relative-time&gt;&lt;/a&gt;
+      &lt;/div&gt;
+        &lt;p&gt;Not sure why I missed this PR. Sorry if it affected your record at the Pull Request Club :-(&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/25771747523</id>
+    <published>2022-12-09T08:36:00Z</published>
+    <updated>2022-12-09T08:36:00Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/parse-rpm-spec/compare/780b0b886f...e3115ec498"/>
+    <title type="html">davorg pushed to master in davorg/parse-rpm-spec</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174090,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25771747523,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;e06c47b8-c95c-4b5c-b635-950e2304f630&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="78c4bc628f40ecea474ac18a2511defb2381dfd018cdf723515716d4e16c13aa"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
     &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
@@ -31,27 +69,38 @@
       &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
       
       pushed to
-        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        &lt;a class="branch-name" href="/davorg/parse-rpm-spec/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
         in
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
+      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/parse-rpm-spec" rel="noreferrer"&gt;davorg/parse-rpm-spec&lt;/a&gt;
         &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
-          &lt;relative-time datetime="2022-12-09T00:23:23Z" class="no-wrap"&gt;Dec 9, 2022&lt;/relative-time&gt;
+          &lt;relative-time datetime="2022-12-09T08:36:00Z" class="no-wrap"&gt;Dec 9, 2022&lt;/relative-time&gt;
         &lt;/span&gt;
 
         &lt;div class="Box p-3 mt-2 "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/parse-rpm-spec/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
 
           &lt;div class="commits "&gt;
             &lt;ul class="list-style-none"&gt;
                 &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="upptime-bot"&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/893b55611c9c6b1458ea47bbd3eabb1cc9184742" rel="noreferrer"&gt;893b556&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/parse-rpm-spec/commit/e3115ec4986233216349e7058317216490fa3b33" rel="noreferrer"&gt;e3115ec&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="bento" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f371.png"&gt;🍱&lt;/g-emoji&gt; Update graphs [skip ci]
+                      Merge pull request &lt;a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1181201076" data-permission-text="Title is private" data-url="https://github.com/davorg/parse-rpm-spec/issues/4" data-hovercard-type="pull_request" data-hovercard-url="/davorg/parse-rpm-spec/pull/4/hovercard" href="https://github.com/davorg/parse-rpm-spec/pull/4" rel="noreferrer"&gt;#4&lt;/a&gt; from hakonhagland/travis
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="hakonhagland"&gt;
+                    &lt;a class="d-inline-block" href="/hakonhagland" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/6708379?s=32&amp;amp;v=4" width="16" height="16" alt="@hakonhagland"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/parse-rpm-spec/commit/99838215e024601bda7f7d954633405c49354290" rel="noreferrer"&gt;9983821&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Remove .travis.yml
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
@@ -66,135 +115,172 @@
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/25764502165</id>
-    <published>2022-12-09T00:06:43Z</published>
-    <updated>2022-12-09T00:06:43Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/e6d7d18de6...b5faefee2d"/>
-    <title type="html">davorg pushed to master in davorg/uptime</title>
+    <id>tag:github.com,2008:PullRequestEvent/25771747439</id>
+    <published>2022-12-09T08:36:00Z</published>
+    <updated>2022-12-09T08:36:00Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/parse-rpm-spec/pull/4"/>
+    <title type="html">davorg merged a pull request in davorg/parse-rpm-spec</title>
     <author>
       <name>davorg</name>
       <email>dave@davecross.co.uk</email>
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25764502165,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;582b9313-523a-4371-93ae-ffa089cdc7cc&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="5fd258d2bc277599266cce3c2f82da74dca8e6de2a5742a2d20b72ba9afdc384"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
+    <content type="html">&lt;div class="issues_merged js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174090,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PullRequestEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25771747439,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;ded420cc-36db-47fd-a207-3938f20aa46b&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="bc55e7e4e299c99d8682e107068de3808f37761aac28524032edbb192e9d597c"&gt;&lt;div class="body"&gt;
+&lt;!-- pull_request --&gt;
 &lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
     &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class=""&gt;
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
-        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
-          &lt;relative-time datetime="2022-12-09T00:06:43Z" class="no-wrap"&gt;Dec 9, 2022&lt;/relative-time&gt;
-        &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 "&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="upptime-bot"&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/b5faefee2d2b1d185d6b7497e373f476ffeb01a6" rel="noreferrer"&gt;b5faefe&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="card_file_box" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c3.png"&gt;🗃️&lt;/g-emoji&gt; Update status summary [skip ci] [upptime]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="upptime-bot"&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/699fb178515f57797427951f740a65efdbfb9f74" rel="noreferrer"&gt;699fb17&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="memo" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png"&gt;📝&lt;/g-emoji&gt; Update summary in README [skip ci] [upptime]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div class="d-flex flex-items-baseline"&gt;
+        &lt;div class=""&gt;
+              &lt;a class="Link--primary no-underline text-bold wb-break-all d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+              
+              merged
+              a pull request in
+              &lt;a class="Link--primary text-bold no-underline wb-break-all d-inline-block" href="/davorg/parse-rpm-spec" rel="noreferrer"&gt;davorg/parse-rpm-spec&lt;/a&gt;
+            &lt;span class="f6 color-fg-muted no-wrap ml-1"&gt;
+              &lt;relative-time datetime="2022-12-09T08:36:00Z" class="no-wrap"&gt;Dec 9, 2022&lt;/relative-time&gt;
+            &lt;/span&gt;
         &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="Box p-3 my-2 "&gt;
+      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request merged d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"&gt;&lt;/path&gt;&lt;/svg&gt;
+
+      &lt;div class="ml-4"&gt;
+        &lt;div&gt;
+          &lt;span class="f4 lh-condensed text-bold color-fg-default"&gt;&lt;a class="color-fg-default text-bold" aria-label="Remove .travis.yml since travis-ci.org has shut down" href="/davorg/parse-rpm-spec/pull/4" rel="noreferrer"&gt;Remove .travis.yml since travis-ci.org has shut down&lt;/a&gt;&lt;/span&gt;
+          &lt;span class="f4 color-fg-muted ml-1"&gt;#4&lt;/span&gt;
+            &lt;div class="lh-condensed mb-2 mt-1"&gt;
+              &lt;p&gt;Unfortunately, travis-ci.org has shut down.
+
+We can use GitHub actions for continuous integration as a replacement.
+&lt;em&gt;Assigned by &lt;a href="https://pullrequest.club" rel="nofollow noreferrer"&gt;pullrequest.club&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="1 commit with 0 additions and 25 deletions"&gt;
+            &lt;span class="color-fg-success"&gt;+0&lt;/span&gt;
+            &lt;span class="color-fg-danger"&gt;-25&lt;/span&gt;
+          &lt;/div&gt;
+
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/25763610192</id>
-    <published>2022-12-08T23:01:21Z</published>
-    <updated>2022-12-08T23:01:21Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/3eceb27eb7...e6d7d18de6"/>
-    <title type="html">davorg pushed to master in davorg/uptime</title>
+    <id>tag:github.com,2008:CreateEvent/25771736967</id>
+    <published>2022-12-09T08:35:26Z</published>
+    <updated>2022-12-09T08:35:26Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/parse-rpm-spec/tree/RELEASE_1.1.0"/>
+    <title type="html">davorg created a tag RELEASE_1.1.0 in davorg/parse-rpm-spec</title>
     <author>
       <name>davorg</name>
       <email>dave@davecross.co.uk</email>
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25763610192,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;c2b7264c-537e-4227-9cd4-1acf12f9af7f&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="bec8ffc3fcdcf2196d09b501100d37f45fabdcdd747d1263cecdbc183313628c"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
+    <content type="html">&lt;div class="tag js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174090,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;CreateEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25771736967,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;e70b381b-deed-4ae6-a4e6-d7745bda8a44&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="0f3b45ecfac72e34d8878a1ff024f18cf58810303583dfa986ede16727d9496a"&gt;&lt;div class="body"&gt;
+&lt;!-- create --&gt;
+&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+
+  &lt;div class="d-flex flex-column width-full"&gt;
+        &lt;div class="d-flex flex-items-baseline"&gt;
+          &lt;div class=""&gt;
+              &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+              
+              created a
+              tag
+              in
+              &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/parse-rpm-spec" rel="noreferrer"&gt;davorg/parse-rpm-spec&lt;/a&gt;
+
+              &lt;span class="f6 color-fg-muted no-wrap ml-1"&gt;
+                &lt;relative-time datetime="2022-12-09T08:35:26Z" class="no-wrap"&gt;Dec 9, 2022&lt;/relative-time&gt;
+              &lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;div class="Box p-3 mt-2 "&gt;
+      &lt;div&gt;
+        &lt;div class="f4 lh-condensed text-bold color-fg-default"&gt;
+              &lt;a class="Link--primary text-bold" title="RELEASE_1.1.0" href="/davorg/parse-rpm-spec/tree/RELEASE_1.1.0" rel="noreferrer"&gt;RELEASE_1.1.0&lt;/a&gt; in &lt;a class="Link--primary text-bold no-underline wb-break-all d-inline-block" href="/davorg/parse-rpm-spec" rel="noreferrer"&gt;davorg/parse-rpm-spec&lt;/a&gt;
+        &lt;/div&gt;
+
+
+          &lt;p class="f6 color-fg-muted mt-2 mb-0"&gt;
+            &lt;span&gt;Updated Dec 9&lt;/span&gt;
+          &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>DAVECROSS has released Parse-RPM-Spec-v1.1.0</title>
+    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Parse-RPM-Spec-v1.1.0" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Perl extension to parse RPM spec files.</div>
+    </content>
+    <author>
+      <name>DAVECROSS</name>
+    </author>
+    <id>https://metacpan.org/release/DAVECROSS/Parse-RPM-Spec-v1.1.0</id>
+    <published>2022-12-09T08:34:55Z</published>
+    <updated>2022-12-09T08:34:55Z</updated>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:IssuesEvent/25771721980</id>
+    <published>2022-12-09T08:34:39Z</published>
+    <updated>2022-12-09T08:34:39Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/parse-rpm-spec/issues/5"/>
+    <title type="html">davorg closed an issue in davorg/parse-rpm-spec</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_closed js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174090,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssuesEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25771721980,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;d0907bad-c0a9-4a28-a2b2-21ec5f1adf4c&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="039fc911155d6a664cafb9b8707ebd8f87b1e10c6e6039fc545fe78bd5bb3ec2"&gt;&lt;div class="body"&gt;
+&lt;!-- issues --&gt;
 &lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
     &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class=""&gt;
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
-        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
-          &lt;relative-time datetime="2022-12-08T23:01:21Z" class="no-wrap"&gt;Dec 8, 2022&lt;/relative-time&gt;
+    &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+      &lt;div class=""&gt;
+          &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+          
+          closed
+          an issue in
+          &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/parse-rpm-spec" rel="noreferrer"&gt;davorg/parse-rpm-spec&lt;/a&gt;
+          &lt;span class="f6 color-fg-muted no-wrap ml-1"&gt;
+            &lt;relative-time datetime="2022-12-09T08:34:39Z" class="no-wrap"&gt;Dec 9, 2022&lt;/relative-time&gt;
+          &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="Box p-3 wb-break-all "&gt;
+      &lt;svg height="16" aria-label="Issue" class="octicon octicon-issue-closed closed d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path d="M11.28 6.78a.75.75 0 00-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l3.5-3.5z"&gt;&lt;/path&gt;&lt;path fill-rule="evenodd" d="M16 8A8 8 0 110 8a8 8 0 0116 0zm-1.5 0a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"&gt;&lt;/path&gt;&lt;/svg&gt;
+      &lt;div class="ml-4"&gt;
+        &lt;span class="f4 lh-condensed text-bold color-fg-default"&gt;
+          &lt;a title="can't parse exclusivearch" class="color-fg-default" aria-label="can't parse exclusivearch" href="/davorg/parse-rpm-spec/issues/5" rel="noreferrer"&gt;can't parse exclusivearch&lt;/a&gt;
         &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 "&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="upptime-bot"&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/e6d7d18de6df2c575d89725187084f6ac513d797" rel="noreferrer"&gt;e6d7d18&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="green_square" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png"&gt;🟩&lt;/g-emoji&gt; Feeds is up (200 in 429 ms) [skip ci] [upptime]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="upptime-bot"&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/6c4699f764e2ef4c0aceb8736f706de3692144d4" rel="noreferrer"&gt;6c4699f&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="green_square" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png"&gt;🟩&lt;/g-emoji&gt; Perl Hacks is up (200 in 1077 ms) [skip ci] [upptime]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-                &lt;li class="f6 mt-2"&gt;
-                  &lt;a class="Link--secondary" href="/davorg/uptime/compare/3eceb27eb7...e6d7d18de6" rel="noreferrer"&gt;4 more commits »&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
+        &lt;span class="f4 color-fg-muted ml-1"&gt;#5&lt;/span&gt;
+          &lt;div class="dashboard-break-word lh-condensed mb-2 mt-1"&gt;
+            &lt;p&gt;&lt;code class="notranslate"&gt;my $spec = Parse::RPM::Spec-&amp;gt;new( { file =&amp;gt; 'some_package.spec' } ); print $spec-&amp;gt;name; # some_package
+print $spec-&amp;gt;version; # 0.01 (for example)
+p…&lt;/code&gt;&lt;/p&gt;
           &lt;/div&gt;
-        &lt;/div&gt;
+
+          &lt;div class="f6 color-fg-muted mt-1"&gt;
+            1 comment
+          &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -259,116 +345,6 @@
       <name>R.E.M.</name>
     </author>
     <id>https://musicbrainz.org/recording/2f07435f-3f64-4ca3-9596-4adaeaf38ade</id>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/25744361989</id>
-    <published>2022-12-08T08:51:18Z</published>
-    <updated>2022-12-08T08:51:18Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/worldcup/compare/fd9306c548...d555cb9bd5"/>
-    <title type="html">davorg pushed to master in davorg/worldcup</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:126968982,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25744361989,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;5fcc2b52-e9b6-4d2e-a415-5e7cad2d1fe3&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="e1dc3735bcaffd86475902c496f4517d6ab0252e3e87ece9f372f4f32f2724c9"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
-    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class=""&gt;
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/worldcup/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/worldcup" rel="noreferrer"&gt;davorg/worldcup&lt;/a&gt;
-        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
-          &lt;relative-time datetime="2022-12-08T08:51:18Z" class="no-wrap"&gt;Dec 8, 2022&lt;/relative-time&gt;
-        &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/worldcup/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/worldcup/commit/d555cb9bd5bcdb6b62032cd092bcfd004431f333" rel="noreferrer"&gt;d555cb9&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Details of the remaining quarter final
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/25735582025</id>
-    <published>2022-12-08T00:20:56Z</published>
-    <updated>2022-12-08T00:20:56Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/4116e7af15...3eceb27eb7"/>
-    <title type="html">davorg pushed to master in davorg/uptime</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:25735582025,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;4e53e47c-29f7-4d28-8647-84bf25101dab&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="4831fe2542ff2202e50bd037dde56d512ddad92cb4a10c4ac02316d4a1ff7490"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline border-bottom color-border-muted py-3"&gt;
-    &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class=""&gt;
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all text-bold d-inline-block" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
-        &lt;span class="color-fg-muted no-wrap f6 ml-1"&gt;
-          &lt;relative-time datetime="2022-12-08T00:20:56Z" class="no-wrap"&gt;Dec 8, 2022&lt;/relative-time&gt;
-        &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="upptime-bot"&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/3eceb27eb7db8a965e22ddd41d81b2118a3b1f74" rel="noreferrer"&gt;3eceb27&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="bento" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f371.png"&gt;🍱&lt;/g-emoji&gt; Update graphs [skip ci]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>This is the wardrobe in the hotel I stayed in last night https://t.co/eMR7SNklq0 https://t.co/2mR8HTGcEo</title>
@@ -795,19 +771,6 @@ RUN apt-get update &amp;&amp; \
     <id>https://metacpan.org/release/DAVECROSS/Plack-Middleware-DirIndex-1.01</id>
     <published>2022-03-26T16:38:35Z</published>
     <updated>2022-03-26T16:38:35Z</updated>
-  </entry>
-  <entry>
-    <title>DAVECROSS has released Genealogy-AncestorChart-0.0.2</title>
-    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Genealogy-AncestorChart-0.0.2" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">create a table of genealogical ancestors.</div>
-    </content>
-    <author>
-      <name>DAVECROSS</name>
-    </author>
-    <id>https://metacpan.org/release/DAVECROSS/Genealogy-AncestorChart-0.0.2</id>
-    <published>2022-02-15T20:48:41Z</published>
-    <updated>2022-02-15T20:48:41Z</updated>
   </entry>
   <entry>
     <title>S.</title>
