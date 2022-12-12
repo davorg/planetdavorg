@@ -57,38 +57,62 @@ body {
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/The+Cure/_/Torture">Torture - The Cure</a></h2>
+              <h2><a href="https://www.last.fm/music/The+Cure/_/Fight">Fight - The Cure</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by The Cure
-     on Monday 12 December 2022 15:01</small></p>
+     on Monday 12 December 2022 16:00</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/The+Cure/_/Catch">Catch - The Cure</a></h2>
+              <h2><a href="https://www.last.fm/music/The+Cure/_/Shiver+and+Shake">Shiver and Shake - The Cure</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by The Cure
-     on Monday 12 December 2022 14:59</small></p>
+     on Monday 12 December 2022 15:56</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/The+Cure/_/The+Kiss">The Kiss - The Cure</a></h2>
+              <h2><a href="https://www.last.fm/music/The+Cure/_/A+Thousand+Hours">A Thousand Hours - The Cure</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by The Cure
-     on Monday 12 December 2022 14:52</small></p>
+     on Monday 12 December 2022 15:53</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/The+Cure/_/Perfect+Girl">Perfect Girl - The Cure</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by The Cure
+     on Monday 12 December 2022 15:50</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/The+Cure/_/Like+Cockatoos">Like Cockatoos - The Cure</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by The Cure
+     on Monday 12 December 2022 15:47</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -101,30 +125,6 @@ body {
 
               <p class="text-right"><small>Published by Dave Cross
      on Monday 12 December 2022 14:48</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Beirut/_/Postcards+From+Italy">Postcards From Italy - Beirut</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Beirut
-     on Monday 12 December 2022 12:25</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Evan+Dando/_/All+My+Life">All My Life - Evan Dando</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Evan Dando
-     on Monday 12 December 2022 12:11</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -616,6 +616,43 @@ You're very welcome. Enjoy :-)</a></h2>
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
+              <h2><a href="https://perlhacks.com/2022/10/containers-for-coverage/">Containers for Coverage</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p>I&#8217;ve been building Docker containers again. And I think you&#8217;ll find this one a little more useful than <a href="https://perlhacks.com/2022/10/building-a-perlanet-container/">the Perlanet one</a> I wrote about a couple of weeks ago.</p>
+<p>Several years ago I got into <a href="https://www.travis-ci.com/">Travis CI</a> and set up lots of <a href="https://github.com/davorg?tab=repositories">my GitHub repos</a> so they automatically ran the tests each time I committed to the repo. Later on, I also worked out how to tie those test runs into <a href="https://coveralls.io/">Coveralls.io</a> so I got pretty graphs of how my test coverage was looking. I gave <a href="https://www.slideshare.net/davorg/github-travisci-and-perl">a talk about what I had done</a>.</p>
+<p>But two things changed.</p>
+<p>Firstly, Travis CI got too popular and, eventually, removed their free service. And, secondly, <a href="https://github.com/features/actions">GitHub Actions</a> was introduced. Over the last few years, I&#8217;ve set up many of my repos to use GitHub Actions for CI. But, basically because I&#8217;m lazy, I didn&#8217;t remove the Travis CI configuration from those repos.</p>
+<p>But last week I decided the time was right to start work on that. And when I went to remove the .travis.yml I realised that something was missing from my GitHub Actions CI workflows &#8211; they were running the unit tests, but they weren&#8217;t reporting on test coverage. So it was time to fix that.</p>
+<p>I needed to reimplement the logic that connected Travis CI to Coveralls.io in a GitHub workflow. That actually turned out to be pretty simple. There&#8217;s a CPAN module called <a href="https://metacpan.org/pod/Devel::Cover::Report::Coveralls">Devel::Cover::Report::Coveralls</a> which takes the output from Devel::Cover, converts it to the correct format and sends it to Coveralls.io. And, as a bonus, it has documentation showing how to implement that in a GitHub workflow.</p>
+<p>So I hacked at my workflow definition file for one of my CPAN modules and within a few minutes I had it working.</p>
+<p>Well, I say &#8220;a few minutes&#8221;, but it took over thirteen minutes to run. It turns out that Devel::Cover::Report::Coveralls is a pretty heavyweight module and needs to install a lot of other modules in order to do its work.</p>
+<p>At this point, you can probably guess where this is going. And you&#8217;d be right.</p>
+<p>I&#8217;ve created a Docker container that has Devel::Cover::Report::Coveralls already installed. And, obviously, it&#8217;s available for everyone to use from the Docker hub &#8211; <a href="https://hub.docker.com/repository/docker/davorg/perl-coveralls">davorg/perl-coveralls</a>.</p>
+<p>A couple of small adjustments to my GitHub workflow and the coverage job is now running on my new container &#8211; and takes 29 seconds instead of 13 minutes. So that&#8217;s a win.</p>
+<p>The relevant section of my <a href="https://github.com/davorg/calendar-simple/blob/master/.github/workflows/perltest.yml">workflow file</a> is here:</p><pre class="urvanov-syntax-highlighter-plain-tag">coverage:
+    runs-on: ubuntu-latest
+    container: davorg/perl-coveralls:latest
+    name: Test coverage
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: cpanm -n --installdeps .
+      - name: Coverage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cover -test -report Coveralls</pre><p>And it&#8217;s producing nice graphs on Coveralls.io like the one above.</p>
+<p>Let me know if you find it useful.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/containers-for-coverage/">Containers for Coverage</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">perl hacks</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Tuesday 18 October 2022 17:01</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
               <h2><a href="https://metacpan.org/release/DAVECROSS/Feed-Find-0.13">DAVECROSS has released Feed-Find-0.13</a></h2>
             </div><!-- panel-heading -->
 
@@ -624,6 +661,62 @@ You're very welcome. Enjoy :-)</a></h2>
 
               <p class="text-right"><small>Published by DAVECROSS
      on Tuesday 18 October 2022 14:58</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p>It&#8217;s October. And that means that <a href="https://hacktoberfest.com/">Hacktoberfest</a> has started. If you can get four pull requests accepted on other people&#8217;s code repositories during October then you can win a t-shirt.</p>
+<p>In many ways, I think it&#8217;s a great idea. It encourages people to get involved in open source software. But in other ways, it can be a bit of a pain in the arse. Some people go crazy for a free t-shirt and that means you&#8217;ll almost certainly get several pull requests that aren&#8217;t really of the quality you&#8217;d hope for.</p>
+<p>I have a particular problem that probably isn&#8217;t very common. I&#8217;ve talked before about the &#8220;semi-static&#8221; sites I run on GitHub Pages. There&#8217;s some data in a GitHub Repo and every couple of hours the system wakes up and runs some code which generates a few HTML pages and commits those HTML pages into the repo&#8217;s &#8220;/docs&#8221; directory. And &#8211; hey presto! &#8211; there&#8217;s a new version of your web site.</p>
+<p>A good example is <a href="https://perl.theplanetarium.org/">Planet Perl</a>. The data is a YAML file which mostly consists of a list of web feeds. Every couple of hours we run <a href="https://metacpan.org/dist/Perlanet/view/bin/perlanet">perlanet</a> to pull in those web feeds and build a new version of the web site containing the latest articles about Perl.</p>
+<p>Can you see what the problem is?</p>
+<p>The problem is that the most obvious file in the repo is the &#8220;index.html&#8221; which is the web site. So when people find that repo and want to make a small change to the web site they&#8217;ll change that &#8220;index.html&#8221; file. But that file is generated. Every few hours, any changes to that file are overwritten as a new version is created. You actually want to change &#8220;index.tt&#8221;. But that uses <a href="https://metacpan.org/dist/Template-Toolkit/view/lib/Template/Manual/Directives.pod">Template Toolkit syntax</a>, so it&#8217;s easy enough to see why people with no Perl knowledge might want to avoid editing that.</p>
+<p>The <a href="https://github.com/davorg/planetperl/blob/master/README.md">README file</a> for the project explains which files you might want to change in order to make different types of changes. But people don&#8217;t read that. Or, if they do read it, they ignore the bits that they don&#8217;t like.</p>
+<p>So I get pull requests that I have to reject because they change the wrong files.</p>
+<p>Last year I got enough of these problematic pull requests that I decided to automate a solution. And it&#8217;s <a href="https://github.com/davorg/planetperl/blob/master/.github/workflows/reject-pr.yml">this pretty simple GitHub Workflow</a>. It runs whenever my repo receives a pull request and looks at the files that have been changed. If that list of files includes &#8220;docs/index.html&#8221; then the PR is automatically closed with a polite message explaining what they&#8217;ve done wrong.</p>
+<p>This makes my life easier. It&#8217;s possible it might make your life easier too.</p>
+<p>&nbsp;</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">perl hacks</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Monday 10 October 2022 16:01</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p>I&#8217;m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain <a href="https://metacpan.org/pod/perlanet">perlanet</a> (a Perl program for aggregating web feeds into a new feed &#8211; and building a web site based on that new feed) and I use it to build <a href="https://theplanetarium.org/">a few sites on topics I&#8217;m interested in</a>.</p>
+<p>Last year, I worked out a way to use GitHub Actions to <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">rebuild these sites automatically</a> every few hours &#8211; thereby enabling me to host the sites on GitHub Pages (I still think it&#8217;s a useful technique, but I sometimes worry slightly about the large number of commits those repos have &#8211; someone at GitHub must surely notice one day!)</p>
+<p>Yesterday, I was doing some light maintenance on one of those sites when I realised that each rebuild of these sites was taking a significant time (by which I mean four or five minutes) and started wondering if there was a way to speed them up and use less of GitHub&#8217;s resources. The problem is that Perlanet is a pretty hefty module and each rebuild was installing that module (and, therefore, dozens of other modules) on a pristine Ubuntu container.</p>
+<p>When you say it like that, the solution is obvious.</p>
+<p>You don&#8217;t need to run your GitHub Actions on the standard containers that GitHub supplies. You can run them on any container that&#8217;s available from any public container hosting service. So the solution was to build a Perlanet container and run the jobs using that instead. So that&#8217;s how I spent an hour or so yesterday.</p>
+<p>Here&#8217;s the Dockerfile I ended up with:</p><pre class="urvanov-syntax-highlighter-plain-tag">FROM perl:latest
+
+RUN apt-get update &amp;&amp; \
+    apt-get -y upgrade &amp;&amp; \ 
+    apt-get install -y build-essential &amp;&amp; \
+    apt-get install -y cpanminus libtidy-dev libxml++2.6-dev libhtml-tidy-perl &amp;&amp; \
+    cpanm --notest Test::Exception &amp;&amp; \
+    cpanm --notest Perlanet &amp;&amp; \
+    cpanm --notest LWP::Protocol::https</pre><p>It&#8217;s (obviously) <a href="https://github.com/davorg/perl-perlanet-docker">available on GitHub</a> in case anyone wants to improve on my rather ropey knowledge of Docker.</p>
+<p>I explicitly install Test::Exception because HTML::Tidy (one of Perlanet&#8217;s pre-requisites) needs it and I can&#8217;t work out why the standard installation procedure isn&#8217;t installing it. And while, LWP::Protocol::https is, strictly speaking, not required by Perlanet, you wouldn&#8217;t get very far on the modern web if you only accessed web feeds that are available over HTTP.</p>
+<p>A little bit of Docker Hub set-up and the container is <a href="https://hub.docker.com/r/davorg/perl-perlanet">available for everyone to use</a> (and rebuilt automatically whenever I commit to the repo).</p>
+<p>It was then just a case of changing my GitHub Actions to use my container. Here&#8217;s an example of <a href="https://github.com/davorg/planetdavorg/commit/5b65ce407e89dd16e74ad4b417b104c43dca96ef">one of the commits</a> that did that.</p>
+<p>I realise I&#8217;m pretty late to the party here, but I think this is a useful pattern. If you have a Perl library (or, indeed, any other software) that exists to provide a service to users then it&#8217;s a great idea to provide a containerised version of that software.</p>
+<p>And I&#8217;m happy to report that my site rebuilds have gone from 4-5 minutes to about 45 seconds.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">perl hacks</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Thursday 06 October 2022 09:43</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -833,6 +926,73 @@ OMD are just one of those bands that I see live whenever I can. I&#8217;ve now b
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
+              <h2><a href="https://perlhacks.com/2020/12/replacing-cpan-rt/">Replacing CPAN RT</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p>[<strong>Update:</strong> the CPAN Request Tracker was saved. It&#8217;s now run by a new team of volunteers and none of my suggestions below are required.]</p>
+<p>Two weeks ago, we learned that the <a href="https://log.perl.org/2020/12/rtcpanorg-sunset.html">CPAN Request Tracker was closing down early next year</a>. I proposed <a href="https://perlhacks.com/2020/12/rt-action-plan-for-cpan-authors/">a plan that CPAN authors could follow</a> to ensure that their users can still find somewhere to report bugs in modules (and, perhaps more importantly, to see what bugs have already been reported in modules).</p>
+<p>But that&#8217;s only part of the problem. In fact, it&#8217;s probably a minor part of the problem. If you&#8217;re an active CPAN author, then you probably already knew about the impending closure and had already made plans to deal with it. It&#8217;s likely that you had already moved your bug tracking to a new system. At the very least, you now know what the problem is and are considering the best way to deal with it before next March.</p>
+<p>The far larger problem is the thousands of distributions that aren&#8217;t owned by active CPAN authors. What are we going to do about those?</p>
+<p>How big is the problem? Well, the site <a href="https://cpan.rocks/">cpan.rocks</a> displays stats about CPAN. One of the panels on its front page shows a summary of the bugtracker information in CPAN distribution. You&#8217;ll see that 24,873 distributions (that&#8217;s 66% of them) have no bugtracker information included in their metadata. That&#8217;ll be for a number of reasons. Some of them will be distributions that haven&#8217;t been updated since alternative bugtrackers were supported by CPAN (originally, it was just assumed that everyone used the CPAN RT); some of them will be because the authors don&#8217;t know how to add the required metadata; and some of them (including most of my distributions) are missing it because the author just hasn&#8217;t got round to adding it yet. There will, of course, be many more reasons.</p>
+<p>Some people will have read the recent news and will be galvanised into doing something about it (I fall firmly into that category) but others (and I&#8217;d suggest that it&#8217;s a large majority) either won&#8217;t hear about the change or won&#8217;t care about it. And why should they care? They were generous enough to donate some of their code to CPAN at some point. They don&#8217;t have any obligation at all to carry on maintaining it after they&#8217;ve lost interest in whatever project led to them writing that software.</p>
+<p>Take, for example, <a href="https://metacpan.org/release/Mail-Alias">Mail-Alias</a>. That was released by someone called Tom Zeltwanger twenty years ago. He released three versions over a period of two months and then stopped. Who knows why. When he last updated the module, the CPAN search engine didn&#8217;t support alternative bugtrackers, so he never considered adding one. And that meant that the CPAN page for his module linked to the default bugtracker set up for the distribution on the CPAN RT. In the last fifteen years, <a href="https://rt.cpan.org/Public/Dist/Display.html?Name=Mail-Alias">four bugs have been reported</a> against that module. But as Tom has moved on, nothing has been done about any of them. There are a lot of modules on CPAN in a similar situation.</p>
+<p>But that leaves <a href="https://metacpan.org/">MetaCPAN</a> (the current CPAN search engine) with a problem. Where does it send people who want to report a bug against an inactive module?</p>
+<p>You might think that it doesn&#8217;t matter. But I disagree. Maybe I think that Mail::Alias would be the perfect module for a project I&#8217;m working on. Even before I start using it, it&#8217;s useful to be able to browse any existing bugs to see how they might affect my use of the module. And if someone later comes along and wants to take over maintenance of the module, then it&#8217;s useful for them to see any bugs that have been raised during the hiatus when the module was unmaintained.</p>
+<p>So, I&#8217;m a big fan of having a default bugtracker for CPAN modules &#8211; even for ones with inactive authors. Which leads us to the question of where should that be. And I have a suggestion.</p>
+<p>A few years ago, Micheal Schwern and Olaf Alders set up <a href="https://github.com/gitpan">Gitpan</a>. It&#8217;s an organisation which has a Github repo for every distribution on CPAN. And those repos each have a commit for every release of those distributions. Here, for example, is <a href="https://github.com/gitpan/Mail-Alias">the repo for Mail-Alias</a> &#8211; and you can see the three commits for the three releases I mentioned above.</p>
+<p>So I&#8217;d like to suggest Gitpan as a suitable place to use as a default bugtracker for CPAN distributions. There are a couple of problems:</p>
+<ul>
+<li>It looks like the auto-population of the commits stopped a few years ago. We&#8217;d need to work out how that works and catch up on the recent uploads.</li>
+<li>None of the repos has the issue tracker turned on. But I expect that can be done with a relatively simple program that uses the GitHub API.</li>
+</ul>
+<p>Of course, we also have the problem that some people object to using GitHub since it was taken over by Microsoft. But that&#8217;s fine, they can just point their bugtracker metadata to their preferred system.</p>
+<p>The problem with the CPAN RT was that it needed too much maintenance &#8211; and the Perl NOC team is really overworked. Any self-hosted alternative seems likely to have the same problem eventually. So I&#8217;m all in favour of using a third-party alternative. And if you&#8217;re taking that route, then it makes sense (to me, at least) to use a third-party system that already has all (ok, most) of the repos set up.</p>
+<p>I haven&#8217;t spoken to Schwern or Olaf about this, so I don&#8217;t know if there was some major problem that would stop this plan from working. But I think it&#8217;s worth looking at.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/12/replacing-cpan-rt/">Replacing CPAN RT</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">perl hacks</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Wednesday 16 December 2020 17:24</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://perlhacks.com/2020/12/rt-action-plan-for-cpan-authors/">RT – Action Plan for CPAN Authors</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p><a href="https://log.perl.org/2020/12/rtcpanorg-sunset.html">CPAN RT is going away.</a> CPAN authors have until the beginning of March to extract any useful information from it.</p>
+<p>RT is the &#8220;Request Tracker&#8221;, a bug tracking system that is written by <a href="https://bestpractical.com/">Best Practical</a>. For almost as long as I can remember, anyone who uploads a module to <a href="https://www.cpan.org/">CPAN</a> gets a free ticket queue for their module at <a href="https://rt.cpan.org/">rt.cpan.org</a>. <a href="https://metacpan.org/">MetaCPAN</a> assumes that&#8217;s where people should report bugs in your module and helpfully adds an &#8220;issues&#8221; link that goes to the appropriate page in RT.</p>
+<p>But now that system is going away. It will be switched off on the 1st March 2021. The <a href="https://noc.perl.org/">Perl NOC team</a> is spread pretty thinly and they just don&#8217;t have the resources to keep it running.</p>
+<p>Gabor has published <a href="https://www.youtube.com/watch?v=5ly28Ew0spY">a video talking about what this means and some of the potential problems</a>. But I thought it would be useful to work on a list of things that CPAN authors should be thinking about over the next three months.</p>
+<p>Firstly, and most importantly, you&#8217;ll need somewhere new for people to report problems with your modules. For most people, that&#8217;ll be simple enough. If you host your code repos somewhere like GitHub, then you could just use the issue trackers that most of those services provide. If you host your own code repos (or don&#8217;t have public code repos), then you&#8217;ll need to find an alternative solution.</p>
+<p>Next you&#8217;ll need to tell people where to find your new bug tracker. You do this by adding it to the metadata for your CPAN distribution. If, like most people, you provide a Makefile.PL in your distribution, then you&#8217;ll want to add a snippet like this to your code:</p><pre class="urvanov-syntax-highlighter-plain-tag">META_MERGE        =&gt; {
+  'meta-spec' =&gt; { version =&gt; 2 },
+  resources =&gt; {
+    bugtracker =&gt; {
+      "web" =&gt; "https://github.com/davorg/moox-role-json_ld/issues"
+    }
+ },</pre><p>It&#8217;s likely that you already have a &#8220;resources&#8221; key in your data structure (containing, for example, a link to your code repo), in which case you just need to add the &#8220;bugtracker&#8221; key inside it. When you release this new update to CPAN, the &#8220;issues&#8221; link will change to point to your new bug tracker.</p>
+<p>You then have the problem of dealing with the tickets that are currently in your RT queues. I suggest one or more of the following strategies:</p>
+<ol>
+<li>Go through the list and fix any that can be easily fixed. I found two like that when looking through my list this morning. If you&#8217;re releasing new versions of the modules (to add the new bug tracker information) then you might as well fix a bug or two at the same time.</li>
+<li>Look for tickets that can be closed. My list contains some very old tickets. I mean like fifteen years old. If someone had a problem installing one of your modules fifteen years ago and hasn&#8217;t followed-up more recently, then there&#8217;s a good chance that they no longer care about the solution. What I&#8217;ve been doing is to check on <a href="https://www.cpantesters.org/">CPAN Testers</a> to see if anyone else has seen a similar problem. If I see other reports, I know that it&#8217;s something that needs to be fixed. If there&#8217;s just the one in RT, then I close it with a message saying (paraphrased) &#8220;if this is still a problem that you&#8217;d like me to investigate, then please open a new ticket at [link to new bug tracker]&#8221;.</li>
+<li>Then you&#8217;re left with the tickets that you&#8217;d still like to address at some point. The Perl NOC team say that they&#8217;ll probably make a static archive of the old RT tickets available. But it would be good to get those tickets over to your new bug tracker. As I&#8217;m using GitHub for my new bug trackers, and that&#8217;s currently the most popular solution other than the CPAN RT itself, I&#8217;m hoping that someone cleverer than me will write some code that will make moving the tickets easy. But if nothing happens before the end of January, I might have to look into that myself.</li>
+</ol>
+<p>I&#8217;ve got a bit of work to do in this area myself. Although I&#8217;ve been using GitHub for all of my CPAN code for a long time, I haven&#8217;t been advertising the fact that I&#8217;d prefer people to use GitHub for bug reporting too. So I need to update all of my modules with the new bug tracker information included. I&#8217;ll do that over the next few weeks.</p>
+<p>I have a couple of tools that might help in this process. Firstly, I&#8217;ve just added to <a href="https://cpandashboard.com/">CPAN Dashboard</a> a column that links to the module&#8217;s bug tracker if one exists. I can use that to know which modules need to be updated.</p>
+<p>You could <a href="https://cpandashboard.com/add/">add yourself to CPAN Dashboard</a> if you wanted to get that information for your modules. But if you don&#8217;t want to do that, I&#8217;ve written a really short program that you can use to find your CPAN distributions that don&#8217;t include the bug tracker information.<a href="https://gist.github.com/davorg/faab75c5f40c9a580aa532f441442eb6"> It&#8217;s available as a Gist.</a></p>
+<p>Have I missed anything? I mean, yes, I know there are a large number of unmaintained CPAN distributions that no-one will get round to updating. But this post was aimed at active CPAN authors. If there&#8217;s anything else you think we should be doing, then please let me know in the comments.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/12/rt-action-plan-for-cpan-authors/">RT &#8211; Action Plan for CPAN Authors</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">perl hacks</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Sunday 06 December 2020 12:40</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
               <h2><a href="https://www.goodreads.com/review/show/3304101908?utm_medium=api&utm_source=rss">Bonk: The Curious Coupling of Sex and Science</a></h2>
             </div><!-- panel-heading -->
             <div class="panel-body">
@@ -996,7 +1156,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Monday 12 December 2022 16:07</address>
+      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Monday 12 December 2022 17:06</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->
