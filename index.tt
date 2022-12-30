@@ -10,11 +10,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+[% IF config.google_ga -%]
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9WV4KKVGH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-L9WV4KKVGH');
+    </script>
+[% END -%]
     <title>[% feed.title %]</title>
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/atom+xml" title="Atom" href="[% cfg.url %][% cfg.feed.fil.split('/').last %]" />
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="[% config.url %][% config.feed.fil.split('/').last %]" />
     <style type="text/css">
 body {
   padding-top: 75px;
@@ -48,7 +59,7 @@ body {
         <div class="col-md-2">
           <h2>sources</h2>
           <ul>
-[% FOR f IN cfg.feeds;
+[% FOR f IN config.feeds;
    bits = f.title.split(':\s*') -%]
             <li><a href="[% f.web | html %]">[% bits.0 %]</a></li>
 [% END -%]
@@ -96,19 +107,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:[% cfg.author.email %]">[% cfg.author.name | html %]</a> / [% feed.modified.strftime('%A %d %B %Y %H:%M') %]</address>
+      <address><a href="mailto:[% config.author.email %]">[% config.author.name | html %]</a> / [% feed.modified.strftime('%A %d %B %Y %H:%M') %]</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-56332-11");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
