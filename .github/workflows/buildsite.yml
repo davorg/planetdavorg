@@ -19,6 +19,8 @@ jobs:
     - name: Create pages
       run: |
         perlanet > perlanet.log 2>&1
+        perlanet longrc > long.log 2>&1
+        perlanet shortrc > short.log > 2>&1
 
     - name: Commit new page
       if: github.repository == 'davorg/planetdavorg'

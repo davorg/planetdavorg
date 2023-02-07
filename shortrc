@@ -1,0 +1,38 @@
+title: planet davorg
+description: Aggregating Dave's stuff
+url: https://davorg.theplanetarium.org/
+author:
+  name: Dave Cross
+  email: dave@theplanetarium.org
+  twitter: davorg
+entries: 30
+page:
+  file: docs/short.html
+  template: index.tt
+feed:
+  file: docs/short.xml
+  format: Atom
+cache_dir: /tmp/davorg
+google_ga: G-L9WV4KKVGH
+feeds:
+  - url: https://api.flickr.com/services/feeds/photos_public.gne?id=39021241@N00&lang=en-us&format=atom
+    title: flickr
+    web: https://flickr.com/photos/davorg
+  - url: https://dave.org.uk/feed-data/twitter.xml
+    title: twitter
+    web: https://twitter.com/davorg
+  - url: https://www.goodreads.com/review/list_rss/5372425?key=314467489241763246ec43367f5e8fb6f0a2cbed&shelf=currently-reading
+    title: goodreads
+    web: https://www.goodreads.com/davorg 
+  - url: https://www.slideshare.net/rss/user/davorg
+    title: slideshare
+    web: https://www.slideshare.net/davorg/slideshows
+  - url: https://dave.org.uk/feed-data/lastfm.xml
+    title: last.fm
+    web: https://www.last.fm/user/davorg
+  - url: https://github.com/davorg.atom
+    title: github
+    web: https://github.com/davorg
+  - url: https://metacpan.org/feed/author/DAVECROSS
+    title: cpan
+    web: https://metacpan.org/author/DAVECROSS
