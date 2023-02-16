@@ -7,68 +7,147 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-02-16T16:07:02Z</updated>
+  <updated>2023-02-16T17:06:43Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
   <entry>
-    <title>The First Big Weekend - Arab Strap</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">The First Big Weekend - Arab Strap</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Arab+Strap/_/The+First+Big+Weekend" type="text/html"/>
-    <updated>2023-02-16T14:59:35Z</updated>
+    <title>Using Dependabot to keep your GitHub Actions up to date (I'm probably the last person to discover this!)
+
+https://t.co/oYYX85oISA</title>
+    <link rel="alternate" href="https://twitter.com/davorg/status/1626253122128543744" type="text/html"/>
+    <id>https://twitter.com/davorg/status/1626253122128543744</id>
     <author>
-      <name>Arab Strap</name>
+      <name>Dave Cross</name>
     </author>
-    <id>https://musicbrainz.org/recording/05281eb6-56e1-4497-bc44-b91aad531a0b</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Using Dependabot to keep your GitHub Actions up to date (I'm probably the last person to discover this!)
+
+https://t.co/oYYX85oISA</div>
+    </content>
+    <updated>2023-02-16T16:12:13Z</updated>
   </entry>
   <entry>
-    <title>Human Behaviour - Björk</title>
+    <title>Dependabot and GitHub Actions</title>
+    <link rel="alternate" href="https://dev.to/davorg/dependabot-and-github-actions-3lai" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>If you're using GitHub Workflows to automate bits of your development process (test runs, deployment, stuff like that) then you're almost certainly using GitHub Actions as well. Actions are pre-build chunks of functionality that you can use in your workflows and which save you having to write a load of code yourself. I've never, for example, written a workflow definition that doesn't use <a href="https://github.com/marketplace/actions/checkout">actions/checkout</a> to checkout the current repo on the container that is running that workflow. Part of my workflow definition will always look like this:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>steps:
+  - name: Check out code
+    uses: actions/checkout@v3
+</code></pre>
+
+</div>
+
+<p>Or, at least, it will look a lot like that. The bit that might change is that <code>v3</code> on the end there. That is, of course, the version of the action that I'm using. And that will change when the author of the action releases a new version. Well, strictly speaking, it will change when I notice that there's a new version and bother to update the workflow definition.</p>
+
+<p>Recently, I noticed that two of the actions I use frequently (including the checkout action which I use <em>everywhere</em>) had updated their version numbers and I hadn't known about the change. It took a few hours of work to update the version numbers in all of my workflow definitions.</p>
+
+<p>And life isn't supposed to be that much work.</p>
+
+<p>But there's a solution. And I discovered it thanks to <a href="https://www.reddit.com/r/github/comments/1134qvp/github_actions_is_it_safe_to_use_master/">a discussion on Reddit</a>.</p>
+
+<p>If you're doing much work on GitHub (particularly in the Javascript/Node) area, then you'll have met <a href="https://github.com/dependabot">Dependabot</a>. It's a bot that scans GitHub repos for dependencies that are out of date and then (and here's the really clever bit!) it generates pull requests that update the repo to use the updated versions.</p>
+
+<p>To be honest, I don't have many projects on GitHub that use the technologies that Dependabot targets by default. The few I have are web sites that use frameworks I've cloned from elsewhere - so I get the occasional PR that updates <code>packages.json</code> and I just apply them and forget about it.</p>
+
+<p>But it seems that Dependabot can do far more than that. You just need to configure it properly in your repo. And one of the things it can do is to scan for out of date actions being used in your workflow definitions. You just need a file called <code>dependabot.yml</code> in your <code>.github</code> directory and the contents should look like this:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># Set update schedule for GitHub Actions
+
+version: 2
+updates:
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
+</code></pre>
+
+</div>
+
+<p>Dependabot will then check your actions versions once a week and create PRs for any that are out of date. I know it works, because I added this to all of my repos this morning and it promptly created half a dozen PRs for repos where I had updated the versions but hadn't pushed the changes to GitHub. When I pushed the existing changes, Dependabot checked its PR against the new code, realised the PR was no longer needed and closed the PR. Which was nice :-)</p>
+
+<p>It you're using GitHub Workflows (and I can't really think of any reason why you wouldn't be) then I recommend adding this file to your repos. Of course, GitHub has <a href="https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot">documentation about this feature</a>.</p>
+
+<p>Dependabot clearly has more uses than I thought it did. I'm going to have to investigate it further. I wonder if it can check CPAN dependencies.</p>
+
+<p>Do you have any Dependabot tricks that I would find useful?</p>
+
+</div>
+    </content>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/dependabot-and-github-actions-3lai</id>
+    <published>2023-02-16T16:10:44Z</published>
+    <updated>2023-02-16T16:10:44Z</updated>
+    <category term="github"/>
+    <category term="githubactions"/>
+    <category term="dependabot"/>
+  </entry>
+  <entry>
+    <title>Big Time Sensuality - Björk</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Human Behaviour - Björk</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Big Time Sensuality - Björk</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Bj%C3%B6rk/_/Human+Behaviour" type="text/html"/>
-    <updated>2023-02-16T14:55:22Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Bj%C3%B6rk/_/Big+Time+Sensuality" type="text/html"/>
+    <updated>2023-02-16T16:01:16Z</updated>
     <author>
       <name>Björk</name>
     </author>
-    <id>https://musicbrainz.org/recording/6cae663c-1cff-4080-8b18-6f95d4cb99f4</id>
+    <id>https://musicbrainz.org/recording/7c8406f4-f118-302e-ad6c-3019bff19e54</id>
   </entry>
   <entry>
-    <title>Do You Remember the First Time? - Pulp</title>
+    <title>Grace - Jeff Buckley</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Do You Remember the First Time? - Pulp</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Grace - Jeff Buckley</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Pulp/_/Do+You+Remember+the+First+Time%3F" type="text/html"/>
-    <updated>2023-02-16T14:50:59Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Jeff+Buckley/_/Grace" type="text/html"/>
+    <updated>2023-02-16T15:55:54Z</updated>
     <author>
-      <name>Pulp</name>
+      <name>Jeff Buckley</name>
     </author>
-    <id>https://musicbrainz.org/recording/424e01ac-0437-4095-8ea1-20744312ec99</id>
+    <id>https://musicbrainz.org/recording/</id>
   </entry>
   <entry>
-    <title>Patio Song - Gorky's Zygotic Mynci</title>
+    <title>Sexy Boy - Air</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Patio Song - Gorky's Zygotic Mynci</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Sexy Boy - Air</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Gorky%27s+Zygotic+Mynci/_/Patio+Song" type="text/html"/>
-    <updated>2023-02-16T14:48:15Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Air/_/Sexy+Boy" type="text/html"/>
+    <updated>2023-02-16T15:50:55Z</updated>
     <author>
-      <name>Gorky's Zygotic Mynci</name>
+      <name>Air</name>
     </author>
-    <id>https://musicbrainz.org/recording/4a028123-d679-31c6-8a95-e8cac4766ed4</id>
+    <id>https://musicbrainz.org/recording/4896c84f-a2ae-444c-b845-e9f74d3ccb2c</id>
   </entry>
   <entry>
-    <title>All My Little Words - The Magnetic Fields</title>
+    <title>Waking Up - Elastica</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">All My Little Words - The Magnetic Fields</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Waking Up - Elastica</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/The+Magnetic+Fields/_/All+My+Little+Words" type="text/html"/>
-    <updated>2023-02-16T14:45:29Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Elastica/_/Waking+Up" type="text/html"/>
+    <updated>2023-02-16T15:47:38Z</updated>
     <author>
-      <name>The Magnetic Fields</name>
+      <name>Elastica</name>
     </author>
-    <id>https://musicbrainz.org/recording/12ad3a0c-f95e-4626-9d89-8c023af8a174</id>
+    <id>https://musicbrainz.org/recording/0787c75a-d1a8-31b8-bad0-2bbe9d23976f</id>
+  </entry>
+  <entry>
+    <title>Olympian - Gene</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Olympian - Gene</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Gene/_/Olympian" type="text/html"/>
+    <updated>2023-02-16T15:42:13Z</updated>
+    <author>
+      <name>Gene</name>
+    </author>
+    <id>https://musicbrainz.org/recording/0552cb06-fab2-4975-948c-90aac4c52119</id>
   </entry>
   <entry>
     <title>I am 43.3% Goth, 80.8% Nerd, placing me in the LARP category: https://t.co/kx4tUb1KUq via @idr_labs</title>
@@ -94,7 +173,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:61634700,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27133701544,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;3a99c588-a715-4ca7-9162-857032a3e6c0&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="5c98a9ea2c23fa7644e6dee34be69c584362af804c7eaff84feffe23f8de94e9"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:61634700,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27133701544,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;ba7d3a88-a03b-45f9-bd30-3478d58770eb&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="95210e31ae0ae011f34c74549e3e3569f9e6837fdf1d330453b6149ddb774351"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -149,7 +228,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_opened js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174098,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssuesEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27133572358,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;3d2feaa0-6091-471f-8acd-1aa14661324c&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d0601b7eacb1ccf77182f2fc1bba3ed906b457e1a248d43f7a097f33c18a7853"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="issues_opened js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174098,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssuesEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27133572358,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;2ce7a993-6e6d-4421-a5a6-dff7abed2e96&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="2e4cb4d119f3a05ed60a7afb4981af1dffaaff08d43355360c5939b227b6e881"&gt;&lt;div class="body"&gt;
 &lt;!-- issues --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -193,7 +272,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174098,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27133555633,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;50768078-7211-46a0-9083-711385264b6a&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="65e273a1442b31b9771bb54271dc4af7deca5251eed94b4878b2dd6c6fbd4fc9"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:174098,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27133555633,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;db592546-0e6e-4167-8d73-25a159fef665&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="9a7e14cbedb7b8588d23f97a7bbfd68a9b6ca425b65bc5cac9cd2c0ede6bbc62"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -248,7 +327,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:126850420,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27131640674,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;48a6498b-d30d-4d34-9452-59c048ea11d8&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="e33a4adbd3d49147efc69e020d0be3a8c8c7700c6b7df4d377917f57fc95600a"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:126850420,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27131640674,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;12c51386-40cf-4541-8529-e9fd7b26b77c&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d01fc2d1d28a34284c299d89ae6bdf87f2f64aa0965a78d1ebd170112424ef4a"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -303,7 +382,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="git-branch js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:88095,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;DeleteEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27131538931,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;8b695782-56d4-4b40-a75b-90569e46a4eb&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="8cda8064f8e9b0473a56f20794e49d6008c40262697080051d00b0057cfc6804"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="git-branch js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:88095,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;DeleteEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27131538931,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;4d5e913e-a1bd-4040-855a-65c3bfb1a054&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="916ef293f5b5e0257f25eb64d947816128317e3a811b7afcc81c83245bed0d4f"&gt;&lt;div class="body"&gt;
 &lt;!-- delete --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -372,18 +451,6 @@
       <div xmlns="http://www.w3.org/1999/xhtml">@smithsam Yeah. Hence "Twitter-based apps", not "Twitter apps" :-)</div>
     </content>
     <updated>2023-02-08T09:50:42Z</updated>
-  </entry>
-  <entry>
-    <title>This is supposed to be happening tomorrow and, as far as I can see, there's still no information about this "paid b… https://t.co/uhNU8SR6I4</title>
-    <link rel="alternate" href="https://twitter.com/davorg/status/1623252150250872836" type="text/html"/>
-    <id>https://twitter.com/davorg/status/1623252150250872836</id>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">This is supposed to be happening tomorrow and, as far as I can see, there's still no information about this "paid b… https://t.co/uhNU8SR6I4</div>
-    </content>
-    <updated>2023-02-08T09:27:25Z</updated>
   </entry>
   <entry>
     <title>Ratio: The Simple Codes Behind the Craft of Everyday Cooking</title>
@@ -1692,45 +1759,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="pull request"/>
     <category term="semi-static sites"/>
     <category term="workflow"/>
-  </entry>
-  <entry>
-    <title>Not that PR, thanks</title>
-    <link rel="alternate" href="https://dev.to/davorg/not-that-pr-thanks-3m1c" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s October. And that means that <a href="https://hacktoberfest.com/">Hacktoberfest</a> has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt.</p>
-
-<p>In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can be a bit of a pain in the arse. Some people go crazy for a free t-shirt and that means you’ll almost certainly get several pull requests that aren’t really of the quality you’d hope for.</p>
-
-<p>I have a particular problem that probably isn’t very common. I’ve talked before about the “semi-static” sites I run on GitHub Pages. There’s some data in a GitHub Repo and every couple of hours the system wakes up and runs some code which generates a few HTML pages and commits those HTML pages into the repo’s “/docs” directory. And – hey presto! – there’s a new version of your web site.</p>
-
-<p>A good example is <a href="https://perl.theplanetarium.org/">Planet Perl</a>. The data is a YAML file which mostly consists of a list of web feeds. Every couple of hours we run <a href="https://metacpan.org/dist/Perlanet/view/bin/perlanet">perlanet</a> to pull in those web feeds and build a new version of the web site containing the latest articles about Perl.</p>
-
-<p>Can you see what the problem is?</p>
-
-<p>The problem is that the most obvious file in the repo is the “index.html” which is the web site. So when people find that repo and want to make a small change to the web site they’ll change that “index.html” file. But that file is generated. Every few hours, any changes to that file are overwritten as a new version is created. You actually want to change “index.tt”. But that uses <a href="https://metacpan.org/dist/Template-Toolkit/view/lib/Template/Manual/Directives.pod">Template Toolkit syntax</a>, so it’s easy enough to see why people with no Perl knowledge might want to avoid editing that.</p>
-
-<p>The <a href="https://github.com/davorg/planetperl/blob/master/README.md">README file</a> for the project explains which files you might want to change in order to make different types of changes. But people don’t read that. Or, if they do read it, they ignore the bits that they don’t like.</p>
-
-<p>So I get pull requests that I have to reject because they change the wrong files.</p>
-
-<p>Last year I got enough of these problematic pull requests that I decided to automate a solution. And it’s <a href="https://github.com/davorg/planetperl/blob/master/.github/workflows/reject-pr.yml">this pretty simple GitHub Workflow</a>. It runs whenever my repo receives a pull request and looks at the files that have been changed. If that list of files includes “docs/index.html” then the PR is automatically closed with a polite message explaining what they’ve done wrong.</p>
-
-<p>This makes my life easier. It’s possible it might make your life easier too.</p>
-
-<p>The post <a href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a href="https://perlhacks.com">Perl Hacks</a>.</p>
-
-</div>
-    </content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/not-that-pr-thanks-3m1c</id>
-    <published>2022-10-10T16:01:43Z</published>
-    <updated>2022-10-10T16:01:43Z</updated>
-    <category term="github"/>
-    <category term="githubactions"/>
-    <category term="pullrequest"/>
-    <category term="semistaticsites"/>
   </entry>
   <entry>
     <title>Building a Perlanet Container</title>

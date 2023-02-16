@@ -7,9 +7,72 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-02-16T16:07:07Z</updated>
+  <updated>2023-02-16T17:06:47Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry>
+    <title>Dependabot and GitHub Actions</title>
+    <link rel="alternate" href="https://dev.to/davorg/dependabot-and-github-actions-3lai" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>If you're using GitHub Workflows to automate bits of your development process (test runs, deployment, stuff like that) then you're almost certainly using GitHub Actions as well. Actions are pre-build chunks of functionality that you can use in your workflows and which save you having to write a load of code yourself. I've never, for example, written a workflow definition that doesn't use <a href="https://github.com/marketplace/actions/checkout">actions/checkout</a> to checkout the current repo on the container that is running that workflow. Part of my workflow definition will always look like this:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>steps:
+  - name: Check out code
+    uses: actions/checkout@v3
+</code></pre>
+
+</div>
+
+<p>Or, at least, it will look a lot like that. The bit that might change is that <code>v3</code> on the end there. That is, of course, the version of the action that I'm using. And that will change when the author of the action releases a new version. Well, strictly speaking, it will change when I notice that there's a new version and bother to update the workflow definition.</p>
+
+<p>Recently, I noticed that two of the actions I use frequently (including the checkout action which I use <em>everywhere</em>) had updated their version numbers and I hadn't known about the change. It took a few hours of work to update the version numbers in all of my workflow definitions.</p>
+
+<p>And life isn't supposed to be that much work.</p>
+
+<p>But there's a solution. And I discovered it thanks to <a href="https://www.reddit.com/r/github/comments/1134qvp/github_actions_is_it_safe_to_use_master/">a discussion on Reddit</a>.</p>
+
+<p>If you're doing much work on GitHub (particularly in the Javascript/Node) area, then you'll have met <a href="https://github.com/dependabot">Dependabot</a>. It's a bot that scans GitHub repos for dependencies that are out of date and then (and here's the really clever bit!) it generates pull requests that update the repo to use the updated versions.</p>
+
+<p>To be honest, I don't have many projects on GitHub that use the technologies that Dependabot targets by default. The few I have are web sites that use frameworks I've cloned from elsewhere - so I get the occasional PR that updates <code>packages.json</code> and I just apply them and forget about it.</p>
+
+<p>But it seems that Dependabot can do far more than that. You just need to configure it properly in your repo. And one of the things it can do is to scan for out of date actions being used in your workflow definitions. You just need a file called <code>dependabot.yml</code> in your <code>.github</code> directory and the contents should look like this:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># Set update schedule for GitHub Actions
+
+version: 2
+updates:
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
+</code></pre>
+
+</div>
+
+<p>Dependabot will then check your actions versions once a week and create PRs for any that are out of date. I know it works, because I added this to all of my repos this morning and it promptly created half a dozen PRs for repos where I had updated the versions but hadn't pushed the changes to GitHub. When I pushed the existing changes, Dependabot checked its PR against the new code, realised the PR was no longer needed and closed the PR. Which was nice :-)</p>
+
+<p>It you're using GitHub Workflows (and I can't really think of any reason why you wouldn't be) then I recommend adding this file to your repos. Of course, GitHub has <a href="https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot">documentation about this feature</a>.</p>
+
+<p>Dependabot clearly has more uses than I thought it did. I'm going to have to investigate it further. I wonder if it can check CPAN dependencies.</p>
+
+<p>Do you have any Dependabot tricks that I would find useful?</p>
+
+</div>
+    </content>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/dependabot-and-github-actions-3lai</id>
+    <published>2023-02-16T16:10:44Z</published>
+    <updated>2023-02-16T16:10:44Z</updated>
+    <category term="github"/>
+    <category term="githubactions"/>
+    <category term="dependabot"/>
+  </entry>
   <entry>
     <title>2022 in Gigs</title>
     <link rel="alternate" href="https://blog.dave.org.uk/2023/02/2022-in-gigs.html" type="text/html"/>
@@ -1107,45 +1170,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="pull request"/>
     <category term="semi-static sites"/>
     <category term="workflow"/>
-  </entry>
-  <entry>
-    <title>Not that PR, thanks</title>
-    <link rel="alternate" href="https://dev.to/davorg/not-that-pr-thanks-3m1c" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s October. And that means that <a href="https://hacktoberfest.com/">Hacktoberfest</a> has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt.</p>
-
-<p>In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can be a bit of a pain in the arse. Some people go crazy for a free t-shirt and that means you’ll almost certainly get several pull requests that aren’t really of the quality you’d hope for.</p>
-
-<p>I have a particular problem that probably isn’t very common. I’ve talked before about the “semi-static” sites I run on GitHub Pages. There’s some data in a GitHub Repo and every couple of hours the system wakes up and runs some code which generates a few HTML pages and commits those HTML pages into the repo’s “/docs” directory. And – hey presto! – there’s a new version of your web site.</p>
-
-<p>A good example is <a href="https://perl.theplanetarium.org/">Planet Perl</a>. The data is a YAML file which mostly consists of a list of web feeds. Every couple of hours we run <a href="https://metacpan.org/dist/Perlanet/view/bin/perlanet">perlanet</a> to pull in those web feeds and build a new version of the web site containing the latest articles about Perl.</p>
-
-<p>Can you see what the problem is?</p>
-
-<p>The problem is that the most obvious file in the repo is the “index.html” which is the web site. So when people find that repo and want to make a small change to the web site they’ll change that “index.html” file. But that file is generated. Every few hours, any changes to that file are overwritten as a new version is created. You actually want to change “index.tt”. But that uses <a href="https://metacpan.org/dist/Template-Toolkit/view/lib/Template/Manual/Directives.pod">Template Toolkit syntax</a>, so it’s easy enough to see why people with no Perl knowledge might want to avoid editing that.</p>
-
-<p>The <a href="https://github.com/davorg/planetperl/blob/master/README.md">README file</a> for the project explains which files you might want to change in order to make different types of changes. But people don’t read that. Or, if they do read it, they ignore the bits that they don’t like.</p>
-
-<p>So I get pull requests that I have to reject because they change the wrong files.</p>
-
-<p>Last year I got enough of these problematic pull requests that I decided to automate a solution. And it’s <a href="https://github.com/davorg/planetperl/blob/master/.github/workflows/reject-pr.yml">this pretty simple GitHub Workflow</a>. It runs whenever my repo receives a pull request and looks at the files that have been changed. If that list of files includes “docs/index.html” then the PR is automatically closed with a polite message explaining what they’ve done wrong.</p>
-
-<p>This makes my life easier. It’s possible it might make your life easier too.</p>
-
-<p>The post <a href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a href="https://perlhacks.com">Perl Hacks</a>.</p>
-
-</div>
-    </content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/not-that-pr-thanks-3m1c</id>
-    <published>2022-10-10T16:01:43Z</published>
-    <updated>2022-10-10T16:01:43Z</updated>
-    <category term="github"/>
-    <category term="githubactions"/>
-    <category term="pullrequest"/>
-    <category term="semistaticsites"/>
   </entry>
   <entry>
     <title>Building a Perlanet Container</title>

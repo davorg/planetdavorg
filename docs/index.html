@@ -68,62 +68,135 @@ body {
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Arab+Strap/_/The+First+Big+Weekend">The First Big Weekend - Arab Strap</a></h2>
+              <h2><a href="https://twitter.com/davorg/status/1626253122128543744">Using Dependabot to keep your GitHub Actions up to date (I'm probably the last person to discover this!)
+
+https://t.co/oYYX85oISA</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
+<span class="label label-default" style="float: left">twitter</span>
 
-              <p class="text-right"><small>Published by Arab Strap
-     on Thursday 16 February 2023 14:59</small></p>
+              <p class="text-right"><small>Published by Dave Cross
+     on Thursday 16 February 2023 16:12</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Bj%C3%B6rk/_/Human+Behaviour">Human Behaviour - Björk</a></h2>
+              <h2><a href="https://dev.to/davorg/dependabot-and-github-actions-3lai">Dependabot and GitHub Actions</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p>If you're using GitHub Workflows to automate bits of your development process (test runs, deployment, stuff like that) then you're almost certainly using GitHub Actions as well. Actions are pre-build chunks of functionality that you can use in your workflows and which save you having to write a load of code yourself. I've never, for example, written a workflow definition that doesn't use <a href="https://github.com/marketplace/actions/checkout">actions/checkout</a> to checkout the current repo on the container that is running that workflow. Part of my workflow definition will always look like this:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>steps:
+  - name: Check out code
+    uses: actions/checkout@v3
+</code></pre>
+
+</div>
+
+<p>Or, at least, it will look a lot like that. The bit that might change is that <code>v3</code> on the end there. That is, of course, the version of the action that I'm using. And that will change when the author of the action releases a new version. Well, strictly speaking, it will change when I notice that there's a new version and bother to update the workflow definition.</p>
+
+<p>Recently, I noticed that two of the actions I use frequently (including the checkout action which I use <em>everywhere</em>) had updated their version numbers and I hadn't known about the change. It took a few hours of work to update the version numbers in all of my workflow definitions.</p>
+
+<p>And life isn't supposed to be that much work.</p>
+
+<p>But there's a solution. And I discovered it thanks to <a href="https://www.reddit.com/r/github/comments/1134qvp/github_actions_is_it_safe_to_use_master/">a discussion on Reddit</a>.</p>
+
+<p>If you're doing much work on GitHub (particularly in the Javascript/Node) area, then you'll have met <a href="https://github.com/dependabot">Dependabot</a>. It's a bot that scans GitHub repos for dependencies that are out of date and then (and here's the really clever bit!) it generates pull requests that update the repo to use the updated versions.</p>
+
+<p>To be honest, I don't have many projects on GitHub that use the technologies that Dependabot targets by default. The few I have are web sites that use frameworks I've cloned from elsewhere - so I get the occasional PR that updates <code>packages.json</code> and I just apply them and forget about it.</p>
+
+<p>But it seems that Dependabot can do far more than that. You just need to configure it properly in your repo. And one of the things it can do is to scan for out of date actions being used in your workflow definitions. You just need a file called <code>dependabot.yml</code> in your <code>.github</code> directory and the contents should look like this:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code># Set update schedule for GitHub Actions
+
+version: 2
+updates:
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
+</code></pre>
+
+</div>
+
+<p>Dependabot will then check your actions versions once a week and create PRs for any that are out of date. I know it works, because I added this to all of my repos this morning and it promptly created half a dozen PRs for repos where I had updated the versions but hadn't pushed the changes to GitHub. When I pushed the existing changes, Dependabot checked its PR against the new code, realised the PR was no longer needed and closed the PR. Which was nice :-)</p>
+
+<p>It you're using GitHub Workflows (and I can't really think of any reason why you wouldn't be) then I recommend adding this file to your repos. Of course, GitHub has <a href="https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot">documentation about this feature</a>.</p>
+
+<p>Dependabot clearly has more uses than I thought it did. I'm going to have to investigate it further. I wonder if it can check CPAN dependencies.</p>
+
+<p>Do you have any Dependabot tricks that I would find useful?</p>
+
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">dev.to</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Thursday 16 February 2023 16:10</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Bj%C3%B6rk/_/Big+Time+Sensuality">Big Time Sensuality - Björk</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by Björk
-     on Thursday 16 February 2023 14:55</small></p>
+     on Thursday 16 February 2023 16:01</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Pulp/_/Do+You+Remember+the+First+Time%3F">Do You Remember the First Time? - Pulp</a></h2>
+              <h2><a href="https://www.last.fm/music/Jeff+Buckley/_/Grace">Grace - Jeff Buckley</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
-              <p class="text-right"><small>Published by Pulp
-     on Thursday 16 February 2023 14:50</small></p>
+              <p class="text-right"><small>Published by Jeff Buckley
+     on Thursday 16 February 2023 15:55</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Gorky%27s+Zygotic+Mynci/_/Patio+Song">Patio Song - Gorky's Zygotic Mynci</a></h2>
+              <h2><a href="https://www.last.fm/music/Air/_/Sexy+Boy">Sexy Boy - Air</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
-              <p class="text-right"><small>Published by Gorky's Zygotic Mynci
-     on Thursday 16 February 2023 14:48</small></p>
+              <p class="text-right"><small>Published by Air
+     on Thursday 16 February 2023 15:50</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/The+Magnetic+Fields/_/All+My+Little+Words">All My Little Words - The Magnetic Fields</a></h2>
+              <h2><a href="https://www.last.fm/music/Elastica/_/Waking+Up">Waking Up - Elastica</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
-              <p class="text-right"><small>Published by The Magnetic Fields
-     on Thursday 16 February 2023 14:45</small></p>
+              <p class="text-right"><small>Published by Elastica
+     on Thursday 16 February 2023 15:47</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Gene/_/Olympian">Olympian - Gene</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by Gene
+     on Thursday 16 February 2023 15:42</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -142,7 +215,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/Ogg-Vorbis-Header/compare/0ebb7c078a...1049fbeaf1">davorg pushed to master in davorg/Ogg-Vorbis-Header</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:61634700,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27133701544,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;3a99c588-a715-4ca7-9162-857032a3e6c0&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="5c98a9ea2c23fa7644e6dee34be69c584362af804c7eaff84feffe23f8de94e9"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:61634700,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27133701544,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;ba7d3a88-a03b-45f9-bd30-3478d58770eb&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="95210e31ae0ae011f34c74549e3e3569f9e6837fdf1d330453b6149ddb774351"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -195,7 +268,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/template-plugin-rpm2/issues/3">davorg opened an issue in davorg/template-plugin-rpm2</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="issues_opened js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:174098,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;IssuesEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27133572358,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;3d2feaa0-6091-471f-8acd-1aa14661324c&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="d0601b7eacb1ccf77182f2fc1bba3ed906b457e1a248d43f7a097f33c18a7853"><div class="body">
+            <div class="panel-body"><div class="issues_opened js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:174098,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;IssuesEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27133572358,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;2ce7a993-6e6d-4421-a5a6-dff7abed2e96&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="2e4cb4d119f3a05ed60a7afb4981af1dffaaff08d43355360c5939b227b6e881"><div class="body">
 <!-- issues -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -237,7 +310,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/template-plugin-rpm2/compare/b476124675...7d705ebdfe">davorg pushed to master in davorg/template-plugin-rpm2</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:174098,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27133555633,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;50768078-7211-46a0-9083-711385264b6a&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="65e273a1442b31b9771bb54271dc4af7deca5251eed94b4878b2dd6c6fbd4fc9"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:174098,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27133555633,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;db592546-0e6e-4167-8d73-25a159fef665&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="9a7e14cbedb7b8588d23f97a7bbfd68a9b6ca425b65bc5cac9cd2c0ede6bbc62"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -290,7 +363,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/moox-role-json_ld/compare/1744061c59...7f44b8c013">davorg pushed to master in davorg/moox-role-json_ld</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:126850420,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27131640674,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;48a6498b-d30d-4d34-9452-59c048ea11d8&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="e33a4adbd3d49147efc69e020d0be3a8c8c7700c6b7df4d377917f57fc95600a"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:126850420,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27131640674,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;12c51386-40cf-4541-8529-e9fd7b26b77c&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="d01fc2d1d28a34284c299d89ae6bdf87f2f64aa0965a78d1ebd170112424ef4a"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -343,7 +416,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/">davorg deleted branch dependabot/github_actions/actions/checkout-3 at davorg/perlanet</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="git-branch js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88095,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;DeleteEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27131538931,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;8b695782-56d4-4b40-a75b-90569e46a4eb&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="8cda8064f8e9b0473a56f20794e49d6008c40262697080051d00b0057cfc6804"><div class="body">
+            <div class="panel-body"><div class="git-branch js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:88095,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;DeleteEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:27131538931,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;4d5e913e-a1bd-4040-855a-65c3bfb1a054&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="916ef293f5b5e0257f25eb64d947816128317e3a811b7afcc81c83245bed0d4f"><div class="body">
 <!-- delete -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -417,18 +490,6 @@ body {
 
               <p class="text-right"><small>Published by Dave Cross
      on Wednesday 08 February 2023 09:50</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://twitter.com/davorg/status/1623252150250872836">This is supposed to be happening tomorrow and, as far as I can see, there's still no information about this &quot;paid b… https://t.co/uhNU8SR6I4</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">twitter</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Wednesday 08 February 2023 09:27</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -1615,40 +1676,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://dev.to/davorg/not-that-pr-thanks-3m1c">Not that PR, thanks</a></h2>
-            </div><!-- panel-heading -->
-            <div class="panel-body"><p>It’s October. And that means that <a href="https://hacktoberfest.com/">Hacktoberfest</a> has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt.</p>
-
-<p>In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can be a bit of a pain in the arse. Some people go crazy for a free t-shirt and that means you’ll almost certainly get several pull requests that aren’t really of the quality you’d hope for.</p>
-
-<p>I have a particular problem that probably isn’t very common. I’ve talked before about the “semi-static” sites I run on GitHub Pages. There’s some data in a GitHub Repo and every couple of hours the system wakes up and runs some code which generates a few HTML pages and commits those HTML pages into the repo’s “/docs” directory. And – hey presto! – there’s a new version of your web site.</p>
-
-<p>A good example is <a href="https://perl.theplanetarium.org/">Planet Perl</a>. The data is a YAML file which mostly consists of a list of web feeds. Every couple of hours we run <a href="https://metacpan.org/dist/Perlanet/view/bin/perlanet">perlanet</a> to pull in those web feeds and build a new version of the web site containing the latest articles about Perl.</p>
-
-<p>Can you see what the problem is?</p>
-
-<p>The problem is that the most obvious file in the repo is the “index.html” which is the web site. So when people find that repo and want to make a small change to the web site they’ll change that “index.html” file. But that file is generated. Every few hours, any changes to that file are overwritten as a new version is created. You actually want to change “index.tt”. But that uses <a href="https://metacpan.org/dist/Template-Toolkit/view/lib/Template/Manual/Directives.pod">Template Toolkit syntax</a>, so it’s easy enough to see why people with no Perl knowledge might want to avoid editing that.</p>
-
-<p>The <a href="https://github.com/davorg/planetperl/blob/master/README.md">README file</a> for the project explains which files you might want to change in order to make different types of changes. But people don’t read that. Or, if they do read it, they ignore the bits that they don’t like.</p>
-
-<p>So I get pull requests that I have to reject because they change the wrong files.</p>
-
-<p>Last year I got enough of these problematic pull requests that I decided to automate a solution. And it’s <a href="https://github.com/davorg/planetperl/blob/master/.github/workflows/reject-pr.yml">this pretty simple GitHub Workflow</a>. It runs whenever my repo receives a pull request and looks at the files that have been changed. If that list of files includes “docs/index.html” then the PR is automatically closed with a polite message explaining what they’ve done wrong.</p>
-
-<p>This makes my life easier. It’s possible it might make your life easier too.</p>
-
-<p>The post <a href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a href="https://perlhacks.com">Perl Hacks</a>.</p>
-
-       </div><!-- panel-body -->
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">dev.to</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Monday 10 October 2022 16:01</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
               <h2><a href="https://davorg.medium.com/building-a-perlanet-container-86479f088e32?source=rss-3781feb8a4f4------2">Building a Perlanet Container</a></h2>
             </div><!-- panel-heading -->
             <div class="panel-body"><figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/0*Qurz8La174s8M_YL.png" /></figure><p>I’m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain <a href="https://metacpan.org/pod/perlanet">perlanet</a> (a Perl program for aggregating web feeds into a new feed — and building a web site based on that new feed) and I use it to build <a href="https://theplanetarium.org/">a few sites on topics I’m interested in</a>.</p><p>Last year, I worked out a way to use GitHub Actions to <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">rebuild these sites automatically</a> every few hours — thereby enabling me to host the sites on GitHub Pages (I still think it’s a useful technique, but I sometimes worry slightly about the large number of commits those repos have — someone at GitHub must surely notice one day!)</p><p>Yesterday, I was doing some light maintenance on one of those sites when I realised that each rebuild of these sites was taking a significant time (by which I mean four or five minutes) and started wondering if there was a way to speed them up and use less of GitHub’s resources. The problem is that Perlanet is a pretty hefty module and each rebuild was installing that module (and, therefore, dozens of other modules) on a pristine Ubuntu container.</p><p>When you say it like that, the solution is obvious.</p><p>You don’t need to run your GitHub Actions on the standard containers that GitHub supplies. You can run them on any container that’s available from any public container hosting service. So the solution was to build a Perlanet container and run the jobs using that instead. So that’s how I spent an hour or so yesterday.</p><p>Here’s the Dockerfile I ended up with:</p><pre>FROM perl:latest<br><br>RUN apt-get update &amp;&amp; \<br>    apt-get -y upgrade &amp;&amp; \ <br>    apt-get install -y build-essential &amp;&amp; \<br>    apt-get install -y cpanminus libtidy-dev libxml++2.6-dev libhtml-tidy-perl &amp;&amp; \<br>    cpanm --notest Test::Exception &amp;&amp; \<br>    cpanm --notest Perlanet &amp;&amp; \<br>    cpanm --notest LWP::Protocol::https</pre><p>It’s (obviously) <a href="https://github.com/davorg/perl-perlanet-docker">available on GitHub</a> in case anyone wants to improve on my rather ropey knowledge of Docker.</p><p>I explicitly install Test::Exception because HTML::Tidy (one of Perlanet’s pre-requisites) needs it and I can’t work out why the standard installation procedure isn’t installing it. And while, LWP::Protocol::https is, strictly speaking, required by Perlanet, you wouldn’t get very far on the modern web if you only accessed web feeds that are available over HTTP.</p><p>A little bit of Docker Hub set-up and the container is <a href="https://hub.docker.com/r/davorg/perl-perlanet">available for everyone to use</a> (and rebuilt automatically whenever I commit to the repo).</p><p>It was then just a case of changing my GitHub Actions to use my container. Here’s an example of <a href="https://github.com/davorg/planetdavorg/commit/5b65ce407e89dd16e74ad4b417b104c43dca96ef">one of the commits</a> that did that.</p><p>I realise I’m pretty late to the party here, but I think this is a useful pattern. If you have a Perl library (or, indeed, any other software) that exists to provide a service to users then it’s a great idea to provide a containerised version of that software.</p><p>And I’m happy to report that my site rebuilds have gone from 4–5 minutes to about 45 seconds.</p><p><em>Originally published at </em><a href="https://perlhacks.com/2022/10/building-a-perlanet-container/"><em>Perl Hacks</em></a><em>.</em></p><img src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=86479f088e32" width="1" height="1" alt="">       </div><!-- panel-body -->
@@ -2040,7 +2067,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Thursday 16 February 2023 16:07</address>
+      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Thursday 16 February 2023 17:06</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->
