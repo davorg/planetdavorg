@@ -7,7 +7,7 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-02-27T10:07:20Z</updated>
+  <updated>2023-02-27T11:06:50Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
   <entry>
@@ -611,7 +611,7 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
 </div>
     </content>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>ChatGPT exposes an API, but there’s no CPAN module for taking advantage of that. Let’s put that right (with help from ChatGPT)… Write a Perl CPAN module for connecting to a ChatGPT server To create a Perl CPAN module for connecting to a ChatGPT server, you will need to have Perl and the necessary dependencies… <a class="more-link" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Continue reading <span class="screen-reader-text">Writing a CPAN module that talks to ChatGPT</span></a></p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>ChatGPT exposes an API, but there’s no CPAN module for taking advantage of that. Let’s put that right (with help from ChatGPT)… Write a Perl CPAN module for connecting to a ChatGPT server To create a Perl CPAN module for connecting to a ChatGPT server, you will need to have Perl and the necessary dependencies installed on your system. To begin, create a new directory for your module and create a file called “ChatGPT.pm” with the following content: [crayon-63fc8ec96cd32335582733/] To use this module in your Perl code, you can create a new ChatGPT object and call the send_prompt method like… <a class="more-link" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Continue reading <span class="screen-reader-text">Writing a CPAN module that talks to ChatGPT</span></a></p>
 <p>The post <a rel="nofollow" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Writing a CPAN module that talks to ChatGPT</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
 </div>
     </summary>
@@ -1039,7 +1039,7 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
 </div>
     </content>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’ve been building Docker containers again. And I think you’ll find this one a little more useful than the Perlanet one I wrote about a couple of weeks ago. Several years ago I got into Travis CI and set up lots of my GitHub repos so they automatically ran the tests each time I committed… <a class="more-link" href="https://perlhacks.com/2022/10/containers-for-coverage/">Continue reading <span class="screen-reader-text">Containers for Coverage</span></a></p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’ve been building Docker containers again. And I think you’ll find this one a little more useful than the Perlanet one I wrote about a couple of weeks ago. Several years ago I got into Travis CI and set up lots of my GitHub repos so they automatically ran the tests each time I committed to the repo. Later on, I also worked out how to tie those test runs into Coveralls.io so I got pretty graphs of how my test coverage was looking. I gave a talk about what I had done. But two things changed. Firstly, Travis CI… <a class="more-link" href="https://perlhacks.com/2022/10/containers-for-coverage/">Continue reading <span class="screen-reader-text">Containers for Coverage</span></a></p>
 <p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/containers-for-coverage/">Containers for Coverage</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
 </div>
     </summary>
@@ -1154,7 +1154,7 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
 &lt;p&gt;The post &lt;a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/"&gt;Not that PR, thanks&lt;/a&gt; appeared first on &lt;a rel="nofollow" href="https://perlhacks.com"&gt;Perl Hacks&lt;/a&gt;.&lt;/p&gt;
 </content>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s October. And that means that Hacktoberfest has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt. In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can… <a class="more-link" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Continue reading <span class="screen-reader-text">Not that PR, thanks</span></a></p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s October. And that means that Hacktoberfest has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt. In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can be a bit of a pain in the arse. Some people go crazy for a free t-shirt and that means you’ll almost certainly get several pull requests that aren’t really of the quality you’d hope for. I have a particular problem that probably isn’t very… <a class="more-link" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Continue reading <span class="screen-reader-text">Not that PR, thanks</span></a></p>
 <p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
 </div>
     </summary>
@@ -1214,7 +1214,7 @@ RUN apt-get update &amp;&amp; \
 </div>
     </content>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain perlanet (a Perl program for aggregating web feeds into a new feed – and building a web site based on that new feed) and I use it to build a few sites on topics I’m interested in.… <a class="more-link" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Continue reading <span class="screen-reader-text">Building a Perlanet Container</span></a></p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain perlanet (a Perl program for aggregating web feeds into a new feed – and building a web site based on that new feed) and I use it to build a few sites on topics I’m interested in. Last year, I worked out a way to use GitHub Actions to rebuild these sites automatically every few hours – thereby enabling me to host the sites on GitHub Pages (I still think it’s a useful technique, but I sometimes worry slightly about the large… <a class="more-link" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Continue reading <span class="screen-reader-text">Building a Perlanet Container</span></a></p>
 <p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
 </div>
     </summary>
@@ -1407,7 +1407,7 @@ OMD are just one of those bands that I see live whenever I can. I’ve now been 
 </div>
     </content>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>[Update: the CPAN Request Tracker was saved. It’s now run by a new team of volunteers and none of my suggestions below are required.] Two weeks ago, we learned that the CPAN Request Tracker was closing down early next year. I proposed a plan that CPAN authors could follow to ensure that their users can… <a class="more-link" href="https://perlhacks.com/2020/12/replacing-cpan-rt/">Continue reading <span class="screen-reader-text">Replacing CPAN RT</span></a></p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>[Update: the CPAN Request Tracker was saved. It’s now run by a new team of volunteers and none of my suggestions below are required.] Two weeks ago, we learned that the CPAN Request Tracker was closing down early next year. I proposed a plan that CPAN authors could follow to ensure that their users can still find somewhere to report bugs in modules (and, perhaps more importantly, to see what bugs have already been reported in modules). But that’s only part of the problem. In fact, it’s probably a minor part of the problem. If you’re an active CPAN author,… <a class="more-link" href="https://perlhacks.com/2020/12/replacing-cpan-rt/">Continue reading <span class="screen-reader-text">Replacing CPAN RT</span></a></p>
 <p>The post <a rel="nofollow" href="https://perlhacks.com/2020/12/replacing-cpan-rt/">Replacing CPAN RT</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
 </div>
     </summary>
