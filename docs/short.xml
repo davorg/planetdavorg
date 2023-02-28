@@ -7,22 +7,60 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-02-28T19:07:01Z</updated>
+  <updated>2023-02-28T20:07:19Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:IssueCommentEvent/27393627106</id>
-    <published>2023-02-28T17:56:19Z</published>
-    <updated>2023-02-28T17:56:19Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/pull/20#issuecomment-1448621867"/>
-    <title type="html">davorg commented on pull request davorg/planetperl#20</title>
+    <id>tag:github.com,2008:CommitCommentEvent/27394616840</id>
+    <published>2023-02-28T18:40:57Z</published>
+    <updated>2023-02-28T18:40:57Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/commit/faa6bb87912b14f070186304f74c3a8bdb3996e3#commitcomment-102457095"/>
+    <title type="html">davorg commented on commit davorg/planetperl@faa6bb8791</title>
     <author>
       <name>davorg</name>
       <email>dave@davecross.co.uk</email>
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27393627106,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;088dcab9-6118-4d9a-b7ef-9cbcbc54d290&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="ce1a6e3500fc3bc4a9b21c88d25d2c5d8b7e169e7403b6420ce34b7b6fbf52ef"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="commit_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;CommitCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27394616840,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;d4919eff-6c62-4a67-9161-5f78f03ae42c&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="ac60952eeaa7eee382a48f346ef69b39828efa57a8fc4f4f7d221098afc8d652"&gt;&lt;div class="body"&gt;
+&lt;!-- commit_comment --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="d-flex flex-items-baseline mb-2"&gt;
+      &lt;div class="color-fg-muted"&gt;
+        &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+        &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+        
+        commented on commit
+        &lt;a class="Link--primary" href="/davorg/planetperl/commit/faa6bb87912b14f070186304f74c3a8bdb3996e3#commitcomment-102457095" rel="noreferrer"&gt;davorg/planetperl@faa6bb8791&lt;/a&gt;
+        &lt;span&gt;
+          · &lt;relative-time tense="past" datetime="2023-02-28T18:40:57Z" data-view-component="true"&gt;February 28, 2023 18:40&lt;/relative-time&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="message markdown-body Box p-3 wb-break-all color-shadow-medium "&gt;
+      &lt;div class="f6 mb-1"&gt;
+        &lt;a class="Link--secondary" href="/davorg/planetperl/commit/faa6bb87912b14f070186304f74c3a8bdb3996e3#commitcomment-102457095" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2023-02-28T18:40:57Z" class="no-wrap"&gt;Feb 28, 2023&lt;/relative-time&gt;&lt;/a&gt;
+      &lt;/div&gt;
+        &lt;p&gt;No problem. We've all been there.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:IssueCommentEvent/27394502890</id>
+    <published>2023-02-28T18:35:41Z</published>
+    <updated>2023-02-28T18:35:41Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/pull/24#issuecomment-1448673532"/>
+    <title type="html">davorg commented on pull request davorg/planetperl#24</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27394502890,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;4f75691d-1ed6-416b-94c6-c5a14d487b18&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="afcfa4600cb98101775c578b71dd29eed8193de3f6f8e3d8b3c8533b6b1fb11a"&gt;&lt;div class="body"&gt;
 &lt;!-- issue_comment --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -32,29 +70,27 @@
           &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
           
           commented on
-          &lt;a class="Link--primary" title="perlanetrc: Add Emacs and Vim modelines" href="/davorg/planetperl/pull/20#issuecomment-1448621867" rel="noreferrer"&gt;davorg/planetperl#20&lt;/a&gt;
+          &lt;a class="Link--primary" title="perlanetrc: Add GitHub commits" href="/davorg/planetperl/pull/24#issuecomment-1448673532" rel="noreferrer"&gt;davorg/planetperl#24&lt;/a&gt;
           &lt;span&gt;
-            · &lt;relative-time tense="past" datetime="2023-02-28T17:56:19Z" data-view-component="true"&gt;February 28, 2023 17:56&lt;/relative-time&gt;
+            · &lt;relative-time tense="past" datetime="2023-02-28T18:35:41Z" data-view-component="true"&gt;February 28, 2023 18:35&lt;/relative-time&gt;
           &lt;/span&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;div class="message markdown-body Box p-3 wb-break-all color-shadow-medium "&gt;
       &lt;div class="f6 mb-1"&gt;
-        &lt;a title="perlanetrc: Add Emacs and Vim modelines" class="Link--secondary" href="/davorg/planetperl/pull/20#issuecomment-1448621867" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2023-02-28T17:56:19Z" class="no-wrap"&gt;Feb 28, 2023&lt;/relative-time&gt;&lt;/a&gt;
+        &lt;a title="perlanetrc: Add GitHub commits" class="Link--secondary" href="/davorg/planetperl/pull/24#issuecomment-1448673532" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2023-02-28T18:35:41Z" class="no-wrap"&gt;Feb 28, 2023&lt;/relative-time&gt;&lt;/a&gt;
       &lt;/div&gt;
-        &lt;p&gt;Doesn't seem to make a difference.
-&lt;a href="https://github.com/davorg/planetperl/blob/master/perlanetrc" rel="noreferrer"&gt;https://github.com/davorg/planetperl/blob/master/perlanetrc&lt;/a&gt;
-What am I missing?&lt;/p&gt;
+        &lt;p&gt;I worry slightly that the feed will get a bit swamped. But let's see...&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/27393601401</id>
-    <published>2023-02-28T17:55:12Z</published>
-    <updated>2023-02-28T17:55:12Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/compare/002a986ade...7513ab7a86"/>
+    <id>tag:github.com,2008:PushEvent/27394465116</id>
+    <published>2023-02-28T18:33:54Z</published>
+    <updated>2023-02-28T18:33:54Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/compare/97ff87fc30...faa6bb8791"/>
     <title type="html">davorg pushed to master in davorg/planetperl</title>
     <author>
       <name>davorg</name>
@@ -62,7 +98,7 @@ What am I missing?&lt;/p&gt;
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27393601401,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;425b324e-36ea-4e36-843c-59c860833afd&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="afc4598889585ecc5407eda89b35b065599a2e2f6d3296c5128e564ad9013b80"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27394465116,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;0d2165c9-2049-491d-a54c-51cca8596f62&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="dbee28ed5952fc2d24ed13811e181345e8a342ce985918545d18275e48fa268c"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -75,11 +111,11 @@ What am I missing?&lt;/p&gt;
         in
       &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetperl" rel="noreferrer"&gt;davorg/planetperl&lt;/a&gt;
       &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-02-28T17:55:12Z" data-view-component="true"&gt;February 28, 2023 17:55&lt;/relative-time&gt;
+        · &lt;relative-time tense="past" datetime="2023-02-28T18:33:54Z" data-view-component="true"&gt;February 28, 2023 18:33&lt;/relative-time&gt;
       &lt;/span&gt;
 
         &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
           &lt;a class="branch-name" href="/davorg/planetperl/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
 
           &lt;div class="commits pusher-is-only-committer"&gt;
@@ -88,29 +124,15 @@ What am I missing?&lt;/p&gt;
                   &lt;span title="davorg"&gt;
                     &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetperl/commit/7513ab7a862fe6f320a37cad17f887a472b330d0" rel="noreferrer"&gt;7513ab7&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetperl/commit/faa6bb87912b14f070186304f74c3a8bdb3996e3" rel="noreferrer"&gt;faa6bb8&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
-                      Merge pull request &lt;a aria-label="Pull request #20" class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1601495615" data-permission-text="Title is private" data-url="https://github.com/davorg/planetperl/issues/20" data-hovercard-type="pull_request" data-hovercard-url="/davorg/planetperl/pull/20/hovercard" href="https://github.com/davorg/planetperl/pull/20" rel="noreferrer"&gt;#20&lt;/a&gt; from rwp0/patch-1
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetperl/commit/242ac2e0bbb245193546db10ac73dfbd2cb6174a" rel="noreferrer"&gt;242ac2e&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Merge branch 'master' into patch-1
+                      Fix the same typo again
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
 
 
-                &lt;li class="f6 mt-2"&gt;
-                  &lt;a class="Link--secondary" href="/davorg/planetperl/compare/002a986ade...7513ab7a86" rel="noreferrer"&gt;1 more commit »&lt;/a&gt;
-                &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -120,10 +142,76 @@ What am I missing?&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PullRequestEvent/27393601191</id>
-    <published>2023-02-28T17:55:11Z</published>
-    <updated>2023-02-28T17:55:11Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/pull/20"/>
+    <id>tag:github.com,2008:PushEvent/27394431813</id>
+    <published>2023-02-28T18:32:18Z</published>
+    <updated>2023-02-28T18:32:18Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/compare/3bc72f0ee2...97ff87fc30"/>
+    <title type="html">davorg pushed to master in davorg/planetperl</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27394431813,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;6890cc2b-6a8f-4a91-9a9b-7bdfe0c7ca3d&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="9e8a0d1a7295413e35b5f84a64c4537a34aacad113c760635dfb680577fef4ae"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetperl/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetperl" rel="noreferrer"&gt;davorg/planetperl&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-02-28T18:32:18Z" data-view-component="true"&gt;February 28, 2023 18:32&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetperl/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits "&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetperl/commit/97ff87fc30cd7eea0f81e2eaa5674e004e22bec6" rel="noreferrer"&gt;97ff87f&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Merge pull request &lt;a aria-label="Pull request #24" class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1603600614" data-permission-text="Title is private" data-url="https://github.com/davorg/planetperl/issues/24" data-hovercard-type="pull_request" data-hovercard-url="/davorg/planetperl/pull/24/hovercard" href="https://github.com/davorg/planetperl/pull/24" rel="noreferrer"&gt;#24&lt;/a&gt; from rwp0/rwp0/github-commits
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="rwp0"&gt;
+                    &lt;a class="d-inline-block" href="/rwp0" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/68062695?s=32&amp;amp;v=4" width="16" height="16" alt="@rwp0"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetperl/commit/13c4665b6f1237a95366878cce0cd3478153d83f" rel="noreferrer"&gt;13c4665&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      perlanetrc: Add GitHub commits
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PullRequestEvent/27394431557</id>
+    <published>2023-02-28T18:32:17Z</published>
+    <updated>2023-02-28T18:32:17Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/pull/24"/>
     <title type="html">davorg merged a pull request in davorg/planetperl</title>
     <author>
       <name>davorg</name>
@@ -131,7 +219,7 @@ What am I missing?&lt;/p&gt;
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_merged js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PullRequestEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27393601191,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;610342ba-b522-4512-b4ac-cea53868ab83&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="3f933def52fa832bdaf50be34f14fdc6101d1c969b5e2ae63c4941bc9d17f6e8"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="issues_merged js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PullRequestEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27394431557,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;7e6b20fe-4195-474b-94ef-0ce48cfb7eba&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="69febfef42f0666dc7e1ffcb312a115a295c16efc108a3f6b45a443266207854"&gt;&lt;div class="body"&gt;
 &lt;!-- pull_request --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -142,9 +230,9 @@ What am I missing?&lt;/p&gt;
           &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
           
           merged
-          &lt;a class="Link--primary no-underline wb-break-all" aria-label="davorg/planetperl#20" href="/davorg/planetperl/pull/20" rel="noreferrer"&gt;davorg/planetperl#20&lt;/a&gt;
+          &lt;a class="Link--primary no-underline wb-break-all" aria-label="davorg/planetperl#24" href="/davorg/planetperl/pull/24" rel="noreferrer"&gt;davorg/planetperl#24&lt;/a&gt;
           &lt;span&gt;
-            · &lt;relative-time tense="past" datetime="2023-02-28T17:55:11Z" data-view-component="true"&gt;February 28, 2023 17:55&lt;/relative-time&gt;
+            · &lt;relative-time tense="past" datetime="2023-02-28T18:32:17Z" data-view-component="true"&gt;February 28, 2023 18:32&lt;/relative-time&gt;
           &lt;/span&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -155,130 +243,24 @@ What am I missing?&lt;/p&gt;
 
       &lt;div class="ml-4"&gt;
         &lt;div&gt;
-          &lt;span class="f4 lh-condensed text-bold color-fg-default"&gt;&lt;a class="color-fg-default text-bold" aria-label="perlanetrc: Add Emacs and Vim modelines" href="/davorg/planetperl/pull/20" rel="noreferrer"&gt;perlanetrc: Add Emacs and Vim modelines&lt;/a&gt;&lt;/span&gt;
-          &lt;span class="f4 color-fg-muted ml-1"&gt;#20&lt;/span&gt;
+          &lt;span class="f4 lh-condensed text-bold color-fg-default"&gt;&lt;a class="color-fg-default text-bold" aria-label="perlanetrc: Add GitHub commits" href="/davorg/planetperl/pull/24" rel="noreferrer"&gt;perlanetrc: Add GitHub commits&lt;/a&gt;&lt;/span&gt;
+          &lt;span class="f4 color-fg-muted ml-1"&gt;#24&lt;/span&gt;
             &lt;div class="lh-condensed mb-2 mt-1"&gt;
-              &lt;p&gt;To enable GitHub (and editor) syntax highlighting&lt;/p&gt;
+              &lt;p&gt;Upstream Perl commits for the "blead" branch.
+&lt;a href="https://github.com/Perl/perl5/commits/blead" rel="noreferrer"&gt;https://github.com/Perl/perl5/commits/blead&lt;/a&gt;
+Thankfully GH allows RSS feeds for repository commits, so…&lt;/p&gt;
             &lt;/div&gt;
         &lt;/div&gt;
 
-          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="2 commits with 4 additions and 1 deletion"&gt;
-            &lt;span class="color-fg-success"&gt;+4&lt;/span&gt;
-            &lt;span class="color-fg-danger"&gt;-1&lt;/span&gt;
+          &lt;div class="diffstat d-inline-block mt-1 tooltipped tooltipped-se" aria-label="1 commit with 3 additions and 0 deletions"&gt;
+            &lt;span class="color-fg-success"&gt;+3&lt;/span&gt;
+            &lt;span class="color-fg-danger"&gt;-0&lt;/span&gt;
           &lt;/div&gt;
 
           &lt;div class="d-inline-block f6 color-fg-muted ml-3"&gt;
-            4 comments
+            1 comment
           &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/27393592527</id>
-    <published>2023-02-28T17:54:48Z</published>
-    <updated>2023-02-28T17:54:48Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/rwp0/planetperl/compare/0e61dd37f8...242ac2e0bb"/>
-    <title type="html">davorg pushed to patch-1 in rwp0/planetperl</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:607250070,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27393592527,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;fa0cbbe9-8a33-4e44-84e1-ca1050771ae0&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="c7d22da3fc5b215e50b9d3f50f12401018eaa29ab052168bf7a213e1432437a7"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/rwp0/planetperl/tree/patch-1" rel="noreferrer"&gt;patch-1&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/rwp0/planetperl" rel="noreferrer"&gt;rwp0/planetperl&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-02-28T17:54:48Z" data-view-component="true"&gt;February 28, 2023 17:54&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/rwp0/planetperl/tree/patch-1" rel="noreferrer"&gt;patch-1&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/rwp0/planetperl/commit/242ac2e0bbb245193546db10ac73dfbd2cb6174a" rel="noreferrer"&gt;242ac2e&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Merge branch 'master' into patch-1
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/rwp0/planetperl/commit/002a986ade7259f2124602f8d241981b8079d248" rel="noreferrer"&gt;002a986&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Merge pull request &lt;a aria-label="Pull request #22" class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1603493096" data-permission-text="Title is private" data-url="https://github.com/davorg/planetperl/issues/22" data-hovercard-type="pull_request" data-hovercard-url="/davorg/planetperl/pull/22/hovercard" href="https://github.com/davorg/planetperl/pull/22" rel="noreferrer"&gt;davorg#22&lt;/a&gt; from rwp0/patch-2
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-                &lt;li class="f6 mt-2"&gt;
-                  &lt;a class="Link--secondary" href="/rwp0/planetperl/compare/0e61dd37f8...242ac2e0bb" rel="noreferrer"&gt;12 more commits »&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:IssueCommentEvent/27393576389</id>
-    <published>2023-02-28T17:54:05Z</published>
-    <updated>2023-02-28T17:54:05Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetperl/pull/20#issuecomment-1448617629"/>
-    <title type="html">davorg commented on pull request davorg/planetperl#20</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27393576389,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;824d5aa7-6e05-4986-b766-9c5567b54f8a&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="f9376a4b92037ef721b97ea7ab31e6daaa26fd96212634f7ffc67ab1fa96a7d1"&gt;&lt;div class="body"&gt;
-&lt;!-- issue_comment --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
-        &lt;div class="color-fg-muted"&gt;
-            &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-          &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-          
-          commented on
-          &lt;a class="Link--primary" title="perlanetrc: Add Emacs and Vim modelines" href="/davorg/planetperl/pull/20#issuecomment-1448617629" rel="noreferrer"&gt;davorg/planetperl#20&lt;/a&gt;
-          &lt;span&gt;
-            · &lt;relative-time tense="past" datetime="2023-02-28T17:54:05Z" data-view-component="true"&gt;February 28, 2023 17:54&lt;/relative-time&gt;
-          &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;div class="message markdown-body Box p-3 wb-break-all color-shadow-medium "&gt;
-      &lt;div class="f6 mb-1"&gt;
-        &lt;a title="perlanetrc: Add Emacs and Vim modelines" class="Link--secondary" href="/davorg/planetperl/pull/20#issuecomment-1448617629" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2023-02-28T17:54:05Z" class="no-wrap"&gt;Feb 28, 2023&lt;/relative-time&gt;&lt;/a&gt;
-      &lt;/div&gt;
-        &lt;p&gt;Oh. Now, that's interesting. Does that work? Why doesn't it work, for example, here?
-&lt;a href="https://github.com/davorg/feeds/blob/main/Feeds/config.yml" rel="noreferrer"&gt;https://github.com/davorg/feeds/blob/main/Feeds/config.yml&lt;/a&gt;&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
