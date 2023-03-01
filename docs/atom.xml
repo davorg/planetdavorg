@@ -7,7 +7,7 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-03-01T05:06:48Z</updated>
+  <updated>2023-03-01T06:08:06Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
@@ -1154,7 +1154,7 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
 </div>
     </content>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>ChatGPT exposes an API, but there’s no CPAN module for taking advantage of that. Let’s put that right (with help from ChatGPT)… Write a Perl CPAN module for connecting to a ChatGPT server To create a Perl CPAN module for connecting to a ChatGPT server, you will need to have Perl and the necessary dependencies installed on your system. To begin, create a new directory for your module and create a file called “ChatGPT.pm” with the following content: [crayon-63fedd613c478578463704/] To use this module in your Perl code, you can create a new ChatGPT object and call the send_prompt method like… <a class="more-link" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Continue reading <span class="screen-reader-text">Writing a CPAN module that talks to ChatGPT</span></a></p>
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>ChatGPT exposes an API, but there’s no CPAN module for taking advantage of that. Let’s put that right (with help from ChatGPT)… Write a Perl CPAN module for connecting to a ChatGPT server To create a Perl CPAN module for connecting to a ChatGPT server, you will need to have Perl and the necessary dependencies installed on your system. To begin, create a new directory for your module and create a file called “ChatGPT.pm” with the following content: [crayon-63feebc1dfd59000165274/] To use this module in your Perl code, you can create a new ChatGPT object and call the send_prompt method like… <a class="more-link" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Continue reading <span class="screen-reader-text">Writing a CPAN module that talks to ChatGPT</span></a></p>
 <p>The post <a rel="nofollow" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Writing a CPAN module that talks to ChatGPT</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
 </div>
     </summary>
