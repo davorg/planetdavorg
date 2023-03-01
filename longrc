@@ -15,16 +15,16 @@ feed:
 cache_dir: /tmp/davorg
 google_ga: G-L9WV4KKVGH
 feeds:
-  - url: https://blog.dave.org.uk/feed
+  - feed: https://blog.dave.org.uk/feed
     title: davblog
     web: https://blog.dave.org.uk/
-  - url: https://perlhacks.com/feed
+  - feed: https://perlhacks.com/feed
     title: perl hacks
     web: https://perlhacks.com/
-  - url: https://dev.to/feed/davorg
+  - feed: https://dev.to/feed/davorg
     title: dev.to
     web: https://dev.to/davorg
-  - url: https://davorg.medium.com/feed
+  - feed: https://davorg.medium.com/feed
     title: medium
     web: https://davorg.medium.com/
 
