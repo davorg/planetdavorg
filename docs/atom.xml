@@ -7,9 +7,102 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-03-03T10:06:41Z</updated>
+  <updated>2023-03-03T11:06:20Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry>
+    <title>RT @perlhacks: Some recent hacking...
+
+https://t.co/EkDE85HS0L</title>
+    <link rel="alternate" href="https://twitter.com/davorg/status/1631600518471589889" type="text/html"/>
+    <id>https://twitter.com/davorg/status/1631600518471589889</id>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">RT @perlhacks: Some recent hacking...
+
+https://t.co/EkDE85HS0L</div>
+    </content>
+    <updated>2023-03-03T10:20:51Z</updated>
+  </entry>
+  <entry>
+    <title>Improvements to Planet Perl and Perlanet</title>
+    <link rel="alternate" href="https://perlhacks.com/2023/03/improvements-to-planet-perl-and-perlanet/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>This is a story of one of those nice incidents where something starts off simple, then spirals out of control for a while but, in the end, everyone wins.</p>
+<p>On Reddit, a few days ago, someone asked <a href="https://www.reddit.com/r/perl/comments/119hu00/perl_rss_feeds/">‘Is there a “Planet Perl” with an RSS feed?’</a> and a few people replied, pointing out the existence of Planet Perl (which is the first Google result for <a href="https://www.google.com/search?q=planet+perl">“Planet Perl”</a>). I’m obviously not marketing that site very well as every time I mention it, I get people (pleasantly) surprised that it exists.</p>
+<p>On this occasion, it was <a href="https://www.reddit.com/user/rwp0/">Elvin Aslanov</a> who seemed to discover my site for the first time. And, very soon afterwards, he started sending <a href="https://github.com/davorg/planetperl/pulls">pull requests</a> to add feeds to the site. As a result, we now have three more feeds that are being pulled into the site.</p>
+<ul>
+<li><a href="https://medium.com/tag/perl">Perl on Medium</a>. I’m slightly embarrassed that I hadn’t thought of this myself. I did, after all, once try to start <a href="https://medium.com/cultured-perl">a Perl publication on Medium</a>. I think I must have decided that there are better sites for technical blogging and blanked it from consideration. Medium’s not the busiest of places for Perl bloggers, but there are a few posts there and they’re mostly from people who are outside of the echo chamber – so getting more eyes on their posts is a good idea.</li>
+<li><a href="https://stackoverflow.com/feeds/tag/perl">Perl questions on Stack Overflow</a>. Another one that would have been obvious if I had thought for a second. I’ve been answering questions on SO for years. It’s a good way to get more perspective on how Perl is being used across the industry. Unfortunately, the feed only includes the titles of the posts – you’ll need to click the link to actually see the question.</li>
+<li><a href="https://github.com/Perl/perl5/commits/blead.atom">Perl commits on GitHub</a>. I’m interested in hearing how useful people think this is. I worry slightly that there will be times when the number of commits will overwhelm the other feeds. But maybe that’s a good idea. Perhaps it’s good for more people to see just how busy the Perl 5 Porters are. I’m a bit annoyed that the feed puts everything in a fixed-width font, but not (yet) annoyed enough to do anything about it.</li>
+</ul>
+<p>You might know that Planet Perl is driven by <a href="https://metacpan.org/pod/Perlanet">Perlanet</a>. So adding new feeds is just a case of adding a few lines to <a href="https://github.com/davorg/planetperl/blob/master/perlanetrc">a configuration file</a>. And looking at the pull requests I got from Elvin, showed a potential problem in the way the configuration was laid out. Each feed has three lines of YAML configuration. There’s a title for the feed, a URL for a web page that displays the content of the feed and the URL for the feed itself. They’re called “title”, “web” and “url”. And it’s that last name that’s slightly problematic – it’s just not clear enough. Elvin got “web” and “url” muddled up in one of his PRs and, when I pointed that out to him, he suggested that renaming “url” to “feed” would make things much clearer.</p>
+<p>I agreed, and the next day I hacked away for a while before releasing <a href="https://metacpan.org/release/DAVECROSS/Perlanet-v3.0.0/view/lib/Perlanet.pm">version 3.0.0 of Perlanet</a>. In this version, the “url” key is renamed to “feed”. It still accepts the old name (so older config files will still work) but you’ll get a warning if you try to use a config name in the old config.</p>
+<p>I didn’t stop there. Last year, I wrote <a href="https://perlhacks.com/2022/10/building-a-perlanet-container/">a blog post about producing a docker image that already had Perlanet installed</a> – so that it was quicker to rebuild my various planets every few hours. Since then I’ve been rebuilding <a href="https://hub.docker.com/repository/docker/davorg/perl-perlanet/general">that image</a> every time I updated Perlanet. But it’s been rather a manual process. And because I’m old and decrepit, I can never remember the steps I go through to rebuild it, tag it correctly and push it to the Docker Hub. This means it always takes far longer than it’s supposed to. So this time, I wrote <a href="https://github.com/davorg/perl-perlanet-docker/blob/main/build">a script to do that for me</a>. And because I now have the kind of mind set that sees GitHub Workflows everywhere I look, I wrote <a href="https://github.com/davorg/perl-perlanet-docker/blob/main/.github/workflows/publish_image.yml">a Workflow definition that builds and publishes the image</a> any time the Dockerfile changes. I guess the next step will be to write an action that automatically updates the Dockerfile (thereby triggering the rebuild) each time I release a new version of Perlanet.</p>
+<p>But that’s a problem for another day. For now, I’m happy with the improvements I’ve made to Planet Perl, Perlanet and the Perlanet Docker infrastructure.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/03/improvements-to-planet-perl-and-perlanet/">Improvements to Planet Perl and Perlanet</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>This is a story of one of those nice incidents where something starts off simple, then spirals out of control for a while but, in the end, everyone wins. On Reddit, a few days ago, someone asked ‘Is there a “Planet Perl” with an RSS feed?’ and a few people replied, pointing out the existence… <a class="more-link" href="https://perlhacks.com/2023/03/improvements-to-planet-perl-and-perlanet/">Continue reading <span class="screen-reader-text">Improvements to Planet Perl and Perlanet</span></a></p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/03/improvements-to-planet-perl-and-perlanet/">Improvements to Planet Perl and Perlanet</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2097</id>
+    <published>2023-03-03T10:16:30Z</published>
+    <updated>2023-03-03T10:16:30Z</updated>
+    <category term="Programming"/>
+    <category term="docker"/>
+    <category term="perlanet"/>
+    <category term="planet perl"/>
+  </entry>
+  <entry>
+    <title>Improvements to Planet Perl and Perlanet</title>
+    <link rel="alternate" href="https://dev.to/davorg/improvements-to-planet-perl-and-perlanet-20d3" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>This is a story of one of those nice incidents where something starts off simple, then spirals out of control for a while but, in the end, everyone wins.</p>
+
+<p>On Reddit, a few days ago, someone asked <a href="https://www.reddit.com/r/perl/comments/119hu00/perl_rss_feeds/">‘Is there a “Planet Perl” with an RSS feed?’</a> and a few people replied, pointing out the existence of Planet Perl (which is the first Google result for <a href="https://www.google.com/search?q=planet+perl">“Planet Perl”</a>). I’m obviously not marketing that site very well as every time I mention it, I get people (pleasantly) surprised that it exists.</p>
+
+<p>On this occasion, it was <a href="https://www.reddit.com/user/rwp0/">Elvin Aslanov</a> who seemed to discover my site for the first time. And, very soon afterwards, he started sending <a href="https://github.com/davorg/planetperl/pulls">pull requests</a> to add feeds to the site. As a result, we now have three more feeds that are being pulled into the site.</p>
+
+<ul>
+<li>
+<a href="https://medium.com/tag/perl">Perl on Medium</a>. I’m slightly embarrassed that I hadn’t thought of this myself. I did, after all, once try to start <a href="https://medium.com/cultured-perl">a Perl publication on Medium</a>. I think I must have decided that there are better sites for technical blogging and blanked it from consideration. Medium’s not the busiest of places for Perl bloggers, but there are a few posts there and they’re mostly from people who are outside of the echo chamber – so getting more eyes on their posts is a good idea.</li>
+<li>
+<a href="https://stackoverflow.com/feeds/tag/perl">Perl questions on Stack Overflow</a>. Another one that would have been obvious if I had thought for a second. I’ve been answering questions on SO for years. It’s a good way to get more perspective on how Perl is being used across the industry. Unfortunately, the feed only includes the titles of the posts – you’ll need to click the link to actually see the question.</li>
+<li>
+<a href="https://github.com/Perl/perl5/commits/blead.atom">Perl commits on GitHub</a>. I’m interested in hearing how useful people think this is. I worry slightly that there will be times when the number of commits will overwhelm the other feeds. But maybe that’s a good idea. Perhaps it’s good for more people to see just how busy the Perl 5 Porters are. I’m a bit annoyed that the feed puts everything in a fixed-width font, but not (yet) annoyed enough to do anything about it.</li>
+</ul>
+
+<p>You might know that Planet Perl is driven by <a href="https://metacpan.org/pod/Perlanet">Perlanet</a>. So adding new feeds is just a case of adding a few lines to <a href="https://github.com/davorg/planetperl/blob/master/perlanetrc">a configuration file</a>. And looking at the pull requests I got from Elvin, showed a potential problem in the way the configuration was laid out. Each feed has three lines of YAML configuration. There’s a title for the feed, a URL for a web page that displays the content of the feed and the URL for the feed itself. They’re called “title”, “web” and “url”. And it’s that last name that’s slightly problematic – it’s just not clear enough. Elvin got “web” and “url” muddled up in one of his PRs and, when I pointed that out to him, he suggested that renaming “url” to “feed” would make things much clearer.</p>
+
+<p>I agreed, and the next day I hacked away for a while before releasing <a href="https://metacpan.org/release/DAVECROSS/Perlanet-v3.0.0/view/lib/Perlanet.pm">version 3.0.0 of Perlanet</a>. In this version, the “url” key is renamed to “feed”. It still accepts the old name (so older config files will still work) but you’ll get a warning if you try to use a config name in the old config.</p>
+
+<p>I didn’t stop there. Last year, I wrote <a href="https://dev.to/davorg/building-a-perlanet-container-43cm">a blog post about producing a docker image that already had Perlanet installed</a> – so that it was quicker to rebuild my various planets every few hours. Since then I’ve been rebuilding <a href="https://hub.docker.com/repository/docker/davorg/perl-perlanet/general">that image</a> every time I updated Perlanet. But it’s been rather a manual process. And because I’m old and decrepit, I can never remember the steps I go through to rebuild it, tag it correctly and push it to the Docker Hub. This means it always takes far longer than it’s supposed to. So this time, I wrote <a href="https://github.com/davorg/perl-perlanet-docker/blob/main/build">a script to do that for me</a>. And because I now have the kind of mind set that sees GitHub Workflows everywhere I look, I wrote <a href="https://github.com/davorg/perl-perlanet-docker/blob/main/.github/workflows/publish_image.yml">a Workflow definition that builds and publishes the image</a> any time the Dockerfile changes. I guess the next step will be to write an action that automatically updates the Dockerfile (thereby triggering the rebuild) each time I release a new version of Perlanet.</p>
+
+<p>But that’s a problem for another day. For now, I’m happy with the improvements I’ve made to Planet Perl, Perlanet and the Perlanet Docker infrastructure.</p>
+
+<p>The post <a href="https://perlhacks.com/2023/03/improvements-to-planet-perl-and-perlanet/">Improvements to Planet Perl and Perlanet</a> appeared first on <a href="https://perlhacks.com">Perl Hacks</a>.</p>
+
+</div>
+    </content>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/improvements-to-planet-perl-and-perlanet-20d3</id>
+    <published>2023-03-03T10:16:30Z</published>
+    <updated>2023-03-03T10:16:30Z</updated>
+    <category term="programming"/>
+    <category term="docker"/>
+    <category term="perlanet"/>
+    <category term="planetperl"/>
+  </entry>
   <entry>
     <title>@DoctorWhoHugh @bbcdoctorwho Firstly, this is the Australian version of BritBox - other territories all have differ… https://t.co/BxWE9d1wgX</title>
     <link rel="alternate" href="https://twitter.com/davorg/status/1631584543663702019" type="text/html"/>
@@ -82,7 +175,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27459907809,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;4f00f0fa-7cf5-45dc-a856-84cd9ae6950f&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="899fa146d28b51fb569d91d6eda8db534ca4d20d9b650c8879ff0b4cc9f521dd"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27459907809,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;b8031ba1-1525-451e-b128-78eb9dd378fb&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="9149e7b2edaa71398c6b60c20fe50f03d0130f5311fad6c235ae71ffa5f665a9"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -137,7 +230,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27459709594,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;e365c960-7282-42b6-9d74-50447369579c&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="373cca4a01d3ea2c42ff638b1da2d0523057e027cc5d95020e7547d43c654110"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27459709594,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;39dee9fd-01e7-4c33-92bb-313e8ad31a51&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="93fa4123546786dd1044b7ee32de192ef6b4b719df812c80ab5cd96d31a5c96a"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -203,7 +296,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27457703441,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;bc515ebb-81fe-43b6-b56c-f90248aa8fea&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="e23081514277f40388b60f782925dbab719efdfca120a209cfe75da0caea81b1"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27457703441,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;770bb0c6-3df0-40ab-8588-18f4e35c611d&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="3f7b7368d21804d23a6ebddb367f2036110325ee6c23815c07f242adb38fb97f"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -296,7 +389,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27452085196,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;e1e9123c-408f-46d6-b87e-9d43ace253fe&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="9b312e66828c4a0c22546117c6176140b32b38fdbd0ca9f9622f384415526776"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27452085196,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;85c61f69-14c2-4250-b698-36f67d87d98d&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="a72c81b40a50bd088632dff0a3895eae9f4be6e9649fec74954f48c38dbef230"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -351,7 +444,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27452062679,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;611f6e66-0046-456f-866a-af3ba6ee5ebd&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="8ea5e1c23b551b451c13bebb3bef750a10be63b8a281b554f7e8eccf4a1ac601"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27452062679,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;5d92a543-bdc5-441f-a9e6-5d2b6a799291&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="8d5b8485fe84b8f3ce850302376723857e9feefb338b745ad39378f43e4bc91d"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -421,18 +514,6 @@ https://t.co/YPuvRbsYH9</div>
       <div xmlns="http://www.w3.org/1999/xhtml">I'm no expert here, obviously, but it seems that it takes some spectacularly misplaced over-confidence to explain w… https://t.co/CpIeUZsAtd</div>
     </content>
     <updated>2023-03-02T17:00:50Z</updated>
-  </entry>
-  <entry>
-    <title>The only place I regularly use cash these days is at the barber's. So this morning's haircut required a search for… https://t.co/6G7o98CIV7</title>
-    <link rel="alternate" href="https://twitter.com/davorg/status/1631242314373840896" type="text/html"/>
-    <id>https://twitter.com/davorg/status/1631242314373840896</id>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">The only place I regularly use cash these days is at the barber's. So this morning's haircut required a search for… https://t.co/6G7o98CIV7</div>
-    </content>
-    <updated>2023-03-02T10:37:29Z</updated>
   </entry>
   <entry>
     <title>DAVECROSS has released Perlanet-v3.0.0</title>
@@ -1678,71 +1759,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="testing"/>
   </entry>
   <entry>
-    <title>Containers for Coverage</title>
-    <link rel="alternate" href="https://dev.to/davorg/containers-for-coverage-1e7o" type="text/html"/>
-    <content type="html">&lt;p&gt;I’ve been building Docker containers again. And I think you’ll find this one a little more useful than &lt;a href="https://dev.to/davorg/building-a-perlanet-container-43cm"&gt;the Perlanet one&lt;/a&gt; I wrote about a couple of weeks ago.&lt;/p&gt;
-
-&lt;p&gt;Several years ago I got into &lt;a href="https://www.travis-ci.com/"&gt;Travis CI&lt;/a&gt; and set up lots of &lt;a href="https://github.com/davorg?tab=repositories"&gt;my GitHub repos&lt;/a&gt; so they automatically ran the tests each time I committed to the repo. Later on, I also worked out how to tie those test runs into &lt;a href="https://coveralls.io/"&gt;Coveralls.io&lt;/a&gt; so I got pretty graphs of how my test coverage was looking. I gave &lt;a href="https://www.slideshare.net/davorg/github-travisci-and-perl"&gt;a talk about what I had done&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;But two things changed.&lt;/p&gt;
-
-&lt;p&gt;Firstly, Travis CI got too popular and, eventually, removed their free service. And, secondly, &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt; was introduced. Over the last few years, I’ve set up many of my repos to use GitHub Actions for CI. But, basically because I’m lazy, I didn’t remove the Travis CI configuration from those repos.&lt;/p&gt;
-
-&lt;p&gt;But last week I decided the time was right to start work on that. And when I went to remove the .travis.yml I realised that something was missing from my GitHub Actions CI workflows – they were running the unit tests, but they weren’t reporting on test coverage. So it was time to fix that.&lt;/p&gt;
-
-&lt;p&gt;I needed to reimplement the logic that connected Travis CI to Coveralls.io in a GitHub workflow. That actually turned out to be pretty simple. There’s a CPAN module called &lt;a href="https://metacpan.org/pod/Devel::Cover::Report::Coveralls"&gt;Devel::Cover::Report::Coveralls&lt;/a&gt; which takes the output from Devel::Cover, converts it to the correct format and sends it to Coveralls.io. And, as a bonus, it has documentation showing how to implement that in a GitHub workflow.&lt;/p&gt;
-
-&lt;p&gt;So I hacked at my workflow definition file for one of my CPAN modules and within a few minutes I had it working.&lt;/p&gt;
-
-&lt;p&gt;Well, I say “a few minutes”, but it took over thirteen minutes to run. It turns out that Devel::Cover::Report::Coveralls is a pretty heavyweight module and needs to install a lot of other modules in order to do its work.&lt;/p&gt;
-
-&lt;p&gt;At this point, you can probably guess where this is going. And you’d be right.&lt;/p&gt;
-
-&lt;p&gt;I’ve created a Docker container that has Devel::Cover::Report::Coveralls already installed. And, obviously, it’s available for everyone to use from the Docker hub – &lt;a href="https://hub.docker.com/repository/docker/davorg/perl-coveralls"&gt;davorg/perl-coveralls&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;A couple of small adjustments to my GitHub workflow and the coverage job is now running on my new container – and takes 29 seconds instead of 13 minutes. So that’s a win.&lt;/p&gt;
-
-&lt;p&gt;The relevant section of my &lt;a href="https://github.com/davorg/calendar-simple/blob/master/.github/workflows/perltest.yml"&gt;workflow file&lt;/a&gt; is here:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;coverage:
-    runs-on: ubuntu-latest
-    container: davorg/perl-coveralls:latest
-    name: Test coverage
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install modules
-        run: cpanm -n --installdeps .
-      - name: Coverage
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: cover -test -report Coveralls
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;And it’s producing nice graphs on Coveralls.io like the one above.&lt;/p&gt;
-
-&lt;p&gt;Let me know if you find it useful.&lt;/p&gt;
-
-&lt;p&gt;The post &lt;a href="https://perlhacks.com/2022/10/containers-for-coverage/"&gt;Containers for Coverage&lt;/a&gt; appeared first on &lt;a href="https://perlhacks.com"&gt;Perl Hacks&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/containers-for-coverage-1e7o</id>
-    <published>2022-10-18T17:01:50Z</published>
-    <updated>2022-10-18T17:01:50Z</updated>
-    <category term="packaging"/>
-    <category term="container"/>
-    <category term="coverallsio"/>
-    <category term="docker"/>
-  </entry>
-  <entry>
     <title>DAVECROSS has released Feed-Find-0.13</title>
     <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Feed-Find-0.13" type="text/html"/>
     <content type="xhtml">
@@ -2049,50 +2065,6 @@ OMD are just one of those bands that I see live whenever I can. I’ve now been 
     <updated>2021-09-25T12:59:24Z</updated>
     <category term="media"/>
     <category term="Uncategorized"/>
-  </entry>
-  <entry>
-    <title>Replacing CPAN RT</title>
-    <link rel="alternate" href="https://perlhacks.com/2020/12/replacing-cpan-rt/" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>[<strong>Update:</strong> the CPAN Request Tracker was saved. It’s now run by a new team of volunteers and none of my suggestions below are required.]</p>
-<p>Two weeks ago, we learned that the <a href="https://log.perl.org/2020/12/rtcpanorg-sunset.html">CPAN Request Tracker was closing down early next year</a>. I proposed <a href="https://perlhacks.com/2020/12/rt-action-plan-for-cpan-authors/">a plan that CPAN authors could follow</a> to ensure that their users can still find somewhere to report bugs in modules (and, perhaps more importantly, to see what bugs have already been reported in modules).</p>
-<p>But that’s only part of the problem. In fact, it’s probably a minor part of the problem. If you’re an active CPAN author, then you probably already knew about the impending closure and had already made plans to deal with it. It’s likely that you had already moved your bug tracking to a new system. At the very least, you now know what the problem is and are considering the best way to deal with it before next March.</p>
-<p>The far larger problem is the thousands of distributions that aren’t owned by active CPAN authors. What are we going to do about those?</p>
-<p>How big is the problem? Well, the site <a href="https://cpan.rocks/">cpan.rocks</a> displays stats about CPAN. One of the panels on its front page shows a summary of the bugtracker information in CPAN distribution. You’ll see that 24,873 distributions (that’s 66% of them) have no bugtracker information included in their metadata. That’ll be for a number of reasons. Some of them will be distributions that haven’t been updated since alternative bugtrackers were supported by CPAN (originally, it was just assumed that everyone used the CPAN RT); some of them will be because the authors don’t know how to add the required metadata; and some of them (including most of my distributions) are missing it because the author just hasn’t got round to adding it yet. There will, of course, be many more reasons.</p>
-<p>Some people will have read the recent news and will be galvanised into doing something about it (I fall firmly into that category) but others (and I’d suggest that it’s a large majority) either won’t hear about the change or won’t care about it. And why should they care? They were generous enough to donate some of their code to CPAN at some point. They don’t have any obligation at all to carry on maintaining it after they’ve lost interest in whatever project led to them writing that software.</p>
-<p>Take, for example, <a href="https://metacpan.org/release/Mail-Alias">Mail-Alias</a>. That was released by someone called Tom Zeltwanger twenty years ago. He released three versions over a period of two months and then stopped. Who knows why. When he last updated the module, the CPAN search engine didn’t support alternative bugtrackers, so he never considered adding one. And that meant that the CPAN page for his module linked to the default bugtracker set up for the distribution on the CPAN RT. In the last fifteen years, <a href="https://rt.cpan.org/Public/Dist/Display.html?Name=Mail-Alias">four bugs have been reported</a> against that module. But as Tom has moved on, nothing has been done about any of them. There are a lot of modules on CPAN in a similar situation.</p>
-<p>But that leaves <a href="https://metacpan.org/">MetaCPAN</a> (the current CPAN search engine) with a problem. Where does it send people who want to report a bug against an inactive module?</p>
-<p>You might think that it doesn’t matter. But I disagree. Maybe I think that Mail::Alias would be the perfect module for a project I’m working on. Even before I start using it, it’s useful to be able to browse any existing bugs to see how they might affect my use of the module. And if someone later comes along and wants to take over maintenance of the module, then it’s useful for them to see any bugs that have been raised during the hiatus when the module was unmaintained.</p>
-<p>So, I’m a big fan of having a default bugtracker for CPAN modules – even for ones with inactive authors. Which leads us to the question of where should that be. And I have a suggestion.</p>
-<p>A few years ago, Micheal Schwern and Olaf Alders set up <a href="https://github.com/gitpan">Gitpan</a>. It’s an organisation which has a Github repo for every distribution on CPAN. And those repos each have a commit for every release of those distributions. Here, for example, is <a href="https://github.com/gitpan/Mail-Alias">the repo for Mail-Alias</a> – and you can see the three commits for the three releases I mentioned above.</p>
-<p>So I’d like to suggest Gitpan as a suitable place to use as a default bugtracker for CPAN distributions. There are a couple of problems:</p>
-<ul>
-<li>It looks like the auto-population of the commits stopped a few years ago. We’d need to work out how that works and catch up on the recent uploads.</li>
-<li>None of the repos has the issue tracker turned on. But I expect that can be done with a relatively simple program that uses the GitHub API.</li>
-</ul>
-<p>Of course, we also have the problem that some people object to using GitHub since it was taken over by Microsoft. But that’s fine, they can just point their bugtracker metadata to their preferred system.</p>
-<p>The problem with the CPAN RT was that it needed too much maintenance – and the Perl NOC team is really overworked. Any self-hosted alternative seems likely to have the same problem eventually. So I’m all in favour of using a third-party alternative. And if you’re taking that route, then it makes sense (to me, at least) to use a third-party system that already has all (ok, most) of the repos set up.</p>
-<p>I haven’t spoken to Schwern or Olaf about this, so I don’t know if there was some major problem that would stop this plan from working. But I think it’s worth looking at.</p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/12/replacing-cpan-rt/">Replacing CPAN RT</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </content>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>[Update: the CPAN Request Tracker was saved. It’s now run by a new team of volunteers and none of my suggestions below are required.] Two weeks ago, we learned that the CPAN Request Tracker was closing down early next year. I proposed a plan that CPAN authors could follow to ensure that their users can… <a class="more-link" href="https://perlhacks.com/2020/12/replacing-cpan-rt/">Continue reading <span class="screen-reader-text">Replacing CPAN RT</span></a></p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2020/12/replacing-cpan-rt/">Replacing CPAN RT</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </summary>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://perlhacks.com/?p=2026</id>
-    <published>2020-12-16T17:24:20Z</published>
-    <updated>2020-12-16T17:24:20Z</updated>
-    <category term="CPAN"/>
-    <category term="bugtracker"/>
-    <category term="cpan"/>
-    <category term="cpan rt"/>
-    <category term="github"/>
-    <category term="gitpan"/>
   </entry>
   <entry>
     <title>The Introvert Entrepreneur</title>
