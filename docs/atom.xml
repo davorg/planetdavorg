@@ -7,9 +7,78 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-03-09T22:06:30Z</updated>
+  <updated>2023-03-09T23:07:16Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/27620086494</id>
+    <published>2023-03-09T23:01:29Z</published>
+    <updated>2023-03-09T23:01:29Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/01b545f6c2...49f0125116"/>
+    <title type="html">davorg pushed to master in davorg/uptime</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27620086494,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;d33e7968-3af0-43c7-af2d-05ea4ec8a270&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="196f309b3d423ab90a94b040757ab9e8156eb9b291b167109794c8e2a6409000"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-03-09T23:01:29Z" data-view-component="true"&gt;March 9, 2023 23:01&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits "&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="upptime-bot"&gt;
+                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/49f0125116bcb9b0fd5ebe0f5968ca5081f98d50" rel="noreferrer"&gt;49f0125&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      &lt;g-emoji class="g-emoji" alias="green_square" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png"&gt;🟩&lt;/g-emoji&gt; Feeds is up (200 in 452 ms) [skip ci] [upptime]
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="upptime-bot"&gt;
+                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/a85eaf53ddd91df0a6cbfa64037d19777c6728d7" rel="noreferrer"&gt;a85eaf5&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      &lt;g-emoji class="g-emoji" alias="green_square" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png"&gt;🟩&lt;/g-emoji&gt; Perl Hacks is up (200 in 1362 ms) [skip ci] [upptime]
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+                &lt;li class="f6 mt-2"&gt;
+                  &lt;a class="Link--secondary" href="/davorg/uptime/compare/01b545f6c2...49f0125116" rel="noreferrer"&gt;4 more commits »&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Is Your Mind That Free? - The Reds, Pinks and Purples</title>
     <summary type="xhtml">
@@ -34,7 +103,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613956079,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;279d6b30-ff6d-415c-8b92-af80a4a14d14&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="03dbae5af617a3826fdeb1a6b3b92cedecb813b7562fb748bd1b85488b51abd4"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613956079,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;a0699510-2e3d-4b3f-ad04-eb548fd2a874&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="f4704ce5d4e71adb4118b86249ec6d9120b4e54ae30443972de84c1c2d8c8b98"&gt;&lt;div class="body"&gt;
 &lt;!-- issue_comment --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -84,7 +153,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316285811,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613907497,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;77c1d8b1-9e23-4cb1-ab54-b439aebbfb2a&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="aa351499b669c6bad49dde9801c05c3e4675eced44ecc1430138c157a91c185b"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316285811,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613907497,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;0b5fcdf2-8024-41e1-ba44-b26f13d1854a&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="1dff03f865911be92b176a96765038643e5528bfcb9d195ece4de7a79ddad2b0"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -139,7 +208,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_closed js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssuesEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613852437,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;b7faad92-890e-43b9-ab4e-c3f30450113a&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="bdd0cb654c78076f28824f8ab8d60e6468a488b8200557c5c5ecb3d6d8d55bd6"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="issues_closed js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssuesEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613852437,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;f02f34ec-3e49-4ee2-9321-c74a3943de1d&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="aa5f56d72b004d22e09bf1979fb7964eba5b6b53d88648add2272b113e06bbd6"&gt;&lt;div class="body"&gt;
 &lt;!-- issues --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -189,7 +258,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613852333,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;33516490-e64f-4789-aaec-fb09c50a8e04&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="7b3e846c138553221691993716e14ed3df757a12e1d87c679e63a3bf0327e115"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613852333,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;baa53f1d-4199-4027-8dc5-74309e71addf&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="0f914db613fa5535dca7ada81b2e2eb32baab1731beb5424639784e18869e4e6"&gt;&lt;div class="body"&gt;
 &lt;!-- issue_comment --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -226,61 +295,6 @@
       <name>Obey Robots</name>
     </author>
     <id>https://musicbrainz.org/recording/538c4a06-3fda-4a1a-87a5-278007b2d849</id>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/27613816490</id>
-    <published>2023-03-09T17:46:06Z</published>
-    <updated>2023-03-09T17:46:06Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perl-perlanet-docker/compare/c9be5fc732...524cdd046d"/>
-    <title type="html">davorg pushed to main in davorg/perl-perlanet-docker</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:546160134,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27613816490,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;6fc7c6b1-d0f3-4bbc-9353-39396cdb908b&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="66e3ca18984de8e0977b54e1932f55be41d750e5b7dc00bcbda8b04268eae22b"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/perl-perlanet-docker/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/perl-perlanet-docker" rel="noreferrer"&gt;davorg/perl-perlanet-docker&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-03-09T17:46:06Z" data-view-component="true"&gt;March 9, 2023 17:46&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/perl-perlanet-docker/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perl-perlanet-docker/commit/524cdd046dde6add580e8dabe724d43ce359978b" rel="noreferrer"&gt;524cdd0&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Correct URL
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>Let It Snow - Obey Robots</title>
@@ -446,19 +460,6 @@ https://t.co/i6P5zjUeIk</div>
     <category term="docker"/>
     <category term="perlanet"/>
     <category term="planetperl"/>
-  </entry>
-  <entry>
-    <title>DAVECROSS has released Perlanet-v3.0.0</title>
-    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Perlanet-v3.0.0" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">A program for creating programs that aggregate web feeds (both</div>
-    </content>
-    <author>
-      <name>DAVECROSS</name>
-    </author>
-    <id>https://metacpan.org/release/DAVECROSS/Perlanet-v3.0.0</id>
-    <published>2023-03-01T16:12:24Z</published>
-    <updated>2023-03-01T16:12:24Z</updated>
   </entry>
   <entry>
     <title>Dependabot and GitHub Actions</title>
@@ -852,19 +853,6 @@ updates:
     <category term="github"/>
     <category term="githubpages"/>
     <category term="githubactions"/>
-  </entry>
-  <entry>
-    <title>DAVECROSS has released Parse-RPM-Spec-v1.1.2</title>
-    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Parse-RPM-Spec-v1.1.2" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Perl extension to parse RPM spec files.</div>
-    </content>
-    <author>
-      <name>DAVECROSS</name>
-    </author>
-    <id>https://metacpan.org/release/DAVECROSS/Parse-RPM-Spec-v1.1.2</id>
-    <published>2023-01-13T10:52:30Z</published>
-    <updated>2023-01-13T10:52:30Z</updated>
   </entry>
   <entry>
     <title>Robo-committer for automated commits</title>
@@ -1614,19 +1602,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="seo"/>
   </entry>
   <entry>
-    <title>DAVECROSS has released SVG-Timeline-0.1.3</title>
-    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/SVG-Timeline-0.1.3" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Program to draw an SVG timeline diagram from events defined in a file</div>
-    </content>
-    <author>
-      <name>DAVECROSS</name>
-    </author>
-    <id>https://metacpan.org/release/DAVECROSS/SVG-Timeline-0.1.3</id>
-    <published>2022-11-01T12:44:59Z</published>
-    <updated>2022-11-01T12:44:59Z</updated>
-  </entry>
-  <entry>
     <title>Containers for Coverage</title>
     <link rel="alternate" href="https://davorg.medium.com/containers-for-coverage-1db8dfc76c2d?source=rss-3781feb8a4f4------2" type="text/html"/>
     <content type="html">&lt;figure&gt;&lt;img alt="" src="https://cdn-images-1.medium.com/max/1024/0*YjwJ59dr4XVoMb1b.png" /&gt;&lt;/figure&gt;&lt;p&gt;I’ve been building Docker containers again. And I think you’ll find this one a little more useful than &lt;a href="https://perlhacks.com/2022/10/building-a-perlanet-container/"&gt;the Perlanet one&lt;/a&gt; I wrote about a couple of weeks ago.&lt;/p&gt;&lt;p&gt;Several years ago I got into &lt;a href="https://www.travis-ci.com/"&gt;Travis CI&lt;/a&gt; and set up lots of &lt;a href="https://github.com/davorg?tab=repositories"&gt;my GitHub repos&lt;/a&gt; so they automatically ran the tests each time I committed to the repo. Later on, I also worked out how to tie those test runs into &lt;a href="https://coveralls.io/"&gt;Coveralls.io&lt;/a&gt; so I got pretty graphs of how my test coverage was looking. I gave &lt;a href="https://www.slideshare.net/davorg/github-travisci-and-perl"&gt;a talk about what I had done&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;But two things changed.&lt;/p&gt;&lt;p&gt;Firstly, Travis CI got too popular and, eventually, removed their free service. And, secondly, &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt; was introduced. Over the last few years, I’ve set up many of my repos to use GitHub Actions for CI. But, basically because I’m lazy, I didn’t remove the Travis CI configuration from those repos.&lt;/p&gt;&lt;p&gt;But last week I decided the time was right to start work on that. And when I went to remove the .travis.yml I realised that something was missing from my GitHub Actions CI workflows — they were running the unit tests, but they weren’t reporting on test coverage. So it was time to fix that.&lt;/p&gt;&lt;p&gt;I needed to reimplement the logic that connected Travis CI to Coveralls.io in a GitHub workflow. That actually turned out to be pretty simple. There’s a CPAN module called &lt;a href="https://metacpan.org/pod/Devel::Cover::Report::Coveralls"&gt;Devel::Cover::Report::Coveralls&lt;/a&gt; which takes the output from Devel::Cover, converts it to the correct format and sends it to Coveralls.io. And, as a bonus, it has documentation showing how to implement that in a GitHub workflow.&lt;/p&gt;&lt;p&gt;So I hacked at my workflow definition file for one of my CPAN modules and within a few minutes I had it working.&lt;/p&gt;&lt;p&gt;Well, I say “a few minutes”, but it took over thirteen minutes to run. It turns out that Devel::Cover::Report::Coveralls is a pretty heavyweight module and needs to install a lot of other modules in order to do its work.&lt;/p&gt;&lt;p&gt;At this point, you can probably guess where this is going. And you’d be right.&lt;/p&gt;&lt;p&gt;I’ve created a Docker container that has Devel::Cover::Report::Coveralls already installed. And, obviously, it’s available for everyone to use from the Docker hub — &lt;a href="https://hub.docker.com/repository/docker/davorg/perl-coveralls"&gt;davorg/perl-coveralls&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A couple of small adjustments to my GitHub workflow and the coverage job is now running on my new container — and takes 29 seconds instead of 13 minutes. So that’s a win.&lt;/p&gt;&lt;p&gt;The relevant section of my &lt;a href="https://github.com/davorg/calendar-simple/blob/master/.github/workflows/perltest.yml"&gt;workflow file&lt;/a&gt; is here:&lt;/p&gt;&lt;pre&gt;coverage:&lt;br&gt;    runs-on: ubuntu-latest&lt;br&gt;    container: davorg/perl-coveralls:latest&lt;br&gt;    name: Test coverage&lt;br&gt;    steps:&lt;br&gt;      - uses: actions/checkout@v3&lt;br&gt;      - name: Install modules&lt;br&gt;        run: cpanm -n --installdeps .&lt;br&gt;      - name: Coverage&lt;br&gt;        env:&lt;br&gt;          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}&lt;br&gt;        run: cover -test -report Coveralls&lt;/pre&gt;&lt;p&gt;And it’s producing nice graphs on Coveralls.io like the one above.&lt;/p&gt;&lt;p&gt;Let me know if you find it useful.&lt;/p&gt;&lt;p&gt;&lt;em&gt;Originally published at &lt;/em&gt;&lt;a href="https://perlhacks.com/2022/10/containers-for-coverage/"&gt;&lt;em&gt;Perl Hacks&lt;/em&gt;&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;&lt;img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=1db8dfc76c2d" width="1" height="1" alt=""&gt;</content>
@@ -1689,19 +1664,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="docker"/>
     <category term="test coverage"/>
     <category term="testing"/>
-  </entry>
-  <entry>
-    <title>DAVECROSS has released Feed-Find-0.13</title>
-    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Feed-Find-0.13" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Syndication feed auto-discovery</div>
-    </content>
-    <author>
-      <name>DAVECROSS</name>
-    </author>
-    <id>https://metacpan.org/release/DAVECROSS/Feed-Find-0.13</id>
-    <published>2022-10-18T14:58:35Z</published>
-    <updated>2022-10-18T14:58:35Z</updated>
   </entry>
   <entry>
     <title>Not that PR, thanks</title>
@@ -1879,19 +1841,6 @@ RUN apt-get update &amp;&amp; \
     <category term="children"/>
     <category term="george and the smart home"/>
     <category term="smart speakers"/>
-  </entry>
-  <entry>
-    <title>DAVECROSS has released Plack-Middleware-DirIndex-1.01</title>
-    <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Plack-Middleware-DirIndex-1.01" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Append an index file to request PATH's ending with a /</div>
-    </content>
-    <author>
-      <name>DAVECROSS</name>
-    </author>
-    <id>https://metacpan.org/release/DAVECROSS/Plack-Middleware-DirIndex-1.01</id>
-    <published>2022-03-26T16:38:35Z</published>
-    <updated>2022-03-26T16:38:35Z</updated>
   </entry>
   <entry>
     <title>S.</title>
