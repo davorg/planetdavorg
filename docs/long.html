@@ -61,6 +61,110 @@ body {
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
+              <h2><a href="https://dev.to/davorg/deploying-github-pages-site-with-github-workflows-3bhh">Deploying GitHub Pages sites with GitHub Workflows</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><p>I've written before about <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">how I use GitHub Workflows to keep "semi-static" web sites up to date</a>. It's a technique that I've found really useful. When I wrote that blog post, things were pretty simple - you chose which branch held your web site (there was a tradition for a while to use <code>gh-pages</code>) and whether the web site pages were in the repos root directory or the directory called <code>/docs</code>. I usually put my web site files into the <code>/docs</code> directory in the <code>master</code> (now <code>main</code>) branch and things worked just fine.</p>
+
+<p>The reason for storing the site in <code>/docs</code> was so that there was a separation between the files that were used to generate the site from the generated output site itself. Many of my repos would have a <code>/tt</code> directory that contained templates, a <code>/data</code> directory which contains JSON files or an SQLite database and a <code>/bin</code> directory with a <code>build</code> program that pulls all that stuff together and generates a pile of HTML files that end up in the <code>/docs</code> directory. In my original blog post on this subject, I demonstrated a GitHub Workflow definition that would regenerate the site (when input files changed or on a schedule) and committed any changed files in the <code>/docs</code> directory. Some GitHub magic would then ensure that the new version of the site was deployed to the GitHub Pages server. All was well with the world.</p>
+
+<p>Then, a few months ago, things got a little more complicated. We gained options about how your GitHub Pages site was deployed. The standard version that I'd be using before was called "deploy from a branch" but there was another option called "GitHub Actions". It seemed likely to me that I really needed to start using the "GitHub Actions" option, but things were still working the old way, and I had far more interesting things to investigate, so I left things the way they were.</p>
+
+<p>Well, I say things were still working in the old way... They were, but something was a bit different. It seemed that the old method was being powered by a new GitHub Workflow called "pages-build-deployment" that had been automatically added to all the repos that needed it. And looking into the details of that workflow, I noticed that it was doing some things that were unnecessary in my repos - for example it assumed that the site was being built using <a href="https://jekyllrb.com/">Jekyll</a> and that was only true for a couple of my repos. For most of them, that was unnecessary work. So I needed to look into the new deployment option in more detail.</p>
+
+<p>I started a couple of weeks ago, by simply switching the option from "deploy from a branch" to "GitHub Actions" in the hope that, because I was already using GitHub Actions, things would Just Work. But, unfortunately, that wasn't the case. My new site was being generated and committed to the repo - but the changes weren't showing up on the live site. So I switched things back until I had time to look into in it more detail.</p>
+
+<p>That time was today. It seemed that I needed to include code in my GitHub Workflow that would actually handle the deployment of the site to the GitHub Pages servers. A quick search of the <a href="https://github.com/marketplace?type=actions">GitHub Actions marketplace</a> found the <a href="https://github.com/marketplace/actions/deploy-github-pages-site">Deploy GitHub Pages site</a> action which seemed to be the right thing. But reading the documentation, I worked out that it wanted to deploy the site from an artifact, so I needed to create that first. And then I found <a href="https://github.com/marketplace/actions/upload-github-pages-artifact">Upload GitHub Pages artifact</a> which did the right thing. So it was just a case of adding these two actions to my workflows in the correct way.</p>
+
+<p>Previously, my workflows for these sites just needed a single job (called <code>build</code>) but now I added a <code>deploy</code> job which depended on <code>build</code>. For example, the workflow that builds <a href="https://perl.theplanetarium.org/">Planet Perl</a> now looks like this:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>name: Generate web page
+
+on:
+  push:
+    branches: '*'
+  schedule:
+    - cron: '37 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: davorg/perl-perlanet:latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create pages
+      run: |
+        mkdir -p docs
+        perlanet &gt; perlanet.log 2&gt;&amp;1
+    - name: Commit new page
+      if: github.repository == 'davorg/planetperl'
+      run: |
+        git config --global --add safe.directory /__w/planetperl/planetperl
+        GIT_STATUS=$(git status --porcelain)
+        echo $GIT_STATUS
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git add docs/
+        if [ "$GIT_STATUS" != "" ]; then git commit -m "Automated Web page generation"; fi
+        if [ "$GIT_STATUS" != "" ]; then git push; fi
+    - name: Archive perlanet logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: perlanet.log
+        path: ./perlanet.log
+        retention-days: 3
+
+    - name: Update pages artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs/
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${\{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
+</code></pre>
+
+</div>
+
+<p>The bits that I've added are the final step in the <code>build</code> job ("Update pages artifact") and the new <code>deploy</code> job. All of the code is largely copied from the documentation of the two actions I mentioned above.</p>
+
+<p>Having made this changes to one of my planet sites, I switched the deployment method and forced the workflow to run. And was very happy to see it ran successfully and the new version of the site appeared at the live URL as soon as the deployment had changed.</p>
+
+<p>This makes me happy as I feel I'm using the GitHub Pages deployment the way that they're supposed to be used. I've updated all of my <a href="https://theplanetarium.org/">planet sites</a> to use this method, but I have several other sites that I'll need to get round to switching at some point.</p>
+
+<p>As always when I find out something new about a GitHub feature, it leaves me with a couple of other suggestions for improvements:</p>
+
+<ul>
+<li>It's possible to <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">call one workflow from another</a>. The planet workflows are all very similar. I wonder if I can define a single workflow that does all of the work and just call that from the individual workflow definition - passing in parameters to handle the differences.</li>
+<li>Now I'm deploying the sites from artifacts, there is no need for the generated site to actually exist in the repo. That might well make a few things quite a bit easier.</li>
+</ul>
+
+<p>Anyway, I thought I'd share what I had discovered today. Is anyone else generating web sites this way? How do you do it?</p>
+
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">dev.to</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Monday 20 March 2023 17:32</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
               <h2><a href="https://perlhacks.com/2023/03/improvements-to-planet-perl-and-perlanet/">Improvements to Planet Perl and Perlanet</a></h2>
             </div><!-- panel-heading -->
             <div class="panel-body"><p>This is a story of one of those nice incidents where something starts off simple, then spirals out of control for a while but, in the end, everyone wins.</p>
@@ -710,304 +814,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://dev.to/davorg/writing-a-cpan-module-that-talks-to-chatgpt-gb5">Writing a CPAN module that talks to ChatGPT</a></h2>
-            </div><!-- panel-heading -->
-            <div class="panel-body"><p><a href="https://chat.openai.com/chat">ChatGPT</a> exposes an API, but there’s no CPAN module for taking advantage of that. Let’s put that right (with help from ChatGPT)…</p>
-
-
-
-
-<p><em>Write a Perl CPAN module for connecting to a ChatGPT server</em></p>
-
-<p>To create a Perl CPAN module for connecting to a ChatGPT server, you will need to have Perl and the necessary dependencies installed on your system.</p>
-
-<p>To begin, create a new directory for your module and create a file called “ChatGPT.pm” with the following content:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight perl"><code><span class="nb">package</span> <span class="nv">ChatGPT</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nv">strict</span><span class="p">;</span>
-<span class="k">use</span> <span class="nv">warnings</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nn">Net::WebSocket::</span><span class="nv">Client</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">Net::WebSocket::</span><span class="nv">Server</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">HTTP::</span><span class="nv">Async</span><span class="p">;</span>
-
-<span class="k">sub </span><span class="nf">new</span> <span class="p">{</span>
-  <span class="k">my</span> <span class="p">(</span><span class="nv">$class</span><span class="p">,</span> <span class="nv">%params</span><span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
-  <span class="k">my</span> <span class="nv">$self</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">host</span> <span class="o">=&gt;</span> <span class="nv">$params</span><span class="p">{</span><span class="nv">host</span><span class="p">},</span>
-    <span class="s">port</span> <span class="o">=&gt;</span> <span class="nv">$params</span><span class="p">{</span><span class="nv">port</span><span class="p">},</span>
-  <span class="p">};</span>
-
-  <span class="nb">bless</span> <span class="nv">$self</span><span class="p">,</span> <span class="nv">$class</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="nv">$self</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">sub </span><span class="nf">send_prompt</span> <span class="p">{</span>
-  <span class="k">my</span> <span class="p">(</span><span class="nv">$self</span><span class="p">,</span> <span class="nv">$prompt</span><span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
-
-  <span class="k">my</span> <span class="nv">$http</span> <span class="o">=</span> <span class="nn">HTTP::</span><span class="nv">Async</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">;</span>
-  <span class="k">my</span> <span class="nv">$client</span> <span class="o">=</span> <span class="nn">Net::WebSocket::</span><span class="nv">Client</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span>
-    <span class="s">url</span> <span class="o">=&gt;</span> <span class="p">"</span><span class="s2">ws://</span><span class="si">$self</span><span class="s2">-&gt;{host}:</span><span class="si">$self</span><span class="s2">-&gt;{port}</span><span class="p">"</span>
-  <span class="p">);</span>
-
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nb">connect</span><span class="p">;</span>
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nv">send_utf8</span><span class="p">(</span><span class="nv">$prompt</span><span class="p">);</span>
-
-  <span class="k">my</span> <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nb">recv</span><span class="p">;</span>
-
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nv">disconnect</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="mi">1</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>To use this module in your Perl code, you can create a new ChatGPT object and call the <code>send_prompt</code> method like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight perl"><code><span class="k">use</span> <span class="nv">ChatGPT</span><span class="p">;</span>
-
-<span class="k">my</span> <span class="nv">$chatgpt</span> <span class="o">=</span> <span class="nv">ChatGPT</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="s">host</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">localhost</span><span class="p">',</span> <span class="s">port</span> <span class="o">=&gt;</span> <span class="mi">8080</span><span class="p">);</span>
-<span class="k">my</span> <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$chatgpt</span><span class="o">-&gt;</span><span class="nv">send_prompt</span><span class="p">('</span><span class="s1">What is your name?</span><span class="p">');</span>
-<span class="k">print</span> <span class="p">"</span><span class="s2">Response: </span><span class="si">$response</span><span class="se">\n</span><span class="p">";</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This will send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080, and print the response to the console.</p>
-
-<p>Note: This is just a basic example of how you can create a Perl CPAN module for connecting to a ChatGPT server. There are many other features and considerations that you may want to add to your module, such as error handling and customization options.</p>
-
-<p>To make your module available on CPAN, you will need to follow the guidelines for creating and distributing CPAN modules, which can be found in the Perl documentation and online resources.</p>
-
-<p><em>Use Moose to create the class</em></p>
-
-<p>To use Moose to create the <code>ChatGPT</code> class, you will need to have Moose installed on your system. You can install Moose by running the following command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>cpanm Moose
-</code></pre>
-
-</div>
-
-
-
-<p>With Moose installed, you can modify the class like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight perl"><code><span class="nb">package</span> <span class="nv">ChatGPT</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nv">Moose</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">Net::WebSocket::</span><span class="nv">Client</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">Net::WebSocket::</span><span class="nv">Server</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">HTTP::</span><span class="nv">Async</span><span class="p">;</span>
-
-<span class="nv">has</span> <span class="s">host</span> <span class="o">=&gt;</span> <span class="p">(</span>
-  <span class="s">is</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">ro</span><span class="p">',</span>
-  <span class="s">isa</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">Str</span><span class="p">',</span>
-  <span class="s">required</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="nv">has</span> <span class="s">port</span> <span class="o">=&gt;</span> <span class="p">(</span>
-  <span class="s">is</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">ro</span><span class="p">',</span>
-  <span class="s">isa</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">Int</span><span class="p">',</span> <span class="s">required</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="k">sub </span><span class="nf">send_prompt</span> <span class="p">{</span>
-  <span class="k">my</span> <span class="p">(</span><span class="nv">$self</span><span class="p">,</span> <span class="nv">$prompt</span><span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
-
-  <span class="k">my</span> <span class="nv">$http</span> <span class="o">=</span> <span class="nn">HTTP::</span><span class="nv">Async</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">;</span>
-  <span class="k">my</span> <span class="nv">$client</span> <span class="o">=</span> <span class="nn">Net::WebSocket::</span><span class="nv">Client</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span>
-    <span class="s">url</span> <span class="o">=&gt;</span> <span class="p">"</span><span class="s2">ws://</span><span class="si">$self</span><span class="s2">-&gt;{host}:</span><span class="si">$self</span><span class="s2">-&gt;{port}</span><span class="p">"</span>
-  <span class="p">);</span>
-
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nb">connect</span><span class="p">;</span>
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nv">send_utf8</span><span class="p">(</span><span class="nv">$prompt</span><span class="p">);</span>
-
-  <span class="k">my</span> <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nb">recv</span><span class="p">;</span>
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nv">disconnect</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="mi">1</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>In this version of the class, the <code>host</code> and <code>port</code> attributes are defined using Moose’s <code>has</code> keyword. These attributes are required and must be specified when creating a new <code>ChatGPT</code> object. The <code>send_prompt</code> method is unchanged from the previous example.</p>
-
-<p>To create a new <code>ChatGPT</code> object, you can use the <code>new</code> method provided by Moose like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight perl"><code><span class="k">use</span> <span class="nv">ChatGPT</span><span class="p">;</span>
-
-<span class="k">my</span> <span class="nv">$chatgpt</span> <span class="o">=</span> <span class="nv">ChatGPT</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="s">host</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">localhost</span><span class="p">',</span> <span class="s">port</span> <span class="o">=&gt;</span> <span class="mi">8080</span><span class="p">);</span>
-
-<span class="k">my</span> <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$chatgpt</span><span class="o">-&gt;</span><span class="nv">send_prompt</span><span class="p">('</span><span class="s1">What is your name?</span><span class="p">');</span>
-
-<span class="k">print</span> <span class="p">"</span><span class="s2">Response: </span><span class="si">$response</span><span class="se">\n</span><span class="p">";</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This will create a new <code>ChatGPT</code> object with the specified <code>host</code> and <code>port</code> attributes, and send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080. The response will be printed to the console.</p>
-
-<p>Note: This is just one way to use Moose to create the <code>ChatGPT</code> class. There are many other features and customization options available in Moose that you may want to consider adding to your class, such as type constraints, default values, and methods.</p>
-
-<p><em>Call the class WebService::ChatGPT</em></p>
-
-<p>To rename the <code>ChatGPT</code> class to <code>WebService::ChatGPT</code>, you will need to update the package name at the top of the file and update the <code>use</code> statements to refer to the new package name.</p>
-
-<p>Here is how you can update the <code>ChatGPT</code> class to use the new package name:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight perl"><code><span class="nb">package</span> <span class="nn">WebService::</span><span class="nv">ChatGPT</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nv">Moose</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">Net::WebSocket::</span><span class="nv">Client</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">Net::WebSocket::</span><span class="nv">Server</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nn">HTTP::</span><span class="nv">Async</span><span class="p">;</span>
-
-<span class="nv">has</span> <span class="s">host</span> <span class="o">=&gt;</span> <span class="p">(</span>
-  <span class="s">is</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">ro</span><span class="p">',</span>
-  <span class="s">isa</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">Str</span><span class="p">',</span>
-  <span class="s">required</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="nv">has</span> <span class="s">port</span> <span class="o">=&gt;</span> <span class="p">(</span>
-  <span class="s">is</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">ro</span><span class="p">',</span>
-  <span class="s">isa</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">Int</span><span class="p">',</span>
-  <span class="s">required</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="k">sub </span><span class="nf">send_prompt</span> <span class="p">{</span>
-  <span class="k">my</span> <span class="p">(</span><span class="nv">$self</span><span class="p">,</span> <span class="nv">$prompt</span><span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
-
-  <span class="k">my</span> <span class="nv">$http</span> <span class="o">=</span> <span class="nn">HTTP::</span><span class="nv">Async</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">;</span>
-  <span class="k">my</span> <span class="nv">$client</span> <span class="o">=</span> <span class="nn">Net::WebSocket::</span><span class="nv">Client</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span>
-    <span class="s">url</span> <span class="o">=&gt;</span> <span class="p">"</span><span class="s2">ws://</span><span class="si">$self</span><span class="s2">-&gt;{host}:</span><span class="si">$self</span><span class="s2">-&gt;{port}</span><span class="p">"</span>
-  <span class="p">);</span>
-
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nb">connect</span><span class="p">;</span>
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nv">send_utf8</span><span class="p">(</span><span class="nv">$prompt</span><span class="p">);</span>
-
-  <span class="k">my</span> <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nb">recv</span><span class="p">;</span>
-  <span class="nv">$client</span><span class="o">-&gt;</span><span class="nv">disconnect</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="mi">1</span><span class="p">;</span>
-</code></pre>
-
-</div>
-
-
-
-<p>With these changes, the class is now called <code>WebService::ChatGPT</code> and can be used like this:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight perl"><code><span class="k">use</span> <span class="nn">WebService::</span><span class="nv">ChatGPT</span><span class="p">;</span>
-
-<span class="k">my</span> <span class="nv">$chatgpt</span> <span class="o">=</span> <span class="nn">WebService::</span><span class="nv">ChatGPT</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="s">host</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">localhost</span><span class="p">',</span> <span class="s">port</span> <span class="o">=&gt;</span> <span class="mi">8080</span><span class="p">);</span>
-
-<span class="k">my</span> <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$chatgpt</span><span class="o">-&gt;</span><span class="nv">send_prompt</span><span class="p">('</span><span class="s1">What is your name?</span><span class="p">');</span>
-<span class="k">print</span> <span class="p">"</span><span class="s2">Response: </span><span class="si">$response</span><span class="se">\n</span><span class="p">";</span>
-</code></pre>
-
-</div>
-
-
-
-<p>This will create a new <code>WebService::ChatGPT</code> object with the specified <code>host</code> and <code>port</code> attributes, and send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080. The response will be printed to the console.,/p&gt;</p>
-
-<p>Note: This is just one way to rename the <code>ChatGPT</code> class to <code>WebService::ChatGPT</code>. You may also need to update any other references to the class name in your code and documentation, as well as update the module file name and directory structure to reflect the new package name.</p>
-
-<p><em>Suggest some tests using the standard Perl testing framework</em></p>
-
-<p>Here are some examples of tests that you could write for the <code>WebService::ChatGPT</code> module using the standard Perl testing framework (Test::More):<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight perl"><code><span class="k">use</span> <span class="nn">Test::</span><span class="nv">More</span><span class="p">;</span>
-<span class="k">use</span> <span class="nn">WebService::</span><span class="nv">ChatGPT</span><span class="p">;</span>
-
-<span class="c1"># Test creating a new ChatGPT object</span>
-<span class="k">my</span> <span class="nv">$chatgpt</span> <span class="o">=</span> <span class="nn">WebService::</span><span class="nv">ChatGPT</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span><span class="s">host</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">localhost</span><span class="p">',</span> <span class="s">port</span> <span class="o">=&gt;</span> <span class="mi">8080</span><span class="p">);</span>
-<span class="nv">isa_ok</span><span class="p">(</span><span class="nv">$chatgpt</span><span class="p">,</span> <span class="p">'</span><span class="s1">WebService::ChatGPT</span><span class="p">',</span> <span class="p">'</span><span class="s1">Object is a ChatGPT</span><span class="p">');</span>
-
-<span class="c1"># Test sending a prompt and receiving a response</span>
-<span class="k">my</span> <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$chatgpt</span><span class="o">-&gt;</span><span class="nv">send_prompt</span><span class="p">('</span><span class="s1">What is your name?</span><span class="p">');</span>
-<span class="nv">is</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="p">'</span><span class="s1">My name is ChatGPT.</span><span class="p">',</span> <span class="p">'</span><span class="s1">Response is correct</span><span class="p">');</span>
-
-<span class="c1"># Test sending an invalid prompt</span>
-<span class="nb">eval</span> <span class="p">{</span> <span class="nv">$chatgpt</span><span class="o">-&gt;</span><span class="nv">send_prompt</span><span class="p">('')</span> <span class="p">};</span>
-<span class="nv">like</span><span class="p">(</span><span class="vg">$@</span><span class="p">,</span> <span class="sx">qr/Invalid prompt/</span><span class="p">,</span> <span class="p">'</span><span class="s1">Invalid prompt error is thrown</span><span class="p">');</span>
-
-<span class="nv">done_testing</span><span class="p">();</span>
-</code></pre>
-
-</div>
-
-
-
-<p>The first test uses the <code>isa_ok</code> function to check that the object created by the <code>new</code> method is an instance of the <code>WebService::ChatGPT</code> class.</p>
-
-<p>The second test uses the <code>is</code> function to compare the expected response to the actual response returned by the <code>send_prompt</code> method.</p>
-
-<p>The third test uses the <code>eval</code> function to catch any exceptions thrown by the <code>send_prompt</code> method when an invalid prompt is provided, and the <code>like</code> function to check that the exception message matches the expected error message.</p>
-
-<p>These tests can be run using the <code>prove</code> command:<br>
-</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight shell"><code>prove <span class="nt">-l</span> t/chatgpt.t
-</code></pre>
-
-</div>
-
-
-
-
-
-
-<p>I haven’t uploaded it to CPAN yet. Do you think I should?</p>
-
-<p>The post <a href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Writing a CPAN module that talks to ChatGPT</a> appeared first on <a href="https://perlhacks.com">Perl Hacks</a>.</p>
-
-       </div><!-- panel-body -->
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">dev.to</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Tuesday 20 December 2022 16:12</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
               <h2><a href="https://davorg.medium.com/5-reasons-why-using-ai-to-generate-blog-posts-can-destroy-your-seo-f8db298de65b?source=rss-3781feb8a4f4------2">5 Reasons Why Using AI to Generate Blog Posts Can Destroy Your SEO</a></h2>
             </div><!-- panel-heading -->
             <div class="panel-body"><div class="medium-feed-item"><p class="medium-feed-image"><a href="https://davorg.medium.com/5-reasons-why-using-ai-to-generate-blog-posts-can-destroy-your-seo-f8db298de65b?source=rss-3781feb8a4f4------2"><img src="https://cdn-images-1.medium.com/max/1568/0*g61hVmjPNir439PR.jpg" width="1568"></a></p><p class="medium-feed-snippet">Using artificial intelligence (AI) to generate blog posts can be bad for search engine optimization (SEO) for several reasons.</p><p class="medium-feed-link"><a href="https://davorg.medium.com/5-reasons-why-using-ai-to-generate-blog-posts-can-destroy-your-seo-f8db298de65b?source=rss-3781feb8a4f4------2">Continue reading on Medium »</a></p></div>       </div><!-- panel-body -->
@@ -1319,7 +1125,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Monday 20 March 2023 17:06</address>
+      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Monday 20 March 2023 17:44</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->

@@ -7,68 +7,362 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-03-20T17:06:35Z</updated>
+  <updated>2023-03-20T17:44:22Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
   <entry>
-    <title>Sing - Travis</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Sing - Travis</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Travis/_/Sing" type="text/html"/>
-    <updated>2023-03-20T15:57:50Z</updated>
+    <title>Deploying GitHub Pages sites with GitHub Workflows</title>
+    <link rel="alternate" href="https://dev.to/davorg/deploying-github-pages-site-with-github-workflows-3bhh" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I've written before about <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">how I use GitHub Workflows to keep "semi-static" web sites up to date</a>. It's a technique that I've found really useful. When I wrote that blog post, things were pretty simple - you chose which branch held your web site (there was a tradition for a while to use <code>gh-pages</code>) and whether the web site pages were in the repos root directory or the directory called <code>/docs</code>. I usually put my web site files into the <code>/docs</code> directory in the <code>master</code> (now <code>main</code>) branch and things worked just fine.</p>
+
+<p>The reason for storing the site in <code>/docs</code> was so that there was a separation between the files that were used to generate the site from the generated output site itself. Many of my repos would have a <code>/tt</code> directory that contained templates, a <code>/data</code> directory which contains JSON files or an SQLite database and a <code>/bin</code> directory with a <code>build</code> program that pulls all that stuff together and generates a pile of HTML files that end up in the <code>/docs</code> directory. In my original blog post on this subject, I demonstrated a GitHub Workflow definition that would regenerate the site (when input files changed or on a schedule) and committed any changed files in the <code>/docs</code> directory. Some GitHub magic would then ensure that the new version of the site was deployed to the GitHub Pages server. All was well with the world.</p>
+
+<p>Then, a few months ago, things got a little more complicated. We gained options about how your GitHub Pages site was deployed. The standard version that I'd be using before was called "deploy from a branch" but there was another option called "GitHub Actions". It seemed likely to me that I really needed to start using the "GitHub Actions" option, but things were still working the old way, and I had far more interesting things to investigate, so I left things the way they were.</p>
+
+<p>Well, I say things were still working in the old way... They were, but something was a bit different. It seemed that the old method was being powered by a new GitHub Workflow called "pages-build-deployment" that had been automatically added to all the repos that needed it. And looking into the details of that workflow, I noticed that it was doing some things that were unnecessary in my repos - for example it assumed that the site was being built using <a href="https://jekyllrb.com/">Jekyll</a> and that was only true for a couple of my repos. For most of them, that was unnecessary work. So I needed to look into the new deployment option in more detail.</p>
+
+<p>I started a couple of weeks ago, by simply switching the option from "deploy from a branch" to "GitHub Actions" in the hope that, because I was already using GitHub Actions, things would Just Work. But, unfortunately, that wasn't the case. My new site was being generated and committed to the repo - but the changes weren't showing up on the live site. So I switched things back until I had time to look into in it more detail.</p>
+
+<p>That time was today. It seemed that I needed to include code in my GitHub Workflow that would actually handle the deployment of the site to the GitHub Pages servers. A quick search of the <a href="https://github.com/marketplace?type=actions">GitHub Actions marketplace</a> found the <a href="https://github.com/marketplace/actions/deploy-github-pages-site">Deploy GitHub Pages site</a> action which seemed to be the right thing. But reading the documentation, I worked out that it wanted to deploy the site from an artifact, so I needed to create that first. And then I found <a href="https://github.com/marketplace/actions/upload-github-pages-artifact">Upload GitHub Pages artifact</a> which did the right thing. So it was just a case of adding these two actions to my workflows in the correct way.</p>
+
+<p>Previously, my workflows for these sites just needed a single job (called <code>build</code>) but now I added a <code>deploy</code> job which depended on <code>build</code>. For example, the workflow that builds <a href="https://perl.theplanetarium.org/">Planet Perl</a> now looks like this:</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>name: Generate web page
+
+on:
+  push:
+    branches: '*'
+  schedule:
+    - cron: '37 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: davorg/perl-perlanet:latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create pages
+      run: |
+        mkdir -p docs
+        perlanet &gt; perlanet.log 2&gt;&amp;1
+    - name: Commit new page
+      if: github.repository == 'davorg/planetperl'
+      run: |
+        git config --global --add safe.directory /__w/planetperl/planetperl
+        GIT_STATUS=$(git status --porcelain)
+        echo $GIT_STATUS
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git add docs/
+        if [ "$GIT_STATUS" != "" ]; then git commit -m "Automated Web page generation"; fi
+        if [ "$GIT_STATUS" != "" ]; then git push; fi
+    - name: Archive perlanet logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: perlanet.log
+        path: ./perlanet.log
+        retention-days: 3
+
+    - name: Update pages artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs/
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${\{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
+</code></pre>
+
+</div>
+
+<p>The bits that I've added are the final step in the <code>build</code> job ("Update pages artifact") and the new <code>deploy</code> job. All of the code is largely copied from the documentation of the two actions I mentioned above.</p>
+
+<p>Having made this changes to one of my planet sites, I switched the deployment method and forced the workflow to run. And was very happy to see it ran successfully and the new version of the site appeared at the live URL as soon as the deployment had changed.</p>
+
+<p>This makes me happy as I feel I'm using the GitHub Pages deployment the way that they're supposed to be used. I've updated all of my <a href="https://theplanetarium.org/">planet sites</a> to use this method, but I have several other sites that I'll need to get round to switching at some point.</p>
+
+<p>As always when I find out something new about a GitHub feature, it leaves me with a couple of other suggestions for improvements:</p>
+
+<ul>
+<li>It's possible to <a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">call one workflow from another</a>. The planet workflows are all very similar. I wonder if I can define a single workflow that does all of the work and just call that from the individual workflow definition - passing in parameters to handle the differences.</li>
+<li>Now I'm deploying the sites from artifacts, there is no need for the generated site to actually exist in the repo. That might well make a few things quite a bit easier.</li>
+</ul>
+
+<p>Anyway, I thought I'd share what I had discovered today. Is anyone else generating web sites this way? How do you do it?</p>
+
+</div>
+    </content>
     <author>
-      <name>Travis</name>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/deploying-github-pages-site-with-github-workflows-3bhh</id>
+    <published>2023-03-20T17:32:53Z</published>
+    <updated>2023-03-20T17:32:53Z</updated>
+    <category term="github"/>
+    <category term="githubpages"/>
+    <category term="githubworkflows"/>
+    <category term="githubactions"/>
+  </entry>
+  <entry>
+    <title>Kundalini Express - Love and Rockets</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Kundalini Express - Love and Rockets</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Love+and+Rockets/_/Kundalini+Express" type="text/html"/>
+    <updated>2023-03-20T16:58:17Z</updated>
+    <author>
+      <name>Love and Rockets</name>
+    </author>
+    <id>https://musicbrainz.org/recording/06313ab2-5a60-3383-9ae1-1aea13cc5b26</id>
+  </entry>
+  <entry>
+    <title>When The World Is Running Down, You Make The Best Of What's Still Around - The Police</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">When The World Is Running Down, You Make The Best Of What's Still Around - The Police</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/The+Police/_/When+The+World+Is+Running+Down,+You+Make+The+Best+Of+What%27s+Still+Around" type="text/html"/>
+    <updated>2023-03-20T16:54:39Z</updated>
+    <author>
+      <name>The Police</name>
+    </author>
+    <id>https://musicbrainz.org/recording/08a2b599-d171-4d14-a05a-d2778d410af0</id>
+  </entry>
+  <entry>
+    <title>Thirty-Three - Remastered 2012 - The Smashing Pumpkins</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Thirty-Three - Remastered 2012 - The Smashing Pumpkins</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/The+Smashing+Pumpkins/_/Thirty-Three+-+Remastered+2012" type="text/html"/>
+    <updated>2023-03-20T16:50:29Z</updated>
+    <author>
+      <name>The Smashing Pumpkins</name>
     </author>
     <id>https://musicbrainz.org/recording/</id>
   </entry>
   <entry>
-    <title>Salvation - The Cranberries</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Salvation - The Cranberries</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/The+Cranberries/_/Salvation" type="text/html"/>
-    <updated>2023-03-20T15:55:27Z</updated>
+    <title>Kathy's Song - Simon &amp; Garfunkel</title>
+    <summary type="text">Kathy's Song - Simon &amp; Garfunkel</summary>
+    <link rel="alternate" href="https://www.last.fm/music/Simon+&amp;+Garfunkel/_/Kathy%27s+Song" type="text/html"/>
+    <updated>2023-03-20T16:47:11Z</updated>
     <author>
-      <name>The Cranberries</name>
+      <name>Simon &amp; Garfunkel</name>
     </author>
-    <id>https://musicbrainz.org/recording/</id>
+    <id>https://musicbrainz.org/recording/0234de72-74c0-48a6-ac9a-c7e5ad6f3ed8</id>
   </entry>
   <entry>
-    <title>Nine Million Rainy Days - The Jesus and Mary Chain</title>
+    <title>Pressure's On - James</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Nine Million Rainy Days - The Jesus and Mary Chain</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Pressure's On - James</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/The+Jesus+and+Mary+Chain/_/Nine+Million+Rainy+Days" type="text/html"/>
-    <updated>2023-03-20T15:50:56Z</updated>
-    <author>
-      <name>The Jesus and Mary Chain</name>
-    </author>
-    <id>https://musicbrainz.org/recording/0282db76-a25d-4675-915c-3863c855a8cd</id>
-  </entry>
-  <entry>
-    <title>Waltzing Along - James</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Waltzing Along - James</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/James/_/Waltzing+Along" type="text/html"/>
-    <updated>2023-03-20T15:47:03Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/James/_/Pressure%27s+On" type="text/html"/>
+    <updated>2023-03-20T16:42:43Z</updated>
     <author>
       <name>James</name>
     </author>
-    <id>https://musicbrainz.org/recording/07383923-6c8e-467b-aecb-26e6a1b2a6cc</id>
+    <id>https://musicbrainz.org/recording/03a2038f-936f-3df6-a53d-8401ceff70cc</id>
   </entry>
-  <entry>
-    <title>A Perfect Day Elise - PJ Harvey</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">A Perfect Day Elise - PJ Harvey</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/PJ+Harvey/_/A+Perfect+Day+Elise" type="text/html"/>
-    <updated>2023-03-20T15:43:56Z</updated>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/27846495503</id>
+    <published>2023-03-20T15:48:21Z</published>
+    <updated>2023-03-20T15:48:21Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetskeptic/compare/4184f7a57c...d6c8d1957f"/>
+    <title type="html">davorg pushed to master in davorg/planetskeptic</title>
     <author>
-      <name>PJ Harvey</name>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
     </author>
-    <id>https://musicbrainz.org/recording/08c794e3-d540-333f-a532-19ca1770dec4</id>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:143118077,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27846495503,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;79ceb89c-26bf-489e-8c63-f269973d4808&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="00f12c30924da9f034459229983e4491fd0066b404aa7d8357b91902c568d6a9"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetskeptic/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetskeptic" rel="noreferrer"&gt;davorg/planetskeptic&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-03-20T15:48:21Z" data-view-component="true"&gt;March 20, 2023 15:48&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetskeptic/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetskeptic/commit/d6c8d1957f4076f1fc7b2fba4c981612ac92c3eb" rel="noreferrer"&gt;d6c8d19&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Add pages deployment
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/27846298185</id>
+    <published>2023-03-20T15:41:47Z</published>
+    <updated>2023-03-20T15:41:47Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetdrwho/compare/878ace48aa...bda109890f"/>
+    <title type="html">davorg pushed to master in davorg/planetdrwho</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:106272483,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27846298185,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;d83380b6-03d3-47cc-8be6-949a16ec4b6a&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="09b4e9b3a393f46297e49b553baf5848252ef0db7d107bd204a77f7c85496440"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetdrwho/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetdrwho" rel="noreferrer"&gt;davorg/planetdrwho&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-03-20T15:41:47Z" data-view-component="true"&gt;March 20, 2023 15:41&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetdrwho/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetdrwho/commit/bda109890ff8300b4a557a086d277e664ec9cf8f" rel="noreferrer"&gt;bda1098&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Merge branch 'master' of github.com:davorg/planetdrwho
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetdrwho/commit/45d66095d05e54352c3a94f152fe3c3dd50d33f2" rel="noreferrer"&gt;45d6609&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Add pages deployment
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/27845586110</id>
+    <published>2023-03-20T15:18:24Z</published>
+    <updated>2023-03-20T15:18:24Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetdavorg/compare/d3f229607f...6437c1e864"/>
+    <title type="html">davorg pushed to main in davorg/planetdavorg</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316296012,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27845586110,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;eb562b6f-4565-44a0-80cc-d135c0653dd9&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="995eb67822b053e3065de14fb98e58e2001fe478505d1d37a028df937891ca6a"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetdavorg/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetdavorg" rel="noreferrer"&gt;davorg/planetdavorg&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-03-20T15:18:24Z" data-view-component="true"&gt;March 20, 2023 15:18&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetdavorg/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetdavorg/commit/6437c1e864be5f558227bbefd69fd485c9db8cf1" rel="noreferrer"&gt;6437c1e&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Merge branch 'main' of github.com:davorg/planetdavorg
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span title="davorg"&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetdavorg/commit/d1ad53cbacc735b7c5994c26d2401d8ce81c2ed7" rel="noreferrer"&gt;d1ad53c&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Try again
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
     <id>tag:github.com,2008:PushEvent/27845485614</id>
@@ -82,7 +376,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316296012,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27845485614,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;7a7eb058-2d31-49a4-bdc7-6bf457a48c0c&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="f2a0f6170da6a85eec1ae71c8aeaee33f3d028a59211a6879b55db2674fcb631"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316296012,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27845485614,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;67b8b117-aa4c-4adc-ae6b-b2db1a21f64b&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="fd99154cf90439bf7bd64f9be7cca4b7b4e48cc32d5614d2d7996de628210852"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -148,7 +442,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316296012,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27845343643,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;eb64545a-2b69-417e-906c-9da6778e43f1&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d6245a0fdab5353130de04a5d68ddbf6d32a12469848c4dba89aae0a6108c6b3"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316296012,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27845343643,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;77c912ea-c7a4-422b-8559-1638beed58ca&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="c7ef1b7dfd90b22e23da6b8a3a411319838fbc56e4807b02871fe362c98b685d"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -178,171 +472,6 @@
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
                       Correct version of action
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/27845188795</id>
-    <published>2023-03-20T15:05:35Z</published>
-    <updated>2023-03-20T15:05:35Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetdavorg/compare/af0df92cf0...cd7b9cc289"/>
-    <title type="html">davorg pushed to main in davorg/planetdavorg</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316296012,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27845188795,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;a662d7b6-96fa-48f8-9a4b-c44b0b57ce1a&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="a83f1916641399c7e311e2f108cfb35b89d1795a7d23f25a5b4fbe00fa383933"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/planetdavorg/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetdavorg" rel="noreferrer"&gt;davorg/planetdavorg&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-03-20T15:05:35Z" data-view-component="true"&gt;March 20, 2023 15:05&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/planetdavorg/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetdavorg/commit/cd7b9cc2893fdee87b1f80288f4ebd56f800e100" rel="noreferrer"&gt;cd7b9cc&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Fix typo
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/27845089155</id>
-    <published>2023-03-20T15:02:18Z</published>
-    <updated>2023-03-20T15:02:18Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetdavorg/compare/dd18347529...af0df92cf0"/>
-    <title type="html">davorg pushed to main in davorg/planetdavorg</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316296012,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27845089155,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;975864be-455b-42f9-b683-8e8f0423cc96&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="b2d4e37864c5ac5bd8c8bf4a7738bc0a8b3ff5b69aaebae73a570af70356cd77"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/planetdavorg/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetdavorg" rel="noreferrer"&gt;davorg/planetdavorg&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-03-20T15:02:18Z" data-view-component="true"&gt;March 20, 2023 15:02&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/planetdavorg/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetdavorg/commit/af0df92cf0b4d0e679bc2b55410f4cfdffc44fe7" rel="noreferrer"&gt;af0df92&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Add pages deployment
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/27836016649</id>
-    <published>2023-03-20T09:31:55Z</published>
-    <updated>2023-03-20T09:31:55Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/psc/compare/b63cb71e20...df61a7e814"/>
-    <title type="html">davorg pushed to main in davorg/psc</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:568754938,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:27836016649,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;aa084a12-3f60-4e1d-99d4-bba0c6bbea91&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="9ff158c749cc29b93eaa492c865f846d17f00e875aad88bb25802700cdef0555"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/psc/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/psc" rel="noreferrer"&gt;davorg/psc&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-03-20T09:31:55Z" data-view-component="true"&gt;March 20, 2023 09:31&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/psc/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span title="davorg"&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/psc/commit/df61a7e8148563b49db397214f2f3afcfa34b334" rel="noreferrer"&gt;df61a7e&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Add PCS #101
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
@@ -1266,307 +1395,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="chatgpt"/>
     <category term="cpan"/>
     <category term="programming"/>
-  </entry>
-  <entry>
-    <title>Writing a CPAN module that talks to ChatGPT</title>
-    <link rel="alternate" href="https://dev.to/davorg/writing-a-cpan-module-that-talks-to-chatgpt-gb5" type="text/html"/>
-    <content type="html">&lt;p&gt;&lt;a href="https://chat.openai.com/chat"&gt;ChatGPT&lt;/a&gt; exposes an API, but there’s no CPAN module for taking advantage of that. Let’s put that right (with help from ChatGPT)…&lt;/p&gt;
-
-
-
-
-&lt;p&gt;&lt;em&gt;Write a Perl CPAN module for connecting to a ChatGPT server&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;To create a Perl CPAN module for connecting to a ChatGPT server, you will need to have Perl and the necessary dependencies installed on your system.&lt;/p&gt;
-
-&lt;p&gt;To begin, create a new directory for your module and create a file called “ChatGPT.pm” with the following content:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="nb"&gt;package&lt;/span&gt; &lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;strict&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;warnings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;HTTP::&lt;/span&gt;&lt;span class="nv"&gt;Async&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;sub &lt;/span&gt;&lt;span class="nf"&gt;new&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$class&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;%params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$self&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="s"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$params&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;host&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-    &lt;span class="s"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$params&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
-  &lt;span class="p"&gt;};&lt;/span&gt;
-
-  &lt;span class="nb"&gt;bless&lt;/span&gt; &lt;span class="nv"&gt;$self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$class&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$self&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;sub &lt;/span&gt;&lt;span class="nf"&gt;send_prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$prompt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$http&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;HTTP::&lt;/span&gt;&lt;span class="nv"&gt;Async&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;ws://&lt;/span&gt;&lt;span class="si"&gt;$self&lt;/span&gt;&lt;span class="s2"&gt;-&amp;gt;{host}:&lt;/span&gt;&lt;span class="si"&gt;$self&lt;/span&gt;&lt;span class="s2"&gt;-&amp;gt;{port}&lt;/span&gt;&lt;span class="p"&gt;"&lt;/span&gt;
-  &lt;span class="p"&gt;);&lt;/span&gt;
-
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;send_utf8&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$prompt&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;recv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;disconnect&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;To use this module in your Perl code, you can create a new ChatGPT object and call the &lt;code&gt;send_prompt&lt;/code&gt; method like this:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="s"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;send_prompt&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;What is your name?&lt;/span&gt;&lt;span class="p"&gt;');&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;Response: &lt;/span&gt;&lt;span class="si"&gt;$response&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;This will send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080, and print the response to the console.&lt;/p&gt;
-
-&lt;p&gt;Note: This is just a basic example of how you can create a Perl CPAN module for connecting to a ChatGPT server. There are many other features and considerations that you may want to add to your module, such as error handling and customization options.&lt;/p&gt;
-
-&lt;p&gt;To make your module available on CPAN, you will need to follow the guidelines for creating and distributing CPAN modules, which can be found in the Perl documentation and online resources.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Use Moose to create the class&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;To use Moose to create the &lt;code&gt;ChatGPT&lt;/code&gt; class, you will need to have Moose installed on your system. You can install Moose by running the following command:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight shell"&gt;&lt;code&gt;cpanm Moose
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;With Moose installed, you can modify the class like this:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="nb"&gt;package&lt;/span&gt; &lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;Moose&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;HTTP::&lt;/span&gt;&lt;span class="nv"&gt;Async&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="nv"&gt;has&lt;/span&gt; &lt;span class="s"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-  &lt;span class="s"&gt;is&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;ro&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt;
-  &lt;span class="s"&gt;isa&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Str&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt;
-  &lt;span class="s"&gt;required&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="nv"&gt;has&lt;/span&gt; &lt;span class="s"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-  &lt;span class="s"&gt;is&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;ro&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt;
-  &lt;span class="s"&gt;isa&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="s"&gt;required&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="k"&gt;sub &lt;/span&gt;&lt;span class="nf"&gt;send_prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$prompt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$http&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;HTTP::&lt;/span&gt;&lt;span class="nv"&gt;Async&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;ws://&lt;/span&gt;&lt;span class="si"&gt;$self&lt;/span&gt;&lt;span class="s2"&gt;-&amp;gt;{host}:&lt;/span&gt;&lt;span class="si"&gt;$self&lt;/span&gt;&lt;span class="s2"&gt;-&amp;gt;{port}&lt;/span&gt;&lt;span class="p"&gt;"&lt;/span&gt;
-  &lt;span class="p"&gt;);&lt;/span&gt;
-
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;send_utf8&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$prompt&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;recv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;disconnect&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;In this version of the class, the &lt;code&gt;host&lt;/code&gt; and &lt;code&gt;port&lt;/code&gt; attributes are defined using Moose’s &lt;code&gt;has&lt;/code&gt; keyword. These attributes are required and must be specified when creating a new &lt;code&gt;ChatGPT&lt;/code&gt; object. The &lt;code&gt;send_prompt&lt;/code&gt; method is unchanged from the previous example.&lt;/p&gt;
-
-&lt;p&gt;To create a new &lt;code&gt;ChatGPT&lt;/code&gt; object, you can use the &lt;code&gt;new&lt;/code&gt; method provided by Moose like this:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="s"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;send_prompt&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;What is your name?&lt;/span&gt;&lt;span class="p"&gt;');&lt;/span&gt;
-
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;Response: &lt;/span&gt;&lt;span class="si"&gt;$response&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;This will create a new &lt;code&gt;ChatGPT&lt;/code&gt; object with the specified &lt;code&gt;host&lt;/code&gt; and &lt;code&gt;port&lt;/code&gt; attributes, and send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080. The response will be printed to the console.&lt;/p&gt;
-
-&lt;p&gt;Note: This is just one way to use Moose to create the &lt;code&gt;ChatGPT&lt;/code&gt; class. There are many other features and customization options available in Moose that you may want to consider adding to your class, such as type constraints, default values, and methods.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Call the class WebService::ChatGPT&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;To rename the &lt;code&gt;ChatGPT&lt;/code&gt; class to &lt;code&gt;WebService::ChatGPT&lt;/code&gt;, you will need to update the package name at the top of the file and update the &lt;code&gt;use&lt;/code&gt; statements to refer to the new package name.&lt;/p&gt;
-
-&lt;p&gt;Here is how you can update the &lt;code&gt;ChatGPT&lt;/code&gt; class to use the new package name:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="nb"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;WebService::&lt;/span&gt;&lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;Moose&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;HTTP::&lt;/span&gt;&lt;span class="nv"&gt;Async&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="nv"&gt;has&lt;/span&gt; &lt;span class="s"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-  &lt;span class="s"&gt;is&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;ro&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt;
-  &lt;span class="s"&gt;isa&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Str&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt;
-  &lt;span class="s"&gt;required&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="nv"&gt;has&lt;/span&gt; &lt;span class="s"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
-  &lt;span class="s"&gt;is&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;ro&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt;
-  &lt;span class="s"&gt;isa&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt;
-  &lt;span class="s"&gt;required&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="k"&gt;sub &lt;/span&gt;&lt;span class="nf"&gt;send_prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$prompt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$http&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;HTTP::&lt;/span&gt;&lt;span class="nv"&gt;Async&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;Net::WebSocket::&lt;/span&gt;&lt;span class="nv"&gt;Client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="s"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;ws://&lt;/span&gt;&lt;span class="si"&gt;$self&lt;/span&gt;&lt;span class="s2"&gt;-&amp;gt;{host}:&lt;/span&gt;&lt;span class="si"&gt;$self&lt;/span&gt;&lt;span class="s2"&gt;-&amp;gt;{port}&lt;/span&gt;&lt;span class="p"&gt;"&lt;/span&gt;
-  &lt;span class="p"&gt;);&lt;/span&gt;
-
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;send_utf8&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$prompt&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;recv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="nv"&gt;$client&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;disconnect&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;With these changes, the class is now called &lt;code&gt;WebService::ChatGPT&lt;/code&gt; and can be used like this:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;WebService::&lt;/span&gt;&lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;WebService::&lt;/span&gt;&lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="s"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;send_prompt&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;What is your name?&lt;/span&gt;&lt;span class="p"&gt;');&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;Response: &lt;/span&gt;&lt;span class="si"&gt;$response&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;This will create a new &lt;code&gt;WebService::ChatGPT&lt;/code&gt; object with the specified &lt;code&gt;host&lt;/code&gt; and &lt;code&gt;port&lt;/code&gt; attributes, and send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080. The response will be printed to the console.,/p&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;Note: This is just one way to rename the &lt;code&gt;ChatGPT&lt;/code&gt; class to &lt;code&gt;WebService::ChatGPT&lt;/code&gt;. You may also need to update any other references to the class name in your code and documentation, as well as update the module file name and directory structure to reflect the new package name.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Suggest some tests using the standard Perl testing framework&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Here are some examples of tests that you could write for the &lt;code&gt;WebService::ChatGPT&lt;/code&gt; module using the standard Perl testing framework (Test::More):&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Test::&lt;/span&gt;&lt;span class="nv"&gt;More&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;WebService::&lt;/span&gt;&lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Test creating a new ChatGPT object&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nn"&gt;WebService::&lt;/span&gt;&lt;span class="nv"&gt;ChatGPT&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="s"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="nv"&gt;isa_ok&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$chatgpt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;WebService::ChatGPT&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Object is a ChatGPT&lt;/span&gt;&lt;span class="p"&gt;');&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Test sending a prompt and receiving a response&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;send_prompt&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;What is your name?&lt;/span&gt;&lt;span class="p"&gt;');&lt;/span&gt;
-&lt;span class="nv"&gt;is&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;My name is ChatGPT.&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Response is correct&lt;/span&gt;&lt;span class="p"&gt;');&lt;/span&gt;
-
-&lt;span class="c1"&gt;# Test sending an invalid prompt&lt;/span&gt;
-&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;$chatgpt&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;send_prompt&lt;/span&gt;&lt;span class="p"&gt;('')&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="nv"&gt;like&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vg"&gt;$@&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="sx"&gt;qr/Invalid prompt/&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;Invalid prompt error is thrown&lt;/span&gt;&lt;span class="p"&gt;');&lt;/span&gt;
-
-&lt;span class="nv"&gt;done_testing&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;The first test uses the &lt;code&gt;isa_ok&lt;/code&gt; function to check that the object created by the &lt;code&gt;new&lt;/code&gt; method is an instance of the &lt;code&gt;WebService::ChatGPT&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p&gt;The second test uses the &lt;code&gt;is&lt;/code&gt; function to compare the expected response to the actual response returned by the &lt;code&gt;send_prompt&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;The third test uses the &lt;code&gt;eval&lt;/code&gt; function to catch any exceptions thrown by the &lt;code&gt;send_prompt&lt;/code&gt; method when an invalid prompt is provided, and the &lt;code&gt;like&lt;/code&gt; function to check that the exception message matches the expected error message.&lt;/p&gt;
-
-&lt;p&gt;These tests can be run using the &lt;code&gt;prove&lt;/code&gt; command:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight shell"&gt;&lt;code&gt;prove &lt;span class="nt"&gt;-l&lt;/span&gt; t/chatgpt.t
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-
-
-
-&lt;p&gt;I haven’t uploaded it to CPAN yet. Do you think I should?&lt;/p&gt;
-
-&lt;p&gt;The post &lt;a href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/"&gt;Writing a CPAN module that talks to ChatGPT&lt;/a&gt; appeared first on &lt;a href="https://perlhacks.com"&gt;Perl Hacks&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/writing-a-cpan-module-that-talks-to-chatgpt-gb5</id>
-    <published>2022-12-20T16:12:38Z</published>
-    <updated>2022-12-20T16:12:38Z</updated>
-    <category term="programming"/>
-    <category term="ai"/>
-    <category term="chatgpt"/>
-    <category term="cpan"/>
   </entry>
   <entry xmlns:flickr="urn:flickr:user" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <title>Brixton Academy</title>
