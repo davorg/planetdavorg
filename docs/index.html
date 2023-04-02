@@ -68,62 +68,395 @@ body {
         <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Saint+Etienne/_/Filthy">Filthy - Saint Etienne</a></h2>
+              <h2><a href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/">Building Planets with Perlanet and GitHub</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><blockquote>
+<p class="quoteText">Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green planet whose ape-descended life forms are so amazingly primitive that they still think digital watches are a pretty neat idea.</p>
+<p style="text-align: right;"><em>Douglas Adams &#8211; The Hitchhiker&#8217;s Guide to the Galaxy</em></p>
+</blockquote>
+<p>I don&#8217;t still wear a digital watch, but I do like other things that are almost as unhip. In particular, I pine for the time about twenty years ago when web feeds looked like they were about to take over the world. Everyone had their favourite feed reader (I still miss Google Reader) and pretty much any useful web site would produce one or more web feeds that you could subscribe to and follow through your feed reader. For a few years, it was almost unthinkable to produce a web site without publishing a feed which included the changes to the site&#8217;s content.</p>
+<p>Then, at some point, that changed. It wasn&#8217;t that web feeds vanished overnight. They still exist for many sites. But they are no longer ubiquitous. You can&#8217;t guarantee they&#8217;ll exist for every site you&#8217;re interested in. I remember people saying that social media would replace them. I was never convinced by that argument but, interestingly, one of the first times I noticed them vanishing was when Twitter removed their web feed of a user&#8217;s posts. They wanted people to use their AP instead (so I wrote <a href="https://github.com/davorg/twitter-json2atom">twitter-json2atom</a> that turned their API&#8217;s JSON into an Atom feed &#8211; I suspect it no longer works). Honestly, I think the main reason for the fall in popularity of web feeds was that people wanted you to read their content on their web sites where the interesting content was surrounded by uninteresting adverts.</p>
+<p>But, as I said, not all web feeds vanished. There are still plenty of them out there (often, I expect because the sites&#8217; owners don&#8217;t realise they&#8217;re there or don&#8217;t know how to turn them off). And that means the web feed-driven technologies of the early 2000s can still be useful.</p>
+<p>One such piece of technology is the feed aggregator. I remember these being very popular. You would create a web site and configure it with a list of web feeds that you were interested in. The site would be driven by a piece of software that every few hours would poll the web feeds in the configuration and use the information it found to create a) a web page made up of information from the feeds and b) another feed that contained all of the information from the source feeds. The most popular software for building these sites was called Planet Planet and was written in Python (it seems to have vanished sometime in the last twenty years, otherwise I would link to it). When I wrote a Perl version, I called it (for reasons I now regret) <a href="https://metacpan.org/pod/Perlanet">Perlanet</a>.</p>
+<p>I still use Perlanet to build planet sites. And they&#8217;re all listed at <a href="https://theplanetarium.org/">The Planetarium</a>. Recently, I&#8217;ve started hosting all my planets on <a href="https://pages.github.com/">GitHub Pages</a>, using <a href="https://github.com/features/actions">GitHub Actions</a> to rebuild the sites periodically. I thought that maybe other people might be old-skool like me and might want to build their own planets &#8211; so in the rest of this post I&#8217;ll explain how to do that, using <a href="https://perl.theplanetarium.org/">Planet Perl</a> as an example.</p>
+<p>The first thing you&#8217;ll need is a GitHub account and a repo to store the code for your planet. I&#8217;m going to assume you know how to set those up (in the interest of keeping this tutorial short). You only actually need two files to create a planet &#8211; a config file and a template for the web site.</p>
+<p>Here&#8217;s part of the config for Planet Perl:</p><pre class="urvanov-syntax-highlighter-plain-tag">title: Planet Perl
+description: There's More Than One Way To Aggregate It
+url: https://perl.theplanetarium.org/
+author:
+  name: Dave Cross
+  email: dave@theplanetarium.org
+  twitter: davorg
+entries: 75
+entries_per_feed: 5
+opml_file: docs/opml.xml
+page:
+  file: docs/index.html
+  template: index.tt
+feed:
+  file: docs/atom.xml
+  format: Atom
+google_ga: G-HD966GMRYP
+cutoff_duration:
+  months: 1
+feeds:
+  - feed: https://www.perl.com/article/index.xml
+    title: perl.com
+    web: https://perl.com/
+  - feed: https://news.perlfoundation.org/atom.xml
+    title: Perl Foundation News
+    web: https://news.perlfoundation.org/</pre><p>I&#8217;ve tried to make it self-explanatory. At the top, there are various config options for the output (the web page and the aggregated feed) and, below, are details of the feeds that you want to aggregate. Let&#8217;s look at the output options first.</p>
+<ul>
+<li>title and description: these are both strings that you can include on the web page that is created. They&#8217;re also used in the aggregate feed that is produced</li>
+<li>url: this is where the web page will be available on the web</li>
+<li>author: this contains details of the person publishing the aggregated site and feed. The Twitter handle is optional</li>
+<li>entries: is the maximum number of entries that your output will contain in total</li>
+<li>entries_per_feed: is the maximum number of entries that you will use from each of your feeds. This is to stop your output being swamped with entries from a particularly busy feed. This can be omitted, in which case there will be no limit</li>
+<li>opml_file: OPML stands for &#8220;Outline Processor Markup File&#8221;. It used to be trendy to publish an OPML file which is a machine-readable data file which contains a list of the feeds that you are aggregating. These days, no-one cares. If you omit this setting, the file won&#8217;t be created.</li>
+<li>page: this contains details of the web page you create. The template is the name of a template file that is used to create the HTML page (more on that below) and file is where the output page is written. If you keep the value used in my example, then things will work well with GitHub Pages as we&#8217;ll see later</li>
+<li>feed: this contains details of the aggregate feed we create. You can choose a format (Atom or RSS) and the filename. Again, the default filename will work well with GitHub Pages</li>
+<li>google_ga: if this value exists, then it will be used as the Google Analytics identifier for the web page that is created</li>
+<li>cutoff_duration: this is another way to control which entries are used in your output feed. Any entries that were published longer ago than this period of time will be ignored</li>
+</ul>
+<p>Then we have the section of the config file that defines the feeds that we are going to aggregate. Each feed has three data items:</p>
+<ul>
+<li>feed: the URL of the feed</li>
+<li>title: a string to use to describe the feed</li>
+<li>web: the URL of the feed&#8217;s original web page</li>
+</ul>
+<p>And that&#8217;s all you need for the config file. Create that, put it in a file called &#8220;perlanetrc&#8221; and add it to your repo.</p>
+<p>The other file you need is the template for the HTML page. This is usually called &#8220;index.tt&#8221;. <a href="https://github.com/davorg/planetperl/blob/master/index.tt">The one I use for Planet Perl</a> is rather complicated (there are all sorts of Javascript tricks in it). <a href="https://github.com/davorg/planetdavorg/blob/main/index.tt">The one I use for Planet Davorg</a> is far simpler &#8211; and should work well with the config file above. I suggest going with that initially and editing it once you&#8217;ve got everything else working.</p>
+<p>I said those are the only two files you need. And that&#8217;s true. But the site you create will be rather ugly. My default web page uses <a href="https://getbootstrap.com/">Bootstrap</a> for CSS, but you&#8217;ll probably want to add your own CSS to tweak the way it looks &#8211; along with, perhaps, some Javascript and some images. All of the files that you need to make your site work should be added to the /docs directory in your repo.</p>
+<p>Having got to this stage, we can test your web site. Well, we&#8217;ll need to install Perlanet first. There are two ways to do this. You can either install it from CPAN along with all of its (many) dependencies &#8211; using &#8220;cpan Perlanet&#8221; or there&#8217;s <a href="https://hub.docker.com/r/davorg/perl-perlanet">a Docker image</a> that you can use. Either way, once you have the software installed, running it is as simple as running &#8220;perlanet&#8221;. That will trundle along for a while and, when it has finished, you&#8217;ll find new files called &#8220;index.html&#8221; and &#8220;atom.xml&#8221; in the /docs directory. My favourite way to test the output locally is to use <a href="https://metacpan.org/dist/App-HTTPThis">App::HTTPThis</a>. Having installed this program, you can just run &#8220;http_this docs&#8221; from the repo&#8217;s main directory and then visit http://localhost:7007/index.html to see the site that was produced (or http://localhost:7007/atom.xml to see the feed.</p>
+<p>You now have a system to build your new planet. You could run that on a server that&#8217;s connected to the internet and set up a cronjob to regenerate the file every few hours. And that&#8217;s how I used to run all of my planets. But, recently, I&#8217;ve moved to running them on GitHub Pages instead. And that&#8217;s what we&#8217;ll look at next.</p>
+<p>There are two parts to this. We need to configure our repo to have a GitHub Pages site associated with it and we also need to configure GitHub Actions to rebuild the site every few hours. Let&#8217;s take those two in turn.</p>
+<p>Turning on GitHub Pages is simple enough. Just go to the &#8220;Pages&#8221; section in your repo&#8217;s settings. Choose &#8220;GitHub Actions&#8221; as the deployment source and tick the box marked &#8220;Enforce HTTPS&#8221;. Later on, you can look at setting up a custom domain for your site but, for now, let&#8217;s stick with the default URL which will be https://&lt;github_username&gt;.github.io/&lt;repo_name&gt;. Nothing will appear yet, as we need to set up GitHub Actions next.</p>
+<p>Setting up a GitHub Action workflow is as simple as adding a YAML file to the /.github/workflows directory in your repo. You&#8217;ll obviously have to create that directory first. Here&#8217;s the workflow definition for Planet Perl (it&#8217;s in a file called &#8220;buildsite.yml&#8221;, but that name isn&#8217;t important).</p><pre class="urvanov-syntax-highlighter-plain-tag">name: Generate web page
+
+on:
+  push:
+    branches: '*'
+  schedule:
+    - cron: '37 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: davorg/perl-perlanet:latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create pages
+      run: |
+        mkdir -p docs
+        perlanet &gt; perlanet.log 2&gt;&amp;1
+    - name: Commit new page
+      if: github.repository == 'davorg/planetperl'
+      run: |
+        git config --global --add safe.directory /__w/planetperl/planetperl
+        GIT_STATUS=$(git status --porcelain)
+        echo $GIT_STATUS
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git add docs/
+        if [ "$GIT_STATUS" != "" ]; then git commit -m "Automated Web page generation"; fi
+        if [ "$GIT_STATUS" != "" ]; then git push; fi
+    - name: Archive perlanet logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: perlanet.log
+        path: ./perlanet.log
+        retention-days: 3
+
+    - name: Update pages artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs/
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2</pre><p>The first section of the file defines the events that will trigger this workflow. I have defined three triggers:</p>
+<ol>
+<li>Pushing a commit. I could be cleverer here and only work when certain files are changed (for example, the config or the index.tt)</li>
+<li>On a schedule. My example runs at 37 minutes past the hour every four hours (so at 04:37, 08:37, etc.)</li>
+<li>Manually. The &#8220;workflow_dispatch&#8221; trigger adds a button to the repo&#8217;s &#8220;Actions&#8221; page on GitHub allowing you to run the workflow manually, whenever you want</li>
+</ol>
+<p>Following that, we define the jobs that need to be run and the steps that make up those jobs. We have two jobs &#8211; one that builds the new version of the site and one that deploys that new site to GitHub Pages. Remember how I mentioned earlier that there is a Perlanet container on the Docker Hub? Well, you&#8217;ll see that the build job runs on that container. This is because pulling a container from the Docker Hub is faster than using a standard Ubuntu container and installing Perlanet.</p>
+<p>The steps in these jobs should be pretty self-explanatory. Basically, we check out the repo, run &#8220;perlanet&#8221; to build the site and then deploy the contents of the /docs directory to the GitHub Pages server.</p>
+<p>Once you&#8217;ve created this file and added it to your repo, you&#8217;ll see details of this workflow on the &#8220;Actions&#8221; tab in your repo. And whenever you push a change or when a scheduled run takes place (or you press the manual run button) you&#8217;ll see logs for the run and (hopefully) your web site will update to contain the latest data.</p>
+<p>I reckon you can get a new planet up and running in about half an hour. Oh, and if you label your repo with the topic &#8220;perlanet&#8221;, then it will automatically be added to The Planetarium.</p>
+<p>So, what are you waiting for? What planet would you like to build?</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/">Building Planets with Perlanet and GitHub</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">perl hacks</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Sunday 02 April 2023 17:54</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://dev.to/davorg/building-planets-with-perlanet-and-github-4jpe">Building Planets with Perlanet and GitHub</a></h2>
+            </div><!-- panel-heading -->
+            <div class="panel-body"><blockquote>
+<p>Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green planet whose ape-descended life forms are so amazingly primitive that they still think digital watches are a pretty neat idea.</p>
+
+<p><em>Douglas Adams – The Hitchhiker’s Guide to the Galaxy</em></p>
+</blockquote>
+
+<p>I don’t still wear a digital watch, but I do like other things that are almost as unhip. In particular, I pine for the time about twenty years ago when web feeds looked like they were about to take over the world. Everyone had their favourite feed reader (I still miss Google Reader) and pretty much any useful web site would produce one or more web feeds that you could subscribe to and follow through your feed reader. For a few years, it was almost unthinkable to produce a web site without publishing a feed which included the changes to the site’s content.</p>
+
+<p>Then, at some point, that changed. It wasn’t that web feeds vanished overnight. They still exist for many sites. But they are no longer ubiquitous. You can’t guarantee they’ll exist for every site you’re interested in. I remember people saying that social media would replace them. I was never convinced by that argument but, interestingly, one of the first times I noticed them vanishing was when Twitter removed their web feed of a user’s posts. They wanted people to use their AP instead (so I wrote <a href="https://github.com/davorg/twitter-json2atom">twitter-json2atom</a> that turned their API’s JSON into an Atom feed – I suspect it no longer works). Honestly, I think the main reason for the fall in popularity of web feeds was that people wanted you to read their content on their web sites where the interesting content was surrounded by uninteresting adverts.</p>
+
+<p>But, as I said, not all web feeds vanished. There are still plenty of them out there (often, I expect because the sites’ owners don’t realise they’re there or don’t know how to turn them off). And that means the web feed-driven technologies of the early 2000s can still be useful.</p>
+
+<p>One such piece of technology is the feed aggregator. I remember these being very popular. You would create a web site and configure it with a list of web feeds that you were interested in. The site would be driven by a piece of software that every few hours would poll the web feeds in the configuration and use the information it found to create a) a web page made up of information from the feeds and b) another feed that contained all of the information from the source feeds. The most popular software for building these sites was called Planet Planet and was written in Python (it seems to have vanished sometime in the last twenty years, otherwise I would link to it). When I wrote a Perl version, I called it (for reasons I now regret) <a href="https://metacpan.org/pod/Perlanet">Perlanet</a>.</p>
+
+<p>I still use Perlanet to build planet sites. And they’re all listed at <a href="https://theplanetarium.org/">The Planetarium</a>. Recently, I’ve started hosting all my planets on <a href="https://pages.github.com/">GitHub Pages</a>, using <a href="https://github.com/features/actions">GitHub Actions</a> to rebuild the sites periodically. I thought that maybe other people might be old-skool like me and might want to build their own planets – so in the rest of this post I’ll explain how to do that, using <a href="https://perl.theplanetarium.org/">Planet Perl</a> as an example.</p>
+
+<p>The first thing you’ll need is a GitHub account and a repo to store the code for your planet. I’m going to assume you know how to set those up (in the interest of keeping this tutorial short). You only actually need two files to create a planet – a config file and a template for the web site.</p>
+
+<p>Here’s part of the config for Planet Perl:<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>title: Planet Perl
+description: There's More Than One Way To Aggregate It
+url: https://perl.theplanetarium.org/
+author:
+  name: Dave Cross
+  email: dave@theplanetarium.org
+  twitter: davorg
+entries: 75
+entries_per_feed: 5
+opml_file: docs/opml.xml
+page:
+  file: docs/index.html
+  template: index.tt
+feed:
+  file: docs/atom.xml
+  format: Atom
+google_ga: G-HD966GMRYP
+cutoff_duration:
+  months: 1
+feeds:
+  - feed: https://www.perl.com/article/index.xml
+    title: perl.com
+    web: https://perl.com/
+  - feed: https://news.perlfoundation.org/atom.xml
+    title: Perl Foundation News
+    web: https://news.perlfoundation.org/
+</code></pre>
+
+</div>
+
+
+
+<p>I’ve tried to make it self-explanatory. At the top, there are various config options for the output (the web page and the aggregated feed) and, below, are details of the feeds that you want to aggregate. Let’s look at the output options first.</p>
+
+<ul>
+<li>title and description: these are both strings that you can include on the web page that is created. They’re also used in the aggregate feed that is produced</li>
+<li>url: this is where the web page will be available on the web</li>
+<li>author: this contains details of the person publishing the aggregated site and feed. The Twitter handle is optional</li>
+<li>entries: is the maximum number of entries that your output will contain in total</li>
+<li>entries_per_feed: is the maximum number of entries that you will use from each of your feeds. This is to stop your output being swamped with entries from a particularly busy feed. This can be omitted, in which case there will be no limit</li>
+<li>opml_file: OPML stands for “Outline Processor Markup File”. It used to be trendy to publish an OPML file which is a machine-readable data file which contains a list of the feeds that you are aggregating. These days, no-one cares. If you omit this setting, the file won’t be created.</li>
+<li>page: this contains details of the web page you create. The template is the name of a template file that is used to create the HTML page (more on that below) and file is where the output page is written. If you keep the value used in my example, then things will work well with GitHub Pages as we’ll see later</li>
+<li>feed: this contains details of the aggregate feed we create. You can choose a format (Atom or RSS) and the filename. Again, the default filename will work well with GitHub Pages</li>
+<li>google_ga: if this value exists, then it will be used as the Google Analytics identifier for the web page that is created</li>
+<li>cutoff_duration: this is another way to control which entries are used in your output feed. Any entries that were published longer ago than this period of time will be ignored</li>
+</ul>
+
+<p>Then we have the section of the config file that defines the feeds that we are going to aggregate. Each feed has three data items:</p>
+
+<ul>
+<li>feed: the URL of the feed</li>
+<li>title: a string to use to describe the feed</li>
+<li>web: the URL of the feed’s original web page</li>
+</ul>
+
+<p>And that’s all you need for the config file. Create that, put it in a file called “perlanetrc” and add it to your repo.</p>
+
+<p>The other file you need is the template for the HTML page. This is usually called “index.tt”. <a href="https://github.com/davorg/planetperl/blob/master/index.tt">The one I use for Planet Perl</a> is rather complicated (there are all sorts of Javascript tricks in it). <a href="https://github.com/davorg/planetdavorg/blob/main/index.tt">The one I use for Planet Davorg</a> is far simpler – and should work well with the config file above. I suggest going with that initially and editing it once you’ve got everything else working.</p>
+
+<p>I said those are the only two files you need. And that’s true. But the site you create will be rather ugly. My default web page uses <a href="https://getbootstrap.com/">Bootstrap</a> for CSS, but you’ll probably want to add your own CSS to tweak the way it looks – along with, perhaps, some Javascript and some images. All of the files that you need to make your site work should be added to the /docs directory in your repo.</p>
+
+<p>Having got to this stage, we can test your web site. Well, we’ll need to install Perlanet first. There are two ways to do this. You can either install it from CPAN along with all of its (many) dependencies – using “cpan Perlanet” or there’s <a href="https://hub.docker.com/r/davorg/perl-perlanet">a Docker image</a> that you can use. Either way, once you have the software installed, running it is as simple as running “perlanet”. That will trundle along for a while and, when it has finished, you’ll find new files called “index.html” and “atom.xml” in the /docs directory. My favourite way to test the output locally is to use <a href="https://metacpan.org/dist/App-HTTPThis">App::HTTPThis</a>. Having installed this program, you can just run “http_this docs” from the repo’s main directory and then visit <a href="http://localhost:7007/index.html">http://localhost:7007/index.html</a> to see the site that was produced (or <a href="http://localhost:7007/atom.xml">http://localhost:7007/atom.xml</a> to see the feed.</p>
+
+<p>You now have a system to build your new planet. You could run that on a server that’s connected to the internet and set up a cronjob to regenerate the file every few hours. And that’s how I used to run all of my planets. But, recently, I’ve moved to running them on GitHub Pages instead. And that’s what we’ll look at next.</p>
+
+<p>There are two parts to this. We need to configure our repo to have a GitHub Pages site associated with it and we also need to configure GitHub Actions to rebuild the site every few hours. Let’s take those two in turn.</p>
+
+<p>Turning on GitHub Pages is simple enough. Just go to the “Pages” section in your repo’s settings. Choose “GitHub Actions” as the deployment source and tick the box marked “Enforce HTTPS”. Later on, you can look at setting up a custom domain for your site but, for now, let’s stick with the default URL which will be https://.github.io/. Nothing will appear yet, as we need to set up GitHub Actions next.</p>
+
+<p>Setting up a GitHub Action workflow is as simple as adding a YAML file to the /.github/workflows directory in your repo. You’ll obviously have to create that directory first. Here’s the workflow definition for Planet Perl (it’s in a file called “buildsite.yml”, but that name isn’t important).<br>
+</p>
+
+<div class="highlight js-code-highlight">
+<pre class="highlight plaintext"><code>name: Generate web page
+
+on:
+  push:
+    branches: '*'
+  schedule:
+    - cron: '37 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: davorg/perl-perlanet:latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create pages
+      run: |
+        mkdir -p docs
+        perlanet &gt; perlanet.log 2&gt;&amp;1
+    - name: Commit new page
+      if: github.repository == 'davorg/planetperl'
+      run: |
+        git config --global --add safe.directory /__w/planetperl/planetperl
+        GIT_STATUS=$(git status --porcelain)
+        echo $GIT_STATUS
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git add docs/
+        if ["$GIT_STATUS" != ""]; then git commit -m "Automated Web page generation"; fi
+        if ["$GIT_STATUS" != ""]; then git push; fi
+    - name: Archive perlanet logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: perlanet.log
+        path: ./perlanet.log
+        retention-days: 3
+
+    - name: Update pages artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs/
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+</code></pre>
+
+</div>
+
+
+
+<p>The first section of the file defines the events that will trigger this workflow. I have defined three triggers:</p>
+
+<ol>
+<li>Pushing a commit. I could be cleverer here and only work when certain files are changed (for example, the config or the index.tt)</li>
+<li>On a schedule. My example runs at 37 minutes past the hour every four hours (so at 04:37, 08:37, etc.)</li>
+<li>Manually. The “workflow_dispatch” trigger adds a button to the repo’s “Actions” page on GitHub allowing you to run the workflow manually, whenever you want</li>
+</ol>
+
+<p>Following that, we define the jobs that need to be run and the steps that make up those jobs. We have two jobs – one that builds the new version of the site and one that deploys that new site to GitHub Pages. Remember how I mentioned earlier that there is a Perlanet container on the Docker Hub? Well, you’ll see that the build job runs on that container. This is because pulling a container from the Docker Hub is faster than using a standard Ubuntu container and installing Perlanet.</p>
+
+<p>The steps in these jobs should be pretty self-explanatory. Basically, we check out the repo, run “perlanet” to build the site and then deploy the contents of the /docs directory to the GitHub Pages server.</p>
+
+<p>Once you’ve created this file and added it to your repo, you’ll see details of this workflow on the “Actions” tab in your repo. And whenever you push a change or when a scheduled run takes place (or you press the manual run button) you’ll see logs for the run and (hopefully) your web site will update to contain the latest data.</p>
+
+<p>I reckon you can get a new planet up and running in about half an hour. Oh, and if you label your repo with the topic “perlanet”, then it will automatically be added to The Planetarium.</p>
+
+<p>So, what are you waiting for? What planet would you like to build?</p>
+
+<p>The post <a href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/">Building Planets with Perlanet and GitHub</a> appeared first on <a href="https://perlhacks.com">Perl Hacks</a>.</p>
+
+       </div><!-- panel-body -->
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">dev.to</span>
+
+              <p class="text-right"><small>Published by Dave Cross
+     on Sunday 02 April 2023 17:54</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Ladytron/_/Seventeen">Seventeen - Ladytron</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
-              <p class="text-right"><small>Published by Saint Etienne
-     on Sunday 02 April 2023 15:58</small></p>
+              <p class="text-right"><small>Published by Ladytron
+     on Sunday 02 April 2023 17:00</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Belle+and+Sebastian/_/Judy+Is+a+Dick+Slap">Judy Is a Dick Slap - Belle and Sebastian</a></h2>
+              <h2><a href="https://www.last.fm/music/James/_/Sometimes">Sometimes - James</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by James
+     on Sunday 02 April 2023 16:55</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Goldfrapp/_/Number+1">Number 1 - Goldfrapp</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by Goldfrapp
+     on Sunday 02 April 2023 16:52</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/PJ+Harvey/_/C%27mon+Billy">C'mon Billy - PJ Harvey</a></h2>
+            </div><!-- panel-heading -->
+
+            <div class="panel-footer">
+<span class="label label-default" style="float: left">last.fm</span>
+
+              <p class="text-right"><small>Published by PJ Harvey
+     on Sunday 02 April 2023 16:49</small></p>
+            </div><!-- panel-footer -->
+          </div><!-- panel -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2><a href="https://www.last.fm/music/Belle+and+Sebastian/_/Sleep+the+Clock+Around">Sleep the Clock Around - Belle and Sebastian</a></h2>
             </div><!-- panel-heading -->
 
             <div class="panel-footer">
 <span class="label label-default" style="float: left">last.fm</span>
 
               <p class="text-right"><small>Published by Belle and Sebastian
-     on Sunday 02 April 2023 15:54</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Arcade+Fire/_/My+Body+Is+a+Cage">My Body Is a Cage - Arcade Fire</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Arcade Fire
-     on Sunday 02 April 2023 15:49</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Doves/_/Firesuite">Firesuite - Doves</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Doves
-     on Sunday 02 April 2023 15:44</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2><a href="https://www.last.fm/music/Dido/_/White+Flag">White Flag - Dido</a></h2>
-            </div><!-- panel-heading -->
-
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">last.fm</span>
-
-              <p class="text-right"><small>Published by Dido
-     on Sunday 02 April 2023 15:40</small></p>
+     on Sunday 02 April 2023 16:44</small></p>
             </div><!-- panel-footer -->
           </div><!-- panel -->
           <div class="panel panel-default">
@@ -178,7 +511,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/uptime/compare/9fcee89be6...8ff8dab9c6">davorg pushed to master in davorg/uptime</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28141220527,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;9ce3df93-dbee-4a5f-aa9c-79412187866d&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="a615b79ccff0ada074d21141ad988cbafcb9296dc3cd31ee5335c77ab5a32d71"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28141220527,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;58aeba39-c845-4769-94c4-06b6405e5e47&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="08fc783a116c4da3d3c6ab026fea0fe5558c572f6acd85e7de6e85732d2e0799"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -231,7 +564,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/uptime/compare/3792ced99a...9fcee89be6">davorg pushed to master in davorg/uptime</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28141130571,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;c3e001f6-158f-4d3f-96b5-11379989bfe9&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="b34858340a1a423cdf1afd159b1861f090a1dd6437607e57fc9c827a27a9420b"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28141130571,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;8cf760ee-acd9-451a-aeb2-2d44cf5e8b54&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="bda045929a29423d8676a50ee1e2e018db9d8b02f3a3be7db288050b56c552ba"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -295,7 +628,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/uptime/compare/249b0b3540...3792ced99a">davorg pushed to master in davorg/uptime</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28140784137,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;6460a9b2-aa5e-426a-803c-d5daa40b40d6&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="c8c95171f5bf6889eeab450441d647520176d6d2f7c716962d975aa51181923e"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28140784137,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;d779e747-168d-4f48-847b-1fc1aa3ac28f&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="e2de0492c810c4ddb17c8533eacbdbfe3e939a0d9785b0f9ed58de2c06f15841"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -374,7 +707,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/uptime/compare/79da7ed75e...249b0b3540">davorg pushed to master in davorg/uptime</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28131655845,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;8d0f6e7e-28ff-430d-92b3-c1a52084ab92&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="33c604aa0a174852d8b5050bbad50a405f97298f0469c521fec1142ee428ca95"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28131655845,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;88dca5c1-d976-4552-a2a8-f381f6704838&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="506312aae8332c313b0467a3947fcb90e6e5c88ebf1d14a417ac0039f67068a7"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -427,7 +760,7 @@ body {
             <div class="panel-heading">
               <h2><a href="https://github.com/davorg/uptime/compare/31f32bb365...79da7ed75e">davorg pushed to master in davorg/uptime</a></h2>
             </div><!-- panel-heading -->
-            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28131514780,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;b4414339-d6d4-498e-9ae6-7e17fbbe1e63&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="7140c50f7da5b664f9bd0ebbe332a4e8aa53cadb9369593f9eda4eeafd08f962"><div class="body">
+            <div class="panel-body"><div class="push js-feed-item-view" data-hydro-view="{&quot;event_type&quot;:&quot;news_feed.event.view&quot;,&quot;payload&quot;:{&quot;event&quot;:{&quot;repo_id&quot;:567308850,&quot;actor_id&quot;:24642,&quot;public&quot;:true,&quot;type&quot;:&quot;PushEvent&quot;,&quot;target_id&quot;:null,&quot;id&quot;:28131514780,&quot;additional_details_shown&quot;:false,&quot;grouped&quot;:false},&quot;event_group&quot;:null,&quot;org_id&quot;:null,&quot;target_type&quot;:&quot;event&quot;,&quot;user_id&quot;:null,&quot;feed_card&quot;:{&quot;card_retrieved_id&quot;:&quot;41de7b07-fecb-484e-a31b-30e272b60fdf&quot;},&quot;originating_url&quot;:&quot;https://github.com/davorg.atom&quot;}}" data-hydro-view-hmac="e7300bad6827649ae68eed36c40b546dafe38638112bdd3b60616cca758abaf8"><div class="body">
 <!-- push -->
 <div class="d-flex flex-items-baseline py-4">
   <div class="d-flex flex-column width-full">
@@ -1058,67 +1391,6 @@ updates:
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://dev.to/davorg/robo-committer-for-automated-commits-2kba">Robo-committer for automated commits</a></h2>
-            </div><!-- panel-heading -->
-            <div class="panel-body"><p>That's an screenshot of <a href="https://github.com/davorg/">my GitHub contributions</a> for the last year. Almost 50,000 commits is a ridiculous number for one person to make in a year. Obviously I had some help.</p>
-
-<p>The explanation is in my previous article <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">GitHub Actions for semi-static web sites</a>. In that article I explained how I was using GitHub Actions to rebuild a number of web sites every few hours. It doesn't take very many of those web sites before you start getting into dozens of automated commits every day. And it is, of course, those automated commits that are artificially inflating my commit count.</p>
-
-<p>This has been mildly worrying me over the last year. I decided that I needed to do something about it. I needed to find a way to separate my real commits from these automated ones.</p>
-
-<p>The previous article includes a sample GitHub Workflow file that I was using to run these sites. And it's easy to see what's causing the problem. There's a step that commits the newly-generated site and that step includes the following:</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git config --global user.name 'Dave Cross'
-git config --global user.email 'my email address'
-</code></pre>
-
-</div>
-
-<p>That email address is associated with my GitHub account and, therefore, those commits are seen as being made by me.</p>
-
-<p>A few weeks ago, I made the first step towards fixing this. I changed that configuration to this:</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git config --global user.name 'Automated Workflow'
-git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-</code></pre>
-
-</div>
-
-<p>We're using a more descriptive name and an email address that GitHub generates for us based on the username of the user who is running the workflow. This is better (as it won't assign commits to me if someone were to fork my repo and run the workflow) but it's still using an email address which GitHub has assigned to me and, therefore, the automated commits are still associated with me.</p>
-
-<p>Yesterday I had another dig into this problem and I have found the solution. The new version I use it this:</p>
-
-<div class="highlight js-code-highlight">
-<pre class="highlight plaintext"><code>git config user.name github-actions[bot]
-git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-</code></pre>
-
-</div>
-
-<p>It turns out that there is a special GitHub user account that can be used to commit to your repos. This user is specifically there to solve the exact problem that I wanted to solve. It's just not particularly well-documented (or, if it is, it's not in the documentation that I've been looking at!)</p>
-
-<p>You might notice that I've also removed the <code>--global</code> setting from the commands. On reflection, it seemed pointless to make global changes on a Docker container that is going to cease to exist in a minute or so.</p>
-
-<p>So that's what I now use on all of my workflows that regenerate web sites. It will mean that I make substantially fewer commits this year and I can no longer be accused of trying to game the system in order to artificially inflate my number of commits.</p>
-
-<p>Oh, and as a bonus, the GitHub Actions Bot has its own Octocat avatar that now appears in the commits for my repos.</p>
-
-<p><a href="https://res.cloudinary.com/practicaldev/image/fetch/s--te-jPozW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1p8uxysiucvdrqcf3p1f.png" class="article-body-image-wrapper"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--te-jPozW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1p8uxysiucvdrqcf3p1f.png" alt="GitHub commits" width="880" height="253"></a></p>
-
-<p>It's possible, of course, that I'm the last person in the world to realise this. But, hopefully, sharing the information will be useful to someone out there.</p>
-
-       </div><!-- panel-body -->
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">dev.to</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Friday 06 January 2023 11:59</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
               <h2><a href="https://www.flickr.com/photos/davorg/52595592514/">Goodbye Vivienne</a></h2>
             </div><!-- panel-heading -->
             <div class="panel-body">			<p><a href="https://www.flickr.com/people/davorg/">Dave Cross</a> posted a photo:</p>
@@ -1548,38 +1820,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
           </div><!-- panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h2><a href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a></h2>
-            </div><!-- panel-heading -->
-            <div class="panel-body"><p>I&#8217;m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain <a href="https://metacpan.org/pod/perlanet">perlanet</a> (a Perl program for aggregating web feeds into a new feed &#8211; and building a web site based on that new feed) and I use it to build <a href="https://theplanetarium.org/">a few sites on topics I&#8217;m interested in</a>.</p>
-<p>Last year, I worked out a way to use GitHub Actions to <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">rebuild these sites automatically</a> every few hours &#8211; thereby enabling me to host the sites on GitHub Pages (I still think it&#8217;s a useful technique, but I sometimes worry slightly about the large number of commits those repos have &#8211; someone at GitHub must surely notice one day!)</p>
-<p>Yesterday, I was doing some light maintenance on one of those sites when I realised that each rebuild of these sites was taking a significant time (by which I mean four or five minutes) and started wondering if there was a way to speed them up and use less of GitHub&#8217;s resources. The problem is that Perlanet is a pretty hefty module and each rebuild was installing that module (and, therefore, dozens of other modules) on a pristine Ubuntu container.</p>
-<p>When you say it like that, the solution is obvious.</p>
-<p>You don&#8217;t need to run your GitHub Actions on the standard containers that GitHub supplies. You can run them on any container that&#8217;s available from any public container hosting service. So the solution was to build a Perlanet container and run the jobs using that instead. So that&#8217;s how I spent an hour or so yesterday.</p>
-<p>Here&#8217;s the Dockerfile I ended up with:</p><pre class="urvanov-syntax-highlighter-plain-tag">FROM perl:latest
-
-RUN apt-get update &amp;&amp; \
-    apt-get -y upgrade &amp;&amp; \ 
-    apt-get install -y build-essential &amp;&amp; \
-    apt-get install -y cpanminus libtidy-dev libxml++2.6-dev libhtml-tidy-perl &amp;&amp; \
-    cpanm --notest Test::Exception &amp;&amp; \
-    cpanm --notest Perlanet &amp;&amp; \
-    cpanm --notest LWP::Protocol::https</pre><p>It&#8217;s (obviously) <a href="https://github.com/davorg/perl-perlanet-docker">available on GitHub</a> in case anyone wants to improve on my rather ropey knowledge of Docker.</p>
-<p>I explicitly install Test::Exception because HTML::Tidy (one of Perlanet&#8217;s pre-requisites) needs it and I can&#8217;t work out why the standard installation procedure isn&#8217;t installing it. And while, LWP::Protocol::https is, strictly speaking, not required by Perlanet, you wouldn&#8217;t get very far on the modern web if you only accessed web feeds that are available over HTTP.</p>
-<p>A little bit of Docker Hub set-up and the container is <a href="https://hub.docker.com/r/davorg/perl-perlanet">available for everyone to use</a> (and rebuilt automatically whenever I commit to the repo).</p>
-<p>It was then just a case of changing my GitHub Actions to use my container. Here&#8217;s an example of <a href="https://github.com/davorg/planetdavorg/commit/5b65ce407e89dd16e74ad4b417b104c43dca96ef">one of the commits</a> that did that.</p>
-<p>I realise I&#8217;m pretty late to the party here, but I think this is a useful pattern. If you have a Perl library (or, indeed, any other software) that exists to provide a service to users then it&#8217;s a great idea to provide a containerised version of that software.</p>
-<p>And I&#8217;m happy to report that my site rebuilds have gone from 4-5 minutes to about 45 seconds.</p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-       </div><!-- panel-body -->
-            <div class="panel-footer">
-<span class="label label-default" style="float: left">perl hacks</span>
-
-              <p class="text-right"><small>Published by Dave Cross
-     on Thursday 06 October 2022 09:43</small></p>
-            </div><!-- panel-footer -->
-          </div><!-- panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
               <h2><a href="https://davorg.medium.com/2021-in-gigs-7ab20766b20f?source=rss-3781feb8a4f4------2">2021 in Gigs</a></h2>
             </div><!-- panel-heading -->
             <div class="panel-body"><figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/0*a_nd3y_-Pb0z6dI0.jpg" /></figure><p>A little later than usual, here’s my review of the gigs I saw last year.</p><p>In 2020, I saw four gigs. In 2021, I almost doubled that to seven. Obviously, we spent a lot of the year with most music venues closed, so those few gigs I saw were all in the second half of the year. Usually, I’d list my top ten gigs. This year (as last year) I’ll be listing them all. So here they are in chronological order.</p><ul><li><a href="https://www.songkick.com/concerts/39755096-mike-oldfield-at-royal-festival-hall-southbank-centre"><strong>Tubular Bells at the Royal Festival Hall</strong></a><br>This was a strange show for several reasons. Firstly, it was advertised as commemorating the fiftieth anniversary of <em>Tubular Bells</em>. But the album was released in 1973, so it was two years early (apparently it was the fiftieth anniversary of when Mike Oldfield started writing the piece). Secondly, Mike Oldfield wasn’t performing — but you needed to examine the publicity very carefully to work that out. And thirdly, there was a troupe of acrobats that were pointlessly leaping around the stage while the musicians played. All in all, I thought this was slightly disappointing.</li><li><a href="https://www.songkick.com/concerts/38968289-heaven-17-at-roundhouse"><strong>Heaven 17 at the Roundhouse</strong></a><br>Many of these shows were postponed from 2020. This was originally intended to celebrate the fortieth anniversary of the Human League album, <em>Travelogue</em>, but it ended but being the forty-first anniversary. But none of that mattered. This was Heaven 17 playing all of the first two Human League albums and it was absolutely wonderful. Apparently, they had invited Phil Oakey to take part, but he wasn’t interested. That’s Heaven 17 in the photo above.</li><li><a href="https://www.songkick.com/concerts/39828850-lump-at-scala"><strong>LUMP at the Scala</strong></a><br>LUMP is Laura Marling playing with Tunng’s Mike Lindsay. I kinda assumed that their first album was going to be a one-off, but they produced a second album in 2020. This was the first gig I’d been to in a cramped venue like the Scala for a couple of years and it all got a bit too much for me. I really didn’t enjoy the atmosphere and left during the third or fourth song. I still love the album though and I hope to build up my tolerance for gig crowds over the coming months.</li><li><a href="https://www.songkick.com/concerts/39773071-staves-at-o2-shepherds-bush-empire"><strong>The Staves at Shepherd’s Bush Empire</strong></a><br>Actually, this was only two-thirds of the Staves. One of the sisters has had a baby recently and has decided to sit out tours for a couple of years. But the two remaining sisters still put on a great show.</li><li><a href="https://www.songkick.com/concerts/39786793-laura-marling-at-roundhouse"><strong>Laura Marling at the Roundhouse</strong></a><br>Given how few gigs I saw last year, it’s surprising how repetitive they were. Here’s Laura Marling again (and the Roundhouse again!) Although she has yet to match the heights of the <em>Short Movie</em> tour, Laura Marling is always worth seeing and this show was no exception.</li><li><a href="https://www.songkick.com/concerts/39662320-heaven-17-at-o2-shepherds-bush-empire"><strong>Heaven 17 at the Shepherd’s Bush</strong></a><br>More repetition. I think the two Heaven 17 gigs were originally supposed to be several months apart, but the vagaries of the Covid scheduling changes led to them being just two months apart. This one celebrated the fortieth (actually forty-first) anniversary of Heaven 17 starting and was a glorious journey through their back catalogue. Oh, and the support was Pete Wylie, so I can finally say I’ve seen all three members of the <a href="https://en.wikipedia.org/wiki/Crucial_Three">Crucial Three</a> live.</li><li><a href="https://www.songkick.com/concerts/39709208-orchestral-manoeuvres-in-the-dark-at-eventim-apollo"><strong>Orchestral Manoeuvres in the Dark at Hammersmith Apollo</strong></a><br>OMD are just one of those bands that I see live whenever I can. I’ve now been seeing them for over forty years (since they supported Gary Numan in 1980). They have such a massive back catalogue that they can just play hit after hit for two hours. But this show was a bit different as they started by playing all of their 1981 album, <em>Architecture and Morality</em>. They were as good as I’ve ever seen them.</li></ul><p>And that was 2021. What will happen in 2022? Well, I have tickets for a dozen or so shows but who knows how many of them I’ll actually see? I’ve already had emails postponing the Wolf Alice and Peter Hook shows I was going to see this month. I guess I’ll just have to wait and see how the rest of the year pans out.</p><p><em>Originally published at </em><a href="https://blog.dave.org.uk/2022/01/2021-in-gigs.html"><em>https://blog.dave.org.uk</em></a><em> on January 9, 2022.</em></p><img src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=7ab20766b20f" width="1" height="1" alt="">       </div><!-- panel-body -->
@@ -1895,7 +2135,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </div><!-- row -->
       <div class="row">
         <div class="col-md-10">
-      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Sunday 02 April 2023 17:06</address>
+      <address><a href="mailto:dave@theplanetarium.org">Dave Cross</a> / Sunday 02 April 2023 18:06</address>
         </div><!-- col-md-10 -->
       </div><!-- row -->
     </div><!-- container -->

@@ -7,9 +7,357 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-04-02T17:06:06Z</updated>
+  <updated>2023-04-02T18:06:41Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry>
+    <title>Building Planets with Perlanet and GitHub</title>
+    <link rel="alternate" href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><blockquote>
+<p class="quoteText">Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green planet whose ape-descended life forms are so amazingly primitive that they still think digital watches are a pretty neat idea.</p>
+<p style="text-align: right;"><em>Douglas Adams – The Hitchhiker’s Guide to the Galaxy</em></p>
+</blockquote>
+<p>I don’t still wear a digital watch, but I do like other things that are almost as unhip. In particular, I pine for the time about twenty years ago when web feeds looked like they were about to take over the world. Everyone had their favourite feed reader (I still miss Google Reader) and pretty much any useful web site would produce one or more web feeds that you could subscribe to and follow through your feed reader. For a few years, it was almost unthinkable to produce a web site without publishing a feed which included the changes to the site’s content.</p>
+<p>Then, at some point, that changed. It wasn’t that web feeds vanished overnight. They still exist for many sites. But they are no longer ubiquitous. You can’t guarantee they’ll exist for every site you’re interested in. I remember people saying that social media would replace them. I was never convinced by that argument but, interestingly, one of the first times I noticed them vanishing was when Twitter removed their web feed of a user’s posts. They wanted people to use their AP instead (so I wrote <a href="https://github.com/davorg/twitter-json2atom">twitter-json2atom</a> that turned their API’s JSON into an Atom feed – I suspect it no longer works). Honestly, I think the main reason for the fall in popularity of web feeds was that people wanted you to read their content on their web sites where the interesting content was surrounded by uninteresting adverts.</p>
+<p>But, as I said, not all web feeds vanished. There are still plenty of them out there (often, I expect because the sites’ owners don’t realise they’re there or don’t know how to turn them off). And that means the web feed-driven technologies of the early 2000s can still be useful.</p>
+<p>One such piece of technology is the feed aggregator. I remember these being very popular. You would create a web site and configure it with a list of web feeds that you were interested in. The site would be driven by a piece of software that every few hours would poll the web feeds in the configuration and use the information it found to create a) a web page made up of information from the feeds and b) another feed that contained all of the information from the source feeds. The most popular software for building these sites was called Planet Planet and was written in Python (it seems to have vanished sometime in the last twenty years, otherwise I would link to it). When I wrote a Perl version, I called it (for reasons I now regret) <a href="https://metacpan.org/pod/Perlanet">Perlanet</a>.</p>
+<p>I still use Perlanet to build planet sites. And they’re all listed at <a href="https://theplanetarium.org/">The Planetarium</a>. Recently, I’ve started hosting all my planets on <a href="https://pages.github.com/">GitHub Pages</a>, using <a href="https://github.com/features/actions">GitHub Actions</a> to rebuild the sites periodically. I thought that maybe other people might be old-skool like me and might want to build their own planets – so in the rest of this post I’ll explain how to do that, using <a href="https://perl.theplanetarium.org/">Planet Perl</a> as an example.</p>
+<p>The first thing you’ll need is a GitHub account and a repo to store the code for your planet. I’m going to assume you know how to set those up (in the interest of keeping this tutorial short). You only actually need two files to create a planet – a config file and a template for the web site.</p>
+<p>Here’s part of the config for Planet Perl:</p><pre class="urvanov-syntax-highlighter-plain-tag">title: Planet Perl
+description: There's More Than One Way To Aggregate It
+url: https://perl.theplanetarium.org/
+author:
+  name: Dave Cross
+  email: dave@theplanetarium.org
+  twitter: davorg
+entries: 75
+entries_per_feed: 5
+opml_file: docs/opml.xml
+page:
+  file: docs/index.html
+  template: index.tt
+feed:
+  file: docs/atom.xml
+  format: Atom
+google_ga: G-HD966GMRYP
+cutoff_duration:
+  months: 1
+feeds:
+  - feed: https://www.perl.com/article/index.xml
+    title: perl.com
+    web: https://perl.com/
+  - feed: https://news.perlfoundation.org/atom.xml
+    title: Perl Foundation News
+    web: https://news.perlfoundation.org/</pre><p>I’ve tried to make it self-explanatory. At the top, there are various config options for the output (the web page and the aggregated feed) and, below, are details of the feeds that you want to aggregate. Let’s look at the output options first.</p>
+<ul>
+<li>title and description: these are both strings that you can include on the web page that is created. They’re also used in the aggregate feed that is produced</li>
+<li>url: this is where the web page will be available on the web</li>
+<li>author: this contains details of the person publishing the aggregated site and feed. The Twitter handle is optional</li>
+<li>entries: is the maximum number of entries that your output will contain in total</li>
+<li>entries_per_feed: is the maximum number of entries that you will use from each of your feeds. This is to stop your output being swamped with entries from a particularly busy feed. This can be omitted, in which case there will be no limit</li>
+<li>opml_file: OPML stands for “Outline Processor Markup File”. It used to be trendy to publish an OPML file which is a machine-readable data file which contains a list of the feeds that you are aggregating. These days, no-one cares. If you omit this setting, the file won’t be created.</li>
+<li>page: this contains details of the web page you create. The template is the name of a template file that is used to create the HTML page (more on that below) and file is where the output page is written. If you keep the value used in my example, then things will work well with GitHub Pages as we’ll see later</li>
+<li>feed: this contains details of the aggregate feed we create. You can choose a format (Atom or RSS) and the filename. Again, the default filename will work well with GitHub Pages</li>
+<li>google_ga: if this value exists, then it will be used as the Google Analytics identifier for the web page that is created</li>
+<li>cutoff_duration: this is another way to control which entries are used in your output feed. Any entries that were published longer ago than this period of time will be ignored</li>
+</ul>
+<p>Then we have the section of the config file that defines the feeds that we are going to aggregate. Each feed has three data items:</p>
+<ul>
+<li>feed: the URL of the feed</li>
+<li>title: a string to use to describe the feed</li>
+<li>web: the URL of the feed’s original web page</li>
+</ul>
+<p>And that’s all you need for the config file. Create that, put it in a file called “perlanetrc” and add it to your repo.</p>
+<p>The other file you need is the template for the HTML page. This is usually called “index.tt”. <a href="https://github.com/davorg/planetperl/blob/master/index.tt">The one I use for Planet Perl</a> is rather complicated (there are all sorts of Javascript tricks in it). <a href="https://github.com/davorg/planetdavorg/blob/main/index.tt">The one I use for Planet Davorg</a> is far simpler – and should work well with the config file above. I suggest going with that initially and editing it once you’ve got everything else working.</p>
+<p>I said those are the only two files you need. And that’s true. But the site you create will be rather ugly. My default web page uses <a href="https://getbootstrap.com/">Bootstrap</a> for CSS, but you’ll probably want to add your own CSS to tweak the way it looks – along with, perhaps, some Javascript and some images. All of the files that you need to make your site work should be added to the /docs directory in your repo.</p>
+<p>Having got to this stage, we can test your web site. Well, we’ll need to install Perlanet first. There are two ways to do this. You can either install it from CPAN along with all of its (many) dependencies – using “cpan Perlanet” or there’s <a href="https://hub.docker.com/r/davorg/perl-perlanet">a Docker image</a> that you can use. Either way, once you have the software installed, running it is as simple as running “perlanet”. That will trundle along for a while and, when it has finished, you’ll find new files called “index.html” and “atom.xml” in the /docs directory. My favourite way to test the output locally is to use <a href="https://metacpan.org/dist/App-HTTPThis">App::HTTPThis</a>. Having installed this program, you can just run “http_this docs” from the repo’s main directory and then visit http://localhost:7007/index.html to see the site that was produced (or http://localhost:7007/atom.xml to see the feed.</p>
+<p>You now have a system to build your new planet. You could run that on a server that’s connected to the internet and set up a cronjob to regenerate the file every few hours. And that’s how I used to run all of my planets. But, recently, I’ve moved to running them on GitHub Pages instead. And that’s what we’ll look at next.</p>
+<p>There are two parts to this. We need to configure our repo to have a GitHub Pages site associated with it and we also need to configure GitHub Actions to rebuild the site every few hours. Let’s take those two in turn.</p>
+<p>Turning on GitHub Pages is simple enough. Just go to the “Pages” section in your repo’s settings. Choose “GitHub Actions” as the deployment source and tick the box marked “Enforce HTTPS”. Later on, you can look at setting up a custom domain for your site but, for now, let’s stick with the default URL which will be https://&lt;github_username&gt;.github.io/&lt;repo_name&gt;. Nothing will appear yet, as we need to set up GitHub Actions next.</p>
+<p>Setting up a GitHub Action workflow is as simple as adding a YAML file to the /.github/workflows directory in your repo. You’ll obviously have to create that directory first. Here’s the workflow definition for Planet Perl (it’s in a file called “buildsite.yml”, but that name isn’t important).</p><pre class="urvanov-syntax-highlighter-plain-tag">name: Generate web page
+
+on:
+  push:
+    branches: '*'
+  schedule:
+    - cron: '37 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: davorg/perl-perlanet:latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create pages
+      run: |
+        mkdir -p docs
+        perlanet &gt; perlanet.log 2&gt;&amp;1
+    - name: Commit new page
+      if: github.repository == 'davorg/planetperl'
+      run: |
+        git config --global --add safe.directory /__w/planetperl/planetperl
+        GIT_STATUS=$(git status --porcelain)
+        echo $GIT_STATUS
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git add docs/
+        if [ "$GIT_STATUS" != "" ]; then git commit -m "Automated Web page generation"; fi
+        if [ "$GIT_STATUS" != "" ]; then git push; fi
+    - name: Archive perlanet logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: perlanet.log
+        path: ./perlanet.log
+        retention-days: 3
+
+    - name: Update pages artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs/
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2</pre><p>The first section of the file defines the events that will trigger this workflow. I have defined three triggers:</p>
+<ol>
+<li>Pushing a commit. I could be cleverer here and only work when certain files are changed (for example, the config or the index.tt)</li>
+<li>On a schedule. My example runs at 37 minutes past the hour every four hours (so at 04:37, 08:37, etc.)</li>
+<li>Manually. The “workflow_dispatch” trigger adds a button to the repo’s “Actions” page on GitHub allowing you to run the workflow manually, whenever you want</li>
+</ol>
+<p>Following that, we define the jobs that need to be run and the steps that make up those jobs. We have two jobs – one that builds the new version of the site and one that deploys that new site to GitHub Pages. Remember how I mentioned earlier that there is a Perlanet container on the Docker Hub? Well, you’ll see that the build job runs on that container. This is because pulling a container from the Docker Hub is faster than using a standard Ubuntu container and installing Perlanet.</p>
+<p>The steps in these jobs should be pretty self-explanatory. Basically, we check out the repo, run “perlanet” to build the site and then deploy the contents of the /docs directory to the GitHub Pages server.</p>
+<p>Once you’ve created this file and added it to your repo, you’ll see details of this workflow on the “Actions” tab in your repo. And whenever you push a change or when a scheduled run takes place (or you press the manual run button) you’ll see logs for the run and (hopefully) your web site will update to contain the latest data.</p>
+<p>I reckon you can get a new planet up and running in about half an hour. Oh, and if you label your repo with the topic “perlanet”, then it will automatically be added to The Planetarium.</p>
+<p>So, what are you waiting for? What planet would you like to build?</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/">Building Planets with Perlanet and GitHub</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green planet whose ape-descended life forms are so amazingly primitive that they still think digital… <a class="more-link" href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/">Continue reading <span class="screen-reader-text">Building Planets with Perlanet and GitHub</span></a></p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/">Building Planets with Perlanet and GitHub</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2104</id>
+    <published>2023-04-02T17:54:37Z</published>
+    <updated>2023-04-02T17:54:37Z</updated>
+    <category term="Programming"/>
+    <category term="atom"/>
+    <category term="perlanet"/>
+    <category term="planet"/>
+    <category term="rss"/>
+    <category term="web feed"/>
+  </entry>
+  <entry>
+    <title>Building Planets with Perlanet and GitHub</title>
+    <link rel="alternate" href="https://dev.to/davorg/building-planets-with-perlanet-and-github-4jpe" type="text/html"/>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun. Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green planet whose ape-descended life forms are so amazingly primitive that they still think digital watches are a pretty neat idea.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Douglas Adams – The Hitchhiker’s Guide to the Galaxy&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I don’t still wear a digital watch, but I do like other things that are almost as unhip. In particular, I pine for the time about twenty years ago when web feeds looked like they were about to take over the world. Everyone had their favourite feed reader (I still miss Google Reader) and pretty much any useful web site would produce one or more web feeds that you could subscribe to and follow through your feed reader. For a few years, it was almost unthinkable to produce a web site without publishing a feed which included the changes to the site’s content.&lt;/p&gt;
+
+&lt;p&gt;Then, at some point, that changed. It wasn’t that web feeds vanished overnight. They still exist for many sites. But they are no longer ubiquitous. You can’t guarantee they’ll exist for every site you’re interested in. I remember people saying that social media would replace them. I was never convinced by that argument but, interestingly, one of the first times I noticed them vanishing was when Twitter removed their web feed of a user’s posts. They wanted people to use their AP instead (so I wrote &lt;a href="https://github.com/davorg/twitter-json2atom"&gt;twitter-json2atom&lt;/a&gt; that turned their API’s JSON into an Atom feed – I suspect it no longer works). Honestly, I think the main reason for the fall in popularity of web feeds was that people wanted you to read their content on their web sites where the interesting content was surrounded by uninteresting adverts.&lt;/p&gt;
+
+&lt;p&gt;But, as I said, not all web feeds vanished. There are still plenty of them out there (often, I expect because the sites’ owners don’t realise they’re there or don’t know how to turn them off). And that means the web feed-driven technologies of the early 2000s can still be useful.&lt;/p&gt;
+
+&lt;p&gt;One such piece of technology is the feed aggregator. I remember these being very popular. You would create a web site and configure it with a list of web feeds that you were interested in. The site would be driven by a piece of software that every few hours would poll the web feeds in the configuration and use the information it found to create a) a web page made up of information from the feeds and b) another feed that contained all of the information from the source feeds. The most popular software for building these sites was called Planet Planet and was written in Python (it seems to have vanished sometime in the last twenty years, otherwise I would link to it). When I wrote a Perl version, I called it (for reasons I now regret) &lt;a href="https://metacpan.org/pod/Perlanet"&gt;Perlanet&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I still use Perlanet to build planet sites. And they’re all listed at &lt;a href="https://theplanetarium.org/"&gt;The Planetarium&lt;/a&gt;. Recently, I’ve started hosting all my planets on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;, using &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt; to rebuild the sites periodically. I thought that maybe other people might be old-skool like me and might want to build their own planets – so in the rest of this post I’ll explain how to do that, using &lt;a href="https://perl.theplanetarium.org/"&gt;Planet Perl&lt;/a&gt; as an example.&lt;/p&gt;
+
+&lt;p&gt;The first thing you’ll need is a GitHub account and a repo to store the code for your planet. I’m going to assume you know how to set those up (in the interest of keeping this tutorial short). You only actually need two files to create a planet – a config file and a template for the web site.&lt;/p&gt;
+
+&lt;p&gt;Here’s part of the config for Planet Perl:&lt;br&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight js-code-highlight"&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;title: Planet Perl
+description: There's More Than One Way To Aggregate It
+url: https://perl.theplanetarium.org/
+author:
+  name: Dave Cross
+  email: dave@theplanetarium.org
+  twitter: davorg
+entries: 75
+entries_per_feed: 5
+opml_file: docs/opml.xml
+page:
+  file: docs/index.html
+  template: index.tt
+feed:
+  file: docs/atom.xml
+  format: Atom
+google_ga: G-HD966GMRYP
+cutoff_duration:
+  months: 1
+feeds:
+  - feed: https://www.perl.com/article/index.xml
+    title: perl.com
+    web: https://perl.com/
+  - feed: https://news.perlfoundation.org/atom.xml
+    title: Perl Foundation News
+    web: https://news.perlfoundation.org/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;I’ve tried to make it self-explanatory. At the top, there are various config options for the output (the web page and the aggregated feed) and, below, are details of the feeds that you want to aggregate. Let’s look at the output options first.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;title and description: these are both strings that you can include on the web page that is created. They’re also used in the aggregate feed that is produced&lt;/li&gt;
+&lt;li&gt;url: this is where the web page will be available on the web&lt;/li&gt;
+&lt;li&gt;author: this contains details of the person publishing the aggregated site and feed. The Twitter handle is optional&lt;/li&gt;
+&lt;li&gt;entries: is the maximum number of entries that your output will contain in total&lt;/li&gt;
+&lt;li&gt;entries_per_feed: is the maximum number of entries that you will use from each of your feeds. This is to stop your output being swamped with entries from a particularly busy feed. This can be omitted, in which case there will be no limit&lt;/li&gt;
+&lt;li&gt;opml_file: OPML stands for “Outline Processor Markup File”. It used to be trendy to publish an OPML file which is a machine-readable data file which contains a list of the feeds that you are aggregating. These days, no-one cares. If you omit this setting, the file won’t be created.&lt;/li&gt;
+&lt;li&gt;page: this contains details of the web page you create. The template is the name of a template file that is used to create the HTML page (more on that below) and file is where the output page is written. If you keep the value used in my example, then things will work well with GitHub Pages as we’ll see later&lt;/li&gt;
+&lt;li&gt;feed: this contains details of the aggregate feed we create. You can choose a format (Atom or RSS) and the filename. Again, the default filename will work well with GitHub Pages&lt;/li&gt;
+&lt;li&gt;google_ga: if this value exists, then it will be used as the Google Analytics identifier for the web page that is created&lt;/li&gt;
+&lt;li&gt;cutoff_duration: this is another way to control which entries are used in your output feed. Any entries that were published longer ago than this period of time will be ignored&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then we have the section of the config file that defines the feeds that we are going to aggregate. Each feed has three data items:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;feed: the URL of the feed&lt;/li&gt;
+&lt;li&gt;title: a string to use to describe the feed&lt;/li&gt;
+&lt;li&gt;web: the URL of the feed’s original web page&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And that’s all you need for the config file. Create that, put it in a file called “perlanetrc” and add it to your repo.&lt;/p&gt;
+
+&lt;p&gt;The other file you need is the template for the HTML page. This is usually called “index.tt”. &lt;a href="https://github.com/davorg/planetperl/blob/master/index.tt"&gt;The one I use for Planet Perl&lt;/a&gt; is rather complicated (there are all sorts of Javascript tricks in it). &lt;a href="https://github.com/davorg/planetdavorg/blob/main/index.tt"&gt;The one I use for Planet Davorg&lt;/a&gt; is far simpler – and should work well with the config file above. I suggest going with that initially and editing it once you’ve got everything else working.&lt;/p&gt;
+
+&lt;p&gt;I said those are the only two files you need. And that’s true. But the site you create will be rather ugly. My default web page uses &lt;a href="https://getbootstrap.com/"&gt;Bootstrap&lt;/a&gt; for CSS, but you’ll probably want to add your own CSS to tweak the way it looks – along with, perhaps, some Javascript and some images. All of the files that you need to make your site work should be added to the /docs directory in your repo.&lt;/p&gt;
+
+&lt;p&gt;Having got to this stage, we can test your web site. Well, we’ll need to install Perlanet first. There are two ways to do this. You can either install it from CPAN along with all of its (many) dependencies – using “cpan Perlanet” or there’s &lt;a href="https://hub.docker.com/r/davorg/perl-perlanet"&gt;a Docker image&lt;/a&gt; that you can use. Either way, once you have the software installed, running it is as simple as running “perlanet”. That will trundle along for a while and, when it has finished, you’ll find new files called “index.html” and “atom.xml” in the /docs directory. My favourite way to test the output locally is to use &lt;a href="https://metacpan.org/dist/App-HTTPThis"&gt;App::HTTPThis&lt;/a&gt;. Having installed this program, you can just run “http_this docs” from the repo’s main directory and then visit &lt;a href="http://localhost:7007/index.html"&gt;http://localhost:7007/index.html&lt;/a&gt; to see the site that was produced (or &lt;a href="http://localhost:7007/atom.xml"&gt;http://localhost:7007/atom.xml&lt;/a&gt; to see the feed.&lt;/p&gt;
+
+&lt;p&gt;You now have a system to build your new planet. You could run that on a server that’s connected to the internet and set up a cronjob to regenerate the file every few hours. And that’s how I used to run all of my planets. But, recently, I’ve moved to running them on GitHub Pages instead. And that’s what we’ll look at next.&lt;/p&gt;
+
+&lt;p&gt;There are two parts to this. We need to configure our repo to have a GitHub Pages site associated with it and we also need to configure GitHub Actions to rebuild the site every few hours. Let’s take those two in turn.&lt;/p&gt;
+
+&lt;p&gt;Turning on GitHub Pages is simple enough. Just go to the “Pages” section in your repo’s settings. Choose “GitHub Actions” as the deployment source and tick the box marked “Enforce HTTPS”. Later on, you can look at setting up a custom domain for your site but, for now, let’s stick with the default URL which will be https://.github.io/. Nothing will appear yet, as we need to set up GitHub Actions next.&lt;/p&gt;
+
+&lt;p&gt;Setting up a GitHub Action workflow is as simple as adding a YAML file to the /.github/workflows directory in your repo. You’ll obviously have to create that directory first. Here’s the workflow definition for Planet Perl (it’s in a file called “buildsite.yml”, but that name isn’t important).&lt;br&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight js-code-highlight"&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;name: Generate web page
+
+on:
+  push:
+    branches: '*'
+  schedule:
+    - cron: '37 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: davorg/perl-perlanet:latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Create pages
+      run: |
+        mkdir -p docs
+        perlanet &amp;gt; perlanet.log 2&amp;gt;&amp;amp;1
+    - name: Commit new page
+      if: github.repository == 'davorg/planetperl'
+      run: |
+        git config --global --add safe.directory /__w/planetperl/planetperl
+        GIT_STATUS=$(git status --porcelain)
+        echo $GIT_STATUS
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git add docs/
+        if ["$GIT_STATUS" != ""]; then git commit -m "Automated Web page generation"; fi
+        if ["$GIT_STATUS" != ""]; then git push; fi
+    - name: Archive perlanet logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: perlanet.log
+        path: ./perlanet.log
+        retention-days: 3
+
+    - name: Update pages artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: docs/
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;The first section of the file defines the events that will trigger this workflow. I have defined three triggers:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Pushing a commit. I could be cleverer here and only work when certain files are changed (for example, the config or the index.tt)&lt;/li&gt;
+&lt;li&gt;On a schedule. My example runs at 37 minutes past the hour every four hours (so at 04:37, 08:37, etc.)&lt;/li&gt;
+&lt;li&gt;Manually. The “workflow_dispatch” trigger adds a button to the repo’s “Actions” page on GitHub allowing you to run the workflow manually, whenever you want&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Following that, we define the jobs that need to be run and the steps that make up those jobs. We have two jobs – one that builds the new version of the site and one that deploys that new site to GitHub Pages. Remember how I mentioned earlier that there is a Perlanet container on the Docker Hub? Well, you’ll see that the build job runs on that container. This is because pulling a container from the Docker Hub is faster than using a standard Ubuntu container and installing Perlanet.&lt;/p&gt;
+
+&lt;p&gt;The steps in these jobs should be pretty self-explanatory. Basically, we check out the repo, run “perlanet” to build the site and then deploy the contents of the /docs directory to the GitHub Pages server.&lt;/p&gt;
+
+&lt;p&gt;Once you’ve created this file and added it to your repo, you’ll see details of this workflow on the “Actions” tab in your repo. And whenever you push a change or when a scheduled run takes place (or you press the manual run button) you’ll see logs for the run and (hopefully) your web site will update to contain the latest data.&lt;/p&gt;
+
+&lt;p&gt;I reckon you can get a new planet up and running in about half an hour. Oh, and if you label your repo with the topic “perlanet”, then it will automatically be added to The Planetarium.&lt;/p&gt;
+
+&lt;p&gt;So, what are you waiting for? What planet would you like to build?&lt;/p&gt;
+
+&lt;p&gt;The post &lt;a href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/"&gt;Building Planets with Perlanet and GitHub&lt;/a&gt; appeared first on &lt;a href="https://perlhacks.com"&gt;Perl Hacks&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/building-planets-with-perlanet-and-github-4jpe</id>
+    <published>2023-04-02T17:54:37Z</published>
+    <updated>2023-04-02T17:54:37Z</updated>
+    <category term="atom"/>
+    <category term="perlanet"/>
+    <category term="planet"/>
+    <category term="rss"/>
+  </entry>
   <entry>
     <title>Deploying GitHub Pages sites with GitHub Workflows</title>
     <link rel="alternate" href="https://dev.to/davorg/deploying-github-pages-site-with-github-workflows-3bhh" type="text/html"/>
@@ -567,70 +915,6 @@ updates:
     <category term="githubactions"/>
   </entry>
   <entry>
-    <title>Robo-committer for automated commits</title>
-    <link rel="alternate" href="https://dev.to/davorg/robo-committer-for-automated-commits-2kba" type="text/html"/>
-    <content type="html">&lt;p&gt;That's an screenshot of &lt;a href="https://github.com/davorg/"&gt;my GitHub contributions&lt;/a&gt; for the last year. Almost 50,000 commits is a ridiculous number for one person to make in a year. Obviously I had some help.&lt;/p&gt;
-
-&lt;p&gt;The explanation is in my previous article &lt;a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g"&gt;GitHub Actions for semi-static web sites&lt;/a&gt;. In that article I explained how I was using GitHub Actions to rebuild a number of web sites every few hours. It doesn't take very many of those web sites before you start getting into dozens of automated commits every day. And it is, of course, those automated commits that are artificially inflating my commit count.&lt;/p&gt;
-
-&lt;p&gt;This has been mildly worrying me over the last year. I decided that I needed to do something about it. I needed to find a way to separate my real commits from these automated ones.&lt;/p&gt;
-
-&lt;p&gt;The previous article includes a sample GitHub Workflow file that I was using to run these sites. And it's easy to see what's causing the problem. There's a step that commits the newly-generated site and that step includes the following:&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;git config --global user.name 'Dave Cross'
-git config --global user.email 'my email address'
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;That email address is associated with my GitHub account and, therefore, those commits are seen as being made by me.&lt;/p&gt;
-
-&lt;p&gt;A few weeks ago, I made the first step towards fixing this. I changed that configuration to this:&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;git config --global user.name 'Automated Workflow'
-git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;We're using a more descriptive name and an email address that GitHub generates for us based on the username of the user who is running the workflow. This is better (as it won't assign commits to me if someone were to fork my repo and run the workflow) but it's still using an email address which GitHub has assigned to me and, therefore, the automated commits are still associated with me.&lt;/p&gt;
-
-&lt;p&gt;Yesterday I had another dig into this problem and I have found the solution. The new version I use it this:&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight plaintext"&gt;&lt;code&gt;git config user.name github-actions[bot]
-git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;It turns out that there is a special GitHub user account that can be used to commit to your repos. This user is specifically there to solve the exact problem that I wanted to solve. It's just not particularly well-documented (or, if it is, it's not in the documentation that I've been looking at!)&lt;/p&gt;
-
-&lt;p&gt;You might notice that I've also removed the &lt;code&gt;--global&lt;/code&gt; setting from the commands. On reflection, it seemed pointless to make global changes on a Docker container that is going to cease to exist in a minute or so.&lt;/p&gt;
-
-&lt;p&gt;So that's what I now use on all of my workflows that regenerate web sites. It will mean that I make substantially fewer commits this year and I can no longer be accused of trying to game the system in order to artificially inflate my number of commits.&lt;/p&gt;
-
-&lt;p&gt;Oh, and as a bonus, the GitHub Actions Bot has its own Octocat avatar that now appears in the commits for my repos.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://res.cloudinary.com/practicaldev/image/fetch/s--te-jPozW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1p8uxysiucvdrqcf3p1f.png" class="article-body-image-wrapper"&gt;&lt;img src="https://res.cloudinary.com/practicaldev/image/fetch/s--te-jPozW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1p8uxysiucvdrqcf3p1f.png" alt="GitHub commits" width="880" height="253"&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;It's possible, of course, that I'm the last person in the world to realise this. But, hopefully, sharing the information will be useful to someone out there.&lt;/p&gt;
-
-</content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/robo-committer-for-automated-commits-2kba</id>
-    <published>2023-01-06T11:59:39Z</published>
-    <updated>2023-01-06T11:59:39Z</updated>
-    <category term="github"/>
-    <category term="githubactions"/>
-    <category term="devops"/>
-    <category term="commitbot"/>
-  </entry>
-  <entry>
     <title>Writing a CPAN module that talks to ChatGPT</title>
     <link rel="alternate" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/" type="text/html"/>
     <content type="xhtml">
@@ -1006,50 +1290,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="containers"/>
     <category term="perlanet"/>
     <category term="packaging"/>
-  </entry>
-  <entry>
-    <title>Building a Perlanet Container</title>
-    <link rel="alternate" href="https://perlhacks.com/2022/10/building-a-perlanet-container/" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain <a href="https://metacpan.org/pod/perlanet">perlanet</a> (a Perl program for aggregating web feeds into a new feed – and building a web site based on that new feed) and I use it to build <a href="https://theplanetarium.org/">a few sites on topics I’m interested in</a>.</p>
-<p>Last year, I worked out a way to use GitHub Actions to <a href="https://dev.to/davorg/github-actions-for-semi-static-web-sites-597g">rebuild these sites automatically</a> every few hours – thereby enabling me to host the sites on GitHub Pages (I still think it’s a useful technique, but I sometimes worry slightly about the large number of commits those repos have – someone at GitHub must surely notice one day!)</p>
-<p>Yesterday, I was doing some light maintenance on one of those sites when I realised that each rebuild of these sites was taking a significant time (by which I mean four or five minutes) and started wondering if there was a way to speed them up and use less of GitHub’s resources. The problem is that Perlanet is a pretty hefty module and each rebuild was installing that module (and, therefore, dozens of other modules) on a pristine Ubuntu container.</p>
-<p>When you say it like that, the solution is obvious.</p>
-<p>You don’t need to run your GitHub Actions on the standard containers that GitHub supplies. You can run them on any container that’s available from any public container hosting service. So the solution was to build a Perlanet container and run the jobs using that instead. So that’s how I spent an hour or so yesterday.</p>
-<p>Here’s the Dockerfile I ended up with:</p><pre class="urvanov-syntax-highlighter-plain-tag">FROM perl:latest
-
-RUN apt-get update &amp;&amp; \
-    apt-get -y upgrade &amp;&amp; \ 
-    apt-get install -y build-essential &amp;&amp; \
-    apt-get install -y cpanminus libtidy-dev libxml++2.6-dev libhtml-tidy-perl &amp;&amp; \
-    cpanm --notest Test::Exception &amp;&amp; \
-    cpanm --notest Perlanet &amp;&amp; \
-    cpanm --notest LWP::Protocol::https</pre><p>It’s (obviously) <a href="https://github.com/davorg/perl-perlanet-docker">available on GitHub</a> in case anyone wants to improve on my rather ropey knowledge of Docker.</p>
-<p>I explicitly install Test::Exception because HTML::Tidy (one of Perlanet’s pre-requisites) needs it and I can’t work out why the standard installation procedure isn’t installing it. And while, LWP::Protocol::https is, strictly speaking, not required by Perlanet, you wouldn’t get very far on the modern web if you only accessed web feeds that are available over HTTP.</p>
-<p>A little bit of Docker Hub set-up and the container is <a href="https://hub.docker.com/r/davorg/perl-perlanet">available for everyone to use</a> (and rebuilt automatically whenever I commit to the repo).</p>
-<p>It was then just a case of changing my GitHub Actions to use my container. Here’s an example of <a href="https://github.com/davorg/planetdavorg/commit/5b65ce407e89dd16e74ad4b417b104c43dca96ef">one of the commits</a> that did that.</p>
-<p>I realise I’m pretty late to the party here, but I think this is a useful pattern. If you have a Perl library (or, indeed, any other software) that exists to provide a service to users then it’s a great idea to provide a containerised version of that software.</p>
-<p>And I’m happy to report that my site rebuilds have gone from 4-5 minutes to about 45 seconds.</p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </content>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’m a dinosaur who still believes that web feeds are a pretty neat idea. I wrote and maintain perlanet (a Perl program for aggregating web feeds into a new feed – and building a web site based on that new feed) and I use it to build a few sites on topics I’m interested in.… <a class="more-link" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Continue reading <span class="screen-reader-text">Building a Perlanet Container</span></a></p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/building-a-perlanet-container/">Building a Perlanet Container</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </summary>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://perlhacks.com/?p=2076</id>
-    <published>2022-10-06T09:43:46Z</published>
-    <updated>2022-10-06T09:43:46Z</updated>
-    <category term="Packaging"/>
-    <category term="container"/>
-    <category term="docker"/>
-    <category term="packaging"/>
-    <category term="perlanet"/>
-    <category term="semi-static"/>
   </entry>
   <entry>
     <title>2021 in Gigs</title>
