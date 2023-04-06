@@ -7,14 +7,14 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-04-06T17:06:26Z</updated>
+  <updated>2023-04-06T18:06:52Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/28254568611</id>
-    <published>2023-04-06T16:41:03Z</published>
-    <updated>2023-04-06T16:41:03Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/d6ec9cf1a7...326751a4c4"/>
+    <id>tag:github.com,2008:PushEvent/28255382468</id>
+    <published>2023-04-06T17:20:37Z</published>
+    <updated>2023-04-06T17:20:37Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/21f8fcae76...df39f7d779"/>
     <title type="html">davorg pushed to master in davorg/perlschool</title>
     <author>
       <name>davorg</name>
@@ -22,7 +22,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28254568611,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;785603ca-246b-47c0-8ce5-a9438cc78171&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d9f320f7f329c6fc83b47bb335665f03c4566d98d57babd60c97ca66c99fe033"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28255382468,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;29a96c41-e543-4fca-aff5-02a330e0bfff&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="407618ea5ce59e1fc90b7a91454e97fdd351a3b04a00b421848260182a3ff59b"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -35,62 +35,7 @@
         in
       &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/perlschool" rel="noreferrer"&gt;davorg/perlschool&lt;/a&gt;
       &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-04-06T16:41:03Z" data-view-component="true"&gt;April 6, 2023 16:41&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/perlschool/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/326751a4c4bfd5606d0df7d1fbbd5bb191f0f995" rel="noreferrer"&gt;326751a&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Fix the rows
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/28254529547</id>
-    <published>2023-04-06T16:39:07Z</published>
-    <updated>2023-04-06T16:39:07Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/2ab694f4e1...d6ec9cf1a7"/>
-    <title type="html">davorg pushed to master in davorg/perlschool</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28254529547,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;1b87ac04-6ed3-4d3c-90d2-7c3b37a2e759&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="99ccfe1c2d8777e744f5ae444cf9eaaed46ff38ec4545eca55b0173d6af312ba"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/perlschool/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/perlschool" rel="noreferrer"&gt;davorg/perlschool&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-04-06T16:39:07Z" data-view-component="true"&gt;April 6, 2023 16:39&lt;/relative-time&gt;
+        · &lt;relative-time tense="past" datetime="2023-04-06T17:20:37Z" data-view-component="true"&gt;April 6, 2023 17:20&lt;/relative-time&gt;
       &lt;/span&gt;
 
         &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
@@ -103,7 +48,7 @@
                   &lt;span&gt;
                     &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/d6ec9cf1a7b015c36fff2f45e70f63d6509954de" rel="noreferrer"&gt;d6ec9cf&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/df39f7d779938298bd7c2acffc41e91147f1ba69" rel="noreferrer"&gt;df39f7d&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
                       Merge branch 'master' of github.com:davorg/perlschool
@@ -114,10 +59,10 @@
                   &lt;span&gt;
                     &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/39c9a383775e6965a2677feea609af0f5860dae5" rel="noreferrer"&gt;39c9a38&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/66d18b6bf29e7a5deb22537af1dfe9ebc03f924c" rel="noreferrer"&gt;66d18b6&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
-                      Add GitHub Pages deployment
+                      Only live books on authors page
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
@@ -132,10 +77,10 @@
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/28254461741</id>
-    <published>2023-04-06T16:35:45Z</published>
-    <updated>2023-04-06T16:35:45Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/7b29b2abb3...06608b24cb"/>
+    <id>tag:github.com,2008:PushEvent/28255303361</id>
+    <published>2023-04-06T17:17:05Z</published>
+    <updated>2023-04-06T17:17:05Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/a19eace62c...026041a4bc"/>
     <title type="html">davorg pushed to master in davorg/perlschool</title>
     <author>
       <name>davorg</name>
@@ -143,7 +88,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28254461741,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;c7ba0061-5d65-491b-a8d3-074beec81254&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="7fb39b450230969a32c6762e2be958d78c4553a7018fd62f0aa5002ae81f8a48"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28255303361,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;53cbce67-397c-4605-bbba-bfbe9c0429b0&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="9667b48f0e0dd12a96080211d4c2a09c3c32244d425b0a6a80cb6e54c01a6720"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -156,7 +101,7 @@
         in
       &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/perlschool" rel="noreferrer"&gt;davorg/perlschool&lt;/a&gt;
       &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-04-06T16:35:45Z" data-view-component="true"&gt;April 6, 2023 16:35&lt;/relative-time&gt;
+        · &lt;relative-time tense="past" datetime="2023-04-06T17:17:05Z" data-view-component="true"&gt;April 6, 2023 17:17&lt;/relative-time&gt;
       &lt;/span&gt;
 
         &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
@@ -169,10 +114,10 @@
                   &lt;span&gt;
                     &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/06608b24cba18da4d2737594c753fd9108f05853" rel="noreferrer"&gt;06608b2&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/026041a4bcbbb057973b5d13d63a4507b760e13a" rel="noreferrer"&gt;026041a&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
-                      Add .nojekyll
+                      Add bios for authors
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
@@ -187,10 +132,10 @@
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/28254434304</id>
-    <published>2023-04-06T16:34:23Z</published>
-    <updated>2023-04-06T16:34:23Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/ed8e6ec2d5...7b29b2abb3"/>
+    <id>tag:github.com,2008:PushEvent/28255051512</id>
+    <published>2023-04-06T17:04:44Z</published>
+    <updated>2023-04-06T17:04:44Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/ced3894f3f...4189b5f792"/>
     <title type="html">davorg pushed to master in davorg/perlschool</title>
     <author>
       <name>davorg</name>
@@ -198,7 +143,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28254434304,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;5697dd92-2cc9-41fb-a9b7-381ea254a883&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="38657ed879fcc817dd6b906e4856379531adc042642967b6523583b10a7e04a0"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28255051512,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;9c514f84-1e5e-40d3-84a6-65d95afdfd3b&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d6794201dd362a258f9e31dfefec01e628dc31e874085f78476d419598e19a5e"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -211,11 +156,11 @@
         in
       &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/perlschool" rel="noreferrer"&gt;davorg/perlschool&lt;/a&gt;
       &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-04-06T16:34:23Z" data-view-component="true"&gt;April 6, 2023 16:34&lt;/relative-time&gt;
+        · &lt;relative-time tense="past" datetime="2023-04-06T17:04:44Z" data-view-component="true"&gt;April 6, 2023 17:04&lt;/relative-time&gt;
       &lt;/span&gt;
 
         &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
           &lt;a class="branch-name" href="/davorg/perlschool/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
 
           &lt;div class="commits pusher-is-only-committer"&gt;
@@ -224,10 +169,21 @@
                   &lt;span&gt;
                     &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
                   &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/7b29b2abb3fe309def0d07d869002ce15b59488f" rel="noreferrer"&gt;7b29b2a&lt;/a&gt;&lt;/code&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/4189b5f7928e25caccbd53f7f69fe969bfe0d949" rel="noreferrer"&gt;4189b5f&lt;/a&gt;&lt;/code&gt;
                   &lt;div class="dashboard-break-word lh-condensed"&gt;
                     &lt;blockquote&gt;
-                      Add "Welcome to Perl School"
+                      Merge branch 'master' of github.com:davorg/perlschool
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/5efd843da8412746c41b6787ecba21319c6bbb02" rel="noreferrer"&gt;5efd843&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Add blurb to authors page
                     &lt;/blockquote&gt;
                   &lt;/div&gt;
                 &lt;/li&gt;
@@ -242,100 +198,185 @@
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <title>Toxygene - 7" Edit - The Orb</title>
+    <title>Alone in Kyoto - Air</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Toxygene - 7" Edit - The Orb</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Alone in Kyoto - Air</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/The+Orb/_/Toxygene+-+7%22+Edit" type="text/html"/>
-    <updated>2023-04-06T16:02:51Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Air/_/Alone+in+Kyoto" type="text/html"/>
+    <updated>2023-04-06T16:59:41Z</updated>
     <author>
-      <name>The Orb</name>
+      <name>Air</name>
     </author>
-    <id>https://musicbrainz.org/recording/1a75593e-eef1-33e9-8ef8-5019e4fb11db</id>
+    <id>https://musicbrainz.org/recording/f900f8e2-7d49-4cca-a9a9-ee67dda88e6e</id>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:IssueCommentEvent/28252860995</id>
-    <published>2023-04-06T15:24:54Z</published>
-    <updated>2023-04-06T15:24:54Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/metacpan/metacpan-web/issues/2884#issuecomment-1499248652"/>
-    <title type="html">davorg commented on issue metacpan/metacpan-web#2884</title>
+    <id>tag:github.com,2008:PushEvent/28254937871</id>
+    <published>2023-04-06T16:59:24Z</published>
+    <updated>2023-04-06T16:59:24Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/3e80468a1f...88ee2c1763"/>
+    <title type="html">davorg pushed to master in davorg/perlschool</title>
     <author>
       <name>davorg</name>
       <email>dave@davecross.co.uk</email>
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_comment js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:1630833,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;IssueCommentEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28252860995,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;c36305b7-a0fa-4a6f-958a-6589648c1c83&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="8f6ab04083f29aefea24baba3bbe2c88b09b61a4de818755c34aac5dced3a05f"&gt;&lt;div class="body"&gt;
-&lt;!-- issue_comment --&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28254937871,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;318e0259-470c-4930-bd49-181905e61155&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="3cc80ee28f02cebb724b9ddf505c52c21b9dd100d6e258383c52a079c5f782af"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
-      &lt;div class="d-flex flex-items-baseline mb-2"&gt;
-        &lt;div class="color-fg-muted"&gt;
-            &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-          &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-          
-          commented on
-          &lt;a class="Link--primary" title="Missing test coverage numbers" href="/metacpan/metacpan-web/issues/2884#issuecomment-1499248652" rel="noreferrer"&gt;metacpan/metacpan-web#2884&lt;/a&gt;
-          &lt;span&gt;
-            · &lt;relative-time tense="past" datetime="2023-04-06T15:24:54Z" data-view-component="true"&gt;April 6, 2023 15:24&lt;/relative-time&gt;
-          &lt;/span&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/perlschool/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/perlschool" rel="noreferrer"&gt;davorg/perlschool&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-04-06T16:59:24Z" data-view-component="true"&gt;April 6, 2023 16:59&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/perlschool/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/88ee2c1763e9308a85f062a945cd8fbf181c45ac" rel="noreferrer"&gt;88ee2c1&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Change the year on a site rebuild
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;div class="message markdown-body Box p-3 wb-break-all color-shadow-medium "&gt;
-      &lt;div class="f6 mb-1"&gt;
-        &lt;a title="Missing test coverage numbers" class="Link--secondary" href="/metacpan/metacpan-web/issues/2884#issuecomment-1499248652" rel="noreferrer"&gt;&lt;img class="avatar mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt; &lt;span class="Link--primary text-bold"&gt;davorg&lt;/span&gt; commented &lt;relative-time datetime="2023-04-06T15:24:54Z" class="no-wrap"&gt;Apr 6, 2023&lt;/relative-time&gt;&lt;/a&gt;
-      &lt;/div&gt;
-        &lt;p&gt;I don't think I'm doing anything clever (or dodgy!) here. That's just what I get when I run &lt;code class="notranslate"&gt;make dist&lt;/code&gt;.&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <title>Blue Lines - 2012 Mix/Master - Massive Attack</title>
+    <title>Teardrop - Massive Attack</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Blue Lines - 2012 Mix/Master - Massive Attack</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Teardrop - Massive Attack</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/+noredirect/Massive+Attack/_/Blue+Lines+-+2012+Mix%2FMaster" type="text/html"/>
-    <updated>2023-04-06T11:49:04Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Massive+Attack/_/Teardrop" type="text/html"/>
+    <updated>2023-04-06T16:54:11Z</updated>
     <author>
       <name>Massive Attack</name>
     </author>
-    <id>https://musicbrainz.org/recording/0dc2d145-77e4-438d-aa08-fd78592981f8</id>
+    <id>https://musicbrainz.org/recording/</id>
   </entry>
   <entry>
-    <title>I Have Forgiven Jesus - Morrissey</title>
+    <title>Lebanese Blonde - Thievery Corporation</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">I Have Forgiven Jesus - Morrissey</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Lebanese Blonde - Thievery Corporation</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Morrissey/_/I+Have+Forgiven+Jesus" type="text/html"/>
-    <updated>2023-04-06T11:45:22Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Thievery+Corporation/_/Lebanese+Blonde" type="text/html"/>
+    <updated>2023-04-06T16:49:22Z</updated>
     <author>
-      <name>Morrissey</name>
+      <name>Thievery Corporation</name>
     </author>
-    <id>https://musicbrainz.org/recording/127b42fe-fc71-30a0-b487-df9aaa1114ae</id>
+    <id>https://musicbrainz.org/recording/6c9a14aa-4f3d-3ff1-b18e-0aaed2853a4c</id>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/28254692633</id>
+    <published>2023-04-06T16:47:15Z</published>
+    <updated>2023-04-06T16:47:15Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/perlschool/compare/24f3ff16ed...249669696b"/>
+    <title type="html">davorg pushed to master in davorg/perlschool</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:275003304,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:28254692633,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;d5563f34-1724-46c7-b8ac-80449b56a6d1&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="a8900d3fe06f33b6a54b75543370ed58dd05b5e7f759339cb9dd58ba25bcbec9"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/perlschool/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/perlschool" rel="noreferrer"&gt;davorg/perlschool&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-04-06T16:47:15Z" data-view-component="true"&gt;April 6, 2023 16:47&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/perlschool/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/249669696be9bec0075c0a10f02bfff6a569c3be" rel="noreferrer"&gt;2496696&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Merge branch 'master' of github.com:davorg/perlschool
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/perlschool/commit/54900bc4d86cd5d0c00be9303759ed421f174e3f" rel="noreferrer"&gt;54900bc&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Fix the rows some more
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
-    <title>Monday - The Jam</title>
+    <title>VCR - The xx</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Monday - The Jam</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">VCR - The xx</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/The+Jam/_/Monday" type="text/html"/>
-    <updated>2023-04-06T11:42:24Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/The+xx/_/VCR" type="text/html"/>
+    <updated>2023-04-06T16:46:24Z</updated>
     <author>
-      <name>The Jam</name>
+      <name>The xx</name>
     </author>
-    <id>https://musicbrainz.org/recording/3dc729c3-95f6-408f-80b7-53c4a1639c18</id>
+    <id>https://musicbrainz.org/recording/13aadc6f-fe6f-4644-a2bf-1f2db369c244</id>
   </entry>
   <entry>
-    <title>Beyond Belief - Elvis Costello &amp; The Attractions</title>
-    <summary type="text">Beyond Belief - Elvis Costello &amp; The Attractions</summary>
-    <link rel="alternate" href="https://www.last.fm/music/Elvis+Costello+&amp;+The+Attractions/_/Beyond+Belief" type="text/html"/>
-    <updated>2023-04-06T11:39:49Z</updated>
+    <title>In The Bath - Lemon Jelly</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">In The Bath - Lemon Jelly</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Lemon+Jelly/_/In+The+Bath" type="text/html"/>
+    <updated>2023-04-06T16:39:42Z</updated>
     <author>
-      <name>Elvis Costello &amp; The Attractions</name>
+      <name>Lemon Jelly</name>
     </author>
-    <id>https://musicbrainz.org/recording/023ed55a-28b6-3c61-9ea0-1c68b819c2d9</id>
+    <id>https://musicbrainz.org/recording/00df2d20-5a61-3d45-acf0-49cc6124583f</id>
   </entry>
   <entry>
     <title>@Jakobonfire @virginmedia It was back for a while, but it seems to have gone again now</title>
