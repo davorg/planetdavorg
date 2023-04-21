@@ -7,9 +7,137 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-04-21T08:07:12Z</updated>
+  <updated>2023-04-21T09:06:34Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry>
+    <title>Extract from "GitHub Actions Essentials"</title>
+    <link rel="alternate" href="https://dev.to/davorg/extract-from-github-actions-essentials-4d34" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>This is a extract from my new book <a href="https://actions.davecross.co.uk/"><em>GitHub Actions Essentials: Automate, Integrate, Deploy: Unlocking the Power of GitHub Actions</em></a>.</p>
+
+<h2>
+  
+  
+  What are GitHub Actions?
+</h2>
+
+<p>GitHub Actions is a powerful automation platform integrated into the GitHub ecosystem that enables developers to create, share, and reuse custom workflows for automating tasks within their software development processes. This feature-rich platform offers a versatile and flexible way to define and execute tasks, including continuous integration (CI), continuous deployment (CD), code testing, linting, issue management, and more. GitHub Actions simplifies the process of automating workflows by providing an environment where these tasks can be configured and executed directly within your GitHub repositories.</p>
+
+<p>At its core, GitHub Actions uses a series of event-driven workflows to execute tasks in response to specific triggers. These workflows are defined using YAML files, which are stored in a special directory within your repository (.github/workflows/). Each workflow file consists of a set of instructions that define the conditions under which the workflow should run (the trigger), the tasks or "actions" to be performed, and the execution environment for those actions. GitHub Actions can be triggered by various GitHub events, such as pushing code to a repository, opening a pull request, creating an issue, or even on a scheduled basis.</p>
+
+<p>One of the key strengths of GitHub Actions is its modular design. Actions can be created and shared as individual, reusable components that can be easily integrated into your workflows. You can use pre-built actions provided by GitHub, create your own custom actions, or leverage community-contributed actions available in the GitHub Actions Marketplace. This modular approach allows developers to build sophisticated workflows by combining various actions in a logical and streamlined manner, resulting in increased productivity and efficiency.</p>
+
+<p>GitHub Actions offers a range of predefined "runners" that serve as execution environments for your workflows. Runners are essentially virtual machines that can run on Linux, macOS, or Windows, allowing you to execute your workflows on the platform of your choice. GitHub provides free, hosted runners for public repositories, while private repositories get a certain amount of free usage each month, with the option to purchase additional minutes if needed. You can also choose to host your own self-managed runners if you require more control over the execution environment or need to comply with specific security requirements.</p>
+
+<p>One of the main advantages of GitHub Actions is its seamless integration with the GitHub ecosystem. Since it's built directly into the platform, there is no need to configure external services or deal with API keys and other credentials. This tight integration with GitHub allows developers to create efficient workflows that automate tasks, such as building and deploying code, running tests, and managing issues, directly within the familiar GitHub interface. Furthermore, the GitHub Actions Marketplace offers a wide range of community-contributed actions that can be easily integrated into your workflows, providing access to a growing library of reusable components.</p>
+
+<p>GitHub Actions also provides extensive support for customizing the execution of workflows. This includes the ability to control the flow of tasks using conditional statements, create parallel execution paths, and manage dependencies between jobs. Additionally, you can use environment variables and secrets to securely store sensitive data and pass it between actions, ensuring that your workflows remain secure and your sensitive information stays protected.</p>
+
+<p>In summary, GitHub Actions is a powerful and flexible automation platform that allows developers to create, share, and reuse custom workflows to automate a wide range of tasks within the software development process. Its event-driven nature, modular design, seamless integration with the GitHub ecosystem, and extensive customization options make it an essential tool for modern software development teams. In the following sections, we'll dive deeper into the various features and capabilities of GitHub Actions, providing you with the knowledge and skills needed to harness its full potential and optimize your software development workflows.</p>
+
+<h2>
+  
+  
+  Why use GitHub Actions?
+</h2>
+
+<p>As software development practices continue to evolve, automation has become increasingly critical for improving efficiency, reducing errors, and streamlining processes. GitHub Actions offers a powerful and flexible solution for automating various aspects of software development workflows, making it an essential tool for modern development teams. In this section, we'll discuss the key reasons why developers and organizations should consider using GitHub Actions.</p>
+
+<h3>
+  
+  
+  Seamless integration with GitHub:
+</h3>
+
+<p>GitHub Actions is tightly integrated with the GitHub platform, making it easy for developers to create and manage automation workflows within their existing repositories. This seamless integration eliminates the need to set up and maintain external tools, ensuring a smooth and cohesive experience. By leveraging the GitHub ecosystem, developers can take advantage of native features, such as branch protection rules, pull requests, and issue tracking, to create more effective and efficient workflows.</p>
+
+<h3>
+  
+  
+  Event-driven architecture:
+</h3>
+
+<p>GitHub Actions employs an event-driven architecture, allowing workflows to be triggered by a wide range of events within the GitHub platform. This includes common events such as pushing code, opening pull requests, and creating issues, as well as scheduled events and manual triggers. This flexibility enables developers to create highly responsive workflows that automatically execute tasks in response to specific actions, streamlining the development process and reducing the potential for human error.</p>
+
+<h3>
+  
+  
+  Modular and reusable actions:
+</h3>
+
+<p>One of the key strengths of GitHub Actions is its modularity. Actions can be created and shared as individual, reusable components that can be easily integrated into workflows. Developers can choose from a vast library of pre-built actions provided by GitHub, create their own custom actions, or leverage community-contributed actions from the GitHub Actions Marketplace. This modular approach allows developers to build sophisticated workflows by combining various actions in a logical and streamlined manner, ultimately boosting productivity and efficiency.</p>
+
+<h3>
+  
+  
+  Cross-platform support:
+</h3>
+
+<p>GitHub Actions provides cross-platform support, enabling workflows to run on different operating systems, including Linux, macOS, and Windows. This allows developers to test and deploy their applications across multiple platforms, ensuring compatibility and performance. With support for a variety of languages and frameworks, GitHub Actions offers a versatile solution for diverse development environments.</p>
+
+<h3>
+  
+  
+  Extensive customization options:
+</h3>
+
+<p>GitHub Actions offers a wide range of customization options for defining and executing workflows. This includes the ability to control the flow of tasks using conditional statements, create parallel execution paths, and manage dependencies between jobs. Additionally, developers can use environment variables and secrets to securely store sensitive data and pass it between actions. These customization options enable developers to create tailored workflows that meet their specific needs and requirements.</p>
+
+<h3>
+  
+  
+  Continuous Integration (CI) and Continuous Deployment (CD):
+</h3>
+
+<p>Implementing CI and CD practices is essential for modern development teams, as it helps to ensure code quality, reduce errors, and speed up the release cycle. GitHub Actions simplifies the process of setting up CI/CD pipelines by providing an environment where tasks such as building, testing, and deploying can be configured and executed directly within your GitHub repositories. With built-in support for popular CI/CD tools and services, developers can easily create efficient and robust pipelines that automate key aspects of their development process.</p>
+
+<h3>
+  
+  
+  Scalability and performance:
+</h3>
+
+<p>GitHub Actions is designed to scale with your development needs, offering a flexible and high-performance solution for automation. By utilizing the parallelisation and matrix build features, developers can optimize their workflows for speed and efficiency. GitHub also provides hosted runners that are automatically scaled and maintained, ensuring that your workflows run smoothly and reliably, even as your projects grow in size and complexity.</p>
+
+<h3>
+  
+  
+  Security and compliance:
+</h3>
+
+<p>Security is a critical consideration for any development process, and GitHub Actions provides a range of features to help ensure the safety and compliance of your workflows. This includes the ability to store sensitive data securely using secrets, manage access control using repository permissions, and monitor and audit activity using GitHub's built-in logging and reporting tools. For organizations with strict security requirements, self-hosted runners can be employed to maintain full control over the execution environment and ensure compliance with internal policies and regulations.</p>
+
+<h3>
+  
+  
+  Community and ecosystem:
+</h3>
+
+<p>GitHub Actions benefits from a large and active community of developers who contribute to the GitHub Actions Marketplace, providing a wealth of pre-built actions for various tasks and integrations with third-party services. This community-driven ecosystem enables developers to quickly find and utilize actions that can simplify their workflows, saving time and effort. Additionally, the collaborative nature of the platform encourages knowledge sharing and best practices, fostering a culture of continuous improvement and innovation.</p>
+
+<h3>
+  
+  
+  Cost-effectiveness:
+</h3>
+
+<p>GitHub Actions offers a cost-effective solution for automation, particularly for open-source projects and small teams. Public repositories can use GitHub Actions for free, while private repositories receive a certain amount of free usage each month, with the option to purchase additional minutes if needed. This pay-as-you-go pricing model ensures that developers only pay for the resources they use, making it an attractive choice for projects of all sizes.</p>
+
+<p>In conclusion, GitHub Actions provides a powerful, flexible, and integrated solution for automating various aspects of software development workflows. By leveraging its event-driven architecture, modular design, cross-platform support, and extensive customization options, developers can create tailored automation workflows that improve efficiency, reduce errors, and streamline processes. The platform's support for CI/CD, security features, and cost-effective pricing make it an essential tool for modern development teams, while its active community and thriving ecosystem ensure that developers have access to a wealth of resources and best practices. By adopting GitHub Actions, development teams can focus on delivering high-quality software more quickly and reliably, ultimately driving innovation and success.</p>
+
+</div>
+    </content>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/extract-from-github-actions-essentials-4d34</id>
+    <published>2023-04-21T08:38:06Z</published>
+    <updated>2023-04-21T08:38:06Z</updated>
+    <category term="devops"/>
+    <category term="github"/>
+    <category term="githubactions"/>
+  </entry>
   <entry>
     <title>Building Planets with Perlanet and GitHub</title>
     <link rel="alternate" href="https://perlhacks.com/2023/04/building-planets-with-perlanet-and-github/" type="text/html"/>
@@ -692,227 +820,6 @@ updates:
     <category term="gigs"/>
     <category term="review"/>
     <category term="year in gigs"/>
-  </entry>
-  <entry>
-    <title>Updating GitHub Pages using GitHub Actions</title>
-    <link rel="alternate" href="https://dev.to/davorg/updating-github-pages-using-github-actions-395a" type="text/html"/>
-    <content type="html">&lt;p&gt;I thought it might be fun to show how I spent an hour or so yesterday throwing together a simple web site that is hosted on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; and is updated daily using &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  An itch to scratch
-&lt;/h2&gt;
-
-&lt;p&gt;So many web sites start out with an itch to scratch, and this one is no different. In this case, it was about wanting to stay more informed.&lt;/p&gt;
-
-&lt;p&gt;Each day, the &lt;a href="https://bbc.co.uk/news/"&gt;BBC News web site&lt;/a&gt; publishes a story that shows the front pages of all of the British newspapers. Although a lot of the British press isn't particularly trustworthy, I still think it's good to get an overview of what they're saying about the day's news. So finding and reading this story on the BBC site is one of my morning rituals.&lt;/p&gt;
-
-&lt;p&gt;But they don't make it easy to find the archive of those stories. So it's hard to read anything than the current day's front pages - and even that story tends to vanish from the BBC site by lunchtime. I decided I'd like a page that contains an archive to these stories.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Scraping the site
-&lt;/h2&gt;
-
-&lt;p&gt;The BBC don't publish an API for their web site, so we need to resort to screen-scraping. That, of course makes the process inherently fragile but it seems to be the best we can do at this stage.&lt;/p&gt;
-
-&lt;p&gt;It wasn't hard to create a program that pulls what I want from the web site using &lt;a href="https://metacpan.org/pod/Web::Query"&gt;Web::Query&lt;/a&gt; (my tool of choice for scraping web sites).&lt;/p&gt;
-
-&lt;p&gt;Of course, having scraped the data, we need to store it somewhere. I decided to store it in a JSON document and worry about displaying it later.&lt;/p&gt;
-
-&lt;p&gt;So here's the code I wrote:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="c1"&gt;#!/usr/bin/perl&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;strict&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;warnings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;feature&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;say&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Time::&lt;/span&gt;&lt;span class="nv"&gt;Piece&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Web::&lt;/span&gt;&lt;span class="nv"&gt;Query&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;JSON&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$site&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;https://bbc.co.uk&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="si"&gt;$site&lt;/span&gt;&lt;span class="s2"&gt;/news/&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;docs/papers.json&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;JSON&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;pretty&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;canonical&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$data&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;e&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;&amp;lt;&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="nb"&gt;die&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;$!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="vg"&gt;$/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
-  &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$json&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$start_len&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@$data&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$q&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;wq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$start&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="nv"&gt;$q&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;find&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;a&lt;/span&gt;&lt;span class="p"&gt;')&lt;/span&gt;
-   &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;each&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;sub &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;/^The Papers:/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="nb"&gt;push&lt;/span&gt; &lt;span class="nv"&gt;@$data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="s"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;localtime&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;%Y-%m-%d&lt;/span&gt;&lt;span class="p"&gt;'),&lt;/span&gt;
-    &lt;span class="s"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;s/^The Papers:\s*//r&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="s"&gt;link&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$site&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;href&lt;/span&gt;&lt;span class="p"&gt;'),&lt;/span&gt;
-  &lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;@$data&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;$start_len&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;warn&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;No new article found&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="nb"&gt;die&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;$!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-  &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;Nothing too complex there. We look for all of the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags in the page and ignore the ones that don't contain text starting with "The Papers:". We then extract the information we want (the text, the link and the date) and store that all in the JSON document.&lt;/p&gt;
-
-&lt;p&gt;At that point, I could run the code to create the JSON file. I then created the GitHub repository and turned on GitHub Pages for the repo. Once that was all working, I could browse to &lt;a href="https://davorg.github.io/bbc_papers/papers.json"&gt;https://davorg.github.io/bbc_papers/papers.json&lt;/a&gt; to see the JSON.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Doing it every day
-&lt;/h2&gt;
-
-&lt;p&gt;We need to run this code every day. That's simple enough with GitHub Actions. We simply add a workflow definition file to the repo. The workflow looks like this:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight yaml"&gt;&lt;code&gt;&lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Overnight processing&lt;/span&gt;
-
-&lt;span class="na"&gt;on&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-  &lt;span class="na"&gt;schedule&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;cron&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="s"&gt;0&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;9&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*'&lt;/span&gt;
-  &lt;span class="na"&gt;workflow_dispatch&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-
-&lt;span class="na"&gt;jobs&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-  &lt;span class="na"&gt;build&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="na"&gt;runs-on&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;ubuntu-latest&lt;/span&gt;
-
-    &lt;span class="na"&gt;steps&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Checkout&lt;/span&gt;
-      &lt;span class="na"&gt;uses&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;actions/checkout@v3&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Install cpanm&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install cpanminus&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Install dependencies&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;sudo cpanm -n --installdeps .&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Add data&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;./get_link&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Commit new page&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="pi"&gt;|&lt;/span&gt;
-        &lt;span class="s"&gt;GIT_STATUS=$(git status --porcelain)&lt;/span&gt;
-        &lt;span class="s"&gt;echo $GIT_STATUS&lt;/span&gt;
-        &lt;span class="s"&gt;git config user.name github-actions[bot]&lt;/span&gt;
-        &lt;span class="s"&gt;git config user.email 41898282+github-actions[bot]@users.noreply.github.com&lt;/span&gt;
-        &lt;span class="s"&gt;git add docs/&lt;/span&gt;
-        &lt;span class="s"&gt;if [ "$GIT_STATUS" != "" ]; then git commit -m "Overnight job"; fi&lt;/span&gt;
-        &lt;span class="s"&gt;if [ "$GIT_STATUS" != "" ]; then git push; fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;Again, this is all pretty much standard stuff. We run the workflow on a Ubuntu container. It's a three-phase process:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Install everything we need&lt;/li&gt;
-&lt;li&gt;Run the program to get the new data&lt;/li&gt;
-&lt;li&gt;Commit the new data file to the repo&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Note that the workflow is triggered in two ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;It runs at 09:00 every morning&lt;/li&gt;
-&lt;li&gt;You can run it manually from the Actions tab in the repo (that's what the &lt;code&gt;workflow_dispatch&lt;/code&gt; line does)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;
-  
-  
-  Displaying our wares
-&lt;/h2&gt;
-
-&lt;p&gt;Having got a daily build of the data, we need to create a web page to display it. I'm not a web designer, so this is going to be necessarily basic. I threw together a simple page using &lt;a href="https://getbootstrap.com/"&gt;Bootstrap&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The next step was to grab the &lt;code&gt;papers.json&lt;/code&gt; document, parse it and then display it on the page. Now, I can wrangle Javascript pretty successfully most of the time. but I wanted to get this working as quickly as possible, so I asked ChatGPT for some help. It only took a few iterations for it to give me this code:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;DOMContentLoaded&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
-    &lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;papers.json&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;tableBody&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;table tbody&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;forEach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;item&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;row&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;tr&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;td&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;textLink&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;td&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;a&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;textLink&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;textLink&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;tableBody&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="p"&gt;});&lt;/span&gt;
-    &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;It didn't work first time. But that's because I'm an idiot and didn't tell ChatGPT the name of my JSON document or how to correctly identify the &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; element in the HTML. But once I'd corrected my errors it all worked perfectly.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Summing up
-&lt;/h2&gt;
-
-&lt;p&gt;So that's how I spent yesterday's lunch break. I can now see an archive of the BBC's stories about each day'd front pages by just going to:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://davorg.github.io/bbc_papers/"&gt;https://davorg.github.io/bbc_papers/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Of course, just after I'd written it, I (once again) had a look to see if someone else had created something similar and found the &lt;a href="https://www.bbc.co.uk/news/topics/cpml2v678pxt"&gt;BBC's page&lt;/a&gt; listing all of the stories. Ah well, I had fun putting my version together.&lt;/p&gt;
-
-&lt;p&gt;All of this code is available &lt;a href="https://github.com/davorg/bbc_papers"&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/updating-github-pages-using-github-actions-395a</id>
-    <published>2023-01-13T16:04:05Z</published>
-    <updated>2023-01-13T16:04:05Z</updated>
-    <category term="perl"/>
-    <category term="github"/>
-    <category term="githubpages"/>
-    <category term="githubactions"/>
   </entry>
   <entry>
     <title>Writing a CPAN module that talks to ChatGPT</title>
