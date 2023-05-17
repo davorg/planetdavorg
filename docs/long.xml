@@ -7,9 +7,115 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-05-17T12:04:23Z</updated>
+  <updated>2023-05-17T18:03:36Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry>
+    <title>Mission (Almost) Accomplished</title>
+    <link rel="alternate" href="https://perlhacks.com/2023/05/mission-almost-accomplished/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>[This post might sound like I’m angry at people making it hard to make progress on some things. That’s not the case at all. I realise completely that people have limited time and they get to choose how they spend it. If people are too busy elsewhere or have moved on to other projects then that’s just how it is and we need to deal with that the best we can.]</p>
+<p>Back in December 2020, I <a href="https://dev.to/davorg/the-story-behind-a-new-module-2gkp">wrote a blog post</a> about how I wanted to fix a long-standing problem with <a href="https://dev.to/davorg/the-story-behind-a-new-module-2gkp">App::HTTPThis</a>. I’m happy to report that two and a half years later, the problem has been fixed.</p>
+<p>To summarise my previous blog post:</p>
+<ul>
+<li>App::HTTPThis allows you to run a tiny web server that will serve the contents of a directory over HTTP. But, unfortunately, it doesn’t support default pages like “index.html”.</li>
+<li>App::HTTPThis uses <a href="https://metacpan.org/pod/Plack::App::Directory">Plack::App::Directory</a> (which is part of the <a href="https://metacpan.org/pod/Plack">Plack</a> distribution) to do the work – so it’s that which actually doesn’t support “index.html”.</li>
+<li>People suggested <a href="https://metacpan.org/pod/Plack::Middleware::DirIndex">Plack::Middleware::DirIndex</a>, but that also didn’t quite do the right thing.</li>
+<li>I submitted <a href="https://github.com/plack/Plack/pull/654">a pull request on Plack::App::Directory</a> to add support for “index.html”.</li>
+<li>I wrote a new module called <a href="https://metacpan.org/pod/Plack::App::DirectoryIndex">Plack::App::DirectoryIndex</a> which was like Plack::App::Directory but with added support for “index.html”.</li>
+<li>I submitted a pull request on App::HTTPThis to use my module in place of Plack::App::Directory.</li>
+</ul>
+<p>Now read on…</p>
+<p>Both of my pull requests went unactioned for months. In the end, I decided to approach the Perl modules list to ask if I could get co-maintainer permission on App::HTTPThis (it looked like the original maintainer had lost interest – there hadn’t been a release since 2010). When I heard nothing back, I put the project to one side only occasionally returning to add a new comment on my two pull requests.</p>
+<p>Then last month I decided I’d have another go at getting co-maintainer permissions. This time it worked and, earlier this week, I got an email from Neil Bowers saying that the previous maintainer had agreed to give me permission and that I could now upload the module to CPAN.</p>
+<p>At that point, I realised that the release mechanism for the module was based on Dist::Zilla and also that fashions in the Dist::Zilla world had changed since App::HTTPThis had last been released. This meant that many of the plugins used had been deprecated and I had to <a href="https://github.com/davorg/app-htttpthis/commit/9bdc04fcf80e3ec1c606867d0a6d56794506684b">do a bit of work</a> to even release the module (which led to <a href="https://www.reddit.com/r/perl/comments/13ib46n/distzilla_considered_annoying/">a small rant on Reddit</a>).</p>
+<p>But I managed to release <a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.003/view/lib/App/HTTPThis.pm">version 0.003</a> to CPAN. Only to realise very soon afterwards that my Dist::Zilla-wrangling had missed an important fix. <a href="https://github.com/davorg/app-htttpthis/commit/57e29f304e2aef1601f54886b25ec8a9bb0d05d6">I fixed that</a> and released version 0.004.</p>
+<p>I then got an email from PAUSE telling me that I didn’t have permission to release the module. It seems this was <a href="https://github.com/andk/pause/issues/372#issuecomment-1548519281">a known PAUSE bug</a> and Neil was able to apply a workaround for me. I was able to release <a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004/view/lib/App/HTTPThis.pm">version 0.004</a>.</p>
+<p class="">All of which means I now have a version of App::HTTPThis (and its included program, <a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004/view/bin/http_this">http_this</a>) which supports default pages. You just have to type, for example:</p>
+<p/><pre class="urvanov-syntax-highlighter-plain-tag">$ http_this --autoindex .</pre><p>And the current directory will be served over HTTP. Also (and this is the important bit!) if you have a file called “index.html” then that will be used instead of the server displaying a directory listing. It’s a tiny improvement, but one that will be very useful to me. And well worth the two and a half years I’ve invested in getting it released.</p>
+<p>So why do I say that the mission is only “almost” completed? Well, there’s still that outstanding pull request on Plack::App::Directory. If that ever gets applied, I’ll remove Plack::App::DirectoryIndex from App::HTTPThis (and mark it as deprecated on CPAN).</p>
+<p>This is, of course, a supremely unimportant fix in the grand scheme of things. But I think it illustrates an important issue that the Perl community should be thinking about. The community is shrinking. Or, at least, the part of the community that supports CPAN modules and runs our important infrastructure is shrinking. CPAN is full of modules that are now unsupported. I’ve lost count of the number of bugs I’ve reported or patches I’ve supplied that have been ignored because the module author is no longer interested. In some cases, I’ve taken over the module myself, but that’s not a scalable solution. Honestly, I don’t know what it is. But I do think that relying on CPAN modules has got harder over the last few years. And it’s not going to get easier any time soon.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/05/mission-almost-accomplished/">Mission (Almost) Accomplished</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>[This post might sound like I’m angry at people making it hard to make progress on some things. That’s not the case at all. I realise completely that people have limited time and they get to choose how they spend it. If people are too busy elsewhere or have moved on to other projects then… <a class="more-link" href="https://perlhacks.com/2023/05/mission-almost-accomplished/">Continue reading <span class="screen-reader-text">Mission (Almost) Accomplished</span></a></p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/05/mission-almost-accomplished/">Mission (Almost) Accomplished</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2108</id>
+    <published>2023-05-17T16:48:28Z</published>
+    <updated>2023-05-17T16:48:28Z</updated>
+    <category term="CPAN"/>
+    <category term="abandonware"/>
+    <category term="cpan"/>
+    <category term="http_this"/>
+    <category term="support"/>
+  </entry>
+  <entry>
+    <title>Mission (Almost) Accomplished</title>
+    <link rel="alternate" href="https://dev.to/davorg/mission-almost-accomplished-3ccg" type="text/html"/>
+    <content type="html">&lt;p&gt;[This post might sound like I’m angry at people making it hard to make progress on some things. That’s not the case at all. I realise completely that people have limited time and they get to choose how they spend it. If people are too busy elsewhere or have moved on to other projects then that’s just how it is and we need to deal with that the best we can.]&lt;/p&gt;
+
+&lt;p&gt;Back in December 2020, I &lt;a href="https://dev.to/davorg/the-story-behind-a-new-module-2gkp"&gt;wrote a blog post&lt;/a&gt; about how I wanted to fix a long-standing problem with &lt;a href="https://dev.to/davorg/the-story-behind-a-new-module-2gkp"&gt;App::HTTPThis&lt;/a&gt;. I’m happy to report that two and a half years later, the problem has been fixed.&lt;/p&gt;
+
+&lt;p&gt;To summarise my previous blog post:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;App::HTTPThis allows you to run a tiny web server that will serve the contents of a directory over HTTP. But, unfortunately, it doesn’t support default pages like “index.html”.&lt;/li&gt;
+&lt;li&gt;App::HTTPThis uses &lt;a href="https://metacpan.org/pod/Plack::App::Directory"&gt;Plack::App::Directory&lt;/a&gt; (which is part of the &lt;a href="https://metacpan.org/pod/Plack"&gt;Plack&lt;/a&gt; distribution) to do the work – so it’s that which actually doesn’t support “index.html”.&lt;/li&gt;
+&lt;li&gt;People suggested &lt;a href="https://metacpan.org/pod/Plack::Middleware::DirIndex"&gt;Plack::Middleware::DirIndex&lt;/a&gt;, but that also didn’t quite do the right thing.&lt;/li&gt;
+&lt;li&gt;I submitted &lt;a href="https://github.com/plack/Plack/pull/654"&gt;a pull request on Plack::App::Directory&lt;/a&gt; to add support for “index.html”.&lt;/li&gt;
+&lt;li&gt;I wrote a new module called &lt;a href="https://metacpan.org/pod/Plack::App::DirectoryIndex"&gt;Plack::App::DirectoryIndex&lt;/a&gt; which was like Plack::App::Directory but with added support for “index.html”.&lt;/li&gt;
+&lt;li&gt;I submitted a pull request on App::HTTPThis to use my module in place of Plack::App::Directory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now read on…&lt;/p&gt;
+
+&lt;p&gt;Both of my pull requests went unactioned for months. In the end, I decided to approach the Perl modules list to ask if I could get co-maintainer permission on App::HTTPThis (it looked like the original maintainer had lost interest – there hadn’t been a release since 2010). When I heard nothing back, I put the project to one side only occasionally returning to add a new comment on my two pull requests.&lt;/p&gt;
+
+&lt;p&gt;Then last month I decided I’d have another go at getting co-maintainer permissions. This time it worked and, earlier this week, I got an email from Neil Bowers saying that the previous maintainer had agreed to give me permission and that I could now upload the module to CPAN.&lt;/p&gt;
+
+&lt;p&gt;At that point, I realised that the release mechanism for the module was based on Dist::Zilla and also that fashions in the Dist::Zilla world had changed since App::HTTPThis had last been released. This meant that many of the plugins used had been deprecated and I had to &lt;a href="https://github.com/davorg/app-htttpthis/commit/9bdc04fcf80e3ec1c606867d0a6d56794506684b"&gt;do a bit of work&lt;/a&gt; to even release the module (which led to &lt;a href="https://www.reddit.com/r/perl/comments/13ib46n/distzilla_considered_annoying/"&gt;a small rant on Reddit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;But I managed to release &lt;a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.003/view/lib/App/HTTPThis.pm"&gt;version 0.003&lt;/a&gt; to CPAN. Only to realise very soon afterwards that my Dist::Zilla-wrangling had missed an important fix. &lt;a href="https://github.com/davorg/app-htttpthis/commit/57e29f304e2aef1601f54886b25ec8a9bb0d05d6"&gt;I fixed that&lt;/a&gt; and released version 0.004.&lt;/p&gt;
+
+&lt;p&gt;I then got an email from PAUSE telling me that I didn’t have permission to release the module. It seems this was &lt;a href="https://github.com/andk/pause/issues/372#issuecomment-1548519281"&gt;a known PAUSE bug&lt;/a&gt; and Neil was able to apply a workaround for me. I was able to release &lt;a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004/view/lib/App/HTTPThis.pm"&gt;version 0.004&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;All of which means I now have a version of App::HTTPThis (and its included program, &lt;a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004/view/bin/http_this"&gt;http_this&lt;/a&gt;) which supports default pages. You just have to type, for example:&lt;br&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight js-code-highlight"&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ http_this --autoindex .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;And the current directory will be served over HTTP. Also (and this is the important bit!) if you have a file called “index.html” then that will be used instead of the server displaying a directory listing. It’s a tiny improvement, but one that will be very useful to me. And well worth the two and a half years I’ve invested in getting it released.&lt;/p&gt;
+
+&lt;p&gt;So why do I say that the mission is only “almost” completed? Well, there’s still that outstanding pull request on Plack::App::Directory. If that ever gets applied, I’ll remove Plack::App::DirectoryIndex from App::HTTPThis (and mark it as deprecated on CPAN).&lt;/p&gt;
+
+&lt;p&gt;This is, of course, a supremely unimportant fix in the grand scheme of things. But I think it illustrates an important issue that the Perl community should be thinking about. The community is shrinking. Or, at least, the part of the community that supports CPAN modules and runs our important infrastructure is shrinking. CPAN is full of modules that are now unsupported. I’ve lost count of the number of bugs I’ve reported or patches I’ve supplied that have been ignored because the module author is no longer interested. In some cases, I’ve taken over the module myself, but that’s not a scalable solution. Honestly, I don’t know what it is. But I do think that relying on CPAN modules has got harder over the last few years. And it’s not going to get easier any time soon.&lt;/p&gt;
+
+&lt;p&gt;The post &lt;a href="https://perlhacks.com/2023/05/mission-almost-accomplished/"&gt;Mission (Almost) Accomplished&lt;/a&gt; appeared first on &lt;a href="https://perlhacks.com"&gt;Perl Hacks&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/mission-almost-accomplished-3ccg</id>
+    <published>2023-05-17T16:48:28Z</published>
+    <updated>2023-05-17T16:48:28Z</updated>
+    <category term="perl"/>
+    <category term="cpan"/>
+    <category term="abandonware"/>
+    <category term="httpthis"/>
+  </entry>
   <entry>
     <title>Seventy Years of Change — Line of Succession Blog</title>
     <link rel="alternate" href="https://medium.com/line-of-succession/seventy-years-of-change-line-of-succession-blog-c2bfe6c8f3a8?source=rss-3781feb8a4f4------2" type="text/html"/>
@@ -725,227 +831,6 @@ updates:
     <category term="year in gigs"/>
   </entry>
   <entry>
-    <title>Updating GitHub Pages using GitHub Actions</title>
-    <link rel="alternate" href="https://dev.to/davorg/updating-github-pages-using-github-actions-395a" type="text/html"/>
-    <content type="html">&lt;p&gt;I thought it might be fun to show how I spent an hour or so yesterday throwing together a simple web site that is hosted on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; and is updated daily using &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  An itch to scratch
-&lt;/h2&gt;
-
-&lt;p&gt;So many web sites start out with an itch to scratch, and this one is no different. In this case, it was about wanting to stay more informed.&lt;/p&gt;
-
-&lt;p&gt;Each day, the &lt;a href="https://bbc.co.uk/news/"&gt;BBC News web site&lt;/a&gt; publishes a story that shows the front pages of all of the British newspapers. Although a lot of the British press isn't particularly trustworthy, I still think it's good to get an overview of what they're saying about the day's news. So finding and reading this story on the BBC site is one of my morning rituals.&lt;/p&gt;
-
-&lt;p&gt;But they don't make it easy to find the archive of those stories. So it's hard to read anything than the current day's front pages - and even that story tends to vanish from the BBC site by lunchtime. I decided I'd like a page that contains an archive to these stories.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Scraping the site
-&lt;/h2&gt;
-
-&lt;p&gt;The BBC don't publish an API for their web site, so we need to resort to screen-scraping. That, of course makes the process inherently fragile but it seems to be the best we can do at this stage.&lt;/p&gt;
-
-&lt;p&gt;It wasn't hard to create a program that pulls what I want from the web site using &lt;a href="https://metacpan.org/pod/Web::Query"&gt;Web::Query&lt;/a&gt; (my tool of choice for scraping web sites).&lt;/p&gt;
-
-&lt;p&gt;Of course, having scraped the data, we need to store it somewhere. I decided to store it in a JSON document and worry about displaying it later.&lt;/p&gt;
-
-&lt;p&gt;So here's the code I wrote:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="c1"&gt;#!/usr/bin/perl&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;strict&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;warnings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;feature&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;say&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Time::&lt;/span&gt;&lt;span class="nv"&gt;Piece&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Web::&lt;/span&gt;&lt;span class="nv"&gt;Query&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;JSON&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$site&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;https://bbc.co.uk&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="si"&gt;$site&lt;/span&gt;&lt;span class="s2"&gt;/news/&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;docs/papers.json&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;JSON&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;pretty&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;canonical&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$data&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;e&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;&amp;lt;&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="nb"&gt;die&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;$!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="vg"&gt;$/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
-  &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$json&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$start_len&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@$data&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$q&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;wq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$start&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="nv"&gt;$q&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;find&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;a&lt;/span&gt;&lt;span class="p"&gt;')&lt;/span&gt;
-   &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;each&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;sub &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;/^The Papers:/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="nb"&gt;push&lt;/span&gt; &lt;span class="nv"&gt;@$data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="s"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;localtime&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;%Y-%m-%d&lt;/span&gt;&lt;span class="p"&gt;'),&lt;/span&gt;
-    &lt;span class="s"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;s/^The Papers:\s*//r&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="s"&gt;link&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$site&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;href&lt;/span&gt;&lt;span class="p"&gt;'),&lt;/span&gt;
-  &lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;@$data&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;$start_len&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;warn&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;No new article found&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="nb"&gt;die&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;$!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-  &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;Nothing too complex there. We look for all of the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags in the page and ignore the ones that don't contain text starting with "The Papers:". We then extract the information we want (the text, the link and the date) and store that all in the JSON document.&lt;/p&gt;
-
-&lt;p&gt;At that point, I could run the code to create the JSON file. I then created the GitHub repository and turned on GitHub Pages for the repo. Once that was all working, I could browse to &lt;a href="https://davorg.github.io/bbc_papers/papers.json"&gt;https://davorg.github.io/bbc_papers/papers.json&lt;/a&gt; to see the JSON.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Doing it every day
-&lt;/h2&gt;
-
-&lt;p&gt;We need to run this code every day. That's simple enough with GitHub Actions. We simply add a workflow definition file to the repo. The workflow looks like this:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight yaml"&gt;&lt;code&gt;&lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Overnight processing&lt;/span&gt;
-
-&lt;span class="na"&gt;on&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-  &lt;span class="na"&gt;schedule&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;cron&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="s"&gt;0&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;9&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*'&lt;/span&gt;
-  &lt;span class="na"&gt;workflow_dispatch&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-
-&lt;span class="na"&gt;jobs&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-  &lt;span class="na"&gt;build&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="na"&gt;runs-on&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;ubuntu-latest&lt;/span&gt;
-
-    &lt;span class="na"&gt;steps&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Checkout&lt;/span&gt;
-      &lt;span class="na"&gt;uses&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;actions/checkout@v3&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Install cpanm&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install cpanminus&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Install dependencies&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;sudo cpanm -n --installdeps .&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Add data&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;./get_link&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Commit new page&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="pi"&gt;|&lt;/span&gt;
-        &lt;span class="s"&gt;GIT_STATUS=$(git status --porcelain)&lt;/span&gt;
-        &lt;span class="s"&gt;echo $GIT_STATUS&lt;/span&gt;
-        &lt;span class="s"&gt;git config user.name github-actions[bot]&lt;/span&gt;
-        &lt;span class="s"&gt;git config user.email 41898282+github-actions[bot]@users.noreply.github.com&lt;/span&gt;
-        &lt;span class="s"&gt;git add docs/&lt;/span&gt;
-        &lt;span class="s"&gt;if [ "$GIT_STATUS" != "" ]; then git commit -m "Overnight job"; fi&lt;/span&gt;
-        &lt;span class="s"&gt;if [ "$GIT_STATUS" != "" ]; then git push; fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;Again, this is all pretty much standard stuff. We run the workflow on a Ubuntu container. It's a three-phase process:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Install everything we need&lt;/li&gt;
-&lt;li&gt;Run the program to get the new data&lt;/li&gt;
-&lt;li&gt;Commit the new data file to the repo&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Note that the workflow is triggered in two ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;It runs at 09:00 every morning&lt;/li&gt;
-&lt;li&gt;You can run it manually from the Actions tab in the repo (that's what the &lt;code&gt;workflow_dispatch&lt;/code&gt; line does)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;
-  
-  
-  Displaying our wares
-&lt;/h2&gt;
-
-&lt;p&gt;Having got a daily build of the data, we need to create a web page to display it. I'm not a web designer, so this is going to be necessarily basic. I threw together a simple page using &lt;a href="https://getbootstrap.com/"&gt;Bootstrap&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The next step was to grab the &lt;code&gt;papers.json&lt;/code&gt; document, parse it and then display it on the page. Now, I can wrangle Javascript pretty successfully most of the time. but I wanted to get this working as quickly as possible, so I asked ChatGPT for some help. It only took a few iterations for it to give me this code:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;DOMContentLoaded&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
-    &lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;papers.json&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;tableBody&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;table tbody&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;forEach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;item&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;row&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;tr&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;td&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;textLink&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;td&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;a&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;textLink&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;textLink&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;tableBody&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="p"&gt;});&lt;/span&gt;
-    &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;It didn't work first time. But that's because I'm an idiot and didn't tell ChatGPT the name of my JSON document or how to correctly identify the &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; element in the HTML. But once I'd corrected my errors it all worked perfectly.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Summing up
-&lt;/h2&gt;
-
-&lt;p&gt;So that's how I spent yesterday's lunch break. I can now see an archive of the BBC's stories about each day'd front pages by just going to:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://davorg.github.io/bbc_papers/"&gt;https://davorg.github.io/bbc_papers/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Of course, just after I'd written it, I (once again) had a look to see if someone else had created something similar and found the &lt;a href="https://www.bbc.co.uk/news/topics/cpml2v678pxt"&gt;BBC's page&lt;/a&gt; listing all of the stories. Ah well, I had fun putting my version together.&lt;/p&gt;
-
-&lt;p&gt;All of this code is available &lt;a href="https://github.com/davorg/bbc_papers"&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/updating-github-pages-using-github-actions-395a</id>
-    <published>2023-01-13T16:04:05Z</published>
-    <updated>2023-01-13T16:04:05Z</updated>
-    <category term="perl"/>
-    <category term="github"/>
-    <category term="githubpages"/>
-    <category term="githubactions"/>
-  </entry>
-  <entry>
     <title>Writing a CPAN module that talks to ChatGPT</title>
     <link rel="alternate" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/" type="text/html"/>
     <content type="xhtml">
@@ -1271,40 +1156,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="workflow"/>
     <category term="semi-static-sites"/>
     <category term="github"/>
-  </entry>
-  <entry>
-    <title>Not that PR, thanks</title>
-    <link rel="alternate" href="https://perlhacks.com/2022/10/not-that-pr-thanks/" type="text/html"/>
-    <content type="html">&lt;p&gt;It&amp;#8217;s October. And that means that &lt;a href="https://hacktoberfest.com/"&gt;Hacktoberfest&lt;/a&gt; has started. If you can get four pull requests accepted on other people&amp;#8217;s code repositories during October then you can win a t-shirt.&lt;/p&gt;
-&lt;p&gt;In many ways, I think it&amp;#8217;s a great idea. It encourages people to get involved in open source software. But in other ways, it can be a bit of a pain in the arse. Some people go crazy for a free t-shirt and that means you&amp;#8217;ll almost certainly get several pull requests that aren&amp;#8217;t really of the quality you&amp;#8217;d hope for.&lt;/p&gt;
-&lt;p&gt;I have a particular problem that probably isn&amp;#8217;t very common. I&amp;#8217;ve talked before about the &amp;#8220;semi-static&amp;#8221; sites I run on GitHub Pages. There&amp;#8217;s some data in a GitHub Repo and every couple of hours the system wakes up and runs some code which generates a few HTML pages and commits those HTML pages into the repo&amp;#8217;s &amp;#8220;/docs&amp;#8221; directory. And &amp;#8211; hey presto! &amp;#8211; there&amp;#8217;s a new version of your web site.&lt;/p&gt;
-&lt;p&gt;A good example is &lt;a href="https://perl.theplanetarium.org/"&gt;Planet Perl&lt;/a&gt;. The data is a YAML file which mostly consists of a list of web feeds. Every couple of hours we run &lt;a href="https://metacpan.org/dist/Perlanet/view/bin/perlanet"&gt;perlanet&lt;/a&gt; to pull in those web feeds and build a new version of the web site containing the latest articles about Perl.&lt;/p&gt;
-&lt;p&gt;Can you see what the problem is?&lt;/p&gt;
-&lt;p&gt;The problem is that the most obvious file in the repo is the &amp;#8220;index.html&amp;#8221; which is the web site. So when people find that repo and want to make a small change to the web site they&amp;#8217;ll change that &amp;#8220;index.html&amp;#8221; file. But that file is generated. Every few hours, any changes to that file are overwritten as a new version is created. You actually want to change &amp;#8220;index.tt&amp;#8221;. But that uses &lt;a href="https://metacpan.org/dist/Template-Toolkit/view/lib/Template/Manual/Directives.pod"&gt;Template Toolkit syntax&lt;/a&gt;, so it&amp;#8217;s easy enough to see why people with no Perl knowledge might want to avoid editing that.&lt;/p&gt;
-&lt;p&gt;The &lt;a href="https://github.com/davorg/planetperl/blob/master/README.md"&gt;README file&lt;/a&gt; for the project explains which files you might want to change in order to make different types of changes. But people don&amp;#8217;t read that. Or, if they do read it, they ignore the bits that they don&amp;#8217;t like.&lt;/p&gt;
-&lt;p&gt;So I get pull requests that I have to reject because they change the wrong files.&lt;/p&gt;
-&lt;p&gt;Last year I got enough of these problematic pull requests that I decided to automate a solution. And it&amp;#8217;s &lt;a href="https://github.com/davorg/planetperl/blob/master/.github/workflows/reject-pr.yml"&gt;this pretty simple GitHub Workflow&lt;/a&gt;. It runs whenever my repo receives a pull request and looks at the files that have been changed. If that list of files includes &amp;#8220;docs/index.html&amp;#8221; then the PR is automatically closed with a polite message explaining what they&amp;#8217;ve done wrong.&lt;/p&gt;
-&lt;p&gt;This makes my life easier. It&amp;#8217;s possible it might make your life easier too.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;The post &lt;a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/"&gt;Not that PR, thanks&lt;/a&gt; appeared first on &lt;a rel="nofollow" href="https://perlhacks.com"&gt;Perl Hacks&lt;/a&gt;.&lt;/p&gt;
-</content>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s October. And that means that Hacktoberfest has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt. In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can… <a class="more-link" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Continue reading <span class="screen-reader-text">Not that PR, thanks</span></a></p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </summary>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://perlhacks.com/?p=2082</id>
-    <published>2022-10-10T16:01:43Z</published>
-    <updated>2022-10-10T16:01:43Z</updated>
-    <category term="Miscellaneous"/>
-    <category term="github"/>
-    <category term="github actions"/>
-    <category term="pull request"/>
-    <category term="semi-static sites"/>
-    <category term="workflow"/>
   </entry>
   <entry>
     <title>Should Children be Polite While Using Smart Speakers?</title>

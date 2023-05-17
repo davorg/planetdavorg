@@ -7,9 +7,418 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-05-17T12:04:19Z</updated>
+  <updated>2023-05-17T18:03:32Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry>
+    <title>@mrjamesob He was particularly whiney in the select committee about the coronation arrests earlier today.</title>
+    <link rel="alternate" href="https://twitter.com/davorg/status/1658885594200539160" type="text/html"/>
+    <id>https://twitter.com/davorg/status/1658885594200539160</id>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">@mrjamesob He was particularly whiney in the select committee about the coronation arrests earlier today.</div>
+    </content>
+    <updated>2023-05-17T17:22:00Z</updated>
+  </entry>
+  <entry>
+    <title>RT @perlhacks: I finally (almost) finished a project I started two and a half years ago.
+
+https://t.co/8HVhdWBO6Y</title>
+    <link rel="alternate" href="https://twitter.com/davorg/status/1658879839896469533" type="text/html"/>
+    <id>https://twitter.com/davorg/status/1658879839896469533</id>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">RT @perlhacks: I finally (almost) finished a project I started two and a half years ago.
+
+https://t.co/8HVhdWBO6Y</div>
+    </content>
+    <updated>2023-05-17T16:59:08Z</updated>
+  </entry>
+  <entry>
+    <title>Mission (Almost) Accomplished</title>
+    <link rel="alternate" href="https://perlhacks.com/2023/05/mission-almost-accomplished/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>[This post might sound like I’m angry at people making it hard to make progress on some things. That’s not the case at all. I realise completely that people have limited time and they get to choose how they spend it. If people are too busy elsewhere or have moved on to other projects then that’s just how it is and we need to deal with that the best we can.]</p>
+<p>Back in December 2020, I <a href="https://dev.to/davorg/the-story-behind-a-new-module-2gkp">wrote a blog post</a> about how I wanted to fix a long-standing problem with <a href="https://dev.to/davorg/the-story-behind-a-new-module-2gkp">App::HTTPThis</a>. I’m happy to report that two and a half years later, the problem has been fixed.</p>
+<p>To summarise my previous blog post:</p>
+<ul>
+<li>App::HTTPThis allows you to run a tiny web server that will serve the contents of a directory over HTTP. But, unfortunately, it doesn’t support default pages like “index.html”.</li>
+<li>App::HTTPThis uses <a href="https://metacpan.org/pod/Plack::App::Directory">Plack::App::Directory</a> (which is part of the <a href="https://metacpan.org/pod/Plack">Plack</a> distribution) to do the work – so it’s that which actually doesn’t support “index.html”.</li>
+<li>People suggested <a href="https://metacpan.org/pod/Plack::Middleware::DirIndex">Plack::Middleware::DirIndex</a>, but that also didn’t quite do the right thing.</li>
+<li>I submitted <a href="https://github.com/plack/Plack/pull/654">a pull request on Plack::App::Directory</a> to add support for “index.html”.</li>
+<li>I wrote a new module called <a href="https://metacpan.org/pod/Plack::App::DirectoryIndex">Plack::App::DirectoryIndex</a> which was like Plack::App::Directory but with added support for “index.html”.</li>
+<li>I submitted a pull request on App::HTTPThis to use my module in place of Plack::App::Directory.</li>
+</ul>
+<p>Now read on…</p>
+<p>Both of my pull requests went unactioned for months. In the end, I decided to approach the Perl modules list to ask if I could get co-maintainer permission on App::HTTPThis (it looked like the original maintainer had lost interest – there hadn’t been a release since 2010). When I heard nothing back, I put the project to one side only occasionally returning to add a new comment on my two pull requests.</p>
+<p>Then last month I decided I’d have another go at getting co-maintainer permissions. This time it worked and, earlier this week, I got an email from Neil Bowers saying that the previous maintainer had agreed to give me permission and that I could now upload the module to CPAN.</p>
+<p>At that point, I realised that the release mechanism for the module was based on Dist::Zilla and also that fashions in the Dist::Zilla world had changed since App::HTTPThis had last been released. This meant that many of the plugins used had been deprecated and I had to <a href="https://github.com/davorg/app-htttpthis/commit/9bdc04fcf80e3ec1c606867d0a6d56794506684b">do a bit of work</a> to even release the module (which led to <a href="https://www.reddit.com/r/perl/comments/13ib46n/distzilla_considered_annoying/">a small rant on Reddit</a>).</p>
+<p>But I managed to release <a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.003/view/lib/App/HTTPThis.pm">version 0.003</a> to CPAN. Only to realise very soon afterwards that my Dist::Zilla-wrangling had missed an important fix. <a href="https://github.com/davorg/app-htttpthis/commit/57e29f304e2aef1601f54886b25ec8a9bb0d05d6">I fixed that</a> and released version 0.004.</p>
+<p>I then got an email from PAUSE telling me that I didn’t have permission to release the module. It seems this was <a href="https://github.com/andk/pause/issues/372#issuecomment-1548519281">a known PAUSE bug</a> and Neil was able to apply a workaround for me. I was able to release <a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004/view/lib/App/HTTPThis.pm">version 0.004</a>.</p>
+<p class="">All of which means I now have a version of App::HTTPThis (and its included program, <a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004/view/bin/http_this">http_this</a>) which supports default pages. You just have to type, for example:</p>
+<p/><pre class="urvanov-syntax-highlighter-plain-tag">$ http_this --autoindex .</pre><p>And the current directory will be served over HTTP. Also (and this is the important bit!) if you have a file called “index.html” then that will be used instead of the server displaying a directory listing. It’s a tiny improvement, but one that will be very useful to me. And well worth the two and a half years I’ve invested in getting it released.</p>
+<p>So why do I say that the mission is only “almost” completed? Well, there’s still that outstanding pull request on Plack::App::Directory. If that ever gets applied, I’ll remove Plack::App::DirectoryIndex from App::HTTPThis (and mark it as deprecated on CPAN).</p>
+<p>This is, of course, a supremely unimportant fix in the grand scheme of things. But I think it illustrates an important issue that the Perl community should be thinking about. The community is shrinking. Or, at least, the part of the community that supports CPAN modules and runs our important infrastructure is shrinking. CPAN is full of modules that are now unsupported. I’ve lost count of the number of bugs I’ve reported or patches I’ve supplied that have been ignored because the module author is no longer interested. In some cases, I’ve taken over the module myself, but that’s not a scalable solution. Honestly, I don’t know what it is. But I do think that relying on CPAN modules has got harder over the last few years. And it’s not going to get easier any time soon.</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/05/mission-almost-accomplished/">Mission (Almost) Accomplished</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>[This post might sound like I’m angry at people making it hard to make progress on some things. That’s not the case at all. I realise completely that people have limited time and they get to choose how they spend it. If people are too busy elsewhere or have moved on to other projects then… <a class="more-link" href="https://perlhacks.com/2023/05/mission-almost-accomplished/">Continue reading <span class="screen-reader-text">Mission (Almost) Accomplished</span></a></p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/05/mission-almost-accomplished/">Mission (Almost) Accomplished</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2108</id>
+    <published>2023-05-17T16:48:28Z</published>
+    <updated>2023-05-17T16:48:28Z</updated>
+    <category term="CPAN"/>
+    <category term="abandonware"/>
+    <category term="cpan"/>
+    <category term="http_this"/>
+    <category term="support"/>
+  </entry>
+  <entry>
+    <title>Mission (Almost) Accomplished</title>
+    <link rel="alternate" href="https://dev.to/davorg/mission-almost-accomplished-3ccg" type="text/html"/>
+    <content type="html">&lt;p&gt;[This post might sound like I’m angry at people making it hard to make progress on some things. That’s not the case at all. I realise completely that people have limited time and they get to choose how they spend it. If people are too busy elsewhere or have moved on to other projects then that’s just how it is and we need to deal with that the best we can.]&lt;/p&gt;
+
+&lt;p&gt;Back in December 2020, I &lt;a href="https://dev.to/davorg/the-story-behind-a-new-module-2gkp"&gt;wrote a blog post&lt;/a&gt; about how I wanted to fix a long-standing problem with &lt;a href="https://dev.to/davorg/the-story-behind-a-new-module-2gkp"&gt;App::HTTPThis&lt;/a&gt;. I’m happy to report that two and a half years later, the problem has been fixed.&lt;/p&gt;
+
+&lt;p&gt;To summarise my previous blog post:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;App::HTTPThis allows you to run a tiny web server that will serve the contents of a directory over HTTP. But, unfortunately, it doesn’t support default pages like “index.html”.&lt;/li&gt;
+&lt;li&gt;App::HTTPThis uses &lt;a href="https://metacpan.org/pod/Plack::App::Directory"&gt;Plack::App::Directory&lt;/a&gt; (which is part of the &lt;a href="https://metacpan.org/pod/Plack"&gt;Plack&lt;/a&gt; distribution) to do the work – so it’s that which actually doesn’t support “index.html”.&lt;/li&gt;
+&lt;li&gt;People suggested &lt;a href="https://metacpan.org/pod/Plack::Middleware::DirIndex"&gt;Plack::Middleware::DirIndex&lt;/a&gt;, but that also didn’t quite do the right thing.&lt;/li&gt;
+&lt;li&gt;I submitted &lt;a href="https://github.com/plack/Plack/pull/654"&gt;a pull request on Plack::App::Directory&lt;/a&gt; to add support for “index.html”.&lt;/li&gt;
+&lt;li&gt;I wrote a new module called &lt;a href="https://metacpan.org/pod/Plack::App::DirectoryIndex"&gt;Plack::App::DirectoryIndex&lt;/a&gt; which was like Plack::App::Directory but with added support for “index.html”.&lt;/li&gt;
+&lt;li&gt;I submitted a pull request on App::HTTPThis to use my module in place of Plack::App::Directory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now read on…&lt;/p&gt;
+
+&lt;p&gt;Both of my pull requests went unactioned for months. In the end, I decided to approach the Perl modules list to ask if I could get co-maintainer permission on App::HTTPThis (it looked like the original maintainer had lost interest – there hadn’t been a release since 2010). When I heard nothing back, I put the project to one side only occasionally returning to add a new comment on my two pull requests.&lt;/p&gt;
+
+&lt;p&gt;Then last month I decided I’d have another go at getting co-maintainer permissions. This time it worked and, earlier this week, I got an email from Neil Bowers saying that the previous maintainer had agreed to give me permission and that I could now upload the module to CPAN.&lt;/p&gt;
+
+&lt;p&gt;At that point, I realised that the release mechanism for the module was based on Dist::Zilla and also that fashions in the Dist::Zilla world had changed since App::HTTPThis had last been released. This meant that many of the plugins used had been deprecated and I had to &lt;a href="https://github.com/davorg/app-htttpthis/commit/9bdc04fcf80e3ec1c606867d0a6d56794506684b"&gt;do a bit of work&lt;/a&gt; to even release the module (which led to &lt;a href="https://www.reddit.com/r/perl/comments/13ib46n/distzilla_considered_annoying/"&gt;a small rant on Reddit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;But I managed to release &lt;a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.003/view/lib/App/HTTPThis.pm"&gt;version 0.003&lt;/a&gt; to CPAN. Only to realise very soon afterwards that my Dist::Zilla-wrangling had missed an important fix. &lt;a href="https://github.com/davorg/app-htttpthis/commit/57e29f304e2aef1601f54886b25ec8a9bb0d05d6"&gt;I fixed that&lt;/a&gt; and released version 0.004.&lt;/p&gt;
+
+&lt;p&gt;I then got an email from PAUSE telling me that I didn’t have permission to release the module. It seems this was &lt;a href="https://github.com/andk/pause/issues/372#issuecomment-1548519281"&gt;a known PAUSE bug&lt;/a&gt; and Neil was able to apply a workaround for me. I was able to release &lt;a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004/view/lib/App/HTTPThis.pm"&gt;version 0.004&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;All of which means I now have a version of App::HTTPThis (and its included program, &lt;a href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004/view/bin/http_this"&gt;http_this&lt;/a&gt;) which supports default pages. You just have to type, for example:&lt;br&gt;
+&lt;/p&gt;
+
+&lt;div class="highlight js-code-highlight"&gt;
+&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ http_this --autoindex .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;And the current directory will be served over HTTP. Also (and this is the important bit!) if you have a file called “index.html” then that will be used instead of the server displaying a directory listing. It’s a tiny improvement, but one that will be very useful to me. And well worth the two and a half years I’ve invested in getting it released.&lt;/p&gt;
+
+&lt;p&gt;So why do I say that the mission is only “almost” completed? Well, there’s still that outstanding pull request on Plack::App::Directory. If that ever gets applied, I’ll remove Plack::App::DirectoryIndex from App::HTTPThis (and mark it as deprecated on CPAN).&lt;/p&gt;
+
+&lt;p&gt;This is, of course, a supremely unimportant fix in the grand scheme of things. But I think it illustrates an important issue that the Perl community should be thinking about. The community is shrinking. Or, at least, the part of the community that supports CPAN modules and runs our important infrastructure is shrinking. CPAN is full of modules that are now unsupported. I’ve lost count of the number of bugs I’ve reported or patches I’ve supplied that have been ignored because the module author is no longer interested. In some cases, I’ve taken over the module myself, but that’s not a scalable solution. Honestly, I don’t know what it is. But I do think that relying on CPAN modules has got harder over the last few years. And it’s not going to get easier any time soon.&lt;/p&gt;
+
+&lt;p&gt;The post &lt;a href="https://perlhacks.com/2023/05/mission-almost-accomplished/"&gt;Mission (Almost) Accomplished&lt;/a&gt; appeared first on &lt;a href="https://perlhacks.com"&gt;Perl Hacks&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/mission-almost-accomplished-3ccg</id>
+    <published>2023-05-17T16:48:28Z</published>
+    <updated>2023-05-17T16:48:28Z</updated>
+    <category term="perl"/>
+    <category term="cpan"/>
+    <category term="abandonware"/>
+    <category term="httpthis"/>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/29128041700</id>
+    <published>2023-05-17T11:51:12Z</published>
+    <updated>2023-05-17T11:51:12Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/PerlToolsTeam/planetperl/compare/f05f53e117...92dece3391"/>
+    <title type="html">davorg pushed to master in PerlToolsTeam/planetperl</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:296646922,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29128041700,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;dc1ee720-7115-48a4-8db1-3ab65b13a6f8&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="6441645943b7cc421edf3297bfc522f8f463d944ac6c5e5673672a15966331f4"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/PerlToolsTeam/planetperl/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/PerlToolsTeam/planetperl" rel="noreferrer"&gt;PerlToolsTeam/planetperl&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-05-17T11:51:12Z" data-view-component="true"&gt;May 17, 2023 11:51&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/PerlToolsTeam/planetperl/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/PerlToolsTeam/planetperl/commit/92dece33910f2be6a864a0cbfba78a0cd1df3407" rel="noreferrer"&gt;92dece3&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Rebuild on the hour
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/29128024558</id>
+    <published>2023-05-17T11:50:27Z</published>
+    <updated>2023-05-17T11:50:27Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetskeptic/compare/cd334583da...03d0bc664f"/>
+    <title type="html">davorg pushed to master in davorg/planetskeptic</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:143118077,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29128024558,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;2a310959-aae5-41cd-9ee3-2076d836980c&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d71b4f0ca69ff42a40fca4dc5a5e0a2e5aa23a3e95f9a61a2ec939dcfc533f80"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetskeptic/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetskeptic" rel="noreferrer"&gt;davorg/planetskeptic&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-05-17T11:50:27Z" data-view-component="true"&gt;May 17, 2023 11:50&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetskeptic/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetskeptic/commit/03d0bc664f41e3b1318b9e4d452e6b14e522f819" rel="noreferrer"&gt;03d0bc6&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Slow down rebuild
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/29128009062</id>
+    <published>2023-05-17T11:49:47Z</published>
+    <updated>2023-05-17T11:49:47Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetdavorg/compare/d77c360a0b...09275cc370"/>
+    <title type="html">davorg pushed to main in davorg/planetdavorg</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316296012,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29128009062,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;df828883-5452-4cb7-a2a4-34cc55ce7931&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="ee4dcf77ff25772bc37308ff3f32373f1155dd4b60108846382cc6ae32c2407b"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetdavorg/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetdavorg" rel="noreferrer"&gt;davorg/planetdavorg&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-05-17T11:49:47Z" data-view-component="true"&gt;May 17, 2023 11:49&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetdavorg/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetdavorg/commit/09275cc370afcaa2f505c83ef2dd74a5cc3088fa" rel="noreferrer"&gt;09275cc&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Slow down rebuild
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/29127991586</id>
+    <published>2023-05-17T11:49:02Z</published>
+    <updated>2023-05-17T11:49:02Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetdrwho/compare/83ccfc7dcf...49f31539a9"/>
+    <title type="html">davorg pushed to master in davorg/planetdrwho</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:106272483,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29127991586,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;87068225-5031-4062-9fdf-caf241328d34&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="fe69dd593ce0eb4af5dc8237c77d3cded87528bec134bf931b19e98cba7a2331"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetdrwho/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetdrwho" rel="noreferrer"&gt;davorg/planetdrwho&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-05-17T11:49:02Z" data-view-component="true"&gt;May 17, 2023 11:49&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetdrwho/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetdrwho/commit/49f31539a90a7692c7a1f50eb7466f0982b28035" rel="noreferrer"&gt;49f3153&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Slow down rebuild
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/29127970327</id>
+    <published>2023-05-17T11:48:05Z</published>
+    <updated>2023-05-17T11:48:05Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/planetbalham/compare/1fe4e820f7...c5f1703271"/>
+    <title type="html">davorg pushed to main in davorg/planetbalham</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:316499991,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29127970327,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;73d6eb05-c1a3-4e74-b0dc-bd84bb74a652&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="fcfe310f60f512e553eb270415c95dc354cca05e1652ed8a510df53e06c8a857"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/planetbalham/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/planetbalham" rel="noreferrer"&gt;davorg/planetbalham&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-05-17T11:48:05Z" data-view-component="true"&gt;May 17, 2023 11:48&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;1 commit to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/planetbalham/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
+
+          &lt;div class="commits pusher-is-only-committer"&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/planetbalham/commit/c5f1703271e10c1deece8bfd6efcc29fd4b412fc" rel="noreferrer"&gt;c5f1703&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      Slow down rebuild
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>If you're not aware of the insanity that has been going on at the @NatConTalk conference over the last few days, th… https://t.co/82tgkbM8eg</title>
     <link rel="alternate" href="https://twitter.com/davorg/status/1658780965680955392" type="text/html"/>
@@ -45,196 +454,6 @@
       <div xmlns="http://www.w3.org/1999/xhtml">Hey, what happened to @BBCNews? If I wanted to listen to a radio phone-in, I'd listen to the radio. I wanted to watch some rolling news</div>
     </content>
     <updated>2023-05-17T08:32:51Z</updated>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/29115544793</id>
-    <published>2023-05-17T00:23:37Z</published>
-    <updated>2023-05-17T00:23:37Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/5ef0942718...7881c632f0"/>
-    <title type="html">davorg pushed to master in davorg/uptime</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29115544793,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;fb785168-f2cb-49ff-9e1b-655765304070&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="c40af1013360ae6a4687d3bfc5733cd916efab39e7429d0776b766e9ba189d6e"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-05-17T00:23:37Z" data-view-component="true"&gt;May 17, 2023 00:23&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/7881c632f09cdef9bab8fc9d1867fecabe76d18f" rel="noreferrer"&gt;7881c63&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="bento" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f371.png"&gt;🍱&lt;/g-emoji&gt; Update graphs [skip ci]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/29115348084</id>
-    <published>2023-05-17T00:06:26Z</published>
-    <updated>2023-05-17T00:06:26Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/f303233891...5ef0942718"/>
-    <title type="html">davorg pushed to master in davorg/uptime</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29115348084,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;c2030c6f-b2a9-47a2-a087-690d95db84dd&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d74f3d81bf90b4fdf24f7f81a7643d7f2d52489673e2f6c85bf755fdbb63d136"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-05-17T00:06:26Z" data-view-component="true"&gt;May 17, 2023 00:06&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/5ef09427189fc080293eb1ca84925e73bacc85c7" rel="noreferrer"&gt;5ef0942&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="card_file_box" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c3.png"&gt;🗃️&lt;/g-emoji&gt; Update status summary [skip ci] [upptime]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/aec08af87714fc1adcdf0ddf9aa20b069a41d646" rel="noreferrer"&gt;aec08af&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="memo" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png"&gt;📝&lt;/g-emoji&gt; Update summary in README [skip ci] [upptime]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/29114610570</id>
-    <published>2023-05-16T23:01:14Z</published>
-    <updated>2023-05-16T23:01:14Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/a2aae6147f...f303233891"/>
-    <title type="html">davorg pushed to master in davorg/uptime</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29114610570,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;fe147ea3-207a-4a05-b6df-ac5f9b7bda3d&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="0d6b57c4d0ccb436f536743788b2151c86a2187c83a0855fcb38c019bf722519"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-05-16T23:01:14Z" data-view-component="true"&gt;May 16, 2023 23:01&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;2 commits to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits "&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/f30323389108eb4a93ed6d0595469c1c366c2d08" rel="noreferrer"&gt;f303233&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="green_square" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png"&gt;🟩&lt;/g-emoji&gt; Feeds is up (200 in 286 ms) [skip ci] [upptime]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/fb354f66aef4d6ed2ebbc2ec9cb62b6c7bd8a85f" rel="noreferrer"&gt;fb354f6&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      &lt;g-emoji class="g-emoji" alias="green_square" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png"&gt;🟩&lt;/g-emoji&gt; Perl Hacks is up (200 in 2010 ms) [skip ci] [upptime]
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-                &lt;li class="f6 mt-2"&gt;
-                  &lt;a class="Link--secondary" href="/davorg/uptime/compare/a2aae6147f...f303233891" rel="noreferrer"&gt;4 more commits »&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>Dayvan Cowboy - Boards of Canada</title>
@@ -296,116 +515,6 @@
     </author>
     <id>https://musicbrainz.org/recording/60cc71ef-a1fb-4054-bb80-f904a8e9b3b3</id>
   </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/29101545111</id>
-    <published>2023-05-16T13:18:03Z</published>
-    <updated>2023-05-16T13:18:03Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/github_workflows/compare/80509a8c6a...12a7cc601b"/>
-    <title type="html">davorg pushed to main in davorg/github_workflows</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:593678960,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29101545111,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;69ec0df0-3237-4dbc-be53-1422814f0981&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="7e6db4c6ddb551b96768ead2a9c4e13e0bbd07345ba65969474e36ab6687957c"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/github_workflows/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/github_workflows" rel="noreferrer"&gt;davorg/github_workflows&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-05-16T13:18:03Z" data-view-component="true"&gt;May 16, 2023 13:18&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/github_workflows/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/github_workflows/commit/12a7cc601b1d380e8a5fb8af5895c41a43d76acb" rel="noreferrer"&gt;12a7cc6&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Don't test module installations
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/29101376120</id>
-    <published>2023-05-16T13:12:34Z</published>
-    <updated>2023-05-16T13:12:34Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/github_workflows/compare/e7a5003316...80509a8c6a"/>
-    <title type="html">davorg pushed to main in davorg/github_workflows</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:593678960,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:29101376120,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;4ca50ca7-dd0d-4b95-bf57-bc092ec8ea65&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="c96c21960a5a1a4ea0857f879319865637bae8425975bb46a0da36966c770c0a"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/github_workflows/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/github_workflows" rel="noreferrer"&gt;davorg/github_workflows&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-05-16T13:12:34Z" data-view-component="true"&gt;May 16, 2023 13:12&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/github_workflows/tree/main" rel="noreferrer"&gt;main&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/github_workflows/commit/80509a8c6a65919558ea5af496a804d295b028c1" rel="noreferrer"&gt;80509a8&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Archive CPAN logs on failure
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
   <entry>
     <title>DAVECROSS has released App-HTTPThis-0.004</title>
     <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/App-HTTPThis-0.004" type="text/html"/>
@@ -431,30 +540,6 @@
     <id>https://metacpan.org/release/DAVECROSS/Perlanet-v3.0.2</id>
     <published>2023-05-15T07:13:52Z</published>
     <updated>2023-05-15T07:13:52Z</updated>
-  </entry>
-  <entry>
-    <title>How much do you trust those web sites that claim to tell you whether text is AI-generated or not? I pasted Genesis… https://t.co/6FBlkfr7Sf</title>
-    <link rel="alternate" href="https://twitter.com/davorg/status/1657793760535748608" type="text/html"/>
-    <id>https://twitter.com/davorg/status/1657793760535748608</id>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">How much do you trust those web sites that claim to tell you whether text is AI-generated or not? I pasted Genesis… https://t.co/6FBlkfr7Sf</div>
-    </content>
-    <updated>2023-05-14T17:03:27Z</updated>
-  </entry>
-  <entry>
-    <title>♫ My Top 5 #lastfm artists: Taylor Swift (49), Maisie Peters (22), Belle and Sebastian (19), Hawkwind (18) &amp;amp; boygenius (15) via @tweeklyfm</title>
-    <link rel="alternate" href="https://twitter.com/davorg/status/1657641967189385217" type="text/html"/>
-    <id>https://twitter.com/davorg/status/1657641967189385217</id>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">♫ My Top 5 #lastfm artists: Taylor Swift (49), Maisie Peters (22), Belle and Sebastian (19), Hawkwind (18) &amp; boygenius (15) via @tweeklyfm</div>
-    </content>
-    <updated>2023-05-14T07:00:17Z</updated>
   </entry>
   <entry>
     <title>Seventy Years of Change — Line of Succession Blog</title>
@@ -1194,227 +1279,6 @@ updates:
     <category term="year in gigs"/>
   </entry>
   <entry>
-    <title>Updating GitHub Pages using GitHub Actions</title>
-    <link rel="alternate" href="https://dev.to/davorg/updating-github-pages-using-github-actions-395a" type="text/html"/>
-    <content type="html">&lt;p&gt;I thought it might be fun to show how I spent an hour or so yesterday throwing together a simple web site that is hosted on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; and is updated daily using &lt;a href="https://github.com/features/actions"&gt;GitHub Actions&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  An itch to scratch
-&lt;/h2&gt;
-
-&lt;p&gt;So many web sites start out with an itch to scratch, and this one is no different. In this case, it was about wanting to stay more informed.&lt;/p&gt;
-
-&lt;p&gt;Each day, the &lt;a href="https://bbc.co.uk/news/"&gt;BBC News web site&lt;/a&gt; publishes a story that shows the front pages of all of the British newspapers. Although a lot of the British press isn't particularly trustworthy, I still think it's good to get an overview of what they're saying about the day's news. So finding and reading this story on the BBC site is one of my morning rituals.&lt;/p&gt;
-
-&lt;p&gt;But they don't make it easy to find the archive of those stories. So it's hard to read anything than the current day's front pages - and even that story tends to vanish from the BBC site by lunchtime. I decided I'd like a page that contains an archive to these stories.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Scraping the site
-&lt;/h2&gt;
-
-&lt;p&gt;The BBC don't publish an API for their web site, so we need to resort to screen-scraping. That, of course makes the process inherently fragile but it seems to be the best we can do at this stage.&lt;/p&gt;
-
-&lt;p&gt;It wasn't hard to create a program that pulls what I want from the web site using &lt;a href="https://metacpan.org/pod/Web::Query"&gt;Web::Query&lt;/a&gt; (my tool of choice for scraping web sites).&lt;/p&gt;
-
-&lt;p&gt;Of course, having scraped the data, we need to store it somewhere. I decided to store it in a JSON document and worry about displaying it later.&lt;/p&gt;
-
-&lt;p&gt;So here's the code I wrote:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight perl"&gt;&lt;code&gt;&lt;span class="c1"&gt;#!/usr/bin/perl&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;strict&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;warnings&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;feature&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;say&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Time::&lt;/span&gt;&lt;span class="nv"&gt;Piece&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nn"&gt;Web::&lt;/span&gt;&lt;span class="nv"&gt;Query&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;JSON&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$site&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;https://bbc.co.uk&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="si"&gt;$site&lt;/span&gt;&lt;span class="s2"&gt;/news/&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;docs/papers.json&lt;/span&gt;&lt;span class="p"&gt;';&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;JSON&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;pretty&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;canonical&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$data&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;e&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;&amp;lt;&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="nb"&gt;die&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;$!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="vg"&gt;$/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
-  &lt;span class="nv"&gt;$data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$json&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$start_len&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@$data&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-&lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$q&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;wq&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$start&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-
-&lt;span class="nv"&gt;$q&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;find&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;a&lt;/span&gt;&lt;span class="p"&gt;')&lt;/span&gt;
-   &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nb"&gt;each&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;sub &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;@_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;unless&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;/^The Papers:/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-  &lt;span class="nb"&gt;push&lt;/span&gt; &lt;span class="nv"&gt;@$data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="s"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;localtime&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;%Y-%m-%d&lt;/span&gt;&lt;span class="p"&gt;'),&lt;/span&gt;
-    &lt;span class="s"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;s/^The Papers:\s*//r&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="s"&gt;link&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;$site&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$elem&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;('&lt;/span&gt;&lt;span class="s1"&gt;href&lt;/span&gt;&lt;span class="p"&gt;'),&lt;/span&gt;
-  &lt;span class="p"&gt;};&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;@$data&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nv"&gt;$start_len&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;warn&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;No new article found&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nb"&gt;open&lt;/span&gt; &lt;span class="k"&gt;my&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;'&lt;/span&gt;&lt;span class="s1"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;',&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="nb"&gt;die&lt;/span&gt; &lt;span class="p"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;$!&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="p"&gt;";&lt;/span&gt;
-  &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="nv"&gt;$fh&lt;/span&gt; &lt;span class="nv"&gt;$js_p&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$data&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;Nothing too complex there. We look for all of the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags in the page and ignore the ones that don't contain text starting with "The Papers:". We then extract the information we want (the text, the link and the date) and store that all in the JSON document.&lt;/p&gt;
-
-&lt;p&gt;At that point, I could run the code to create the JSON file. I then created the GitHub repository and turned on GitHub Pages for the repo. Once that was all working, I could browse to &lt;a href="https://davorg.github.io/bbc_papers/papers.json"&gt;https://davorg.github.io/bbc_papers/papers.json&lt;/a&gt; to see the JSON.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Doing it every day
-&lt;/h2&gt;
-
-&lt;p&gt;We need to run this code every day. That's simple enough with GitHub Actions. We simply add a workflow definition file to the repo. The workflow looks like this:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight yaml"&gt;&lt;code&gt;&lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Overnight processing&lt;/span&gt;
-
-&lt;span class="na"&gt;on&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-  &lt;span class="na"&gt;schedule&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;cron&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="s"&gt;0&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;9&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;*'&lt;/span&gt;
-  &lt;span class="na"&gt;workflow_dispatch&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-
-&lt;span class="na"&gt;jobs&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-  &lt;span class="na"&gt;build&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="na"&gt;runs-on&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;ubuntu-latest&lt;/span&gt;
-
-    &lt;span class="na"&gt;steps&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Checkout&lt;/span&gt;
-      &lt;span class="na"&gt;uses&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;actions/checkout@v3&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Install cpanm&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install cpanminus&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Install dependencies&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;sudo cpanm -n --installdeps .&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Add data&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;./get_link&lt;/span&gt;
-
-    &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;Commit new page&lt;/span&gt;
-      &lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="pi"&gt;|&lt;/span&gt;
-        &lt;span class="s"&gt;GIT_STATUS=$(git status --porcelain)&lt;/span&gt;
-        &lt;span class="s"&gt;echo $GIT_STATUS&lt;/span&gt;
-        &lt;span class="s"&gt;git config user.name github-actions[bot]&lt;/span&gt;
-        &lt;span class="s"&gt;git config user.email 41898282+github-actions[bot]@users.noreply.github.com&lt;/span&gt;
-        &lt;span class="s"&gt;git add docs/&lt;/span&gt;
-        &lt;span class="s"&gt;if [ "$GIT_STATUS" != "" ]; then git commit -m "Overnight job"; fi&lt;/span&gt;
-        &lt;span class="s"&gt;if [ "$GIT_STATUS" != "" ]; then git push; fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;Again, this is all pretty much standard stuff. We run the workflow on a Ubuntu container. It's a three-phase process:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Install everything we need&lt;/li&gt;
-&lt;li&gt;Run the program to get the new data&lt;/li&gt;
-&lt;li&gt;Commit the new data file to the repo&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Note that the workflow is triggered in two ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;It runs at 09:00 every morning&lt;/li&gt;
-&lt;li&gt;You can run it manually from the Actions tab in the repo (that's what the &lt;code&gt;workflow_dispatch&lt;/code&gt; line does)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;
-  
-  
-  Displaying our wares
-&lt;/h2&gt;
-
-&lt;p&gt;Having got a daily build of the data, we need to create a web page to display it. I'm not a web designer, so this is going to be necessarily basic. I threw together a simple page using &lt;a href="https://getbootstrap.com/"&gt;Bootstrap&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The next step was to grab the &lt;code&gt;papers.json&lt;/code&gt; document, parse it and then display it on the page. Now, I can wrangle Javascript pretty successfully most of the time. but I wanted to get this working as quickly as possible, so I asked ChatGPT for some help. It only took a few iterations for it to give me this code:&lt;br&gt;
-&lt;/p&gt;
-
-&lt;div class="highlight js-code-highlight"&gt;
-&lt;pre class="highlight javascript"&gt;&lt;code&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;DOMContentLoaded&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
-    &lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;papers.json&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-    &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;tableBody&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;querySelector&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;table tbody&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;forEach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;item&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;row&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;tr&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;td&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;textLink&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;td&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="kd"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="s2"&gt;a&lt;/span&gt;&lt;span class="dl"&gt;"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;href&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;item&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="nx"&gt;textLink&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;textLink&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="nx"&gt;tableBody&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;row&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="p"&gt;});&lt;/span&gt;
-    &lt;span class="p"&gt;});&lt;/span&gt;
-&lt;span class="p"&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;p&gt;It didn't work first time. But that's because I'm an idiot and didn't tell ChatGPT the name of my JSON document or how to correctly identify the &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; element in the HTML. But once I'd corrected my errors it all worked perfectly.&lt;/p&gt;
-
-&lt;h2&gt;
-  
-  
-  Summing up
-&lt;/h2&gt;
-
-&lt;p&gt;So that's how I spent yesterday's lunch break. I can now see an archive of the BBC's stories about each day'd front pages by just going to:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://davorg.github.io/bbc_papers/"&gt;https://davorg.github.io/bbc_papers/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Of course, just after I'd written it, I (once again) had a look to see if someone else had created something similar and found the &lt;a href="https://www.bbc.co.uk/news/topics/cpml2v678pxt"&gt;BBC's page&lt;/a&gt; listing all of the stories. Ah well, I had fun putting my version together.&lt;/p&gt;
-
-&lt;p&gt;All of this code is available &lt;a href="https://github.com/davorg/bbc_papers"&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-</content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/updating-github-pages-using-github-actions-395a</id>
-    <published>2023-01-13T16:04:05Z</published>
-    <updated>2023-01-13T16:04:05Z</updated>
-    <category term="perl"/>
-    <category term="github"/>
-    <category term="githubpages"/>
-    <category term="githubactions"/>
-  </entry>
-  <entry>
     <title>DAVECROSS has released Parse-RPM-Spec-v1.1.2</title>
     <link rel="alternate" href="https://metacpan.org/release/DAVECROSS/Parse-RPM-Spec-v1.1.2" type="text/html"/>
     <content type="xhtml">
@@ -1914,40 +1778,6 @@ done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to 
     <category term="workflow"/>
     <category term="semi-static-sites"/>
     <category term="github"/>
-  </entry>
-  <entry>
-    <title>Not that PR, thanks</title>
-    <link rel="alternate" href="https://perlhacks.com/2022/10/not-that-pr-thanks/" type="text/html"/>
-    <content type="html">&lt;p&gt;It&amp;#8217;s October. And that means that &lt;a href="https://hacktoberfest.com/"&gt;Hacktoberfest&lt;/a&gt; has started. If you can get four pull requests accepted on other people&amp;#8217;s code repositories during October then you can win a t-shirt.&lt;/p&gt;
-&lt;p&gt;In many ways, I think it&amp;#8217;s a great idea. It encourages people to get involved in open source software. But in other ways, it can be a bit of a pain in the arse. Some people go crazy for a free t-shirt and that means you&amp;#8217;ll almost certainly get several pull requests that aren&amp;#8217;t really of the quality you&amp;#8217;d hope for.&lt;/p&gt;
-&lt;p&gt;I have a particular problem that probably isn&amp;#8217;t very common. I&amp;#8217;ve talked before about the &amp;#8220;semi-static&amp;#8221; sites I run on GitHub Pages. There&amp;#8217;s some data in a GitHub Repo and every couple of hours the system wakes up and runs some code which generates a few HTML pages and commits those HTML pages into the repo&amp;#8217;s &amp;#8220;/docs&amp;#8221; directory. And &amp;#8211; hey presto! &amp;#8211; there&amp;#8217;s a new version of your web site.&lt;/p&gt;
-&lt;p&gt;A good example is &lt;a href="https://perl.theplanetarium.org/"&gt;Planet Perl&lt;/a&gt;. The data is a YAML file which mostly consists of a list of web feeds. Every couple of hours we run &lt;a href="https://metacpan.org/dist/Perlanet/view/bin/perlanet"&gt;perlanet&lt;/a&gt; to pull in those web feeds and build a new version of the web site containing the latest articles about Perl.&lt;/p&gt;
-&lt;p&gt;Can you see what the problem is?&lt;/p&gt;
-&lt;p&gt;The problem is that the most obvious file in the repo is the &amp;#8220;index.html&amp;#8221; which is the web site. So when people find that repo and want to make a small change to the web site they&amp;#8217;ll change that &amp;#8220;index.html&amp;#8221; file. But that file is generated. Every few hours, any changes to that file are overwritten as a new version is created. You actually want to change &amp;#8220;index.tt&amp;#8221;. But that uses &lt;a href="https://metacpan.org/dist/Template-Toolkit/view/lib/Template/Manual/Directives.pod"&gt;Template Toolkit syntax&lt;/a&gt;, so it&amp;#8217;s easy enough to see why people with no Perl knowledge might want to avoid editing that.&lt;/p&gt;
-&lt;p&gt;The &lt;a href="https://github.com/davorg/planetperl/blob/master/README.md"&gt;README file&lt;/a&gt; for the project explains which files you might want to change in order to make different types of changes. But people don&amp;#8217;t read that. Or, if they do read it, they ignore the bits that they don&amp;#8217;t like.&lt;/p&gt;
-&lt;p&gt;So I get pull requests that I have to reject because they change the wrong files.&lt;/p&gt;
-&lt;p&gt;Last year I got enough of these problematic pull requests that I decided to automate a solution. And it&amp;#8217;s &lt;a href="https://github.com/davorg/planetperl/blob/master/.github/workflows/reject-pr.yml"&gt;this pretty simple GitHub Workflow&lt;/a&gt;. It runs whenever my repo receives a pull request and looks at the files that have been changed. If that list of files includes &amp;#8220;docs/index.html&amp;#8221; then the PR is automatically closed with a polite message explaining what they&amp;#8217;ve done wrong.&lt;/p&gt;
-&lt;p&gt;This makes my life easier. It&amp;#8217;s possible it might make your life easier too.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;The post &lt;a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/"&gt;Not that PR, thanks&lt;/a&gt; appeared first on &lt;a rel="nofollow" href="https://perlhacks.com"&gt;Perl Hacks&lt;/a&gt;.&lt;/p&gt;
-</content>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>It’s October. And that means that Hacktoberfest has started. If you can get four pull requests accepted on other people’s code repositories during October then you can win a t-shirt. In many ways, I think it’s a great idea. It encourages people to get involved in open source software. But in other ways, it can… <a class="more-link" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Continue reading <span class="screen-reader-text">Not that PR, thanks</span></a></p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/10/not-that-pr-thanks/">Not that PR, thanks</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </summary>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://perlhacks.com/?p=2082</id>
-    <published>2022-10-10T16:01:43Z</published>
-    <updated>2022-10-10T16:01:43Z</updated>
-    <category term="Miscellaneous"/>
-    <category term="github"/>
-    <category term="github actions"/>
-    <category term="pull request"/>
-    <category term="semi-static sites"/>
-    <category term="workflow"/>
   </entry>
   <entry>
     <title>Should Children be Polite While Using Smart Speakers?</title>
