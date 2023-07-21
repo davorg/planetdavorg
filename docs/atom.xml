@@ -7,68 +7,203 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-07-20T18:03:55Z</updated>
+  <updated>2023-07-21T00:11:38Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/30572329622</id>
+    <published>2023-07-21T00:06:08Z</published>
+    <updated>2023-07-21T00:06:08Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/68b0c3f13f...b443190e7a"/>
+    <title type="html">davorg pushed to master in davorg/uptime</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30572329622,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;de475932-b8e3-418c-bb1b-ebbff71dd6e9&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="022a00b8b7540e921dbbc6538be6cf11f3cee0fa2b59ea7d0b1317939e167f2a"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-07-21T00:06:08Z" data-view-component="true"&gt;July 21, 2023 00:06&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits "&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/b443190e7ae39ef175ce7600c070e19b8ae2dc42" rel="noreferrer"&gt;b443190&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      &lt;g-emoji class="g-emoji" alias="card_file_box" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5c3.png"&gt;🗃️&lt;/g-emoji&gt; Update status summary [skip ci] [upptime]
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/a862706c49c3c8e6dbd6ef420e79f046241c90c6" rel="noreferrer"&gt;a862706&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      &lt;g-emoji class="g-emoji" alias="memo" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png"&gt;📝&lt;/g-emoji&gt; Update summary in README [skip ci] [upptime]
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry xmlns:media="http://search.yahoo.com/mrss/">
+    <id>tag:github.com,2008:PushEvent/30571623078</id>
+    <published>2023-07-20T23:01:28Z</published>
+    <updated>2023-07-20T23:01:28Z</updated>
+    <link type="text/html" rel="alternate" href="https://github.com/davorg/uptime/compare/246ab32436...68b0c3f13f"/>
+    <title type="html">davorg pushed to master in davorg/uptime</title>
+    <author>
+      <name>davorg</name>
+      <email>dave@davecross.co.uk</email>
+      <uri>https://github.com/davorg</uri>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30571623078,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;37d8bfeb-6d9c-46e7-a411-9b5ce6d66a1b&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="ba4294c798b5828d7ec46936fbd2990b0fc34a7809c4acdc8405a60081e7da33"&gt;&lt;div class="body"&gt;
+&lt;!-- push --&gt;
+&lt;div class="d-flex flex-items-baseline py-4"&gt;
+  &lt;div class="d-flex flex-column width-full"&gt;
+    &lt;div class="color-fg-muted"&gt;
+      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
+      
+      pushed to
+        &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+        in
+      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/uptime" rel="noreferrer"&gt;davorg/uptime&lt;/a&gt;
+      &lt;span&gt;
+        · &lt;relative-time tense="past" datetime="2023-07-20T23:01:28Z" data-view-component="true"&gt;July 20, 2023 23:01&lt;/relative-time&gt;
+      &lt;/span&gt;
+
+        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
+          &lt;span&gt;2 commits to&lt;/span&gt;
+          &lt;a class="branch-name" href="/davorg/uptime/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
+
+          &lt;div class="commits "&gt;
+            &lt;ul class="list-style-none"&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/68b0c3f13fab1ea7a5535c98f26228c7470e08e1" rel="noreferrer"&gt;68b0c3f&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      &lt;g-emoji class="g-emoji" alias="green_square" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png"&gt;🟩&lt;/g-emoji&gt; Feeds is up (200 in 567 ms) [skip ci] [upptime]
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="d-flex flex-items-baseline"&gt;
+                  &lt;span&gt;
+                    &lt;a class="d-inline-block" href="/upptime-bot" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/73812536?s=32&amp;amp;v=4" width="16" height="16" alt="@upptime-bot"&gt;&lt;/a&gt;
+                  &lt;/span&gt;
+                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/uptime/commit/a04a3d84cd2e2c1adc954a313e87af1c2d02c4b8" rel="noreferrer"&gt;a04a3d8&lt;/a&gt;&lt;/code&gt;
+                  &lt;div class="dashboard-break-word lh-condensed"&gt;
+                    &lt;blockquote&gt;
+                      &lt;g-emoji class="g-emoji" alias="green_square" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f7e9.png"&gt;🟩&lt;/g-emoji&gt; Perl Hacks is up (200 in 1484 ms) [skip ci] [upptime]
+                    &lt;/blockquote&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+
+
+                &lt;li class="f6 mt-2"&gt;
+                  &lt;a class="Link--secondary" href="/davorg/uptime/compare/246ab32436...68b0c3f13f" rel="noreferrer"&gt;4 more commits »&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
-    <title>World In My Eyes - 7" Version - Depeche Mode</title>
+    <title>It's No Good - Depeche Mode</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">World In My Eyes - 7" Version - Depeche Mode</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">It's No Good - Depeche Mode</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/World+In+My+Eyes+-+7%22+Version" type="text/html"/>
-    <updated>2023-07-20T17:01:14Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/It%27s+No+Good" type="text/html"/>
+    <updated>2023-07-20T17:28:29Z</updated>
+    <author>
+      <name>Depeche Mode</name>
+    </author>
+    <id>https://musicbrainz.org/recording/9dd4d79b-8115-4451-9be1-11beb3339382</id>
+  </entry>
+  <entry>
+    <title>Barrel of a Gun - Depeche Mode</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Barrel of a Gun - Depeche Mode</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/Barrel+of+a+Gun" type="text/html"/>
+    <updated>2023-07-20T17:23:03Z</updated>
+    <author>
+      <name>Depeche Mode</name>
+    </author>
+    <id>https://musicbrainz.org/recording/6c73ecac-4fbe-4947-ad5b-6b65bcddcc3e</id>
+  </entry>
+  <entry>
+    <title>In Your Room - Depeche Mode</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">In Your Room - Depeche Mode</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/In+Your+Room" type="text/html"/>
+    <updated>2023-07-20T17:18:12Z</updated>
+    <author>
+      <name>Depeche Mode</name>
+    </author>
+    <id>https://musicbrainz.org/recording/4ab2ac00-aff5-4aff-a039-7dbeec9cac23</id>
+  </entry>
+  <entry>
+    <title>Condemnation - Single Version - Depeche Mode</title>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">Condemnation - Single Version - Depeche Mode</div>
+    </summary>
+    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/Condemnation+-+Single+Version" type="text/html"/>
+    <updated>2023-07-20T17:14:50Z</updated>
     <author>
       <name>Depeche Mode</name>
     </author>
     <id>https://musicbrainz.org/recording/</id>
   </entry>
   <entry>
-    <title>Policy of Truth - Depeche Mode</title>
+    <title>Walking in My Shoes - Depeche Mode</title>
     <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Policy of Truth - Depeche Mode</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">Walking in My Shoes - Depeche Mode</div>
     </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/Policy+of+Truth" type="text/html"/>
-    <updated>2023-07-20T16:56:00Z</updated>
+    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/Walking+in+My+Shoes" type="text/html"/>
+    <updated>2023-07-20T17:09:48Z</updated>
     <author>
       <name>Depeche Mode</name>
     </author>
-    <id>https://musicbrainz.org/recording/596babc5-3291-4779-aaf9-6a1ce916e0c0</id>
-  </entry>
-  <entry>
-    <title>Enjoy the Silence - Depeche Mode</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Enjoy the Silence - Depeche Mode</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/Enjoy+the+Silence" type="text/html"/>
-    <updated>2023-07-20T16:51:44Z</updated>
-    <author>
-      <name>Depeche Mode</name>
-    </author>
-    <id>https://musicbrainz.org/recording/59eb6c7c-4d19-3080-9bc6-161dab6fc9a1</id>
-  </entry>
-  <entry>
-    <title>Personal Jesus - Single Version - Depeche Mode</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Personal Jesus - Single Version - Depeche Mode</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/Personal+Jesus+-+Single+Version" type="text/html"/>
-    <updated>2023-07-20T16:47:59Z</updated>
-    <author>
-      <name>Depeche Mode</name>
-    </author>
-    <id>https://musicbrainz.org/recording/</id>
-  </entry>
-  <entry>
-    <title>Behind the Wheel - Depeche Mode</title>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">Behind the Wheel - Depeche Mode</div>
-    </summary>
-    <link rel="alternate" href="https://www.last.fm/music/Depeche+Mode/_/Behind+the+Wheel" type="text/html"/>
-    <updated>2023-07-20T16:43:57Z</updated>
-    <author>
-      <name>Depeche Mode</name>
-    </author>
-    <id>https://musicbrainz.org/recording/4aef031d-8ba9-4439-b32c-26a7178fe03b</id>
+    <id>https://musicbrainz.org/recording/76531e6d-961c-4313-ba77-6d0130d48937</id>
   </entry>
   <entry xmlns:media="http://search.yahoo.com/mrss/">
     <id>tag:github.com,2008:PushEvent/30543419761</id>
@@ -82,7 +217,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30543419761,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;ec09e9c1-4230-4dba-a374-cab02eaa6acb&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="e5ad6c66815c981748214559fa40db07f9b8e2e3a0305042fc1c7a036c2de681"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30543419761,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;a092edfe-9897-48b5-82c9-ed01c6be2840&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="23fc44c7648e94bad01e27abb521a72d3bd1d2367b4654833136d9d4846c8427"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -137,7 +272,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30543210415,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;2af6dc0a-4b79-41ec-82d4-4f42c263914d&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="ebaa28c467dbcf9924666b94b615d059222009920213a3ccb30d99d4004b6875"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30543210415,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;d11f0f6c-5618-45a6-b8cc-40612c922278&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d92d63f165cddd7fafd5d9c460b37b6762472ebc80d19ffebd5bbdb3204962ea"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -203,7 +338,7 @@
       <uri>https://github.com/davorg</uri>
     </author>
     <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30542461061,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;c3d79142-de32-4aca-a617-e7b174d3b01a&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="bf1c0927c54c1be38820f092dfd270fc7395982ad5ca9dd2e5904c9c2caa1edf"&gt;&lt;div class="body"&gt;
+    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:567308850,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30542461061,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;74c263c4-5ccf-42a1-9188-698cebd74668&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="0120dded0f3b6867c7f51f67b553996d1e6f9ffa4084c7ae1ecc14a50cbfd89c"&gt;&lt;div class="body"&gt;
 &lt;!-- push --&gt;
 &lt;div class="d-flex flex-items-baseline py-4"&gt;
   &lt;div class="d-flex flex-column width-full"&gt;
@@ -252,112 +387,6 @@
                 &lt;li class="f6 mt-2"&gt;
                   &lt;a class="Link--secondary" href="/davorg/uptime/compare/3e53f20364...c885810fb7" rel="noreferrer"&gt;4 more commits »&lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PullRequestEvent/30535897553</id>
-    <published>2023-07-19T17:19:41Z</published>
-    <updated>2023-07-19T17:19:41Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/szabgab/whitecamel.org/pull/9"/>
-    <title type="html">davorg opened a pull request in szabgab/whitecamel.org</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="issues_opened js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:129967,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PullRequestEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30535897553,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;37dba26f-90f0-4188-a9de-e490d9a14191&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="0dac854b34e3982ec4f60b1ac9e809ef002c85757609e3f820ef3d0f2ffa4db1"&gt;&lt;div class="body"&gt;
-&lt;!-- pull_request --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div&gt;
-      &lt;div class="d-flex flex-items-baseline"&gt;
-        &lt;div class="color-fg-muted"&gt;
-          &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-          &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-          
-          opened
-          &lt;a class="Link--primary no-underline wb-break-all" aria-label="szabgab/whitecamel.org#9" href="/szabgab/whitecamel.org/pull/9" rel="noreferrer"&gt;szabgab/whitecamel.org#9&lt;/a&gt;
-          &lt;span&gt;
-            · &lt;relative-time tense="past" datetime="2023-07-19T17:19:41Z" data-view-component="true"&gt;July 19, 2023 17:19&lt;/relative-time&gt;
-          &lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="Box p-3 my-2 color-shadow-medium "&gt;
-      &lt;svg height="16" aria-label="Pull request" class="octicon octicon-git-pull-request open d-inline-block mt-1 float-left" viewBox="0 0 16 16" version="1.1" width="16" role="img"&gt;&lt;path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"&gt;&lt;/path&gt;&lt;/svg&gt;
-
-      &lt;div class="ml-4"&gt;
-        &lt;div&gt;
-          &lt;span class="f4 lh-condensed text-bold color-fg-default"&gt;&lt;a class="color-fg-default text-bold" aria-label="Case-insensitive sort (puts brian d foy in the right place)" href="/szabgab/whitecamel.org/pull/9" rel="noreferrer"&gt;Case-insensitive sort (puts brian d foy in the right place)&lt;/a&gt;&lt;/span&gt;
-          &lt;span class="f4 color-fg-muted ml-1"&gt;#9&lt;/span&gt;
-        &lt;/div&gt;
-
-          &lt;div class="diffstat d-inline-block mt-1"&gt;
-            &lt;span class="color-fg-success"&gt;+1&lt;/span&gt;
-            &lt;span class="color-fg-danger"&gt;-1&lt;/span&gt;
-          &lt;/div&gt;
-
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</content>
-  </entry>
-  <entry xmlns:media="http://search.yahoo.com/mrss/">
-    <id>tag:github.com,2008:PushEvent/30535874748</id>
-    <published>2023-07-19T17:18:47Z</published>
-    <updated>2023-07-19T17:18:47Z</updated>
-    <link type="text/html" rel="alternate" href="https://github.com/davorg/whitecamel.org/compare/0a8f88dc58...ae6b0917fd"/>
-    <title type="html">davorg pushed to master in davorg/whitecamel.org</title>
-    <author>
-      <name>davorg</name>
-      <email>dave@davecross.co.uk</email>
-      <uri>https://github.com/davorg</uri>
-    </author>
-    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/24642?s=30&amp;v=4"/>
-    <content type="html">&lt;div class="push js-feed-item-view" data-hydro-view="{&amp;quot;event_type&amp;quot;:&amp;quot;news_feed.event.view&amp;quot;,&amp;quot;payload&amp;quot;:{&amp;quot;event&amp;quot;:{&amp;quot;repo_id&amp;quot;:668192638,&amp;quot;actor_id&amp;quot;:24642,&amp;quot;public&amp;quot;:true,&amp;quot;type&amp;quot;:&amp;quot;PushEvent&amp;quot;,&amp;quot;target_id&amp;quot;:null,&amp;quot;id&amp;quot;:30535874748,&amp;quot;additional_details_shown&amp;quot;:false,&amp;quot;grouped&amp;quot;:false},&amp;quot;event_group&amp;quot;:null,&amp;quot;org_id&amp;quot;:null,&amp;quot;target_type&amp;quot;:&amp;quot;event&amp;quot;,&amp;quot;user_id&amp;quot;:null,&amp;quot;feed_card&amp;quot;:{&amp;quot;card_retrieved_id&amp;quot;:&amp;quot;edc6aaa0-a378-44f7-ab0f-0f620860c2ee&amp;quot;},&amp;quot;originating_url&amp;quot;:&amp;quot;https://github.com/davorg.atom&amp;quot;}}" data-hydro-view-hmac="d8a941cd091c70e735051b01372cae9be84595eaa00f17863328a5b101c61c91"&gt;&lt;div class="body"&gt;
-&lt;!-- push --&gt;
-&lt;div class="d-flex flex-items-baseline py-4"&gt;
-  &lt;div class="d-flex flex-column width-full"&gt;
-    &lt;div class="color-fg-muted"&gt;
-      &lt;span class="mr-2"&gt;&lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=64&amp;amp;v=4" width="32" height="32" alt="@davorg"&gt;&lt;/a&gt;&lt;/span&gt;
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg" rel="noreferrer"&gt;davorg&lt;/a&gt;
-      
-      pushed to
-        &lt;a class="branch-name" href="/davorg/whitecamel.org/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-        in
-      &lt;a class="Link--primary no-underline wb-break-all" href="/davorg/whitecamel.org" rel="noreferrer"&gt;davorg/whitecamel.org&lt;/a&gt;
-      &lt;span&gt;
-        · &lt;relative-time tense="past" datetime="2023-07-19T17:18:47Z" data-view-component="true"&gt;July 19, 2023 17:18&lt;/relative-time&gt;
-      &lt;/span&gt;
-
-        &lt;div class="Box p-3 mt-2 color-shadow-medium "&gt;
-          &lt;span&gt;1 commit to&lt;/span&gt;
-          &lt;a class="branch-name" href="/davorg/whitecamel.org/tree/master" rel="noreferrer"&gt;master&lt;/a&gt;
-
-          &lt;div class="commits pusher-is-only-committer"&gt;
-            &lt;ul class="list-style-none"&gt;
-                &lt;li class="d-flex flex-items-baseline"&gt;
-                  &lt;span&gt;
-                    &lt;a class="d-inline-block" href="/davorg" rel="noreferrer"&gt;&lt;img class="mr-1 avatar-user" src="https://avatars.githubusercontent.com/u/24642?s=32&amp;amp;v=4" width="16" height="16" alt="@davorg"&gt;&lt;/a&gt;
-                  &lt;/span&gt;
-                  &lt;code&gt;&lt;a class="mr-1" href="/davorg/whitecamel.org/commit/ae6b0917fdd2c09b5fb79151b29b01d373a3cfc4" rel="noreferrer"&gt;ae6b091&lt;/a&gt;&lt;/code&gt;
-                  &lt;div class="dashboard-break-word lh-condensed"&gt;
-                    &lt;blockquote&gt;
-                      Case-insensitive sort (puts brian d foy in the right place)
-                    &lt;/blockquote&gt;
-                  &lt;/div&gt;
-                &lt;/li&gt;
-
-
             &lt;/ul&gt;
           &lt;/div&gt;
         &lt;/div&gt;
