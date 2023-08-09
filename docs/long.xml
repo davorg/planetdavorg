@@ -7,9 +7,91 @@
     <name>Dave Cross</name>
     <email>dave@theplanetarium.org</email>
   </author>
-  <updated>2023-08-09T12:04:20Z</updated>
+  <updated>2023-08-09T18:04:03Z</updated>
   <link rel="self" href="https://davorg.theplanetarium.org/" type="application/atom+xml"/>
   <id>https://davorg.theplanetarium.org/</id>
+  <entry>
+    <title>GitHub Organisations</title>
+    <link rel="alternate" href="https://perlhacks.com/2023/08/github-organisations/" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’ve mentioned before how much I enjoyed Olaf Alders’ talk, <a href="https://www.youtube.com/watch?v=areXIy7UKyA"><em>Whither Perl</em></a>, at the Perl and Raku Conference in Toronto last month. I think it’s well worth spending forty minutes watching it. It triggered a few ideas that I’ll be writing about over the coming weeks and, today, I wanted to start by talking briefly about the idea of <a href="https://docs.github.com/organizations">GitHub Organisations</a> and introducing a couple of organisations that I’ve recently set up.</p>
+<p>Olaf talks about GitHub Organisations as a way to ensure the continuity of your projects. And I think that’s a very important point. I’ve written a few times over recent years about the problems of getting fixes into CPAN modules when the maintainer has gone missing. This is also true of non-CPAN projects that members of the community might find useful. By setting up an organisation and inviting a few trusted people to join it, you can share the responsibility of looking after your projects. So if you lose interest or drift away, there’s a better chance that someone else will be able to take up the reins.</p>
+<p>It’s actually a thought that I had before going to Toronto. A couple of months ago, I set up the <a href="https://github.com/PerlToolsTeam">Perl Tools Team</a> organisation and transferred ownership of four of my repos.</p>
+<ul>
+<li><a href="https://github.com/PerlToolsTeam/dashboard">dashboard</a> is the code that runs <a href="https://cpandashboard.com/">CPAN Dashboard</a></li>
+<li><a href="https://github.com/PerlToolsTeam/planetperl">planetperl</a> has the code that drives <a href="https://perl.theplanetarium.org/">Planet Perl</a> (ok, actually, it contains the configuration for that site – most of the actual work is done by <a href="https://metacpan.org/dist/Perlanet">Perlanet</a> – and see below for more about that)</li>
+<li><a href="https://github.com/PerlToolsTeam/psc">psc</a> is used to generate my list of <a href="https://psc.perlhacks.com/">Perl Steering Council meetings</a> – which should probably be updated</li>
+<li><a href="https://github.com/PerlToolsTeam/perlsearch">perlsearch</a> is the <a href="https://search.perlhacks.com/">Perl Search Engine</a> – which I haven’t looked at for years</li>
+</ul>
+<p>There will, no doubt, be other repos that I’ll want to transfer over to this organisation in time. And, of course, if you have a tool that is used by the Perl community, I’ll be happy to add it to the list. Just get in touch and we can talk about it.</p>
+<p>The <a href="https://github.com/davorg-cpan">other organisation</a> (and I set this up just this morning) now owns all of the repos for <a href="https://metacpan.org/author/DAVECROSS">my CPAN modules</a>. I won’t be adding anybody else’s repos to this organisation, but if you send PRs to any of these projects (and I’m looking at you, Mohammad) then don’t be surprised if you get added to the organisation too! If you’ve watched my talk on <a href="https://www.youtube.com/watch?v=ol_Qk31v17g"><em>GitHub Actions for Perl Development</em></a>, then you might remember that I was developing a GitHub Workflow definition for releasing modules to CPAN. That’s still a work in progress, but now I’m thinking that I could add my PAUSE credentials to the GitHub secrets store for this organisation and the GitHub workflow could release the code to CPAN using my credentials without my input (but, obviously, I’m still considering the security implications of that – it would certainly only ever be available to me and a few trusted lieutenants).</p>
+<p>This is still all very new and it will definitely develop in several directions over the coming months. But it feels like the a move in the right direction. After twenty years of CPAN releases, it feels like I’m turning my work into a “proper” project. And, hopefully, it can serve as a template that other people can follow. I’ll let you know how it goes.</p>
+<p>So, what do you think? Is this the right model for CPAN development (and, also, Perl infrastructure development) moving forward? Would you be interested in joining either of these organisations? Do you have any tools that the Perl Tools Team could maintain for you?</p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/08/github-organisations/">GitHub Organisations</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </content>
+    <summary type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’ve mentioned before how much I enjoyed Olaf Alders’ talk, Whither Perl, at the Perl and Raku Conference in Toronto last month. I think it’s well worth spending forty minutes watching it. It triggered a few ideas that I’ll be writing about over the coming weeks and, today, I wanted to start by talking briefly… <a class="more-link" href="https://perlhacks.com/2023/08/github-organisations/">Continue reading <span class="screen-reader-text">GitHub Organisations</span></a></p>
+<p>The post <a rel="nofollow" href="https://perlhacks.com/2023/08/github-organisations/">GitHub Organisations</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
+</div>
+    </summary>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://perlhacks.com/?p=2118</id>
+    <published>2023-08-09T13:47:06Z</published>
+    <updated>2023-08-09T13:47:06Z</updated>
+    <category term="Programming"/>
+    <category term="cpan"/>
+    <category term="github"/>
+    <category term="github-organisations"/>
+    <category term="perl"/>
+  </entry>
+  <entry>
+    <title>GitHub Organisations</title>
+    <link rel="alternate" href="https://dev.to/davorg/github-organisations-1fb4" type="text/html"/>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml"><p>I’ve mentioned before how much I enjoyed Olaf Alders’ talk, <a href="https://www.youtube.com/watch?v=areXIy7UKyA"><em>Whither Perl</em></a>, at the Perl and Raku Conference in Toronto last month. I think it’s well worth spending forty minutes watching it. It triggered a few ideas that I’ll be writing about over the coming weeks and, today, I wanted to start by talking briefly about the idea of <a href="https://docs.github.com/organizations">GitHub Organisations</a> and introducing a couple of organisations that I’ve recently set up.</p>
+
+<p>Olaf talks about GitHub Organisations as a way to ensure the continuity of your projects. And I think that’s a very important point. I’ve written a few times over recent years about the problems of getting fixes into CPAN modules when the maintainer has gone missing. This is also true of non-CPAN projects that members of the community might find useful. By setting up an organisation and inviting a few trusted people to join it, you can share the responsibility of looking after your projects. So if you lose interest or drift away, there’s a better chance that someone else will be able to take up the reins.</p>
+
+<p>It’s actually a thought that I had before going to Toronto. A couple of months ago, I set up the <a href="https://github.com/PerlToolsTeam">Perl Tools Team</a> organisation and transferred ownership of four of my repos.</p>
+
+<ul>
+<li>
+<a href="https://github.com/PerlToolsTeam/dashboard">dashboard</a> is the code that runs <a href="https://cpandashboard.com/">CPAN Dashboard</a>
+</li>
+<li>
+<a href="https://github.com/PerlToolsTeam/planetperl">planetperl</a> has the code that drives <a href="https://perl.theplanetarium.org/">Planet Perl</a> (ok, actually, it contains the configuration for that site – most of the actual work is done by <a href="https://metacpan.org/dist/Perlanet">Perlanet</a> – and see below for more about that)</li>
+<li>
+<a href="https://github.com/PerlToolsTeam/psc">psc</a> is used to generate my list of <a href="https://psc.perlhacks.com/">Perl Steering Council meetings</a> – which should probably be updated</li>
+<li>
+<a href="https://github.com/PerlToolsTeam/perlsearch">perlsearch</a> is the <a href="https://search.perlhacks.com/">Perl Search Engine</a> – which I haven’t looked at for years</li>
+</ul>
+
+<p>There will, no doubt, be other repos that I’ll want to transfer over to this organisation in time. And, of course, if you have a tool that is used by the Perl community, I’ll be happy to add it to the list. Just get in touch and we can talk about it.</p>
+
+<p>The <a href="https://github.com/davorg-cpan">other organisation</a> (and I set this up just this morning) now owns all of the repos for <a href="https://metacpan.org/author/DAVECROSS">my CPAN modules</a>. I won’t be adding anybody else’s repos to this organisation, but if you send PRs to any of these projects (and I’m looking at you, Mohammad) then don’t be surprised if you get added to the organisation too! If you’ve watched my talk on <a href="https://www.youtube.com/watch?v=ol_Qk31v17g"><em>GitHub Actions for Perl Development</em></a>, then you might remember that I was developing a GitHub Workflow definition for releasing modules to CPAN. That’s still a work in progress, but now I’m thinking that I could add my PAUSE credentials to the GitHub secrets store for this organisation and the GitHub workflow could release the code to CPAN using my credentials without my input (but, obviously, I’m still considering the security implications of that – it would certainly only ever be available to me and a few trusted lieutenants).</p>
+
+<p>This is still all very new and it will definitely develop in several directions over the coming months. But it feels like the a move in the right direction. After twenty years of CPAN releases, it feels like I’m turning my work into a “proper” project. And, hopefully, it can serve as a template that other people can follow. I’ll let you know how it goes.</p>
+
+<p>So, what do you think? Is this the right model for CPAN development (and, also, Perl infrastructure development) moving forward? Would you be interested in joining either of these organisations? Do you have any tools that the Perl Tools Team could maintain for you?</p>
+
+<p>The post <a href="https://perlhacks.com/2023/08/github-organisations/">GitHub Organisations</a> appeared first on <a href="https://perlhacks.com">Perl Hacks</a>.</p>
+
+</div>
+    </content>
+    <author>
+      <name>Dave Cross</name>
+    </author>
+    <id>https://dev.to/davorg/github-organisations-1fb4</id>
+    <published>2023-08-09T13:47:06Z</published>
+    <updated>2023-08-09T13:47:06Z</updated>
+    <category term="programming"/>
+    <category term="cpan"/>
+    <category term="github"/>
+    <category term="githuborganisations"/>
+  </entry>
   <entry>
     <title>The next thing...</title>
     <link rel="alternate" href="https://davecross.substack.com/p/the-next-thing" type="text/html"/>
@@ -798,48 +880,6 @@ jobs:
     <category term="planet perl"/>
   </entry>
   <entry>
-    <title>Improvements to Planet Perl and Perlanet</title>
-    <link rel="alternate" href="https://dev.to/davorg/improvements-to-planet-perl-and-perlanet-20d3" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>This is a story of one of those nice incidents where something starts off simple, then spirals out of control for a while but, in the end, everyone wins.</p>
-
-<p>On Reddit, a few days ago, someone asked <a href="https://www.reddit.com/r/perl/comments/119hu00/perl_rss_feeds/">‘Is there a “Planet Perl” with an RSS feed?’</a> and a few people replied, pointing out the existence of Planet Perl (which is the first Google result for <a href="https://www.google.com/search?q=planet+perl">“Planet Perl”</a>). I’m obviously not marketing that site very well as every time I mention it, I get people (pleasantly) surprised that it exists.</p>
-
-<p>On this occasion, it was <a href="https://www.reddit.com/user/rwp0/">Elvin Aslanov</a> who seemed to discover my site for the first time. And, very soon afterwards, he started sending <a href="https://github.com/davorg/planetperl/pulls">pull requests</a> to add feeds to the site. As a result, we now have three more feeds that are being pulled into the site.</p>
-
-<ul>
-<li>
-<a href="https://medium.com/tag/perl">Perl on Medium</a>. I’m slightly embarrassed that I hadn’t thought of this myself. I did, after all, once try to start <a href="https://medium.com/cultured-perl">a Perl publication on Medium</a>. I think I must have decided that there are better sites for technical blogging and blanked it from consideration. Medium’s not the busiest of places for Perl bloggers, but there are a few posts there and they’re mostly from people who are outside of the echo chamber – so getting more eyes on their posts is a good idea.</li>
-<li>
-<a href="https://stackoverflow.com/feeds/tag/perl">Perl questions on Stack Overflow</a>. Another one that would have been obvious if I had thought for a second. I’ve been answering questions on SO for years. It’s a good way to get more perspective on how Perl is being used across the industry. Unfortunately, the feed only includes the titles of the posts – you’ll need to click the link to actually see the question.</li>
-<li>
-<a href="https://github.com/Perl/perl5/commits/blead.atom">Perl commits on GitHub</a>. I’m interested in hearing how useful people think this is. I worry slightly that there will be times when the number of commits will overwhelm the other feeds. But maybe that’s a good idea. Perhaps it’s good for more people to see just how busy the Perl 5 Porters are. I’m a bit annoyed that the feed puts everything in a fixed-width font, but not (yet) annoyed enough to do anything about it.</li>
-</ul>
-
-<p>You might know that Planet Perl is driven by <a href="https://metacpan.org/pod/Perlanet">Perlanet</a>. So adding new feeds is just a case of adding a few lines to <a href="https://github.com/davorg/planetperl/blob/master/perlanetrc">a configuration file</a>. And looking at the pull requests I got from Elvin, showed a potential problem in the way the configuration was laid out. Each feed has three lines of YAML configuration. There’s a title for the feed, a URL for a web page that displays the content of the feed and the URL for the feed itself. They’re called “title”, “web” and “url”. And it’s that last name that’s slightly problematic – it’s just not clear enough. Elvin got “web” and “url” muddled up in one of his PRs and, when I pointed that out to him, he suggested that renaming “url” to “feed” would make things much clearer.</p>
-
-<p>I agreed, and the next day I hacked away for a while before releasing <a href="https://metacpan.org/release/DAVECROSS/Perlanet-v3.0.0/view/lib/Perlanet.pm">version 3.0.0 of Perlanet</a>. In this version, the “url” key is renamed to “feed”. It still accepts the old name (so older config files will still work) but you’ll get a warning if you try to use a config name in the old config.</p>
-
-<p>I didn’t stop there. Last year, I wrote <a href="https://dev.to/davorg/building-a-perlanet-container-43cm">a blog post about producing a docker image that already had Perlanet installed</a> – so that it was quicker to rebuild my various planets every few hours. Since then I’ve been rebuilding <a href="https://hub.docker.com/repository/docker/davorg/perl-perlanet/general">that image</a> every time I updated Perlanet. But it’s been rather a manual process. And because I’m old and decrepit, I can never remember the steps I go through to rebuild it, tag it correctly and push it to the Docker Hub. This means it always takes far longer than it’s supposed to. So this time, I wrote <a href="https://github.com/davorg/perl-perlanet-docker/blob/main/build">a script to do that for me</a>. And because I now have the kind of mind set that sees GitHub Workflows everywhere I look, I wrote <a href="https://github.com/davorg/perl-perlanet-docker/blob/main/.github/workflows/publish_image.yml">a Workflow definition that builds and publishes the image</a> any time the Dockerfile changes. I guess the next step will be to write an action that automatically updates the Dockerfile (thereby triggering the rebuild) each time I release a new version of Perlanet.</p>
-
-<p>But that’s a problem for another day. For now, I’m happy with the improvements I’ve made to Planet Perl, Perlanet and the Perlanet Docker infrastructure.</p>
-
-<p>The post <a href="https://perlhacks.com/2023/03/improvements-to-planet-perl-and-perlanet/">Improvements to Planet Perl and Perlanet</a> appeared first on <a href="https://perlhacks.com">Perl Hacks</a>.</p>
-
-</div>
-    </content>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://dev.to/davorg/improvements-to-planet-perl-and-perlanet-20d3</id>
-    <published>2023-03-03T10:16:30Z</published>
-    <updated>2023-03-03T10:16:30Z</updated>
-    <category term="programming"/>
-    <category term="docker"/>
-    <category term="perlanet"/>
-    <category term="planetperl"/>
-  </entry>
-  <entry>
     <title>2022 in Gigs</title>
     <link rel="alternate" href="https://blog.dave.org.uk/2023/02/2022-in-gigs.html" type="text/html"/>
     <content type="html">
@@ -924,189 +964,6 @@ jobs:
     <category term="gigs"/>
     <category term="review"/>
     <category term="year in gigs"/>
-  </entry>
-  <entry>
-    <title>Writing a CPAN module that talks to ChatGPT</title>
-    <link rel="alternate" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/" type="text/html"/>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p><a href="https://chat.openai.com/chat">ChatGPT</a> exposes an API, but there’s no CPAN module for taking advantage of that. Let’s put that right (with help from ChatGPT)…</p>
-<hr/>
-<p><em>Write a Perl CPAN module for connecting to a ChatGPT server</em></p>
-<p>To create a Perl CPAN module for connecting to a ChatGPT server, you will need to have Perl and the necessary dependencies installed on your system.</p>
-<p>To begin, create a new directory for your module and create a file called “ChatGPT.pm” with the following content:</p><pre class="urvanov-syntax-highlighter-plain-tag">package ChatGPT;
-
-use strict;
-use warnings;
-
-use Net::WebSocket::Client;
-use Net::WebSocket::Server;
-use HTTP::Async;
-
-sub new {
-  my ($class, %params) = @_;
-  my $self = {
-    host =&gt; $params{host},
-    port =&gt; $params{port},
-  };
-
-  bless $self, $class;
-
-  return $self;
-}
-
-sub send_prompt {
-  my ($self, $prompt) = @_;
-
-  my $http = HTTP::Async-&gt;new;
-  my $client = Net::WebSocket::Client-&gt;new(
-    url =&gt; "ws://$self-&gt;{host}:$self-&gt;{port}"
-  );
-
-  $client-&gt;connect;
-  $client-&gt;send_utf8($prompt);
-
-  my $response = $client-&gt;recv;
-
-  $client-&gt;disconnect;
-
-  return $response;
-}
-
-1;</pre><p>To use this module in your Perl code, you can create a new ChatGPT object and call the <code>send_prompt</code> method like this:</p><pre class="urvanov-syntax-highlighter-plain-tag">use ChatGPT;
-
-my $chatgpt = ChatGPT-&gt;new(host =&gt; 'localhost', port =&gt; 8080);
-my $response = $chatgpt-&gt;send_prompt('What is your name?');
-print "Response: $response\n";</pre><p>This will send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080, and print the response to the console.</p>
-<p>Note: This is just a basic example of how you can create a Perl CPAN module for connecting to a ChatGPT server. There are many other features and considerations that you may want to add to your module, such as error handling and customization options.</p>
-<p>To make your module available on CPAN, you will need to follow the guidelines for creating and distributing CPAN modules, which can be found in the Perl documentation and online resources.</p>
-<p><em>Use Moose to create the class</em></p>
-<p>To use Moose to create the <code>ChatGPT</code> class, you will need to have Moose installed on your system. You can install Moose by running the following command:</p><pre class="urvanov-syntax-highlighter-plain-tag">cpanm Moose</pre><p>With Moose installed, you can modify the class like this:</p><pre class="urvanov-syntax-highlighter-plain-tag">package ChatGPT;
-
-use Moose;
-use Net::WebSocket::Client;
-use Net::WebSocket::Server;
-use HTTP::Async;
-
-has host =&gt; (
-  is =&gt; 'ro',
-  isa =&gt; 'Str',
-  required =&gt; 1,
-);
-
-has port =&gt; (
-  is =&gt; 'ro',
-  isa =&gt; 'Int', required =&gt; 1,
-);
-
-sub send_prompt {
-  my ($self, $prompt) = @_;
-
-  my $http = HTTP::Async-&gt;new;
-  my $client = Net::WebSocket::Client-&gt;new(
-    url =&gt; "ws://$self-&gt;{host}:$self-&gt;{port}"
-  );
-
-  $client-&gt;connect; $client-&gt;send_utf8($prompt);
-  my $response = $client-&gt;recv;
-  $client-&gt;disconnect;
-
-  return $response;
-}
-
-1;</pre><p>In this version of the class, the <code>host</code> and <code>port</code> attributes are defined using Moose’s <code>has</code> keyword. These attributes are required and must be specified when creating a new <code>ChatGPT</code> object. The <code>send_prompt</code> method is unchanged from the previous example.</p>
-<p>To create a new <code>ChatGPT</code> object, you can use the <code>new</code> method provided by Moose like this:</p><pre class="urvanov-syntax-highlighter-plain-tag">use ChatGPT;
-
-my $chatgpt = ChatGPT-&gt;new(host =&gt; 'localhost', port =&gt; 8080);
-
-my $response = $chatgpt-&gt;send_prompt('What is your name?');
-
-print "Response: $response\n";</pre><p>This will create a new <code>ChatGPT</code> object with the specified <code>host</code> and <code>port</code> attributes, and send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080. The response will be printed to the console.</p>
-<p>Note: This is just one way to use Moose to create the <code>ChatGPT</code> class. There are many other features and customization options available in Moose that you may want to consider adding to your class, such as type constraints, default values, and methods.</p>
-<p><em>Call the class WebService::ChatGPT</em></p>
-<p>To rename the <code>ChatGPT</code> class to <code>WebService::ChatGPT</code>, you will need to update the package name at the top of the file and update the <code>use</code> statements to refer to the new package name.</p>
-<p>Here is how you can update the <code>ChatGPT</code> class to use the new package name:</p><pre class="urvanov-syntax-highlighter-plain-tag">package WebService::ChatGPT;
-
-use Moose;
-use Net::WebSocket::Client;
-use Net::WebSocket::Server;
-
-use HTTP::Async;
-
-has host =&gt; (
-  is =&gt; 'ro',
-  isa =&gt; 'Str',
-  required =&gt; 1,
-);
-
-has port =&gt; (
-  is =&gt; 'ro',
-  isa =&gt; 'Int',
-  required =&gt; 1,
-);
-
-sub send_prompt {
-  my ($self, $prompt) = @_;
-
-  my $http = HTTP::Async-&gt;new;
-  my $client = Net::WebSocket::Client-&gt;new(
-    url =&gt; "ws://$self-&gt;{host}:$self-&gt;{port}"
-  );
-
-  $client-&gt;connect; $client-&gt;send_utf8($prompt);
-  my $response = $client-&gt;recv;
-  $client-&gt;disconnect;
-
-  return $response;
-}
-
-1;</pre><p>With these changes, the class is now called <code>WebService::ChatGPT</code> and can be used like this:</p><pre class="urvanov-syntax-highlighter-plain-tag">use WebService::ChatGPT;
-
-my $chatgpt = WebService::ChatGPT-&gt;new(host =&gt; 'localhost', port =&gt; 8080);
-
-my $response = $chatgpt-&gt;send_prompt('What is your name?');
-print "Response: $response\n";</pre><p>This will create a new <code>WebService::ChatGPT</code> object with the specified <code>host</code> and <code>port</code> attributes, and send the text prompt “What is your name?” to the ChatGPT server running on localhost at port 8080. The response will be printed to the console.,/p&gt;</p>
-<p>Note: This is just one way to rename the <code>ChatGPT</code> class to <code>WebService::ChatGPT</code>. You may also need to update any other references to the class name in your code and documentation, as well as update the module file name and directory structure to reflect the new package name.</p>
-<p><em>Suggest some tests using the standard Perl testing framework</em></p>
-<p>Here are some examples of tests that you could write for the <code>WebService::ChatGPT</code> module using the standard Perl testing framework (Test::More):</p><pre class="urvanov-syntax-highlighter-plain-tag">use Test::More;
-use WebService::ChatGPT;
-
-# Test creating a new ChatGPT object
-my $chatgpt = WebService::ChatGPT-&gt;new(host =&gt; 'localhost', port =&gt; 8080);
-isa_ok($chatgpt, 'WebService::ChatGPT', 'Object is a ChatGPT');
-
-# Test sending a prompt and receiving a response
-my $response = $chatgpt-&gt;send_prompt('What is your name?');
-is($response, 'My name is ChatGPT.', 'Response is correct');
-
-# Test sending an invalid prompt
-eval { $chatgpt-&gt;send_prompt('') };
-like($@, qr/Invalid prompt/, 'Invalid prompt error is thrown');
-
-done_testing();</pre><p>The first test uses the <code>isa_ok</code> function to check that the object created by the <code>new</code> method is an instance of the <code>WebService::ChatGPT</code> class.</p>
-<p>The second test uses the <code>is</code> function to compare the expected response to the actual response returned by the <code>send_prompt</code> method.</p>
-<p>The third test uses the <code>eval</code> function to catch any exceptions thrown by the <code>send_prompt</code> method when an invalid prompt is provided, and the <code>like</code> function to check that the exception message matches the expected error message.</p>
-<p>These tests can be run using the <code>prove</code> command:</p><pre class="urvanov-syntax-highlighter-plain-tag">prove -l t/chatgpt.t</pre><p/>
-<hr/>
-<p>I haven’t uploaded it to CPAN yet. Do you think I should?</p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Writing a CPAN module that talks to ChatGPT</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </content>
-    <summary type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml"><p>ChatGPT exposes an API, but there’s no CPAN module for taking advantage of that. Let’s put that right (with help from ChatGPT)… Write a Perl CPAN module for connecting to a ChatGPT server To create a Perl CPAN module for connecting to a ChatGPT server, you will need to have Perl and the necessary dependencies… <a class="more-link" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Continue reading <span class="screen-reader-text">Writing a CPAN module that talks to ChatGPT</span></a></p>
-<p>The post <a rel="nofollow" href="https://perlhacks.com/2022/12/writing-a-cpan-module-that-talks-to-chatgpt/">Writing a CPAN module that talks to ChatGPT</a> appeared first on <a rel="nofollow" href="https://perlhacks.com">Perl Hacks</a>.</p>
-</div>
-    </summary>
-    <author>
-      <name>Dave Cross</name>
-    </author>
-    <id>https://perlhacks.com/?p=2093</id>
-    <published>2022-12-20T16:12:38Z</published>
-    <updated>2022-12-20T16:12:38Z</updated>
-    <category term="Programming"/>
-    <category term="ai"/>
-    <category term="chatgpt"/>
-    <category term="cpan"/>
-    <category term="programming"/>
   </entry>
   <entry>
     <title>5 Reasons Why Using AI to Generate Blog Posts Can Destroy Your SEO</title>
