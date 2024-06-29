@@ -33,6 +33,10 @@
 body {
   padding-top: 75px;
 }
+.card.img {
+  max-width: 100%;
+  object-fit: scale-down;
+}
     </style>
 
   </head>
