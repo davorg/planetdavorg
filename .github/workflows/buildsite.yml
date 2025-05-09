@@ -22,6 +22,11 @@ jobs:
         perlanet longrc > long.log 2>&1
         perlanet shortrc > short.log 2>&1
 
+    - name: Make JSON file
+      run: |
+        cpanm --notest App::FeedDeduplicator
+        feed-deduplicator feeds.json > docs/feeds.json
+
     - name: Archive perlanet logs
       uses: actions/upload-artifact@v4
       with:

@@ -1,0 +1,26 @@
+{
+  "output_format": "json",
+  "max_entries": 10,
+  "feeds": [{
+    "feed": "https://perlhacks.com/feed/",
+    "web":  "https://perlhacks.com/",
+    "name": "Perl Hacks"
+  }, {
+    "feed": "https://davecross.substack.com/feed",
+    "web":  "https://davecross.substack.com/",
+    "name": "Substack"
+  }, {
+    "feed": "https://blog.dave.org.uk/feed/",
+    "web":  "https://blog.dave.org.uk/",
+    "name": "Davblog"
+  }, {
+    "feed": "https://dev.to/feed/davorg",
+    "web":  "https://dev.to/davorg",
+    "name": "Dev.to"
+  }, {
+    "feed": "https://davorg.medium.com/feed",
+    "web":  "https://davorg.medium.com/",
+    "name": "Medium"
+  }]
+}
+
