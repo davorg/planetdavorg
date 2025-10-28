@@ -28,7 +28,7 @@ jobs:
         feed-deduplicator feeds.json > docs/feeds.json
 
     - name: Archive perlanet logs
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: perlanet.log
         path: ./perlanet.log
